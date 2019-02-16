@@ -1,20 +1,19 @@
 
 
-    ```
-<meta name="citation_title" content="The testis isoform of the phosphorylase kinase catalytic subunit (PhK-T) plays a critical role in regulation of glycogen mobilization in developing lung">
-<meta name="citation_author" content="Liu, Li">
-<meta name="citation_author" content="Rannels, Stephen R.">
-<meta name="citation_author" content="Falconieri, Mary">
-<meta name="citation_author" content="Phillips, Karen S.">
-<meta name="citation_author" content="Wolpert, Ellen B.">
-<meta name="citation_author" content="Weaver, Timothy E.">
-<meta name="citation_date" content="1996/05/17">
-<meta name="citation_journal_title" content="Journal of Biological Chemistry">
-<meta name="citation_volume" content="271">
-<meta name="citation_issue" content="20">
-<meta name="citation_firstpage" content="11761">
-<meta name="citation_pdf_url" content="http://www.example.com/content/271/20/11761.full.pdf">
-```
+
+    <meta name="citation_title" content="The testis isoform of the phosphorylase kinase catalytic subunit (PhK-T) plays a critical role in regulation of glycogen mobilization in developing lung">
+    <meta name="citation_author" content="Liu, Li">
+    <meta name="citation_author" content="Rannels, Stephen R.">
+    <meta name="citation_author" content="Falconieri, Mary">
+    <meta name="citation_author" content="Phillips, Karen S.">
+    <meta name="citation_author" content="Wolpert, Ellen B.">
+    <meta name="citation_author" content="Weaver, Timothy E.">
+    <meta name="citation_date" content="1996/05/17">
+    <meta name="citation_journal_title" content="Journal of Biological Chemistry">
+    <meta name="citation_volume" content="271">
+    <meta name="citation_issue" content="20">
+    <meta name="citation_firstpage" content="11761">
+    <meta name="citation_pdf_url" content="http://www.example.com/content/271/20/11761.full.pdf">
 
 # [![Google Scholar](https://scholar.google.com/intl/en/scholar/images/1x/scholar_logo_30dp.png)](https://scholar.google.com/schhp?hl=en)
 
@@ -124,5 +123,5 @@ Please understand that the references are identified automatically by the parser
 -   [Google](https://www.google.com/webhp?hl=en)
 -   [Privacy & Terms](https://www.google.com/intl/en/policies/)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTE5OTgxNjMyLC0xODkwMTUwODYwXX0=
+eyJoaXN0b3J5IjpbMTUzNDIxNTQ0NiwtMTg5MDE1MDg2MF19
 -->

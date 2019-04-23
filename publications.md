@@ -113,7 +113,9 @@ Powered by the
 [28]: https://gohugo.io/
 
 ----
-
+Dvir, N. (2018, May). Teaching E-commerce to STEM students: Leveraging evidence
+from a large-scale survey. Presented at the Conference on Instruction &amp;
+Technology (CIT), Cortland, New York.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMDgwMDg2ODYsNTc0MDM5MzY4XX0=
+eyJoaXN0b3J5IjpbMjEyNTYxNzYxNSw1NzQwMzkzNjhdfQ==
 -->

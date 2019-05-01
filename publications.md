@@ -12,12 +12,12 @@
 ][5]
 * [__][6]
 
-Nim Dvir  (2018).  [Sticky words: Evaluation and optimization of information interactions based on linguistic analysis](https://nimdvir.github.io/~nd115232/public/publication/sticky_asist/). In  _Proceedings of the annual meeting of the Association for Information Science & Technology (ASIS&T)_, (Vol. 81, pp. 797–798). Vancouver, Canada: Association for Information Science and Technology..
+**Dvir, N.**  (2018).  [Sticky words: Evaluation and optimization of information interactions based on linguistic analysis](https://nimdvir.github.io/~nd115232/public/publication/sticky_asist/). In  _Proceedings of the annual meeting of the Association for Information Science & Technology (ASIS&T)_, (Vol. 81, pp. 797–798). Vancouver, Canada: Association for Information Science and Technology..
 
 [Preprint](http://arxiv.org/pdf/1512.04133v1) [PDF](https://nimdvir.github.io/~nd115232/public/publication/sticky_asist/sticky_asist.pdf) [Project](https://nimdvir.github.io/~nd115232/public/project/sticky/) [Source Document](https://www.asist.org/wp-content/uploads/2018/12/Final-81st-Annual-Meeting-Proceedings.pdf#page=821)
 
 ---
-Nim Dvir, Ruti Gafni  (2018).  [When less is more: Empirical study of the relation between consumer behavior and information sharing on commercial landing pages](https://nimdvir.github.io/~nd115232/public/publication/less-isi/). In  _Informing Science: The International Journal of an Emerging Transdiscipline_, 21, 019–039..
+**Dvir, N.**  Gafni, R.  (2018).  [When less is more: Empirical study of the relation between consumer behavior and information sharing on commercial landing pages](https://nimdvir.github.io/~nd115232/public/publication/less-isi/). In  _Informing Science: The International Journal of an Emerging Transdiscipline_, 21, 019–039..
 
 [PDF](https://nimdvir.github.io/~nd115232/public/publication/less-isi/less-isi.pdf) Cite  [Project](https://nimdvir.github.io/~nd115232/public/project/less/) [Project](https://nimdvir.github.io/~nd115232/public/project/content/) [Source Document](https://www.informingscience.org/Publications/4015) [DOI](https://doi.org/10.28945/4015)
 
@@ -136,6 +136,6 @@ Dvir, N. (2018, May). Teaching E-commerce to STEM students: Leveraging evidence
 from a large-scale survey. Presented at the Conference on Instruction &amp;
 Technology (CIT), Cortland, New York.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMzI3NDg2MSwyMTI1NjE3NjE1LDU3ND
-AzOTM2OF19
+eyJoaXN0b3J5IjpbLTg3NjgwNjU3NywtMzAzMjc0ODYxLDIxMj
+U2MTc2MTUsNTc0MDM5MzY4XX0=
 -->

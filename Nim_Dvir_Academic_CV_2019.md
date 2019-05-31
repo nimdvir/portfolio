@@ -50,9 +50,9 @@ management (KOM) • Management information systems (MIS)
 
 ## EDUCATION
 
- Ph.D. Information Studies (2020)
-University at Albany - State University of New York (SUNY)
-Specializations: 
+### Ph.D. Information Studies (2020)
+#### University at Albany - State University of New York (SUNY)
+*Specializations:*  
 * Human Computer Interaction (HCI)
 * Management Information Systems (MIS)
 * Knowledge Organization and Management (KOM)
@@ -645,5 +645,5 @@ Baruch College, CUNY
 [[Amitai.Touval\@baruch.cuny.edu]{.underline}](mailto:Amitai.Touval@baruch.cuny.edu)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyMDAwNDM3OSwxNTc3NTYzNjAyXX0=
+eyJoaXN0b3J5IjpbLTIwMjExMDcxMTQsMTU3NzU2MzYwMl19
 -->

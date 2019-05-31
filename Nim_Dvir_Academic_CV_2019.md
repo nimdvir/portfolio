@@ -50,7 +50,24 @@ management (KOM) • Management information systems (MIS)
 
 ## EDUCATION
 
+ Ph.D. Information Studies (2020)
+University at Albany - State University of New York (SUNY)
+Specializations: 
+* Human Computer Interaction (HCI)
+* Management Information Systems (MIS)
+* Knowledge Organization and Management (KOM)
 
+M.B.A. Marketing and Information Systems (2014)
+Zicklin School of Business
+Baruch College - City University of New York (CUNY)
+Cum Laude
+
+B.A. Political Science and Communications (2011)
+Presidential Honor Program
+New York University (NYU)
+
+Cum Laude
+-----
 ### 2020 (exp.) Ph.D. Information Studies
 College of Emergency Preparedness, Homeland Security and ‎Cybersecurity | College of Engineering and Applied Sciences
 #### University at Albany, State University of New York (SUNY)‎
@@ -628,5 +645,5 @@ Baruch College, CUNY
 [[Amitai.Touval\@baruch.cuny.edu]{.underline}](mailto:Amitai.Touval@baruch.cuny.edu)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NzU2MzYwMl19
+eyJoaXN0b3J5IjpbMTgyMDAwNDM3OSwxNTc3NTYzNjAyXX0=
 -->

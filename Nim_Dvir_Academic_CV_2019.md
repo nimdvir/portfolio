@@ -57,16 +57,15 @@ management (KOM) • Management information systems (MIS)
 * Management Information Systems (MIS)
 * Knowledge Organization and Management (KOM)
 
-M.B.A. Marketing and Information Systems (2014)
-Zicklin School of Business
-Baruch College - City University of New York (CUNY)
-Cum Laude
+### M.B.A. Marketing and Information Systems (2014)
+#### Baruch College - City University of New York (CUNY)
+*Cum Laude*
 
-B.A. Political Science and Communications (2011)
-Presidential Honor Program
-New York University (NYU)
+### B.A. Political Science and Communications (2011)
+#### Presidential Honor Program, New York University (NYU)
 
-Cum Laude
+*Cum Laude*
+
 -----
 ### 2020 (exp.) Ph.D. Information Studies
 College of Emergency Preparedness, Homeland Security and ‎Cybersecurity | College of Engineering and Applied Sciences
@@ -645,5 +644,5 @@ Baruch College, CUNY
 [[Amitai.Touval\@baruch.cuny.edu]{.underline}](mailto:Amitai.Touval@baruch.cuny.edu)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjExMDcxMTQsMTU3NzU2MzYwMl19
+eyJoaXN0b3J5IjpbLTE2MDIxMzczMzUsMTU3NzU2MzYwMl19
 -->

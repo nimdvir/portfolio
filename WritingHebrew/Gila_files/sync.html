@@ -1,0 +1,31 @@
+
+<!-- saved from url=(1874)https://us-match.taboola.com/sync?dast=V9cVECABYDABKMeES_wXFwBAASjHhEv8FxcAUAAAAABgYAxwcAJDlxWBYTx2YtMjmca9FwsnIrXLvZWuJxrYYrj8O58OyGAEBSNs9oMXFt3CqbZ-EWTQYLt8SwW61lK4vH5nBYFpPRcgoAI800GQQNn8ugoJyeHrPLICq63ha7w2n2HNQCWdPk8rsBYA9Np8Pnutfrfr-7wvR2-Owav11p9qtEvJVyshLxVsrlSsRbKTcsEW-lHK1VIt5KOVmJeCvliiXirZQbloi3Ui5XIt5KOViJeCvlhq0S8VYK4krEWymXKxFvpRysRLyVcrkS8VbK1UrEWylnfDkAAAAAADwAAIA1V0IA_AACAEQAAAAAAEgAAAAAAFAABFQA_FsACFwAAAAAAGAAACgc9mkAAIxvAAg4sxwACO7yHZR_y9cfAAAADxEgAAAAAhghAAAAAAMiAAAAAAAjAAAAAAAkAAAHt-ElAAAtiAkmAAAAAZBBWAUWJwAAAAAAAAAAACwA_____zEAA_b0dTIAA_0KEz0AAA8-AAAPRAAABLtVRQCMAAAAAADEDoAdjgAmAXQCQAVgUQUAAECQbgUAcAUAABAAGcS1KB0GAAAAECAGEKra-0XY-1s8BrBAD4vfb3bYNX63ywAAAAAAAAAAAMwA_s8A_tEAhEYUetIAhCf1w9UAfgEBANYAfgEBANgAtA1g3AAAAN4ABOAAQg5gBU2nw-e61-t-v7vC9Hb47Bq_XWn26_f7_Vq_3-_3-7V-v9_v93vRARC0YjBYHYBC7IazxW44mS1mBwAAAABwB_D___-PBxCq2vtF2PtbrAcAgjPbzLKYzSwOj8llGhlmE8_CY1gtZ7vJbGPZLbcHIEVXSfA6w-3YBzDSTJNB0PC5DArK6ekxuwyiouttsTucZs9BLZA1TS6__QAmbDFaTSab5XC2XEwGw9FwNNofwEBMZgMEmIjBcjmZLCa71Wg12gx3o9lggQACMZggAEWLBpPVaDRZTIar0WQ1Wy52uw0CULRqNRttBsPVbDLb7VbDwXA5GiHAhC1Gq8lksxzOlovJYDgajkZDBIAZ18q3sUwGa43LsVmLliPDWmKzbNbK3WC08Cxmy5HJtRa9PqaTYeIYDEZbBBAMeNuL4CKdaJ4-s8vyVpguYonmZJFOZJd9cWabWRazmcXhMblMI8Ns4ll4DKvlbDeZbSy75b7jWvk2lslgrXE5NmvRcmRYS2yWzVq5G4wWnsVsOTK51qLXx3QyTByDwWjf2C2Wg91utlrtG7vFcjCcrJbDfYfO8F19zkbfzVr1yJwW67R4sZkOGpfB5p0WLdLW4egz6ry2iTC1Nu0cE6vQKvEaFJ7fwtybVodaz7j6jAa11YLYoFDEEsHpIp2IXsbTRSyRPC3Sichjc_iWg43H4lhZHJvBZOZZzDymmWdjmBlnHodFLFGaLtKJXiXyrZSTlci3Ui5XIt9KuXGJfCvlaK0S-VbKyUrkWylXLpFvpdy4RL6VcrkS-VbKwUrkWyk3bpXIt1IYVyLfSrlciXwr5WAl8q2Uy5XIt1KuViLfSjmzqP8IsJDDuW6uWE7mitEqAQAAAAAAAAAALAFsAgAAAABwAhjUYDWcrJYLAFBxAqIL8OMso6EFh2txDJAwT5_ZZXkrTFcGAKg40WAG2AzgGYAg1mq1rAEAAAAGsAEAAAACuAF0A_AGEHBmxwH-___99wGAmkQfuVDqh_kBCHI4G-0fAECAQqzVavl8sVarJRDw____TxAAAAAAAABgglgQ8P_______z-cEEAhwGCIlr_b5YWA!&excid=22&docw=0&cijs=1&nlb=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+    const partners = [{url: '<iframe width="0" height="0" src="https://us-east-1-cs.taboolamedia.com/sync-iframe?gdpr=0&redirect=https%3A%2F%2Fsync.taboola.com%2Fsg%2Frisertb-network%2F1%2Frtb-h%2F%3Ftaboola_hm%3D%7BpartnerId%7D"></iframe>'},
+{url: '<img width="0" height="0" src="https://id5-sync.com/s/464/9.gif?puid=c5e7c220-ce13-49d0-bf23-9704a3169dd5-tuctd0b1004&gdpr=0&&callback=https%3A%2F%2Fsync.taboola.com%2Fsg%2Fid5-network%2F1%2Frtb-h%2F%3Ftaboola_hm%3D%7BID5UID%7D"></img>'}];
+
+    const MAX_SIMUL = 3 || 1;
+    const WAIT_MS = 5000;
+
+    window.onload = () => {
+        setTimeout(() => run(0), 0);
+    };
+
+    function run(current) {
+        const remaining = partners.length - current;
+        const fragment = new DocumentFragment();
+        for (let i = 0; i < MAX_SIMUL && i < remaining; ++i) {
+            const partner = partners[current + i];
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = partner.url.trim();
+            const element = tempDiv.firstChild;
+            fragment.appendChild(element);
+        }
+
+        document.body.appendChild(fragment);
+
+        if (MAX_SIMUL < remaining) {
+            setTimeout(run.bind(this, current + MAX_SIMUL), WAIT_MS);
+        }
+    }
+</script></head><body><iframe width="0" height="0" src="./sync-iframe(1).html"></iframe><img width="0" height="0" src="./9.gif"></body></html>

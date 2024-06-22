@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://cdn.taboola.com/libtrc/static/topics/taboola-browsing-topics.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Taboola Topics Frame</title>
+    <script>
+        (async()=>{
+            var s=document.referrer;
+            if("browsingTopics"in document&&document.featurePolicy.allowsFeature("browsing-topics"))
+                try{
+                    var e=await document.browsingTopics();e.length&&parent.postMessage({topics:e},s)
+                }catch(e){
+                    parent.postMessage({error:e.message},s)
+                }else parent.postMessage({policyMessage:"Topics not allowed in document feature policy in: "+s},s)})();
+    </script>
+</head>
+<body>
+<div></div>
+
+
+</body></html>

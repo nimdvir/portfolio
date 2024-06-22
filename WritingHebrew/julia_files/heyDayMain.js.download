@@ -1,0 +1,4198 @@
+window._heyDay = window._heyDay || {cmd:[]}; window._heyDay.cmd = window._heyDay.cmd.concat([{},{"searchBox":{"tmpl":{"htmlBox":"","search_item":"<a href=\"<%=obj.clickUrl%>\" target=\"_parent\" class=\"Rlink\"><div class=\"Rmain <%=obj.phz%>\">\n    <div class=\"Rbody\">\n      <%if(obj.pd.img){%>\n        <div class=\"RimageC\">\n<img src=\"<%=obj.pd.img%>\" class=\"Rimg\" />\n</div>\n      <%}%>\n      <h3 class=\"Rtitle\"><%=obj.pd.title%></h3>    \n        <%if(obj.description){%>\n          <div class=\"description\">\n          <%=obj.description%>\n          </div>\n        <%}%>\n <%if(obj.pd.author || obj.creationTime){%>\n        <div class=\"Rda\"> \n          <%if(obj.pd.author){%>\n          <span class=\"Rauthor\"><%=obj.pd.author%></span>\n          <%}%>\n          <%if(obj.creationTime){%>\n<span class=\"pipe\">|</span>\n            <span class=\"Rdate\"><%=obj.creationTime%></span>\n          <%}%>\n      </div>\n     \n          <%if(obj.nr){%>\n            <div class=\"Rmissing\">[!missing]: <span class=\"n\"><%=obj.nr%></span> | [!must_include]: <span class=\"y\" onclick=\"mustInclude('<%=obj.nr%>')\"><%=obj.nr%></span></div>\n          <%}%>\n       </div>\n      <%}%>\n  </div></a>","autocomplete_item":"","results_data":"","instant_search_item":""},"elements":[{"type":"holder","selector":"#hdy_holder"},{"type":"AC_holder","selector":"#hdy_ac_holder"}],"dir":"rtl","type":"search","dateLocal":"he-HE","tmplDefaultImg":"","placeholderLang":"hebrew","tmplPlaceHolders":{"resWithout":"תוצאות ללא","approx":"נמצאו כ-","resFound":"תוצאות","noRes":"לא נמצאו תוצאו עבור","didYouMean":"האם התכוונתם ל","prevPage":"הקודם","nextPage":"קרא עוד","AC_item_left":"","AC_item_right":"","searchBoxText":"מה תרצו לחפש...","missing":"חסר","must_include":"חייב להכיל","brands":"מותגים","clear":"ניקוי","priceRange":"מחירים","categories":"קטגוריות","sortBy":"מיון לפי","for":"עבור","relevance":"רלוונטיות","priceLTH":"מחיר: מנמוך לגבוה","priceHTL":"מחיר: מגבוה לנמוך","dateN":"","dateL":"","ellipsisF":"","ellipsisL":"","filter":"סנן","to":"החל מ","from":"ל"},"imageOnly":false,"productOnly":false,"stylesheet":"  @font-face {\n    font-family: 'SimplerPro_H-Regular'; \n    src: url('https://www.israelhayom.co.il/_next/static/media/SimplerPro_H-Regular.63cab0e397b2467e2e83c7f4bfb9971d.woff') format('woff');\n    font-weight: 400; \n    font-style: normal;\n}\n@font-face {\n    font-family: 'SimplerPro_H-Bold'; \n    src: url('https://www.israelhayom.co.il/_next/static/media/SimplerPro_H-Bold.3fff878ac8e79aba5cbaeaeb46f425de.woff') format('woff');\n    font-weight: 700; \n}\n\n#heyday_SB_AC_holder .autoComplete span {\n    position: unset !important;\n    font-size: 16px !important;\n}\n\n#heyday_SB_AC_holder, #heyday_SB_holder {\n    font-family: 'SimplerPro_H-Regular' !important;\n}\n\n.hdy_footer {\n    margin-top: 30px !important;\n}\n\n#heyday_SB_AC_holder .search_bar-fixed {\n    border: none !important;\n    border-radius: unset !important;\n    background: #f8f8f8 !important;\n    width: 100% !important;\n    margin: 0px 10px 0px 10px !important;\n}\n\n#heyday_SB_holder .RimageC {\n    float: right !important;\n    margin: 0px 0px 0px 10px !important;\n}\n\n#heyday_SB_holder .Rimg {\n    display: block !important;\n    transition: transform 275ms ease-out !important;\n    width: 100% !important;\n    height: 100% !important;\n}\n\n#heyday_SB_holder .Rimg:hover {\n    transform: scale(1.1) !important;\n}\n\n#heyday_SB_holder .RimageC {\n    height: 205px !important;\n    width: 308px !important;\n    border-radius: unset !important;\n}\n\n#heyday_SB_holder .Rda {\n    position: unset !important;\n    color: #999 !important;\n    font-size: 13px !important;\n    font-weight: 700 !important;\n    margin: 5px 317px !important;\n}\n\n#heyday_SB_holder .Rtitle {\n    font: inherit !important;\n    font-family: 'SimplerPro_H-Bold' !important;\n    vertical-align: baseline !important;\n    color: #1f1f1f !important;\n    font-size: 1.3rem !important;\n    line-height: 1.4rem !important;\n    padding-right: 22px !important;\n    font-weight: 700 !important;\n    font-stretch: normal !important;\n    font-style: normal !important;\n    text-align: right !important;\n    margin-top: 0 !important;\n}\n\n#heyday_SB_holder .Rtitle:hover {\n    text-decoration: underline !important;\n}\n\n#heyday_SB_holder .footer {\n    padding: 40px !important;\n}\n\n#heyday_SB_holder .hd-s-syn {\n    display: none !important;\n}\n\n#heyday_SB_holder .description {\n    -webkit-text-size-adjust: 100% !important;\n    direction: rtl !important;\n    text-align: right !important;\n    --swiper-theme-color: #007aff !important;\n    --horoscopePrimary: #e5d9ee !important;\n    --horoscopeDark: #bd8ae1 !important;\n    --horoscopeWidget: #d8ccee !important;\n    font-family: 'SimplerPro_H-Regular' !important;\n    letter-spacing: -.02em !important;\n    visibility: visible !important;\n    --gutter: 20px !important;\n    overflow-wrap: break-word !important;\n    line-height: 1.2rem !important;\n    color: #434343 !important;\n    box-sizing: border-box !important;\n    margin: 0 !important;\n    padding: 0 !important;\n    border: 0 !important;\n    font-size: 20px !important;\n    vertical-align: baseline !important;\n}\n\n#heyday_SB_holder .Rmain {\n    border-bottom: unset !important;\n}\n\n#heyday_SB_holder .Rauthor {\n    margin-left: unset !important;\n    margin-right: unset !important;\n}\n\n#heyday_SB_holder .do-search {\n    -webkit-text-size-adjust: 100% !important;\n    direction: rtl !important;\n    --swiper-theme-color: #007aff !important;\n    --horoscopePrimary: #e5d9ee !important;\n    --horoscopeDark: #bd8ae1 !important;\n    --horoscopeWidget: #d8ccee !important;\n    visibility: visible !important;\n    --gutter: 20px !important;\n    box-sizing: border-box !important;\n    font-family: inherit !important;\n    margin: 0 !important;\n    overflow: visible !important;\n    -webkit-appearance: button !important;\n    text-transform: none !important;\n    background: none !important;\n    padding: 0 .9em !important;\n    line-height: 2 !important;\n    outline: 0 !important;\n    align-items: center !important;\n    background-color: #006a9f !important;\n    display: inline-block !important;\n    cursor: pointer !important;\n    border-radius: 4px !important;\n    color: #fff !important;\n    font-size: 17px !important;\n    font-weight: 400 !important;\n    letter-spacing: -.41px !important;\n    border: none !important;\n}\n\n#heyday_SB_AC_holder #removeHistory {\n    margin-right: 4px !important;\n    margin-left: 16px !important;\n    height: 18px !important;\n    width: 20px !important;\n}\n\n#heyday_SB_holder .res_p {\n    -webkit-text-size-adjust: 100% !important;\n    direction: rtl !important;\n    text-align: right !important;\n    --swiper-theme-color: #007aff !important;\n    --horoscopePrimary: #e5d9ee !important;\n    --horoscopeDark: #bd8ae1 !important;\n    --horoscopeWidget: #d8ccee !important;\n    font-family: 'SimplerPro_H-Bold' !important;\n    letter-spacing: -.02em !important;\n    cursor: default !important;\n    visibility: visible !important;\n    --gutter: 20px !important;\n    font-weight: 800 !important;\n    line-height: 50px !important;\n    color: #006a9f !important;\n    box-sizing: border-box !important;\n    margin: 0 !important;\n    padding: 0 !important;\n    border: 0 !important;\n    font-size: 20px !important;\n    vertical-align: baseline !important;\n}\n\n#heyday_SB_holder .res_p span {\n    margin-right: 4px !important;\n}\n\n#heyday_SB_holder .pipe {\n    margin-left: 7px !important;\n    margin-right: 7px !important;\n}\n\n#heyday_SB_holder .paging {\n    padding: 20px !important;\n}\n\n#heyday_SB_holder .search_bar-fixed {\n    width: 100% !important;\n    box-shadow: 0px 5px 7px 0px rgba(36, 38, 61, 0.1) !important;\n    border: 1px solid #F8F8F8 !important;\n    background: #F8F8F8 !important;\n    border-radius: unset !important;\n}\n\n#heyday_SB_holder .searchBtn,\n#heyday_SB_AC_holder .searchBtn {\n    left: 0 !important;\n}\n\n#heyday_SB_AC_holder .autoComplete, \n#heyday_SB_holder .autoComplete {\n    background: #fbfbfb !important;\n}\n\nhtml.AC_holder #autoComplete {\n    background: #fff !important;\n    top: 100% !important;\n    box-shadow: 0 5px 10px rgba(0,0,0,.1) !important;\n}\n\n.ACel, .ACel_sell {\n    border-radius: unset !important;\n}\n\n#heyday_SB_AC_holder .HeyDay_q {\n    font-weight: 700 !important;\n    color: #101619 !important;\n    font-size: 1.5625rem !important;\n    font-family: Simpler Pro H, sans-serif !important;\n}\n\n#heyday_SB_holder .HeyDay_q {\n    font-weight: 700 !important;\n    color: #101619 !important;\n    font-size: 1.5625rem !important;\n    font-weight: 800 !important;\n    font-family: 'SimplerPro_H-Bold' !important;\n}\n\n#clearIcon {\n    left: 40px !important;\n    background-color: unset !important;\n}\n\n#heyday_SB_AC_holder .hd-s-main {\n    max-width: 100% !important;\n}\n\n#heyday_SB_AC_holder .paging {\n    display: none !important;\n}\n\n#lala {\n    width: 100% !important;\n    background: #f8f8f8 !important;\n    border: 0 !important;\n    font-size: 1.5625rem !important;\n    font-weight: 800 !important;\n    color: #1f1f1f !important;\n    padding-top: 10px !important;\n    padding-bottom: 10px !important;\n    padding-right: 100px !important;\n    border-radius: unset !important;\n}\n\n#heyday_SB_AC_holder .searchBtn {\n    left: 2% !important;\n}\n\n@media only screen and (min-width: 1000px) {\n    #heyday_SB_AC_holder .ACel, \n    #heyday_SB_AC_holder .ACel_sell {\n        border-radius: unset !important;\n        padding: 8px 60px !important;\n    }\n\n    #heyday_SB_AC_holder .HeyDay_q {\n        padding: 6px 100px !important;\n        box-shadow: 0 5px 10px rgba(0,0,0,.1) !important;\n        height: 60px !important;\n        font-size: 25px !important;\n        width: 100% !important;\n    }\n\n    .search_bar-fixed .clearIcon {\n        left: 33px !important;\n        background-color: unset !important;\n    }\n\n    #heyday_SB_AC_holder .clearIcon {\n        left: 80px !important;\n    }\n}\n\n@media only screen and (max-width: 600px) {\n    #heyday_SB_holder .RimageC {\n        height: 91px !important;\n        width: 136px !important;\n    }\n\n    #heyday_SB_AC_holder .HeyDay_q {\n        font-size: 1.3rem !important;\n        font-weight: unset !important;\n        padding: 6px 15px !important;\n    }\n\n    #heyday_SB_AC_holder .AC_item_right {\n        width: 18px !important;\n    }\n\n    #heyday_SB_AC_holder .AC_item_left {\n        width: 18px !important;\n    }\n\n    #heyday_SB_AC_holder .search_bar-fixed {\n        line-height: 2.5 !important;\n        background: #f8f8f8 !important;\n        padding: 0 1em !important;\n        width: 90% !important;\n        border-radius: calc(2.5em / 2) !important;\n        border: none !important;\n        font-size: 1rem !important;\n        color: #2c2c2c !important;\n    }\n\n    #heyday_SB_AC_holder {\n        background-color: white !important;\n    }\n\n    #heyday_SB_holder .description {\n        display: none !important;\n    }\n\n    #heyday_SB_holder .Rtitle {\n        font-size: 16px !important;\n        overflow: hidden !important;\n        display: -webkit-box !important;\n        -webkit-line-clamp: 2 !important;\n        -webkit-box-orient: vertical !important;\n        padding: 2px !important;\n    }\n\n    #heyday_SB_AC_holder .ACel, \n    .ACel_sell {\n        padding: 2px 0px !important;\n    }\n\n    #heyday_SB_AC_holder .AC_item_left {\n        margin-right: 3px !important;\n        margin-left: 11px !important;\n    }\n\n    #heyday_SB_AC_holder .AC_item_right_rtl {\n        margin-right: 3px !important;\n        margin-left: 11px !important;\n    }\n\n    .search_bar-fixed .autoComplete .AC_item_left {\n        margin-right: 3px !important;\n    }\n\n    #heyday_SB_holder .Rda {\n        margin: 0px 0px 0px 0px !important;\n        font-size: 10px !important;\n    }\n\n    #heyday_SB_AC_holder .clearIcon {\n        left: 62px !important;\n    }\n\n    #heyday_SB_holder .clearIcon {\n        left: 62px !important;\n    }\n\n    .searchResults {\n        width: calc(100% - 40px) !important;\n    }\n}\n#heyday_SB_AC_holder.d_rtl .HeyDay_q{\nmargin: 0px 0 0 26px !important;\n}\n","modal_stylesheet":".init-sticky-header div .search-box-container.active {\n    z-index: 9999 !important;\n}\n#hdy_ac_holder{\n    background: #ffffff;\n       max-height: 75px;\n}\n.init-sticky-header div .search-box-container span{\ntop: 25px;\n}\n@media only screen and (max-width: 600px) {\n#hdy_ac_holder{\n    background: #fff;\n}\n.mainMenuDrawer .search-box{\n    z-index: 99999;\n}\n}","searchUrlFormat":"","init_eval":"","search_eval":"var a = document.querySelector('.header-open-btn_menu');\nif(a){\n    a.click();\n}","affType":0,"logo":""},"searchPage":"/search"},{},{"closeHidden":[]},{"renderHidden":{"AC_holder":".header-btn_search"}},{"GA4":{"gtagKey":"","trackingId":""}},{"sDomain":"www.israelhayom.co.il"}]);window._heyDay.cmd.push({"affId":2716});window._heyDay.cmd.push({"domain":"israelhayom.co.il"});window._heyDay.cmd.push({"backEnd":"heyday.io"});window._heyDay.cmd.push({"version":2});
+      (function () {
+        function hdy_tmplFunctions() {
+          this.tmplCache = {};
+          this.tmplProdDefaultImg = false;
+          this.tmplPlaceHolders = {
+            resWithout: "results without",
+            approx: "Approximately",
+            resFound: "results found",
+            noRes: "No results found for",
+            didYouMean: "Did you mean",
+            prevPage: "Previous",
+            nextPage: "Next",
+            AC_item_left: "AC_item_left",
+            AC_item_right: "AC_item_right",
+            searchBoxText: "search",
+            missing: "Missing",
+            must_include: "Must include",
+            brands: "Brands",
+            clear: "clear",
+            priceRange: "Price range",
+            categories: "Categories",
+            sortBy: "Sort By",
+            for: "for",
+            relevance: "Relevance",
+            priceLTH: "Price: low to high",
+            priceHTL: "Price: high to low",
+            filter: "Filter",
+            to: "To",
+            from: "From",
+            ellipsisF: "...",
+            ellipsisL: "...",
+            selectedFilters: "Selected Filters:",
+            forMoreRes: "For more results",
+            dateOTN: "Date: old to new",
+            dateNTO: "Date: new to old",
+            products: "Products",
+          };
+          this.msgListener = function (ev) {
+            var context = ev.context;
+            switch (ev.action) {
+              case "init_search":
+                this.initSearch(ev);
+                break;
+              case "set_query":
+                this.globalRqParams.boxEl.value = context.ini_q;
+                window.focus();
+                break;
+              case "do_search":
+              case "open_search":
+                window.focus();
+                if (context.ini_q) {
+                  let opt;
+                  if (context.ini_sm) {
+                    let rd = context.smData ? context.smData.rd : false;
+                    this.globalRqParams.sm = 1;
+                    opt = {
+                      q: context.ini_sm,
+                      recommendationMask: context.ini_q,
+                      sm_rd: rd,
+                    };
+                  }
+                  if (context.isRecommended) {
+                    opt = { q: context.ini_q, isRecommended: context.isRecommended };
+                  }
+                  this.globalRqParams.boxEl.value = context.ini_q;
+                  this.search.bind(this)(opt);
+                } else {
+                  var that = this;
+                  setTimeout(function () {
+                    that.clearSearch(false);
+                  }, 200);
+                }
+        
+                break;
+              case "close_search":
+                this.clearSearch(true, context);
+                this.globalRqParams.boxEl.blur();
+                break;
+              case "scroll_to_top":
+                this.globalRqParams.sortBy = "relevance";
+                var that = this;
+                setTimeout(function () {
+                  that.scrollElementIntoView();
+                }, 500);
+                break;
+              case "renderHidden":
+                this.clearSearch(false, context);
+                break;
+              case "set_debug":
+                this.globalRqParams.debug = context;
+                break;
+              default:
+                break;
+            }
+          };
+        
+          this.tmpl = function (tplKey, data) {
+            if (!this.tmplCache[tplKey]) {
+              let placeholders =
+                this.globalRqParams.tmpl[tplKey].match(/\[!(.*?)\]/g);
+              if (placeholders) {
+                placeholders.forEach(function (placeholder) {
+                  let phText = placeholder.substring(2, placeholder.length - 1);
+                  if (this.tmplPlaceHolders[phText]) {
+                    let regexPhText = new RegExp(`\\[!${phText}\\]`, "g");
+                    this.globalRqParams.tmpl[tplKey] = this.globalRqParams.tmpl[
+                      tplKey
+                    ].replace(regexPhText, this.tmplPlaceHolders[phText]);
+                  }
+                }, this);
+              }
+        
+              let parsed =
+                "var __$=[],print=function(){__$.push.apply(__$,arguments);};" +
+                "__$.push('" +
+                this.globalRqParams.tmpl[tplKey]
+                  .replace(/\s{2,}|\t|\n/g, "")
+                  .replace(/[\r\t\n]/g, " ")
+                  .split("<%")
+                  .join("\t")
+                  .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+                  .replace(/\t=(.*?)%>/g, "',$1,'")
+                  .split("\t")
+                  .join("');")
+                  .split("%>")
+                  .join("__$.push('")
+                  .split("\r")
+                  .join("\\'") +
+                "');return __$.join('');";
+              this.tmplCache[tplKey] = new Function(
+                "obj",
+                parsed.replaceAll("__$.push('');", "")
+              );
+            }
+            return this.tmplCache[tplKey](data);
+          };
+        
+          this.myPostMessage = function (action, context) {
+            if (action == "close") {
+              this.globalRqParams.boxEl.blur();
+              this.globalRqParams.selectedACEL = null;
+              this.globalRqParams.AC_lastUserInput = "";
+            }
+            context = context || {};
+            window._heyDayInterface.methods.messageMain(
+              {
+                action: action,
+                type: this.globalRqParams.type,
+                context: context,
+              },
+              this.globalRqParams.p_domain
+            );
+          };
+        
+          this.handleAddToCart = function (buttonElement) {
+            const productUrl = buttonElement.getAttribute("data-product-url");
+            const productId = buttonElement.getAttribute("data-product-id");
+            const input = buttonElement
+              .closest(".results-box")
+              .querySelector(".quantity-input");
+            var quantity = 1;
+            if (input) {
+              quantity = parseInt(input.value, 10);
+            }
+            this.addToCartHdy(productId, productUrl, quantity);
+          };
+        
+          this.plusSlides = function (n, element) {
+            let ancestor = element.parentNode;
+            while (ancestor && !ancestor.classList.contains("Rmain")) {
+              ancestor = ancestor.parentNode;
+            }
+            if (!ancestor) return;
+        
+            const slides = ancestor.querySelectorAll(".slide");
+            const dots = ancestor
+              .querySelector(".dots-container")
+              .querySelectorAll(".dot");
+        
+            let currentSlideIndex;
+            for (let i = 0; i < dots.length; i++) {
+              if (dots[i].classList.contains("imgActive")) {
+                currentSlideIndex = i;
+                break;
+              }
+            }
+        
+            const nextSlideIndex = currentSlideIndex + n;
+            if (nextSlideIndex >= 0 && nextSlideIndex < slides.length) {
+              this.currentSlide(nextSlideIndex + 1, dots[nextSlideIndex]);
+            } else if (nextSlideIndex == slides.length) {
+              this.currentSlide(1, dots[0]);
+            } else if (nextSlideIndex == -1) {
+              this.currentSlide(slides.length, dots[slides.length - 1]);
+            }
+          };
+        
+          this.searchClick = function (clickUrl) {
+            return true;
+          };
+        
+          this.autoSearch = function (d) {
+            this.autoSet(d);
+            this.globalRqParams.AC_El.innerHTML = "";
+            if (this.globalRqParams.AC_CO) {
+              this.globalRqParams.AC_CO.style.display = "none";
+            } else {
+              this.globalRqParams.AC_El.style.display = "none";
+            }
+            this.search.bind(this)();
+          };
+        
+          this.autoSet = function (d) {
+            if (
+              this.globalRqParams.isEcommerceRightMenu &&
+              this.globalRqParams.type != "triggered" &&
+              SB_objects["holder"]
+            ) {
+              window.priceRangeHdy = false;
+              SB_objects["holder"].msgListener({
+                action: "scroll_to_top",
+                context: { sortBy: "relevance" },
+              });
+            }
+            if (this.globalRqParams.sortBy) this.globalRqParams.sortBy = "relevance";
+            if (d.w) this.setMask(d.w + " " + d.c);
+            else this.setMask(d.c);
+          };
+        
+          this.searchClickUrl = function (u) {
+            if (this.globalRqParams.trk) {
+              let tren = encodeURIComponent(this.globalRqParams.trk);
+              let t = "heyday_src=heyday_sm";
+              let url = new URL(u);
+              if (url.search) return u + "&" + t;
+              else return u + "?" + t;
+            }
+            return u;
+          };
+        
+          this.mustInclude = function (w) {
+            this.search({ mi: w });
+          };
+        
+          this.currentSlide = function (n, element) {
+            const slides = element.parentNode.parentNode.querySelectorAll(".slide");
+            const dots = element.parentNode.querySelectorAll(".dot");
+        
+            if (slides.length > 0 && dots.length > 0) {
+              for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("imgActive");
+              }
+              slides[n - 1].style.display = "block";
+              dots[n - 1].classList.add("imgActive");
+            }
+          };
+        
+          this.sResult = function (obj, q, today) {
+            if (obj.pd.creationTime) {
+              d = new Date(obj.pd.creationTime * 1000);
+              var options = {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              };
+              if (d.toDateString() == today) {
+                options.hour = "numeric";
+                options.minute = "numeric";
+              }
+              obj.creationTime = d.toLocaleDateString(
+                this.globalRqParams.dateLocal,
+                options
+              );
+            }
+        
+            obj.q = q;
+            if (!obj.clickUrl) obj.clickUrl = this.searchClickUrl(obj.pd.url, q);
+        
+            if (obj.wd) {
+              var d = "";
+              for (var i = 0; i < obj.wd.length; i++) {
+                var start = obj.wd[i].indexOf(" ");
+                var end = obj.wd[i].lastIndexOf(" ");
+                if (start >= 0 && end >= 0 && start != end) {
+                  var s = obj.wd[i].substring(start + 1, end);
+                  if (obj.hqd && obj.hqd[i]) {
+                    for (var k = 0; k < obj.hqd[i].length; k++)
+                      s = s.replace(obj.hqd[i][k], "<b>" + obj.hqd[i][k] + "</b>");
+                  }
+                  if (!this.globalRqParams.isEcommerce) {
+                    d += this.tmpl("ellipsis_format1", obj) + s;
+                  } else {
+                    d += "..." + s;
+                  }
+                }
+              }
+        
+              if (d) {
+                if (!this.globalRqParams.isEcommerce) {
+                  d += this.tmpl("ellipsis_format2", obj);
+                } else {
+                  d += "...";
+                }
+                obj.description = d;
+              }
+            } else if (obj.pd.description) obj.description = obj.pd.description;
+            obj.defaultImg = this.tmplProdDefaultImg;
+            return this.tmpl("search_item", obj);
+          };
+        
+          this.instSresult = function (obj, q) {
+            obj.q = q;
+            obj.clickUrl = this.searchClickUrl(obj.pd.url, q);
+        
+            if (obj.wd) {
+              var d = "";
+              for (var i = 0; i < obj.wd.length; i++) {
+                var start = obj.wd[i].indexOf(" ");
+                var end = obj.wd[i].lastIndexOf(" ");
+                if (start >= 0 && end >= 0 && start != end) {
+                  var s = obj.wd[i].substring(start + 1, end);
+                  if (obj.hqd && obj.hqd[i]) {
+                    for (var k = 0; k < obj.hqd[i].length; k++)
+                      s = s.replace(obj.hqd[i][k], "<b>" + obj.hqd[i][k] + "</b>");
+                  }
+                  d += "..." + s;
+                }
+              }
+        
+              if (d) {
+                d += "...";
+                obj.description = d;
+              }
+            } else if (obj.pd.description) obj.description = obj.pd.description;
+            obj.defaultImg = this.tmplProdDefaultImg;
+            return this.tmpl("instant_search_item", obj);
+          };
+        
+          this.formatURL = function (urlFormat, query) {
+            return urlFormat.replace(/<query>/g, encodeURIComponent(query));
+          };
+        
+          this.getPaginator = function () {
+            var p = {
+              length:
+                this.globalRqParams.paginator.t < this.globalRqParams.paginator.oip
+                  ? this.globalRqParams.paginator.t
+                  : this.globalRqParams.paginator.oip,
+              active: this.globalRqParams.paginator.p,
+              prev:
+                this.globalRqParams.paginator.p > 1 &&
+                this.globalRqParams.paginator.p - 1,
+              next:
+                this.globalRqParams.paginator.p < this.globalRqParams.paginator.t &&
+                this.globalRqParams.paginator.p + 1,
+            };
+            p.start =
+              this.globalRqParams.paginator.p -
+                Math.ceil(this.globalRqParams.paginator.oip / 2) >
+              1
+                ? this.globalRqParams.paginator.p -
+                  Math.ceil(this.globalRqParams.paginator.oip / 2)
+                : 1;
+            p.end =
+              this.globalRqParams.paginator.p +
+                Math.ceil(this.globalRqParams.paginator.oip / 2) <
+              this.globalRqParams.paginator.t
+                ? this.globalRqParams.paginator.p +
+                  Math.ceil(this.globalRqParams.paginator.oip / 2)
+                : this.globalRqParams.paginator.t;
+            return p;
+          };
+        
+          this.myFrontFetch = function (requestJson, errorCalback, uri, callback) {
+            var options = {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(requestJson),
+            };
+        
+            return fetch(this.globalRqParams.fetchHost + uri, options).then(function (
+              response
+            ) {
+              if (!response.ok) {
+                if (errorCalback) errorCalback(requestJson, response);
+              } else if (callback) {
+                response.json().then(function (responseJson) {
+                  callback(requestJson, responseJson);
+                });
+              }
+            });
+          };
+        
+          this.mobileCheck = function () {
+            let check = false;
+            (function (a) {
+              if (
+                /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
+                  a
+                ) ||
+                /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(
+                  a.substr(0, 4)
+                )
+              )
+                check = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return check;
+          };
+        
+          this.printAChistory = function () {
+            if (
+              this.globalRqParams.recommend.length > 0 &&
+              this.globalRqParams.boxEl.value === ""
+            ) {
+              if (this.globalRqParams.isEcommerce)
+                this.globalRqParams.AC_CO.style.display = "block";
+              this.autoCompleteRes({ r: this.globalRqParams.recommend }, "");
+              document.querySelectorAll(".AC_item_right").forEach((el) => {
+                el.style.display = "none";
+              });
+        
+              document.querySelectorAll(".AC_item_left").forEach((el) => {
+                el.style.display = "block";
+              });
+            }
+          };
+        
+          this.ACselect = function (keyCode) {
+            clearTimeout(this.globalRqParams.InstSearchTO);
+            if (keyCode == 40) {
+              //keydown
+              if (!this.globalRqParams.selectedACEL) {
+                if (this.globalRqParams.AC_El.firstElementChild?.firstElementChild) {
+                  this.globalRqParams.selectedACEL =
+                    this.globalRqParams.AC_El.firstElementChild.firstElementChild;
+                }
+              } else {
+                this.globalRqParams.selectedACEL.className =
+                  this.globalRqParams.classes.ACel;
+                this.globalRqParams.selectedACEL =
+                  this.globalRqParams.selectedACEL.nextElementSibling;
+              }
+            } //==38 key up
+            else {
+              if (!this.globalRqParams.selectedACEL) {
+                if (this.globalRqParams.AC_El.firstElementChild?.lastElementChild) {
+                  this.globalRqParams.selectedACEL =
+                    this.globalRqParams.AC_El.firstElementChild.lastElementChild;
+                }
+              } else {
+                this.globalRqParams.selectedACEL.className =
+                  this.globalRqParams.classes.ACel;
+                this.globalRqParams.selectedACEL =
+                  this.globalRqParams.selectedACEL.previousElementSibling;
+              }
+            }
+        
+            if (this.globalRqParams.selectedACEL) {
+              this.globalRqParams.selectedACEL.className =
+                this.globalRqParams.classes.ACel_sell;
+              this.autoSet(this.globalRqParams.selectedACEL.dataset);
+              if (!this.globalRqParams.selectedACEL.dataset.w)
+                if (
+                  this.globalRqParams.isEcommerce &&
+                  !this.globalRqParams.isRecommendedPage
+                ) {
+                  const that = this;
+                  this.globalRqParams.InstSearchTO = setTimeout(function () {
+                    that.instantSearch(that.globalRqParams.selectedACEL.dataset.c);
+                  }, 100);
+                }
+            } else {
+              this.setMask(this.globalRqParams.AC_lastUserInput);
+            }
+          };
+        
+          this.instantSearch = function (q) {
+            requestJson = { q: q };
+            requestJson.inst = true;
+            requestJson.h = this.globalRqParams.domain;
+            requestJson.p = 1;
+            requestJson.getCat = this.globalRqParams.getCatInstant;
+            if (this.globalRqParams.filters)
+              requestJson.filters = this.globalRqParams.filters;
+        
+            this.myFrontFetch(
+              requestJson,
+              null,
+              "/search/s/",
+              function (requestJson, responseJson) {
+                this.globalRqParams.q = requestJson.q;
+                var Rhtml = "";
+                if (this.globalRqParams.isEcommerce) {
+                  if (responseJson.catData && responseJson.catData.filters) {
+                    var ulCategories = document.createElement("ul");
+                    ulCategories.setAttribute("id", "ulCategories");
+                    let counter = 0;
+                    for (let k in responseJson.catData.filters) {
+                      if (counter < 10) {
+                        var rCategories = "";
+                        if (responseJson.catData.filters.hasOwnProperty(k)) {
+                          const id = "instantCategoriesCheckbox" + k;
+                          rCategories =
+                            '<li class="categories-li"><button class="categories-btn" name="' +
+                            k +
+                            '"> ' +
+                            k +
+                            " (" +
+                            responseJson.catData.filters[k] +
+                            ")";
+                          ("</button></li>");
+                          ulCategories.insertAdjacentHTML("beforeend", rCategories);
+                          counter++;
+                        }
+                      }
+                    }
+                  }
+                  if (ulCategories && ulCategories.innerHTML.trim() !== "") {
+                    Rhtml += ulCategories.outerHTML;
+                  }
+        
+                  if (responseJson.r && responseJson.r.length > 0) {
+                    let len = responseJson.r.length;
+                    var ulElement = document.createElement("ul");
+                    ulElement.setAttribute("class", "productsUl");
+                    for (var i = 0; i < len; i++) {
+                      responseJson.r[i].pd = responseJson.r[i].pd;
+                      responseJson.r[i].phz = i % 2 ? "even" : "odd";
+                      ulElement.insertAdjacentHTML(
+                        "beforeend",
+                        this.instSresult(responseJson.r[i], requestJson.q)
+                      );
+                    }
+                    Rhtml += ulElement.outerHTML;
+                  }
+                } else {
+                  if (responseJson.r && responseJson.r.length > 0) {
+                    let len = responseJson.r.length;
+                    for (var i = 0; i < len; i++) {
+                      responseJson.r[i].pd = responseJson.r[i].pd;
+                      responseJson.r[i].phz = i % 2 ? "even" : "odd";
+                      Rhtml += this.instSresult(responseJson.r[i], requestJson.q);
+                    }
+                  }
+                }
+                this.globalRqParams.IS_cacheMap[requestJson.q] = {
+                  res: responseJson,
+                  value: Rhtml,
+                };
+                this.renderInstantSearch(requestJson.q);
+              }.bind(this)
+            );
+          };
+        
+          this.gResultReplaced = function (acRes, qRegex) {
+            if (!qRegex) return '<span class="ACsubStr">' + acRes + "</span>";
+        
+            return (
+              "<span>" +
+              acRes.replace(
+                new RegExp(qRegex, "gi"),
+                '<span class="ACsubStr">' + "$1" + "</span>"
+              ) +
+              "</span>"
+            );
+          };
+        
+          this.renderInstantSearch = function (instantSearch) {
+            this.globalRqParams.IR_El.innerHTML = "";
+            if (this.globalRqParams.IS_cacheMap[instantSearch]) {
+              var Rhtml = this.globalRqParams.IS_cacheMap[instantSearch].value;
+              if (Rhtml) {
+                this.globalRqParams.IR_El.style.display = "inline-block";
+                this.globalRqParams.IR_El.insertAdjacentHTML("beforeend", Rhtml);
+                var aTags = this.globalRqParams.IR_El.querySelectorAll("a");
+                var that = this;
+                aTags.forEach(function (tag) {
+                  tag.addEventListener("mousedown", function (e) {
+                    e.stopPropagation();
+                    const onclickValue = tag.getAttribute("onclick");
+                    if (onclickValue) {
+                      const urlParam = onclickValue.match(
+                        /navigateToUrl\('(.*)'\)/
+                      )[1];
+                      that.navigateToUrl(urlParam);
+                    } else {
+                      tag.click();
+                    }
+                  });
+                });
+        
+                const buttonCategories = document.querySelectorAll(".categories-btn");
+                if (buttonCategories) {
+                  buttonCategories.forEach(function (button) {
+                    button.addEventListener("click", function (event) {
+                      event.preventDefault();
+                      const catRequestJson = {
+                        q: instantSearch,
+                        filters: { categories: [] },
+                      };
+                      const target = event.target;
+                      const name = target.getAttribute("name");
+                      catRequestJson.filters.categories.push([name, true]);
+                      catRequestJson.categoriesCheckedId = [];
+                      catRequestJson.categoriesCheckedId.push(
+                        "categoriesCheckbox" + name
+                      );
+                      this.clearAllCheckboxes();
+                      this.globalRqParams.filters = {};
+                      this.search(catRequestJson);
+                      this.globalRqParams.AC_CO.style.display = "none";
+                    });
+                  });
+                }
+              }
+            }
+          };
+        
+          this.clearAllCheckboxes = function () {
+            const checked = document.querySelectorAll("input[type='checkbox']");
+            if (checked) {
+              for (var i = 0; i < checked.length; i++) {
+                checked[i].checked = false;
+              }
+            }
+          };
+        
+          this.setMask = function (t) {
+            this.globalRqParams.boxEl.value = t;
+          };
+        
+          this.getMask = function () {
+            return this.globalRqParams.boxEl.value;
+          };
+        
+          this.getCanonicalizedQuery = function (q) {
+            return q.toLocaleLowerCase().trim();
+          };
+        
+          this.canonicalize = function (q) {
+            return q
+              .toLocaleLowerCase()
+              .replace(/[:\t\.\[\];,\-\?\!"\|&\(_]/g, " ")
+              .replace(/ {2,}/g, " ");
+          };
+        
+          this.autoComplete = function (event) {
+            if (
+              event &&
+              [13, 16, 17, 18, 19, 40, 38, 27, 37, 39, 91, 93].indexOf(
+                event.keyCode
+              ) >= 0
+            ) {
+              return false;
+            }
+            if (this.globalRqParams.isEcommerce)
+              clearTimeout(this.globalRqParams.InstSearchTO);
+            this.globalRqParams.selectedACEL = null;
+            var requestJson = {};
+            requestJson.q = this.getMask();
+            this.globalRqParams.AC_lastUserInput = requestJson.q;
+            if (requestJson.q.length == 0) {
+              this.clearSearch(true);
+              this.printAChistory();
+              return;
+            }
+            this.globalRqParams.clearIcon.parentNode.classList.add("t");
+        
+            this.globalRqParams.AC_El.display = "initial";
+            if (this.globalRqParams.AC_cacheMap[requestJson.q]) {
+              this.renderAutoCompleteRes(
+                this.globalRqParams.AC_cacheMap[requestJson.q].value
+              );
+              if (this.globalRqParams.isEcommerce) {
+                const that = this;
+                this.globalRqParams.InstSearchTO = setTimeout(function () {
+                  that.renderInstantSearch.bind(that)(
+                    that.globalRqParams.AC_cacheMap[requestJson.q].res.r[0]
+                  );
+                }, 300);
+              }
+            } else {
+              requestJson.domain = this.globalRqParams.domainAC;
+              this.myFrontFetch(
+                requestJson,
+                null,
+                "/search/a/",
+                function (requestJson, responseJson) {
+                  let rVal = this.autoCompleteRes(responseJson, requestJson.q);
+                  if (
+                    this.globalRqParams.isEcommerce &&
+                    !this.globalRqParams.isRecommendedPage
+                  ) {
+                    const that = this;
+                    if (responseJson.r[0])
+                      this.globalRqParams.InstSearchTO = setTimeout(function () {
+                        that.instantSearch.bind(that)(rVal);
+                      }, 300);
+                  }
+                }.bind(this)
+              );
+            }
+          };
+        
+          this.clearSearch = function (noFocus, context) {
+            this.setMask("");
+            if (this.globalRqParams.isEcommerceRightMenu) {
+              window.priceRangeHdy = false;
+            }
+            try {
+              if (typeof localStorage !== "undefined") {
+                let qHis = localStorage.getItem(this.globalRqParams.qHistKey);
+                if (qHis) {
+                  try {
+                    this.globalRqParams.recommend = JSON.parse(qHis);
+                  } catch (e) {
+                    this.globalRqParams.recommend = false;
+                  }
+                }
+              }
+            } catch (error) {
+              this.globalRqParams.recommend = false;
+            }
+            if (this.globalRqParams.sb_el.querySelector(".side-filters-menu"))
+              this.globalRqParams.sb_el.querySelector(
+                ".side-filters-menu"
+              ).innerHTML = "";
+            this.globalRqParams.paginator.p = "";
+            this.globalRqParams.AC_El.innerHTML = "";
+            this.globalRqParams.R_El.innerHTML = "";
+            this.globalRqParams.P_El.innerHTML = "";
+            //   this.globalRqParams.footer.style.display = 'none';
+            this.globalRqParams.clearIcon.parentNode.classList.remove("t");
+            this.globalRqParams.filters = {};
+            if (this.globalRqParams.isEcommerce) {
+              this.globalRqParams.IR_El.innerHTML = "";
+              this.globalRqParams.IR_El.style.display = "none";
+            }
+            if (!noFocus) this.globalRqParams.boxEl.focus();
+            if (!context || !context.dontPostBack)
+              this.myPostMessage("clear_search", {
+                type: this.globalRqParams.type,
+              });
+          };
+        
+          this.autoCompleteModifier = function (event) {
+            switch (event.keyCode) {
+              case 40: //Keydown
+              case 38: //Keyup
+                event.preventDefault();
+                this.ACselect(event.keyCode);
+                break;
+              case 13: //Enter
+                event.preventDefault();
+                this.search.bind(this)();
+                break;
+        
+              case 27:
+                this.clearSearch(true);
+                this.myPostMessage("close");
+                break;
+              default:
+                /*this.search();
+                 this.globalRqParams.AC_CO.style.display = "initial";*/
+                break;
+            }
+          };
+        
+          this.navigateToUrl = function (url) {
+            window.top.location.href = url;
+          };
+        
+          this.renderAutoCompleteRes = function (ac) {
+            const that = this;
+            if (this.globalRqParams.isEcommerce)
+              this.globalRqParams.AC_CO.style.display = "block";
+            this.globalRqParams.AC_El.innerHTML = ac.outerHTML;
+            if (ac.firstChild) {
+              this.globalRqParams.AC_El.querySelectorAll(
+                ac.firstChild.tagName
+              ).forEach(function ($item) {
+                $item.addEventListener(
+                  "mousedown",
+                  function (e) {
+                    e.preventDefault();
+                  },
+                  false
+                );
+                $item.addEventListener(
+                  "click",
+                  function (e) {
+                    var isInsert = function isInsert(el) {
+                      if (
+                        !el ||
+                        el.classList.contains(that.globalRqParams.classes.ACel)
+                      ) {
+                        return false;
+                      }
+                      if (el.classList.contains("AC_item_right")) {
+                        return true;
+                      }
+                      return isInsert(el.parentElement);
+                    };
+        
+                    if (isInsert(e.target)) {
+                      e.preventDefault();
+                      that.autoSet.bind(that)($item.dataset);
+                    } else {
+                      that.autoSearch.bind(that)($item.dataset);
+                    }
+                  },
+                  false
+                );
+                $item.addEventListener(
+                  "mouseenter",
+                  function (evt) {
+                    evt.target.className = that.globalRqParams.classes.ACel_sell;
+                  },
+                  false
+                );
+                $item.addEventListener(
+                  "mouseleave",
+                  function (evt) {
+                    evt.target.className = that.globalRqParams.classes.ACel;
+                  },
+                  false
+                );
+              });
+            }
+            const historyClockIcon = document.querySelectorAll(".clockIcon");
+            if (historyClockIcon) {
+              historyClockIcon.forEach((item) => {
+                item.addEventListener(
+                  "click",
+                  function (evt) {
+                    evt.stopPropagation();
+                    const qWord =
+                      evt.target.parentElement.parentElement.getAttribute("data-c");
+                    if (qWord) {
+                      try {
+                        let qHis = localStorage.getItem(this.globalRqParams.qHistKey);
+                        if (qHis) {
+                          try {
+                            let parsedQHis = JSON.parse(qHis);
+                            let newQHis = parsedQHis.filter((item) => item !== qWord);
+                            localStorage.setItem(
+                              this.globalRqParams.qHistKey,
+                              JSON.stringify(newQHis)
+                            );
+                            this.globalRqParams.recommend = newQHis;
+                          } catch (e) {}
+                        }
+                      } catch (e) {}
+                    }
+                    evt.target.parentElement.parentElement.remove();
+                  },
+                  false
+                );
+              });
+              historyClockIcon.forEach((item) => {
+                item.addEventListener("mouseenter", function (event) {
+                  // event.stopPropagation();
+                  const removeHistoryIcon =
+                    event.target.querySelector("#removeHistory");
+                  if (removeHistoryIcon) {
+                    removeHistoryIcon.style.display = "block";
+                    let clockIcon = event.target.querySelector(".AC_item_left_rtl");
+                    if (clockIcon) {
+                      clockIcon.style.display = "none";
+                    } else {
+                      clockIcon = event.target.querySelector(".AC_item_right");
+                      if (clockIcon) clockIcon.style.display = "none";
+                    }
+                  }
+                });
+              });
+              historyClockIcon.forEach((item) => {
+                item.addEventListener("mouseleave", function (event) {
+                  // event.stopPropagation();
+                  const removeHistoryIcon =
+                    event.target.querySelector("#removeHistory");
+                  const clockIcon = event.target.querySelector(".AC_item_left_rtl");
+                  if (removeHistoryIcon && clockIcon) {
+                    removeHistoryIcon.style.display = "none";
+                    clockIcon.style.display = "block";
+                  }
+                });
+              });
+            }
+          };
+        
+          this.buildCatData = function (
+            responseJson,
+            categoriesCheckedId,
+            brandsCheckedId,
+            attrCheckedId
+          ) {
+            let catData = { brands: "", priceRange: "", categories: "" };
+        
+            if (this.globalRqParams.rangeFilter) {
+              responseJson.rangeFilter = this.globalRqParams.rangeFilter;
+            }
+            if (responseJson.catData?.ranges?.price) {
+              catData.priceRange += this.tmpl("price_range_slider", responseJson);
+            }
+        
+            if (responseJson.catData && responseJson.catData.filters) {
+              for (let k in responseJson.catData.filters) {
+                if (responseJson.catData.filters.hasOwnProperty(k)) {
+                  const id = "categoriesCheckbox" + k;
+                  if (categoriesCheckedId.includes(id)) {
+                    catData.categories +=
+                      '<div class=atter-container style="display: flex;"><input checked="true" id="' +
+                      id +
+                      '" type="checkbox" name="' +
+                      k +
+                      '"> ' +
+                      '<span class="attr-input-text-container">' +
+                      '<span class="attr-word">' +
+                      k +
+                      "</span>" +
+                      '<span class="hdy-attr-number">' +
+                      " (" +
+                      responseJson.catData.filters[k] +
+                      ")</span>" +
+                      "</span></div>";
+                  } else {
+                    catData.categories +=
+                      '<div class=atter-container style="display: flex;"><input id="' +
+                      id +
+                      '" type="checkbox" name="' +
+                      k +
+                      '"> ' +
+                      '<span class="attr-input-text-container">' +
+                      '<span class="attr-word">' +
+                      k +
+                      "</span>" +
+                      '<span class="hdy-attr-number">' +
+                      " (" +
+                      responseJson.catData.filters[k] +
+                      ")</span>" +
+                      "</span></div>";
+                  }
+                }
+              }
+              catData.categories += "</div>";
+            }
+        
+            if (responseJson.catData && responseJson.catData.attributes.brand) {
+              for (let z in responseJson.catData.attributes.brand) {
+                const id = "brandsCheckbox" + z;
+                if (responseJson.catData.attributes.brand.hasOwnProperty(z)) {
+                  if (brandsCheckedId.includes(id)) {
+                    catData.brands +=
+                      '<div class=atter-container><input checked="true" id="' +
+                      id +
+                      '" type="checkbox" attrname="brand" name="' +
+                      z +
+                      '"> ' +
+                      '<span class="attr-input-text-container">' +
+                      '<span class="attr-word">' +
+                      z +
+                      "</span>" +
+                      '<span class="hdy-attr-number">' +
+                      " (" +
+                      responseJson.catData.attributes.brand[z] +
+                      ")</span>" +
+                      "</span></div>";
+                  } else {
+                    catData.brands +=
+                      '<div class=atter-container><input id="' +
+                      id +
+                      '" type="checkbox" attrname="brand" name="' +
+                      z +
+                      '"> ' +
+                      '<span class="attr-input-text-container">' +
+                      '<span class="attr-word">' +
+                      z +
+                      "</span>" +
+                      '<span class="hdy-attr-number">' +
+                      " (" +
+                      responseJson.catData.attributes.brand[z] +
+                      ")</span>" +
+                      "</span></div>";
+                  }
+                }
+              }
+            }
+        
+            if (responseJson.catData && responseJson.catData.attributes) {
+              for (let k in responseJson.catData.attributes) {
+                if (responseJson.catData.attributes.hasOwnProperty(k)) {
+                  catData[k] = '<div id="' + k + '">';
+                  for (let z in responseJson.catData.attributes[k]) {
+                    const id = "attr" + k + "||" + z;
+                    const isChecked = attrCheckedId.includes(id)
+                      ? "checked='true'"
+                      : "";
+                    var atterClass =
+                      k === "color" ? "colors-container" : "atter-container";
+                    let colorCircle = "";
+                    if (k === "color") {
+                      colorCircle =
+                        '<span class="color-circle" data-checkbox-id="' +
+                        id +
+                        '" style="background-color: ' +
+                        z +
+                        ';"></span> ';
+                    }
+        
+                    catData[k] +=
+                      '<div class="' +
+                      atterClass +
+                      '" id="colors-container"><input type="checkbox" ' +
+                      isChecked +
+                      ' attrName="' +
+                      k +
+                      '" id="' +
+                      id +
+                      '" name="' +
+                      z +
+                      '">' +
+                      colorCircle +
+                      '<span class="attr-input-text-container">' +
+                      '<span class="attr-word">' +
+                      z +
+                      "</span>" +
+                      '<span class="hdy-attr-number">' +
+                      " (" +
+                      responseJson.catData.attributes[k][z] +
+                      ")</span>" +
+                      "</span>" +
+                      "</div>";
+                  }
+                  catData[k] += "</div>";
+                }
+              }
+            }
+            return catData;
+          };
+        
+          this.search = function (options) {
+            if (this.globalRqParams.isEcommerce)
+              clearTimeout(this.globalRqParams.InstSearchTO);
+            options = options || {};
+            var p = options.p,
+              f = options.f,
+              q = options.q,
+              requestJson = {};
+            requestJson.filters = {};
+            requestJson.affId = this.globalRqParams.affId;
+            if (options.filters) requestJson.filters = options.filters;
+            let requestUri, maskQ, isSM;
+            if (options && options.recommendationMask) {
+              requestUri = "/search/r/";
+              maskQ = " ";
+              isSM = true;
+              if (options.sm_rd) requestJson.url = options.sm_rd;
+            } else if (options.isRecommended) {
+              requestUri = "/search/r/";
+              maskQ = "";
+              isSM = true;
+              if (options.isRecommended.hdy_u) {
+                requestJson.url = options.isRecommended.hdy_u;
+              }
+            } else {
+              requestUri = "/search/s/";
+              maskQ = q;
+              isSM = false;
+              if (this.globalRqParams.isRecommendedPage) {
+                _heyDayInterface.methods.logStats(2003);
+              }
+            }
+            const categoriesCheckedId = options.categoriesCheckedId || [];
+            const categoriesCheckedIdMenu = options.categoriesCheckedIdMenu || [];
+            const attrCheckedIdMenu = options.attrCheckedIdMenu || [];
+            const attrCheckedId = [];
+            const brandsCheckedId = [];
+            requestJson.q = q
+              ? this.getCanonicalizedQuery(q)
+              : this.getCanonicalizedQuery(this.getMask());
+            if (!requestJson.q) {
+              return false;
+            }
+        
+            requestJson.pageResSize = 24;
+            if (this.globalRqParams.type == "AC_holder") {
+              this.globalRqParams.boxEl.blur();
+              this.myPostMessage("toggleSearch", { q: requestJson.q });
+              return;
+            } else {
+              this.myPostMessage("trackSearch", { q: requestJson.q, isSM: isSM });
+            }
+        
+            if (options.mi) requestJson.mi = options.mi;
+        
+            if (options.dym) requestJson.dym = true;
+            if (options.rangeFilter?.length > 0) {
+              requestJson.rangeFilter = options.rangeFilter;
+              this.globalRqParams.rangeFilter = options.rangeFilter;
+            } else if (
+              options.isPriceRange == null &&
+              this.globalRqParams.isEcommerceRightMenu
+            ) {
+              this.globalRqParams.rangeFilter = null;
+            }
+        
+            if (categoriesCheckedIdMenu.length > 0) {
+              requestJson.filters.categories = requestJson.filters.categories || [];
+              for (let i = 0; i < categoriesCheckedIdMenu.length; i++) {
+                requestJson.filters.categories.push([
+                  categoriesCheckedIdMenu[i],
+                  true,
+                ]);
+                categoriesCheckedId.push(
+                  "categoriesCheckbox" + categoriesCheckedIdMenu[i]
+                );
+              }
+            }
+            if (attrCheckedIdMenu.length > 0) {
+              requestJson.filters.attributes = requestJson.filters.attributes || [];
+              for (let i = 0; i < attrCheckedIdMenu.length; i++) {
+                var attr = {};
+                let attrVal = attrCheckedIdMenu[i][2];
+                attr[attrVal] = [];
+                attr[attrVal].push([attrCheckedIdMenu[i][0], true]);
+                requestJson.filters.attributes.push(attr);
+                attrCheckedId.push(attrCheckedIdMenu[i][1]);
+                brandsCheckedId.push(attrCheckedIdMenu[i][1]);
+              }
+            }
+        
+            if (
+              document.querySelector("#rangeFrom") &&
+              document.querySelector("#rangeTo") &&
+              options.isPriceRange
+            ) {
+              let from = parseInt(document.querySelector("#rangeFrom").value) * 10;
+              let to = parseInt(document.querySelector("#rangeTo").value) * 10;
+              if (!isNaN(from) && !isNaN(to) && from < to) {
+                requestJson.rangeFilter = ["price", from, to];
+                this.globalRqParams.rangeFilter = requestJson.rangeFilter;
+              }
+            }
+        
+            if (this.globalRqParams.rangeFilter)
+              requestJson.rangeFilter = this.globalRqParams.rangeFilter;
+        
+            if (this.globalRqParams.sb_el.querySelector("#categories")) {
+              let nd = document
+                .querySelector("#categories")
+                .querySelectorAll("input[type=checkbox]");
+              if (nd.length > 0) {
+                requestJson.filters.categories = requestJson.filters.categories || [];
+                for (let k = 0; k < nd.length; k++) {
+                  if (nd[k].checked) {
+                    requestJson.filters.categories.push([nd[k].name, true]);
+                    categoriesCheckedId.push(nd[k].id);
+                  }
+                }
+              }
+            }
+        
+            if (this.globalRqParams.sb_el.querySelector("#attributes")) {
+              requestJson.filters = requestJson.filters || {};
+              requestJson.filters.attributes = [];
+              let attrNd = this.globalRqParams.sb_el
+                .querySelector("#attributes")
+                .querySelectorAll(".it_attribute");
+              let elem = this.globalRqParams.sb_el.querySelectorAll(".it_attribute");
+              attrNd = elem;
+              for (let p = 0; p < attrNd.length; p++) {
+                let attrVal = attrNd[p].id;
+                let attr = {};
+                attr[attrVal] = [];
+                nd = attrNd[p].querySelectorAll("input[type=checkbox]");
+                for (let k = 0; k < nd.length; k++) {
+                  if (nd[k].checked) {
+                    attr[attrVal].push([nd[k].name, true]);
+                    brandsCheckedId.push(nd[k].id);
+                    attrCheckedId.push(nd[k].id);
+                    requestJson.filters.attributes.push(attr);
+                  }
+                }
+              }
+            }
+        
+            if (
+              requestJson.filters &&
+              requestJson.filters.attributes &&
+              requestJson.filters.attributes.length === 0
+            ) {
+              delete requestJson.filters.attributes;
+              if (Object.keys(requestJson.filters).length === 0) {
+                delete requestJson.filters;
+              }
+            }
+            if (
+              requestJson.filters &&
+              requestJson.filters.categories &&
+              requestJson.filters.categories.length === 0
+            ) {
+              delete requestJson.filters.categories;
+            }
+        
+            if (this.globalRqParams.isEcommerce) {
+              const selectScore = this.globalRqParams.sortBy;
+              if (selectScore !== "relevance") {
+                if (selectScore === "date_asc" || selectScore === "date_desc") {
+                  requestJson.sorting = "date";
+                  requestJson.ascOrder = selectScore === "date_asc";
+                } else {
+                  requestJson.sorting = "price";
+                  requestJson.ascOrder = selectScore === "price_asc";
+                }
+              } else {
+                delete requestJson["ascOrder"];
+                delete requestJson["sorting"];
+              }
+              requestJson.getRange = "price";
+              requestJson.getCat = true;
+            } else {
+              const selectScore = options.sortBy || "relevance";
+              this.globalRqParams.sortBy = selectScore;
+              if (selectScore !== "relevance") {
+                requestJson.sorting = "date";
+                requestJson.ascOrder = selectScore === "asc";
+              }
+            }
+            this.globalRqParams.boxEl.blur();
+            this.globalRqParams.AC_El.innerHTML = "";
+            if (!(p > 1)) {
+              this.globalRqParams.R_El.innerHTML = "";
+              this.globalRqParams.paginator.p = 1;
+            }
+            if (this.globalRqParams.isEcommerce) {
+              this.globalRqParams.IR_El.innerHTML = "";
+              this.globalRqParams.IR_El.style.display = "none";
+            }
+            this.globalRqParams.P_El.innerHTML = "";
+            requestJson.h = this.globalRqParams.domain;
+            requestJson.p = p ? parseInt(p, 10) : this.globalRqParams.paginator.p;
+            if (this.globalRqParams.filters)
+              requestJson.filters = this.globalRqParams.filters;
+        
+            if (
+              this.globalRqParams.AC_lastUserSearch &&
+              this.globalRqParams.AC_lastUserSearch !== requestJson.q
+            ) {
+              requestJson.p = 1;
+            }
+        
+            if (f) {
+              requestJson.f = true;
+            }
+            if (maskQ || isSM) {
+              this.setMask(maskQ);
+            }
+        
+            this.globalRqParams.AC_lastUserSearch = requestJson.q;
+            if (!this.globalRqParams.getFilters) {
+              ["filters", "getRange", "getCat"].forEach(
+                (key) => delete requestJson[key]
+              );
+            }
+            this.myFrontFetch(
+              requestJson,
+              null,
+              requestUri,
+              function (requestJson, responseJson) {
+                this.globalRqParams.paginator.p = requestJson.p;
+                this.globalRqParams.paginator.t = Math.ceil(
+                  responseJson.res / this.globalRqParams.paginator.rpp
+                );
+        
+                this.globalRqParams.searchQuery = responseJson.q = requestJson.q;
+                if (this.globalRqParams.paginator.p === 1) {
+                  if (responseJson.res) {
+                    let r = "";
+                    if (responseJson.nr) {
+                      if (
+                        this.globalRqParams.paginator.p === 1 &&
+                        !document.querySelector(".res_p") &&
+                        !r.includes("res_p")
+                      ) {
+                        r += this.tmpl("results_without", responseJson);
+                      }
+                    } else if (responseJson.L) {
+                      r += this.tmpl("low_quality", responseJson);
+                    } else if (
+                      this.globalRqParams.paginator.p === 1 &&
+                      !document.querySelector(".res_p") &&
+                      !r.includes("res_p")
+                    ) {
+                      r += this.tmpl("approximately_found", responseJson);
+                    }
+                    if (this.globalRqParams.isEcommerceSideMenu) {
+                      if (!(this.globalRqParams.paginator.p > 1)) {
+                        r += this.tmpl("filters", {
+                          sortBySelected: this.globalRqParams.sortBy,
+                        });
+                      }
+                    }
+                    var catData = this.buildCatData(
+                      responseJson,
+                      categoriesCheckedId,
+                      brandsCheckedId,
+                      attrCheckedId
+                    );
+                    if (this.globalRqParams.isEcommerceSideMenu) {
+                      if (this.globalRqParams.sb_element) {
+                        var sideMenu =
+                          this.globalRqParams.sb_element.querySelector(
+                            ".side-filters-menu"
+                          );
+                        var filters = `<button id="hamburger-btn" aria-expanded="true" aria-label="Menu">
+                          <span class="hamburger-line"></span>
+                          <span class="hamburger-line"></span>
+                          <span class="hamburger-line"></span>
+                        </button>`;
+                        catData.sortBySelected = this.globalRqParams.sortBy;
+                        filters += this.tmpl("results_data", catData);
+                        if (sideMenu) sideMenu.innerHTML = filters;
+                      }
+                    } else if (this.globalRqParams.isEcommerce) {
+                      if (
+                        !this.globalRqParams.R_El.innerHTML.includes("filter-bar")
+                      ) {
+                        catData.sortBySelected = this.globalRqParams.sortBy;
+                        r += this.tmpl("results_data", catData);
+                      }
+                    } else {
+                      console.log(this.globalRqParams.isEcommerce);
+                      if (
+                        !this.globalRqParams.R_El.innerHTML.includes(
+                          "selectDropdownMenuButton"
+                        )
+                      ) {
+                        let catData = {};
+                        catData.sortBySelected = this.globalRqParams.sortBy;
+                        r += this.tmpl("sort_by", catData);
+                      }
+                    }
+                    this.globalRqParams.R_El.innerHTML += r;
+                  } else if (!responseJson.r || responseJson.r.length == 0) {
+                    requestJson.q = requestJson.q.replace(/[&<>]/g, "");
+                    this.globalRqParams.R_El.innerHTML = this.tmpl(
+                      "no_results",
+                      requestJson
+                    );
+                    if (this.globalRqParams.sb_el.querySelector(".side-filters-menu"))
+                      this.globalRqParams.sb_el.querySelector(
+                        ".side-filters-menu"
+                      ).innerHTML = "";
+                  } else {
+                    this.globalRqParams.R_El.innerHTML = "";
+                  }
+                  this.spellingResult(responseJson, requestJson);
+                }
+                this.globalRqParams.q = requestJson.q;
+                if (responseJson.r && responseJson.r.length > 0) {
+                  if (!isSM) this.addHistorySearch(requestJson);
+        
+                  var d = new Date();
+                  var today = d.toDateString();
+                  var Rhtml = "";
+                  for (var i = 0; i < responseJson.r.length; i++) {
+                    responseJson.r[i].phz = i % 2 ? "even" : "odd";
+                    Rhtml += this.sResult.bind(this)(
+                      responseJson.r[i],
+                      requestJson.q,
+                      today
+                    );
+                  }
+                  this.globalRqParams.R_El.insertAdjacentHTML("beforeend", Rhtml);
+                  this.renderPaging.bind(this)();
+                  if (this.globalRqParams.paginator.p === 1) {
+                    this.addEventElements.bind(this)();
+                  }
+                }
+                this.addEventsToElements.bind(this)(requestJson.q);
+                if (this.globalRqParams.footer) {
+                  this.globalRqParams.footer.style.display = "block";
+                }
+              }.bind(this)
+            );
+          };
+        
+          this.addEventElements = function () {
+            var that = this;
+            const checkboxes = that.globalRqParams.sb_element.querySelectorAll(
+              "input[type='checkbox']"
+            );
+            if (checkboxes) {
+              for (let i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].addEventListener("change", function () {
+                  that.search();
+                });
+              }
+            }
+        
+            const hamburgerBtn =
+              that.globalRqParams.sb_element.querySelector("#hamburger-btn");
+            const rdElement = that.globalRqParams.sb_element.querySelector("#hdyRD");
+            const closeMenuBtn = document.getElementById("close-menu-btn");
+        
+            if (hamburgerBtn && rdElement) {
+              const slideDirection =
+                this.globalRqParams.dir === "rtl" ? "right" : "left";
+              if (slideDirection === "left") {
+                rdElement.classList.add("left");
+              } else if (slideDirection === "right") {
+                rdElement.classList.add("right");
+              }
+        
+              closeMenuBtn.addEventListener("click", function () {
+                rdElement.classList.add("hide");
+                hamburgerBtn.style.display = "flex";
+                hamburgerBtn.setAttribute("aria-expanded", false);
+              });
+        
+              hamburgerBtn.addEventListener("click", () => {
+                const isExpanded =
+                  hamburgerBtn.getAttribute("aria-expanded") === "false";
+                hamburgerBtn.setAttribute("aria-expanded", isExpanded);
+                rdElement.classList.toggle("visible");
+                if (!isExpanded) {
+                  rdElement.style.display = "none";
+                  if (window.innerWidth < 450) {
+                    rdElement.classList.add("hide");
+                    hamburgerBtn.style.display = "flex";
+                    const products =
+                      that.globalRqParams.sb_element.querySelector("#productsResult");
+                    if (products) {
+                      products.style.display = "block";
+                      products.style.transform = "translate(0)";
+                    }
+                  }
+                } else {
+                  rdElement.style.display = "block";
+                  rdElement.classList.remove("hide");
+                  if (window.innerWidth < 451) {
+                    // hamburgerBtn.style.display = "none";
+                    const products =
+                      that.globalRqParams.sb_element.querySelector("#productsResult");
+                    if (products) products.style.transform = "translate(-150%)";
+                  }
+                }
+              });
+            }
+        
+            function checkScreenWidth() {
+              if (hamburgerBtn && rdElement) {
+                if (window.innerWidth < 750) {
+                  // rdElement.classList.add("visible");
+                  rdElement.classList.add("hide");
+                  hamburgerBtn.setAttribute("aria-expanded", false);
+                } else {
+                  rdElement.classList.remove("visible");
+                  rdElement.style.display = "block";
+                  hamburgerBtn.setAttribute("aria-expanded", true);
+                }
+              }
+            }
+        
+            if (
+              that.globalRqParams.type === "triggered" ||
+              that.globalRqParams.type === "holder"
+            ) {
+              checkScreenWidth();
+            }
+        
+            window.addEventListener("resize", checkScreenWidth);
+        
+            const clearAttributes = (event) => {
+              const button = event.currentTarget;
+              const attributesDiv = button.closest("#attributes");
+              if (attributesDiv) {
+                const checkboxAttr = attributesDiv.querySelectorAll(
+                  "input[type='checkbox']"
+                );
+                for (let i = 0; i < checkboxAttr.length; i++) {
+                  checkboxAttr[i].checked = false;
+                }
+              }
+              that.search();
+            };
+        
+            const clearAttBtns =
+              that.globalRqParams.sb_element.querySelectorAll(".clearAttBtn");
+            if (clearAttBtns) {
+              clearAttBtns.forEach((clearAttBtn) => {
+                clearAttBtn.addEventListener("click", clearAttributes);
+              });
+            }
+        
+            const clearBrands =
+              that.globalRqParams.sb_element.querySelector("#clearBrandsBtn");
+            if (clearBrands) {
+              clearBrands.addEventListener("click", clearAttributes);
+            }
+        
+            const clearCategories = that.globalRqParams.sb_element.querySelector(
+              ".clearCategoriesBtn"
+            );
+            if (clearCategories) {
+              clearCategories.addEventListener("click", function () {
+                const checkboxCategories = that.globalRqParams.sb_element
+                  .querySelector("#categories")
+                  .querySelectorAll("input[type='checkbox']");
+                let flag = false;
+                for (var i = 0; i < checkboxCategories.length; i++) {
+                  if (checkboxCategories[i].checked) {
+                    flag = true;
+                  }
+                  checkboxCategories[i].checked = false;
+                }
+                if (flag) that.search();
+                clearCategories.style.display = "none";
+              });
+            }
+        
+            const clearPriceRangeBtn = that.globalRqParams.sb_element.querySelector(
+              "#clearPriceRangeBtn"
+            );
+            if (clearPriceRangeBtn) {
+              clearPriceRangeBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                that.globalRqParams.rangeFilter = null;
+                if (
+                  that.globalRqParams.sb_element.querySelector("#rangeFrom") &&
+                  that.globalRqParams.sb_element.querySelector("#rangeTo")
+                ) {
+                  if (
+                    that.globalRqParams.sb_element.querySelector("#rangeFrom")
+                      .value !== "" ||
+                    that.globalRqParams.sb_element.querySelector("#rangeTo").value !==
+                      ""
+                  ) {
+                    that.globalRqParams.sb_element.querySelector("#rangeFrom").value =
+                      "";
+                    that.globalRqParams.sb_element.querySelector("#rangeTo").value =
+                      "";
+                    that.search();
+                  }
+                }
+              });
+            }
+        
+            const sectionTitle =
+              that.globalRqParams.sb_element.querySelector(".section-title");
+            if (sectionTitle) {
+              const caretIcon = sectionTitle.querySelector(".caret-icon");
+              if (caretIcon) {
+                sectionTitle.addEventListener("click", function () {
+                  caretIcon.classList.toggle("up");
+                });
+              }
+            }
+        
+            that.globalRqParams.sb_element
+              .querySelectorAll(".select-dropdown-item")
+              .forEach((item) => {
+                item.addEventListener("click", function (event) {
+                  event.stopPropagation();
+                  const value = this.getAttribute("data-value");
+                  const text = this.textContent;
+                  that.globalRqParams.sb_element.querySelector(
+                    ".selected"
+                  ).textContent = text;
+                  that.globalRqParams.sb_element
+                    .querySelector(".select-dropdown-header")
+                    .classList.remove("open");
+                  const selectedOption = value;
+                  const selectScore = selectedOption ? selectedOption : "relevance";
+                  if (selectScore !== that.globalRqParams.sortBy) {
+                    that.globalRqParams.sortBy = selectScore;
+                    that.search();
+                  }
+                });
+              });
+        
+            const selectDropDownHeader = that.globalRqParams.sb_element.querySelector(
+              ".select-dropdown-header"
+            );
+            if (selectDropDownHeader) {
+              selectDropDownHeader.addEventListener("click", function (event) {
+                event.stopPropagation();
+                this.classList.toggle("open");
+              });
+            }
+        
+            document.addEventListener("click", function (event) {
+              if (!event.target.closest(".select-dropdown")) {
+                const selectDropdownMenuBtn =
+                  that.globalRqParams.sb_element.querySelector(
+                    "#selectDropdownMenuButton"
+                  );
+                if (selectDropdownMenuBtn) {
+                  selectDropdownMenuBtn.classList.remove("open");
+                }
+              }
+            });
+        
+            const rangeInput =
+                that.globalRqParams.sb_element.querySelectorAll(".range-input input"),
+              priceInput =
+                that.globalRqParams.sb_element.querySelectorAll(".price-input input"),
+              range =
+                that.globalRqParams.sb_element.querySelector(".slider .progress");
+            let priceGap = 2;
+        
+            function handleRangeInput() {
+              let minVal = parseInt(rangeInput[0].value);
+              let maxVal = parseInt(rangeInput[1].value);
+              if (minVal === maxVal) {
+                if (
+                  that.globalRqParams.sb_element.querySelector(
+                    ".priceRange-container"
+                  )
+                )
+                  that.globalRqParams.sb_element.querySelector(
+                    ".priceRange-container"
+                  ).style.display = "none";
+              } else {
+                if (
+                  that.globalRqParams.sb_element.querySelector(
+                    ".priceRange-container"
+                  )
+                )
+                  that.globalRqParams.sb_element.querySelector(
+                    ".priceRange-container"
+                  ).style.display = "block";
+              }
+        
+              if (maxVal - minVal < priceGap) {
+                rangeInput[0].value = maxVal - priceGap;
+              } else {
+                priceInput[0].value = minVal;
+                priceInput[1].value = maxVal;
+                range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+              }
+            }
+        
+            if (priceInput && rangeInput && range) {
+              handleRangeInput();
+              priceInput.forEach((input) => {
+                input.addEventListener("input", (e) => {
+                  let minPrice = parseInt(priceInput[0].value),
+                    maxPrice = parseInt(priceInput[1].value);
+        
+                  if (
+                    maxPrice - minPrice >= priceGap &&
+                    maxPrice <= rangeInput[1].max
+                  ) {
+                    if (e.target.className === "input-min") {
+                      rangeInput[0].value = minPrice;
+                      range.style.left = (minPrice / rangeInput[0].max) * 100 + "%";
+                    } else {
+                      rangeInput[1].value = maxPrice;
+                      range.style.right =
+                        100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+                    }
+                  }
+                });
+              });
+        
+              rangeInput.forEach((input) => {
+                input.addEventListener("input", (e) => {
+                  let minVal = parseInt(rangeInput[0].value),
+                    maxVal = parseInt(rangeInput[1].value);
+        
+                  if (maxVal - minVal < priceGap) {
+                    if (e.target.className === "range-min") {
+                      rangeInput[0].value = maxVal - priceGap;
+                    } else {
+                      rangeInput[1].value = minVal + priceGap;
+                    }
+                  } else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                    range.style.right =
+                      100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                  }
+                });
+              });
+            }
+        
+            that.globalRqParams.sb_element
+              .querySelectorAll(".hdy-dropbtn")
+              .forEach((button) => {
+                button.addEventListener("click", (event) => {
+                  const dropdownContent =
+                    event.currentTarget.parentElement.querySelector(
+                      ".hdy-dropdown-content"
+                    );
+                  const caretIcon =
+                    event.currentTarget.querySelector(".hdy-caret-icon");
+                  if (dropdownContent) {
+                    const isCurrentlyVisible =
+                      dropdownContent.style.display === "block";
+                    dropdownContent.style.display = isCurrentlyVisible
+                      ? "none"
+                      : "block";
+        
+                    if (isCurrentlyVisible) {
+                      caretIcon.classList.remove("active");
+                    } else {
+                      caretIcon.classList.add("active");
+                    }
+                  }
+                  that.globalRqParams.sb_element
+                    .querySelectorAll(".hdy-caret-icon")
+                    .forEach((icon) => {
+                      if (icon !== caretIcon) icon.classList.remove("active");
+                    });
+                  that.globalRqParams.sb_element
+                    .querySelectorAll(".hdy-dropdown-content")
+                    .forEach((content) => {
+                      if (content !== dropdownContent) content.style.display = "none";
+                    });
+                });
+              });
+        
+            /////////////////
+            const dropdown =
+              that.globalRqParams.sb_element.querySelectorAll(".dropdown");
+            dropdown.forEach((dropdown) => {
+              dropdown.addEventListener("click", function (event) {
+                if (
+                  event.target.matches(".dropdown-content") ||
+                  event.target.matches(".dropdown-content *")
+                ) {
+                  event.stopPropagation();
+                  return;
+                }
+        
+                const sectionTitle = this.querySelector(".section-title");
+                if (sectionTitle) {
+                  const caretIcon = sectionTitle.querySelector(".caret-icon");
+                  if (caretIcon) {
+                    caretIcon.classList.toggle("up");
+                  }
+                }
+        
+                this.classList.toggle("active");
+                let current =
+                  that.globalRqParams.sb_element.getElementsByClassName("selected");
+                if (current.length > 0) {
+                  current[0].classList.remove("selected");
+                }
+        
+                let thisDropdownContent =
+                  this.getElementsByClassName("dropdown-content")[0];
+        
+                if (thisDropdownContent.style.display === "block") {
+                  thisDropdownContent.style.display = "none";
+                } else {
+                  thisDropdownContent.style.display = "block";
+                  this.classList.add("selected");
+                }
+        
+                var dropdownContent =
+                  that.globalRqParams.sb_element.querySelectorAll(
+                    ".dropdown-content"
+                  );
+                for (var j = 0; j < dropdownContent.length; j++) {
+                  if (dropdownContent[j] !== thisDropdownContent) {
+                    dropdownContent[j].style.display = "none";
+                    if (dropdown[j]) {
+                      const otherSectionTitle =
+                        dropdown[j].querySelector(".section-title");
+                      const otherCaretIcon =
+                        otherSectionTitle?.querySelector(".caret-icon");
+                      if (otherCaretIcon) otherCaretIcon.classList.remove("up");
+                    }
+                  }
+                }
+              });
+            });
+        
+            var dropdowns =
+              that.globalRqParams.sb_element.querySelectorAll(".dropdown");
+            if (dropdowns) {
+              dropdowns.forEach(function (dropdown) {
+                if (dropdown.querySelectorAll("input:checked").length > 0) {
+                  var checkboxes = dropdown.querySelectorAll("input:checked");
+        
+                  checkboxes.forEach(function (checkbox) {
+                    var resetBtn = document.createElement("button");
+                    resetBtn.className = "reset-btn";
+                    resetBtn.innerText = checkbox.getAttribute("name");
+        
+                    resetBtn.addEventListener("click", function () {
+                      checkbox.removeAttribute("checked");
+                      resetBtn.parentNode.removeChild(resetBtn);
+                      that.search();
+                    });
+                    var activeFilters = that.globalRqParams.sb_element.querySelector(
+                      ".hdy-active-filters"
+                    );
+        
+                    if (!activeFilters) {
+                      activeFilters = document.createElement("div");
+                      activeFilters.className = "hdy-active-filters";
+                      var selectedFilters = document.createElement("div");
+                      selectedFilters.className = "hdy-selected-filters";
+                      selectedFilters.insertAdjacentHTML(
+                        "beforeend",
+                        that.tmpl("selected_filters")
+                      );
+                      activeFilters.appendChild(selectedFilters);
+                    }
+                    const sideElements =
+                      that.globalRqParams.sb_element.querySelector(".side-elements");
+                    if (sideElements) {
+                      sideElements.parentNode.insertBefore(
+                        activeFilters,
+                        sideElements
+                      );
+                      activeFilters.appendChild(resetBtn);
+                    }
+                  });
+                }
+              });
+            }
+        
+            const filterRangeBtnElems =
+              that.globalRqParams.sb_element.querySelector("#filterRangeBtn");
+            if (filterRangeBtnElems) {
+              filterRangeBtnElems.addEventListener("click", function () {
+                const option = {
+                  isPriceRange: true,
+                };
+                that.search(option);
+              });
+            }
+        
+            const colorCircles =
+              that.globalRqParams.sb_element.querySelectorAll(".color-circle");
+            if (colorCircles) {
+              colorCircles.forEach(function (circle) {
+                circle.addEventListener("click", function (event) {
+                  const checkboxId = event.target.getAttribute("data-checkbox-id");
+                  const checkbox =
+                    that.globalRqParams.sb_element.getElementById(checkboxId);
+                  if (checkbox) {
+                    checkbox.click();
+                  }
+                });
+              });
+            }
+          };
+        
+          this.renderPaging = function () {
+            var paginator = this.getPaginator();
+            const pageingElement = document.querySelector(
+              "#heyday_SB_holder .paging"
+            );
+            this.globalRqParams.P_El.innerHTML = "";
+        
+            if (this.globalRqParams.paginator.p === 1) {
+              this.scrollElementIntoView();
+            }
+        
+            if (this.globalRqParams.paginator.t > 1) {
+              if (paginator.next) {
+                if (pageingElement) {
+                  pageingElement.style.display = "block";
+                }
+                this.globalRqParams.P_El.insertAdjacentHTML(
+                  "beforeend",
+                  this.tmpl("paging_item", {
+                    href: paginator.next,
+                    title: this.tmplPlaceHolders.nextPage,
+                  })
+                );
+              }
+              const that = this;
+        
+              // const buttonNext = this.globalRqParams.P_El.querySelector('.do-search');
+              // if (buttonNext) {
+              //   this.globalRqParams.observer.observe(buttonNext);
+              // }
+        
+              this.globalRqParams.P_El.querySelectorAll(".do-search").forEach(
+                function (ds) {
+                  ds.addEventListener("click", function (evt) {
+                    evt.preventDefault();
+                    if (that.globalRqParams.isEcommerceRightMenu) {
+                      that.searchWithSort.bind(that)(evt.target.dataset.p);
+                    } else {
+                      that.search.bind(that)({ p: evt.target.dataset.p });
+                    }
+                  });
+                }
+              );
+            }
+        
+            if (this.globalRqParams.searchUrlFormat) {
+              const query = this.getMask();
+              const formattedUrl = this.$(this.globalRqParams.searchUrlFormat, query);
+              window.history.replaceState(null, null, formattedUrl);
+            }
+        
+            if (this.globalRqParams.search_eval) {
+              eval(this.globalRqParams.search_eval);
+            }
+            if (this.globalRqParams.isEcommerceRightMenu) {
+              this.addEventsForRightMenu();
+            }
+          };
+        
+          this.autoCompleteRes = function (responseJson, q) {
+            var rVal = "";
+            var hasRTL = false;
+            if (this.globalRqParams.isEcommerce) {
+              clearTimeout(this.globalRqParams.InstSearchTO);
+            } else {
+              let el = window.document.getElementsByClassName("d_rtl");
+              hasRTL = !!el.length;
+            }
+        
+            var r = responseJson.r;
+            var ac =
+              this.globalRqParams.AC_El.firstChild ||
+              document.createElement(
+                this.globalRqParams.tmpl.autocomplete_holder || "ul"
+              );
+            ac.innerHTML = "";
+            if (responseJson.sb) q = responseJson.sb;
+            var qRegex = "(" + q.replace(/[ ]{1,}/g, "|") + ")";
+            if (responseJson.w) {
+              if (!this.globalRqParams.widthACdiv) {
+                this.globalRqParams.widthACdiv = document.createElement("span");
+                this.globalRqParams.widthACdiv.style.display = "hidden";
+                this.globalRqParams.widthACdiv.style.fontSize = "20px";
+                this.globalRqParams.widthACdiv.style.fontColor = "white";
+                // document.body.appendChild(this.globalRqParams.widthACdiv);
+              }
+              var w = q.lastIndexOf(" ") != -1 ? q.substr(0, q.lastIndexOf(" ")) : q;
+              rVal = w + " " + r[0];
+              if (this.globalRqParams.isEcommerce) {
+                this.globalRqParams.widthACdiv.innerText = w + "...";
+              } else {
+                this.globalRqParams.widthACdiv.innerText = w;
+              }
+              var w_padding = this.globalRqParams.widthACdiv.offsetWidth + 10;
+              ac.insertAdjacentHTML(
+                "beforeend",
+                this.tmpl("autocomplete_item", {
+                  item: this.gResultReplaced("..." + r[0], null),
+                })
+              );
+              if (
+                this.globalRqParams.dir == "rtl" &&
+                this.globalRqParams.isEcommerce
+              ) {
+                ac.lastChild.querySelector("span").style.paddingRight =
+                  w_padding + "px";
+              } else {
+                ac.lastChild.querySelector("span").style.paddingLeft =
+                  w_padding + "px";
+              }
+              if (hasRTL) {
+                ac.lastChild.querySelector("span").style.paddingRight =
+                  w_padding + "px";
+              } else {
+                ac.lastChild.querySelector("span").style.paddingLeft =
+                  w_padding + "px";
+              }
+              ac.lastChild.dataset.c = r[0];
+              ac.lastChild.dataset.w = w;
+            } else if (r.length > 0) {
+              rVal = r[0];
+              for (var i = 0; i < r.length; i++) {
+                ac.insertAdjacentHTML(
+                  "beforeend",
+                  this.tmpl("autocomplete_item", {
+                    item: this.gResultReplaced(r[i], qRegex),
+                  })
+                );
+                ac.lastChild.dataset.c = r[i];
+              }
+            }
+            if (this.globalRqParams.p_domain != "https://admin.heyday.io")
+              this.globalRqParams.AC_cacheMap[q] = {
+                res: responseJson,
+                value: ac,
+              };
+            this.renderAutoCompleteRes.bind(this)(ac);
+            return rVal;
+          };
+        
+          this.createElementsForRMenu = function () {
+            window.priceRangeHdy = false;
+            if (!document.querySelector(".background-dark-hdy")) {
+              const darkDivElement = document.createElement("div");
+              darkDivElement.className = "background-dark-hdy";
+              document.body.appendChild(darkDivElement);
+            }
+            if (!document.querySelector(".hdy-filter-bar")) {
+              const hdySideMenu = document.createElement("div");
+              hdySideMenu.className = "hdy-filter-bar";
+              document.body.appendChild(hdySideMenu);
+              var newDiv = document.createElement("div");
+              newDiv.textContent = "סינון";
+              newDiv.className = "filter-text";
+              hdySideMenu.appendChild(newDiv);
+              const footerDiv = document.createElement("div");
+              footerDiv.className = "mobile-footer-hdy";
+              const removeAll = document.createElement("button");
+              removeAll.className = "clear-all";
+              removeAll.type = "button";
+              removeAll.textContent = "הסרת הכל";
+              var that = this;
+              removeAll.addEventListener("click", function () {
+                var checked = document.querySelectorAll("input[type='checkbox']");
+                if (checked) {
+                  for (var i = 0; i < checked.length; i++) {
+                    checked[i].checked = false;
+                  }
+                  const option = {
+                    isPriceRange: false,
+                    rangeFilter: null,
+                  };
+                  if (that.globalRqParams.type === "triggered") {
+                    SB_objects["triggered"].msgListener({
+                      action: "search_without_price",
+                      context: { option: option },
+                    });
+                  } else {
+                    SB_objects["holder"].msgListener({
+                      action: "search_without_price",
+                      context: { option: option },
+                    });
+                  }
+                }
+              });
+        
+              const buttonSearch = document.createElement("button");
+              buttonSearch.type = "button";
+              buttonSearch.className = "btn-show-results";
+              buttonSearch.textContent = "הצג תוצאות";
+              buttonSearch.addEventListener("click", function () {
+                const hdySideMenu = document.querySelector(".hdy-filter-bar");
+                if (hdySideMenu) hdySideMenu.style.transform = "translate(100%)";
+                const darkDiv = document.querySelector(".background-dark-hdy");
+                if (darkDiv) {
+                  darkDiv.style.display = "none";
+                }
+                if (document.querySelector(".hdy-close-bar")) {
+                  document.querySelector(".hdy-close-bar").style.display = "none";
+                }
+              });
+        
+              footerDiv.appendChild(buttonSearch);
+              footerDiv.appendChild(removeAll);
+              hdySideMenu.appendChild(footerDiv);
+              const hdyCloseMenu = document.createElement("div");
+              hdyCloseMenu.className = "hdy-close-bar";
+              hdySideMenu.appendChild(hdyCloseMenu);
+              hdyCloseMenu.addEventListener("click", function (e) {
+                const hdySideMenu = document.querySelector(".hdy-filter-bar");
+                if (hdySideMenu) hdySideMenu.style.transform = "translate(100%)";
+                const darkDiv = document.querySelector(".background-dark-hdy");
+                if (darkDiv) {
+                  darkDiv.style.display = "none";
+                }
+                this.style.display = "none";
+              });
+            }
+          };
+        
+          this.addEventsForRightMenu = function () {
+            const filterBtnMobile = document.querySelector(".filter-button-mobile");
+            if (filterBtnMobile) {
+              filterBtnMobile.addEventListener("click", function () {
+                const hdySideMenu = document.querySelector(".hdy-filter-bar");
+                if (hdySideMenu) {
+                  hdySideMenu.style.transform = "translate(0)";
+                }
+                var elemClose = document.querySelector(".hdy-close-bar");
+                if (elemClose) {
+                  elemClose.style.display = "block";
+                }
+                const darkDiv = document.querySelector(".background-dark-hdy");
+                if (darkDiv) {
+                  darkDiv.style.display = "block";
+                }
+              });
+              if (this.globalRqParams.paginator.p === 1) {
+                const sectionTitle = document.querySelector(".section-title");
+                if (sectionTitle) {
+                  const caretIcon = sectionTitle.querySelector(".caret-icon");
+                  if (caretIcon) {
+                    sectionTitle.addEventListener("click", function () {
+                      caretIcon.classList.toggle("up");
+                    });
+                  }
+                }
+        
+                const selectDropDownHeader = document.querySelector(
+                  ".select-dropdown-header"
+                );
+                if (selectDropDownHeader) {
+                  selectDropDownHeader.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    this.classList.toggle("open");
+                  });
+                }
+        
+                // Close select-dropdown when clicking outside
+                document.addEventListener("click", function (event) {
+                  if (!event.target.closest(".select-dropdown")) {
+                    const selectDropdownMenuBtn = document.getElementById(
+                      "selectDropdownMenuButton"
+                    );
+                    if (selectDropdownMenuBtn) {
+                      selectDropdownMenuBtn.classList.remove("open");
+                    }
+                  }
+                });
+        
+                //price range:
+                const rangeInput = document.querySelectorAll(".range-input input"),
+                  priceInput = document.querySelectorAll(".price-input input"),
+                  range = document.querySelector(".slider .progress");
+                let priceGap = 2;
+        
+                if (priceInput && rangeInput && range) {
+                  function handleRangeInput() {
+                    let minVal = parseInt(rangeInput[0].value);
+                    let maxVal = parseInt(rangeInput[1].value);
+                    if (minVal === maxVal) {
+                      document.querySelector(".priceRange-container").style.display =
+                        "none";
+                    } else {
+                      document.querySelector(".priceRange-container").style.display =
+                        "block";
+                    }
+        
+                    if (maxVal - minVal < priceGap) {
+                      rangeInput[0].value = maxVal - priceGap;
+                    } else {
+                      priceInput[0].value = minVal;
+                      priceInput[1].value = maxVal;
+                      range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                      range.style.right =
+                        100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                    }
+                  }
+        
+                  handleRangeInput();
+                  priceInput.forEach((input) => {
+                    input.addEventListener("input", (e) => {
+                      let minPrice = parseInt(priceInput[0].value),
+                        maxPrice = parseInt(priceInput[1].value);
+                      if (
+                        maxPrice - minPrice >= priceGap &&
+                        maxPrice <= rangeInput[1].max
+                      ) {
+                        if (e.target.className === "input-min") {
+                          rangeInput[0].value = minPrice;
+                          range.style.left =
+                            (minPrice / rangeInput[0].max) * 100 + "%";
+                        } else {
+                          rangeInput[1].value = maxPrice;
+                          range.style.right =
+                            100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+                        }
+                      }
+                    });
+                  });
+        
+                  rangeInput.forEach((input) => {
+                    input.addEventListener("input", (e) => {
+                      let minVal = parseInt(rangeInput[0].value),
+                        maxVal = parseInt(rangeInput[1].value);
+        
+                      if (maxVal - minVal < priceGap) {
+                        if (e.target.className === "range-min") {
+                          rangeInput[0].value = maxVal - priceGap;
+                        } else {
+                          rangeInput[1].value = minVal + priceGap;
+                        }
+                      } else {
+                        priceInput[0].value = minVal;
+                        priceInput[1].value = maxVal;
+                        range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                        range.style.right =
+                          100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                      }
+                    });
+                  });
+                }
+        
+                const dropdown = document.getElementsByClassName("dropdown");
+        
+                for (let i = 0; i < dropdown.length; i++) {
+                  dropdown[i].addEventListener("click", function (event) {
+                    if (
+                      event.target.matches(".dropdown-content") ||
+                      event.target.matches(".dropdown-content *")
+                    ) {
+                      event.stopPropagation();
+                      return;
+                    }
+        
+                    let thisDropdownContent =
+                      this.getElementsByClassName("dropdown-content")[0];
+        
+                    if (thisDropdownContent.style.maxHeight == "300px") {
+                      thisDropdownContent.style.maxHeight = 0;
+                      thisDropdownContent.style.transform = "translate(-100%)";
+                      // thisDropdownContent.style.display = 'none';
+                      const sectionTitle = this.querySelector(".section-title");
+                      const caretIcon = sectionTitle.querySelector(".caret-icon");
+                      caretIcon.classList.remove("up");
+                    } else {
+                      // thisDropdownContent.style.display = 'block';
+                      thisDropdownContent.style.maxHeight = "300px";
+                      thisDropdownContent.style.transform = "translate(0px)";
+                      this.classList.add("selected");
+                      const sectionTitle = this.querySelector(".section-title");
+                      const caretIcon = sectionTitle.querySelector(".caret-icon");
+                      caretIcon.classList.add("up");
+                    }
+                    var dropdownContent =
+                      document.querySelectorAll(".dropdown-content");
+                    // Loop through all dropdown-content elements
+                    for (var j = 0; j < dropdownContent.length; j++) {
+                      // Close all open dropdown-content elements
+                      if (dropdownContent[j] !== thisDropdownContent) {
+                        dropdownContent[j].style.maxHeight = 0;
+                        dropdownContent[j].style.transform = "translate(-100%)";
+                        //dropdownContent[j].style.maxHeight = null;
+                        const otherSectionTitle =
+                          dropdown[j].querySelector(".section-title");
+                        const otherCaretIcon =
+                          otherSectionTitle.querySelector(".caret-icon");
+                        otherCaretIcon.classList.remove("up");
+                      }
+                    }
+                  });
+                }
+                var categoriesCheckedId = [];
+                var attrCheckedId = [];
+        
+                const attrCheckboxes = document.querySelectorAll(
+                  "#attributes input[type='checkbox']"
+                );
+                const catCheckboxes = document.querySelectorAll(
+                  "#categories input[type='checkbox']"
+                );
+        
+                const checkCategoriesCheckboxes = () => {
+                  for (let i = 0; i < catCheckboxes.length; i++) {
+                    catCheckboxes[i].addEventListener("change", function (e) {
+                      for (let i = 0; i < attrCheckboxes.length; i++) {
+                        if (attrCheckboxes[i].checked) {
+                          let attrname = attrCheckboxes[i].getAttribute("attrname");
+                          attrCheckedId.push([
+                            attrCheckboxes[i].name,
+                            attrCheckboxes[i].id,
+                            attrname,
+                          ]);
+                        }
+                      }
+                      if (this.checked) {
+                        for (let i = 0; i < catCheckboxes.length; i++) {
+                          if (catCheckboxes[i].checked) {
+                            categoriesCheckedId.push(catCheckboxes[i].name);
+                          }
+                        }
+                        if (priceRangeHdy && priceRangeHdy.length > 0) {
+                          var option = {
+                            isPriceRange: true,
+                            rangeFilter: priceRangeHdy,
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        } else {
+                          var option = {
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        }
+                        if (SB_objects["triggered"]) {
+                          SB_objects["triggered"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        } else {
+                          SB_objects["holder"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        }
+                        if (document.querySelector(".hdy-filter-bar"))
+                          document.querySelector(".hdy-filter-bar").style.transform =
+                            "translate(100%)";
+                        if (document.querySelector(".hdy-close-bar"))
+                          document.querySelector(".hdy-close-bar").style.display =
+                            "none";
+                        const darkDiv = document.querySelector(
+                          ".background-dark-hdy"
+                        );
+                        if (darkDiv) {
+                          darkDiv.style.display = "none";
+                        }
+                      } else {
+                        for (let i = 0; i < catCheckboxes.length; i++) {
+                          if (catCheckboxes[i].checked && checkboxes[i] != this) {
+                            categoriesCheckedId.push(catCheckboxes[i].name);
+                          }
+                        }
+                        if (priceRangeHdy && priceRangeHdy.length > 0) {
+                          var option = {
+                            isPriceRange: true,
+                            rangeFilter: priceRangeHdy,
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        } else {
+                          var option = {
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        }
+                        if (SB_objects["triggered"]) {
+                          SB_objects["triggered"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        } else {
+                          SB_objects["holder"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        }
+                        if (document.querySelector(".hdy-close-bar"))
+                          document.querySelector(".hdy-close-bar").style.display =
+                            "none";
+                        const darkDiv = document.querySelector(
+                          ".background-dark-hdy"
+                        );
+                        if (darkDiv) {
+                          darkDiv.style.display = "none";
+                        }
+                        if (document.querySelector(".hdy-filter-bar"))
+                          document.querySelector(".hdy-filter-bar").style.transform =
+                            "translate(100%)";
+                      }
+                    });
+                  }
+                };
+                const checkAttributesCheckboxes = () => {
+                  for (let i = 0; i < attrCheckboxes.length; i++) {
+                    attrCheckboxes[i].addEventListener("change", function (e) {
+                      for (let i = 0; i < catCheckboxes.length; i++) {
+                        if (catCheckboxes[i].checked) {
+                          categoriesCheckedId.push(catCheckboxes[i].name);
+                        }
+                      }
+                      if (this.checked) {
+                        for (let i = 0; i < attrCheckboxes.length; i++) {
+                          if (attrCheckboxes[i].checked) {
+                            let attrname = attrCheckboxes[i].getAttribute("attrname");
+                            attrCheckedId.push([
+                              attrCheckboxes[i].name,
+                              attrCheckboxes[i].id,
+                              attrname,
+                            ]);
+                          }
+                        }
+                        if (priceRangeHdy && priceRangeHdy.length > 0) {
+                          var option = {
+                            isPriceRange: true,
+                            rangeFilter: priceRangeHdy,
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        } else {
+                          var option = {
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        }
+                        if (SB_objects["triggered"]) {
+                          SB_objects["triggered"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        } else {
+                          SB_objects["holder"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        }
+                        if (document.querySelector(".hdy-close-bar"))
+                          document.querySelector(".hdy-close-bar").style.display =
+                            "none";
+                        if (document.querySelector(".hdy-filter-bar"))
+                          document.querySelector(".hdy-filter-bar").style.transform =
+                            "translate(100%)";
+                        const darkDiv = document.querySelector(
+                          ".background-dark-hdy"
+                        );
+                        if (darkDiv) {
+                          darkDiv.style.display = "none";
+                        }
+                      } else {
+                        for (let i = 0; i < attrCheckboxes.length; i++) {
+                          if (attrCheckboxes[i].checked && checkboxes[i] != this) {
+                            let attrname = attrCheckboxes[i].getAttribute("attrname");
+                            attrCheckedId.push([
+                              attrCheckboxes[i].name,
+                              attrCheckboxes[i].id,
+                              attrname,
+                            ]);
+                          }
+                        }
+                        if (priceRangeHdy && priceRangeHdy.length > 0) {
+                          var option = {
+                            isPriceRange: true,
+                            rangeFilter: priceRangeHdy,
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        } else {
+                          var option = {
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        }
+                        if (SB_objects["triggered"]) {
+                          SB_objects["triggered"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        } else {
+                          SB_objects["holder"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        }
+                        if (document.querySelector(".hdy-close-bar"))
+                          document.querySelector(".hdy-close-bar").style.display =
+                            "none";
+                        const darkDiv = document.querySelector(
+                          ".background-dark-hdy"
+                        );
+                        if (darkDiv) {
+                          darkDiv.style.display = "none";
+                        }
+                        if (document.querySelector(".hdy-filter-bar"))
+                          document.querySelector(".hdy-filter-bar").style.transform =
+                            "translate(100%)";
+                      }
+                    });
+                  }
+                };
+                function clearAttributes() {
+                  const attributesDivs = document.querySelectorAll("#attributes");
+                  attributesDivs.forEach(function (attributesDiv) {
+                    const checkboxAttr = attributesDiv.querySelectorAll(
+                      "input[type='checkbox']"
+                    );
+                    for (var i = 0; i < checkboxAttr.length; i++) {
+                      checkboxAttr[i].checked = false;
+                    }
+                  });
+                  categoriesCheckedId = [];
+                  attrCheckedId = [];
+                  for (let i = 0; i < catCheckboxes.length; i++) {
+                    if (catCheckboxes[i].checked) {
+                      categoriesCheckedId.push(catCheckboxes[i].name);
+                    }
+                  }
+                  if (priceRangeHdy && priceRangeHdy.length > 0) {
+                    var option = {
+                      isPriceRange: true,
+                      rangeFilter: priceRangeHdy,
+                      categoriesCheckedIdMenu: categoriesCheckedId,
+                      attrCheckedIdMenu: attrCheckedId,
+                    };
+                  } else {
+                    var option = {
+                      categoriesCheckedIdMenu: categoriesCheckedId,
+                      attrCheckedIdMenu: attrCheckedId,
+                    };
+                  }
+        
+                  if (SB_objects["triggered"]) {
+                    SB_objects["triggered"].msgListener({
+                      action: "search_with_option",
+                      context: { option: option },
+                    });
+                  } else {
+                    SB_objects["holder"].msgListener({
+                      action: "search_with_option",
+                      context: { option: option },
+                    });
+                  }
+                  if (document.querySelector(".hdy-close-bar"))
+                    document.querySelector(".hdy-close-bar").style.display = "none";
+                  const darkDiv = document.querySelector(".background-dark-hdy");
+                  if (darkDiv) {
+                    darkDiv.style.display = "none";
+                  }
+                  if (document.querySelector(".hdy-filter-bar"))
+                    document.querySelector(".hdy-filter-bar").style.transform =
+                      "translate(100%)";
+                }
+        
+                const clearBrands = document.getElementById("clearBrandsBtn");
+                if (clearBrands) {
+                  clearBrands.addEventListener("click", clearAttributes);
+                }
+        
+                checkCategoriesCheckboxes();
+                checkAttributesCheckboxes();
+        
+                const clearCategories = document.getElementById("clearCategoriesBtn");
+        
+                if (clearCategories) {
+                  clearCategories.addEventListener("click", function () {
+                    const checkboxCategories = document
+                      .getElementById("categories")
+                      .querySelectorAll("input[type='checkbox']");
+                    let flag = false;
+                    for (var i = 0; i < checkboxCategories.length; i++) {
+                      if (checkboxCategories[i].checked) {
+                        flag = true;
+                      }
+                      checkboxCategories[i].checked = false;
+                    }
+                    categoriesCheckedId = [];
+                    attrCheckedId = [];
+                    for (let i = 0; i < attrCheckboxes.length; i++) {
+                      if (attrCheckboxes[i].checked) {
+                        let attrname = attrCheckboxes[i].getAttribute("attrname");
+                        attrCheckedId.push([
+                          attrCheckboxes[i].name,
+                          attrCheckboxes[i].id,
+                          attrname,
+                        ]);
+                      }
+                    }
+                    if (flag) {
+                      if (priceRangeHdy && priceRangeHdy.length > 0) {
+                        var option = {
+                          isPriceRange: true,
+                          rangeFilter: priceRangeHdy,
+                          categoriesCheckedIdMenu: categoriesCheckedId,
+                          attrCheckedIdMenu: attrCheckedId,
+                        };
+                      } else {
+                        var option = {
+                          categoriesCheckedIdMenu: categoriesCheckedId,
+                          attrCheckedIdMenu: attrCheckedId,
+                        };
+                      }
+                      if (SB_objects["triggered"]) {
+                        SB_objects["triggered"].msgListener({
+                          action: "search_with_option",
+                          context: { option: option },
+                        });
+                      } else {
+                        SB_objects["holder"].msgListener({
+                          action: "search_with_option",
+                          context: { option: option },
+                        });
+                      }
+                      if (document.querySelector(".hdy-close-bar"))
+                        document.querySelector(".hdy-close-bar").style.display =
+                          "none";
+                      const darkDiv = document.querySelector(".background-dark-hdy");
+                      if (darkDiv) {
+                        darkDiv.style.display = "none";
+                      }
+                      if (document.querySelector(".hdy-filter-bar"))
+                        document.querySelector(".hdy-filter-bar").style.transform =
+                          "translate(100%)";
+                    }
+                  });
+                }
+                var dropdowns = document.querySelectorAll(".dropdown");
+                if (dropdowns) {
+                  dropdowns.forEach(function (dropdown) {
+                    if (dropdown.querySelectorAll("input:checked").length > 0) {
+                      var resetBtn = document.createElement("button");
+                      resetBtn.className = "reset-btn";
+                      resetBtn.innerText = "ניקוי";
+                      resetBtn.style.top = "15px";
+                      resetBtn.style.border = "none";
+                      resetBtn.style.position = "absolute";
+                      resetBtn.style.left = "0";
+        
+                      resetBtn.addEventListener("click", function () {
+                        var checkboxes = dropdown.querySelectorAll(
+                          'input[type="checkbox"]'
+                        );
+                        for (var i = 0; i < checkboxes.length; i++) {
+                          checkboxes[i].checked = false;
+                        }
+                        resetBtn.parentNode.removeChild(resetBtn);
+                        categoriesCheckedId = [];
+                        attrCheckedId = [];
+                        for (let i = 0; i < attrCheckboxes.length; i++) {
+                          if (attrCheckboxes[i].checked) {
+                            let attrname = attrCheckboxes[i].getAttribute("attrname");
+                            attrCheckedId.push([
+                              attrCheckboxes[i].name,
+                              attrCheckboxes[i].id,
+                              attrname,
+                            ]);
+                          }
+                        }
+                        for (let i = 0; i < catCheckboxes.length; i++) {
+                          if (catCheckboxes[i].checked) {
+                            categoriesCheckedId.push(catCheckboxes[i].name);
+                          }
+                        }
+                        if (document.querySelector(".hdy-close-bar"))
+                          document.querySelector(".hdy-close-bar").style.display =
+                            "none";
+                        const darkDiv = document.querySelector(
+                          ".background-dark-hdy"
+                        );
+                        if (darkDiv) {
+                          darkDiv.style.display = "none";
+                        }
+                        if (document.querySelector(".hdy-filter-bar"))
+                          document.querySelector(".hdy-filter-bar").style.transform =
+                            "translate(100%)";
+                        if (priceRangeHdy && priceRangeHdy.length > 0) {
+                          var option = {
+                            isPriceRange: true,
+                            rangeFilter: priceRangeHdy,
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        } else {
+                          var option = {
+                            categoriesCheckedIdMenu: categoriesCheckedId,
+                            attrCheckedIdMenu: attrCheckedId,
+                          };
+                        }
+                        if (SB_objects["triggered"]) {
+                          SB_objects["triggered"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        } else {
+                          SB_objects["holder"].msgListener({
+                            action: "search_with_option",
+                            context: { option: option },
+                          });
+                        }
+                      });
+                      dropdown.insertBefore(resetBtn, dropdown.firstChild);
+                    }
+                  });
+                }
+        
+                const clearPriceRangeBtn =
+                  document.getElementById("clearPriceRangeBtn");
+                if (clearPriceRangeBtn) {
+                  clearPriceRangeBtn.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    var rangeFilter = null;
+                    if (
+                      document.querySelector("#rangeFrom") &&
+                      document.querySelector("#rangeTo")
+                    ) {
+                      if (
+                        document.querySelector("#rangeFrom").value !== "" ||
+                        document.querySelector("#rangeTo").value !== ""
+                      ) {
+                        document.querySelector("#rangeFrom").value = "";
+                        document.querySelector("#rangeTo").value = "";
+                      }
+                    }
+                    if (priceRangeHdy) window.priceRangeHdy = false;
+                    const option = {
+                      isPriceRange: false,
+                      rangeFilter: rangeFilter,
+                    };
+                    if (SB_objects["triggered"]) {
+                      SB_objects["triggered"].msgListener({
+                        action: "search_without_price",
+                        context: { option: option },
+                      });
+                    } else {
+                      SB_objects["holder"].msgListener({
+                        action: "search_without_price",
+                        context: { option: option },
+                      });
+                    }
+                    if (document.querySelector(".hdy-close-bar"))
+                      document.querySelector(".hdy-close-bar").style.display = "none";
+                    const darkDiv = document.querySelector(".background-dark-hdy");
+                    if (darkDiv) {
+                      darkDiv.style.display = "none";
+                    }
+                    if (document.querySelector(".hdy-filter-bar"))
+                      document.querySelector(".hdy-filter-bar").style.transform =
+                        "translate(100%)";
+                  });
+                }
+        
+                const filterRangeBtnElems = document.querySelector("#filterRangeBtn");
+                if (filterRangeBtnElems) {
+                  filterRangeBtnElems.addEventListener("click", function () {
+                    if (
+                      document.querySelector("#rangeFrom") &&
+                      document.querySelector("#rangeTo")
+                    ) {
+                      let from =
+                        parseInt(document.querySelector("#rangeFrom").value) * 10;
+                      let to =
+                        parseInt(document.querySelector("#rangeTo").value) * 10;
+                      if (!isNaN(from) && !isNaN(to) && from < to) {
+                        var rangeFilterArray = ["price", from, to];
+                        priceRangeHdy = rangeFilterArray;
+                      }
+                    }
+                    categoriesCheckedId = [];
+                    attrCheckedId = [];
+                    for (let i = 0; i < attrCheckboxes.length; i++) {
+                      if (attrCheckboxes[i].checked) {
+                        let attrname = attrCheckboxes[i].getAttribute("attrname");
+                        attrCheckedId.push([
+                          attrCheckboxes[i].name,
+                          attrCheckboxes[i].id,
+                          attrname,
+                        ]);
+                      }
+                    }
+                    for (let i = 0; i < catCheckboxes.length; i++) {
+                      if (catCheckboxes[i].checked) {
+                        categoriesCheckedId.push(catCheckboxes[i].name);
+                      }
+                    }
+                    const option = {
+                      isPriceRange: true,
+                      rangeFilter: rangeFilterArray,
+                      categoriesCheckedIdMenu: categoriesCheckedId,
+                      attrCheckedIdMenu: attrCheckedId,
+                    };
+                    if (SB_objects["triggered"]) {
+                      SB_objects["triggered"].msgListener({
+                        action: "search_with_option",
+                        context: { option: option },
+                      });
+                    } else {
+                      SB_objects["holder"].msgListener({
+                        action: "search_with_option",
+                        context: { option: option },
+                      });
+                    }
+                    if (document.querySelector(".hdy-close-bar"))
+                      document.querySelector(".hdy-close-bar").style.display = "none";
+                    const darkDiv = document.querySelector(".background-dark-hdy");
+                    if (darkDiv) {
+                      darkDiv.style.display = "none";
+                    }
+                    if (document.querySelector(".hdy-filter-bar"))
+                      document.querySelector(".hdy-filter-bar").style.transform =
+                        "translate(100%)";
+                  });
+                }
+              }
+            }
+            if (this.globalRqParams.paginator.p === 1) {
+              var that = this;
+              document.querySelectorAll(".select-dropdown-item").forEach((item) => {
+                item.addEventListener("click", function (event) {
+                  event.stopPropagation();
+                  const value = this.getAttribute("data-value");
+                  const text = this.textContent;
+                  document.querySelector(".selected").textContent = text;
+                  document
+                    .querySelector(".select-dropdown-header")
+                    .classList.remove("open");
+                  const selectedOption = value;
+                  const selectScore = selectedOption ? selectedOption : "relevance";
+                  if (selectScore !== that.globalRqParams.sortBy) {
+                    that.globalRqParams.sortBy = selectScore;
+                    that.searchWithSort();
+                  }
+                });
+              });
+            }
+            // this.handleAddToCartEvents();
+          };
+        
+          this.increaseQuantity = function (button) {
+            const input = button.parentNode.querySelector(".quantity-input");
+            input.value = parseInt(input.value, 10) + 1;
+          };
+        
+          this.decreaseQuantity = function (button) {
+            const input = button.parentNode.querySelector(".quantity-input");
+            const minValue = parseInt(input.min, 10) || 1;
+            if (parseInt(input.value, 10) > minValue) {
+              input.value = parseInt(input.value, 10) - 1;
+            }
+          };
+        
+          this.handleAddToCartEvents = function () {
+            const plusButtons = document.querySelectorAll(
+              ".quantity-btn[data-quantity-plus]"
+            );
+            const minusButtons = document.querySelectorAll(
+              ".quantity-btn[data-quantity-minus]"
+            );
+            plusButtons.forEach((button) => {
+              button.addEventListener("click", function (e) {
+                const input = e.target
+                  .closest(".quantity-control")
+                  .querySelector(".quantity-input");
+                input.value = parseInt(input.value, 10) + 1;
+              });
+            });
+        
+            minusButtons.forEach((button) => {
+              button.addEventListener("click", function (e) {
+                const input = e.target
+                  .closest(".quantity-control")
+                  .querySelector(".quantity-input");
+                const minValue = parseInt(input.min, 10) || 1;
+                if (parseInt(input.value, 10) > minValue) {
+                  input.value = parseInt(input.value, 10) - 1;
+                }
+              });
+            });
+          };
+        
+          this.onErrorImg = function (element, defaultImg) {
+            element.onerror = null;
+            element.src = defaultImg;
+          };
+        
+          this.onLoadImg = function (element) {
+            if (element) {
+              const card = element.closest(".Rlink");
+              const cardTitle = card.querySelector(".Rtitle");
+              const cardDesc = card.querySelector(".Rbrand");
+              const cardPrice = card.querySelector(".Rprice");
+              const cardRPrice = card.querySelector(".RpriceR");
+              const cardPriceBefore = card.querySelector(".Rprice_before");
+              if (cardPriceBefore) cardPriceBefore.classList.remove("loading");
+              if (cardRPrice) cardRPrice.classList.remove("loading");
+              if (cardTitle) cardTitle.classList.remove("loading");
+              if (cardDesc) cardDesc.classList.remove("loading");
+              element.classList.remove("loading");
+              if (cardPrice) cardPrice.classList.remove("loading");
+            }
+          };
+        
+          this.initSearch = function (data) {
+            if (this.initStyle) this.initStyle(data.sb_el);
+            this.globalRqParams.sb_element = data.sb_el;
+            this.globalRqParams.affId = data.configs.affId;
+            this.globalRqParams.searchUrlFormat =
+              data.configs.searchBox.searchUrlFormat || "";
+            this.globalRqParams.search_eval =
+              data.configs.searchBox.search_eval || "";
+            this.globalRqParams.init_eval = data.configs.searchBox.init_eval || "";
+            this.globalRqParams.domain = data.domain;
+            this.globalRqParams.domainAC = this.globalRqParams.domain + ",";
+            this.globalRqParams.id = data.id;
+            this.globalRqParams.p_domain = data.p_domain;
+            this.globalRqParams.topHref = data.topHref;
+            this.globalRqParams.tmpl =
+              data.configs.searchBox.customTmpl &&
+              data.configs.searchBox.customTmpl[data.context.type]
+                ? data.configs.searchBox.customTmpl[data.context.type]
+                : data.configs.searchBox.tmpl || {};
+            this.globalRqParams.type = data.context.type;
+            this.globalRqParams.isTriggered = data.context.type == "triggered";
+            this.globalRqParams.isMobile = this.mobileCheck();
+            this.globalRqParams.dateLocal = data.configs.searchBox.dateLocal;
+            this.globalRqParams.dir = data.configs.searchBox.dir
+              ? data.configs.searchBox.dir
+              : "ltr";
+            this.globalRqParams.ini_q = data.configs.ini_q;
+            this.globalRqParams.trk = data.configs.trk || false;
+            this.globalRqParams.isRecommendedPage =
+              data.configs.isRecommendedPage || false;
+            this.globalRqParams.getFilters =
+              data.configs.searchBox.getFilters === false ? false : true;
+            if (data.configs.searchBox.categories) {
+              this.globalRqParams.filters = {
+                categories: data.configs.searchBox.categories,
+              };
+            }
+            if (data.configs.searchBox.attributes) {
+              this.globalRqParams.filters = this.globalRqParams.filters || {};
+              this.globalRqParams.filters.attributes =
+                data.configs.searchBox.attributes;
+            }
+            this.globalRqParams.observer = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const button = entry.target;
+                  if (button) {
+                    button.click();
+                  }
+                  this.globalRqParams.observer.unobserve(button);
+                }
+              });
+            });
+        
+            if (data.configs.searchBox.tmplPlaceHolders) {
+              for (var hld in this.tmplPlaceHolders) {
+                if (
+                  this.tmplPlaceHolders.hasOwnProperty(hld) &&
+                  data.configs.searchBox.tmplPlaceHolders[hld]
+                ) {
+                  this.tmplPlaceHolders[hld] =
+                    data.configs.searchBox.tmplPlaceHolders[hld];
+                }
+              }
+            }
+            if (data.configs.searchBox.tmplDefaultImg) {
+              this.tmplProdDefaultImg = data.configs.searchBox.tmplDefaultImg;
+            }
+            if (this.globalRqParams.dir == "rtl") {
+              if (data.sb_el) {
+                data.sb_el.classList.add("d_rtl");
+              }
+              this.tmplPlaceHolders.AC_item_left = "AC_item_left AC_item_left_rtl";
+              this.tmplPlaceHolders.AC_item_right = "AC_item_right AC_item_right_rtl";
+            }
+            for (var tmpl in this.defaultTmpl) {
+              if (!this.globalRqParams.tmpl[tmpl]) {
+                this.globalRqParams.tmpl[tmpl] = this.defaultTmpl[tmpl];
+              }
+            }
+        
+            this.globalRqParams.qHistKey = this.globalRqParams.p_domain + "_qHist";
+            try {
+              let qHis = localStorage.getItem(this.globalRqParams.qHistKey);
+              if (qHis) {
+                try {
+                  this.globalRqParams.recommend = JSON.parse(qHis);
+                } catch (e) {
+                  this.globalRqParams.recommend = false;
+                }
+              }
+            } catch (e) {}
+            if (
+              !this.globalRqParams.recommend ||
+              typeof this.globalRqParams.recommend != "object"
+            ) {
+              this.globalRqParams.recommend = data.configs.searchBox.recommend || [];
+            }
+        
+            this.globalRqParams.selectedACEL = null;
+            this.globalRqParams.AC_cacheMap = {};
+            this.globalRqParams.rangeFilter = null;
+            this.globalRqParams.IS_cacheMap = {};
+            this.globalRqParams.AC_lastUserInput = "";
+            this.globalRqParams.isLoadingFlag = false;
+            this.globalRqParams.paginator = {
+              rpp: 24, //results per page
+              oip: 24, //max options in paging
+              p: 1, //current page
+              t: 1, // total pages
+            };
+        
+            if (data.configs.searchBox.stylesheet) {
+              var s = document.createElement("style");
+              s.type = "text/css";
+              s.id = "hdy-config-style";
+              s.rel = "stylesheet";
+              if (s.stylesheet) {
+                s.styleSheet.cssText = data.configs.searchBox.stylesheet;
+              } else {
+                s.innerText = data.configs.searchBox.stylesheet;
+              }
+              if (!document.querySelector("#hdy-config-style")) {
+                document.head.appendChild(s);
+              }
+            }
+        
+            let htmlBoxTmplObject = {
+              logo: null,
+              home: this.globalRqParams.p_domain,
+            };
+
+            htmlBoxTmplObject.logo = data.configs.searchBox.customLogo &&
+            data.configs.searchBox.customLogo[data.context.type]
+              ? data.configs.searchBox.customLogo[data.context.type]
+              : data.configs.searchBox.logo || null;
+
+            this.globalRqParams.sb_el = data.sb_el;
+            this.globalRqParams.sb_el.innerHTML = this.tmpl(
+              "htmlBox",
+              htmlBoxTmplObject
+            );
+            this.globalRqParams.sBar =
+              this.globalRqParams.sb_el.querySelector(".search_bar-fixed");
+            this.globalRqParams.boxEl =
+              this.globalRqParams.sb_el.querySelector(".HeyDay_q");
+            this.globalRqParams.btnEl =
+              this.globalRqParams.sb_el.querySelector(".searchBtn");
+            this.globalRqParams.btnCls =
+              this.globalRqParams.sb_el.querySelector(".closeSearch");
+            this.globalRqParams.clearIcon =
+              this.globalRqParams.sb_el.querySelector(".clearIcon");
+            this.globalRqParams.AC_El =
+              this.globalRqParams.sb_el.querySelector(".autoComplete");
+            this.globalRqParams.R_El =
+              this.globalRqParams.sb_el.querySelector(".searchResults");
+            this.globalRqParams.P_El =
+              this.globalRqParams.sb_el.querySelector(".paging");
+            this.globalRqParams.noR_El =
+              this.globalRqParams.sb_el.querySelector(".noRes");
+            this.globalRqParams.AC_CO = this.globalRqParams.sb_el.querySelector(
+              ".autoComplete_container"
+            );
+            this.globalRqParams.IR_El =
+              this.globalRqParams.sb_el.querySelector(".instantSearch");
+            this.globalRqParams.SL =
+              this.globalRqParams.sb_el.querySelector(".search-label");
+            this.globalRqParams.InstSearchTO = null;
+            if (this.globalRqParams.type !== "AC_holder") {
+              this.globalRqParams.sb_el
+                .querySelector(".hd-s-main")
+                .insertAdjacentHTML(
+                  "beforeend",
+                  '<div  class="hdy_footer"><a href="https://heyday.io/" target="_blank">Results by HeyDay.io</a></div>'
+                );
+            }
+        
+            this.globalRqParams.footer = document.querySelector(".hdy_footer");
+            this.globalRqParams.boxEl.autocomplete = "off";
+            if (
+              !window.getComputedStyle(this.globalRqParams.boxEl.parentElement)
+                .position ||
+              window.getComputedStyle(this.globalRqParams.boxEl.parentElement)
+                .position === "static"
+            ) {
+              this.globalRqParams.boxEl.parentElement.style.position = "relative";
+            }
+            if (this.globalRqParams.type != "triggered") {
+              this.globalRqParams.btnCls.style.display = "none";
+            }
+            document.documentElement.classList.add(this.globalRqParams.type);
+            this.globalRqParams.sortBy = "relevance";
+        
+            const that = this;
+            this.globalRqParams.btnEl.addEventListener(
+              "click",
+              this.search.bind(that),
+              false
+            );
+        
+            this.globalRqParams.clearIcon.addEventListener(
+              "click",
+              function () {
+                that.clearSearch(false);
+              },
+              false
+            );
+            this.globalRqParams.btnCls.addEventListener(
+              "click",
+              function (e) {
+                that.clearSearch(true);
+                that.myPostMessage("close");
+              },
+              false
+            );
+        
+            this.globalRqParams.boxEl.addEventListener(
+              "keydown",
+              (event) => {
+                that.autoCompleteModifier(event, that);
+              },
+              false
+            );
+            this.globalRqParams.boxEl.addEventListener(
+              "keyup",
+              that.autoComplete.bind(that),
+              false
+            );
+            this.globalRqParams.boxEl.addEventListener(
+              "onpaste",
+              that.autoComplete.bind(that),
+              false
+            );
+        
+            this.globalRqParams.boxEl.addEventListener(
+              "focus",
+              function fieldFocus(evt) {
+                if (that.globalRqParams.sm == 1) {
+                  that.globalRqParams.sm = 0;
+                  that.setMask("");
+                }
+        
+                that.globalRqParams.AC_El.style.display = "block";
+                that.printAChistory();
+                if (that.globalRqParams.boxEl.value) {
+                  that.globalRqParams.clearIcon.parentNode.classList.add("t");
+                }
+              },
+              false
+            );
+            this.globalRqParams.boxEl.addEventListener(
+              "blur",
+              function fieldBlur(evt) {
+                if (that.globalRqParams.isEcommerce) {
+                  if (
+                    evt.relatedTarget &&
+                    evt.relatedTarget.className.indexOf("Rlink") != -1
+                  ) {
+                    return;
+                  }
+                  that.globalRqParams.AC_CO.style.display = "none";
+                  that.globalRqParams.AC_El.style.display = "none";
+                  return true;
+                } else {
+                  that.globalRqParams.AC_El.style.display = "none";
+                }
+              },
+              false
+            );
+            this.myPostMessage("init_search_done", {
+              type: that.globalRqParams.type,
+            });
+            if (that.globalRqParams.init_eval) {
+              this.myPostMessage("myEval", {
+                myEval: that.globalRqParams.init_eval,
+              });
+            }
+            this.scrollElementIntoView = function () {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            };
+          };
+        
+          this.searchWithSort = function (page = 1) {
+            const attrCheckboxes = document.querySelectorAll(
+              "#attributes input[type='checkbox']"
+            );
+            const catCheckboxes = document.querySelectorAll(
+              "#categories input[type='checkbox']"
+            );
+            var categoriesCheckedId = [];
+            var attrCheckedId = [];
+            for (let i = 0; i < attrCheckboxes.length; i++) {
+              if (attrCheckboxes[i].checked) {
+                let attrname = attrCheckboxes[i].getAttribute("attrname");
+                attrCheckedId.push([
+                  attrCheckboxes[i].name,
+                  attrCheckboxes[i].id,
+                  attrname,
+                ]);
+              }
+            }
+            for (let i = 0; i < catCheckboxes.length; i++) {
+              if (catCheckboxes[i].checked) {
+                categoriesCheckedId.push(catCheckboxes[i].name);
+              }
+            }
+            if (priceRangeHdy && priceRangeHdy.length > 0) {
+              var option = {
+                p: page,
+                isPriceRange: true,
+                rangeFilter: priceRangeHdy,
+                categoriesCheckedIdMenu: categoriesCheckedId,
+                attrCheckedIdMenu: attrCheckedId,
+              };
+            } else {
+              var option = {
+                p: page,
+                categoriesCheckedIdMenu: categoriesCheckedId,
+                attrCheckedIdMenu: attrCheckedId,
+              };
+            }
+            if (SB_objects["triggered"]) {
+              SB_objects["triggered"].msgListener({
+                action: "search_with_option",
+                context: { option: option },
+              });
+            } else {
+              SB_objects["holder"].msgListener({
+                action: "search_with_option",
+                context: { option },
+              });
+            }
+          };
+        
+          this.spellingResult = function (responseJson, requestJson) {
+            if (responseJson.d) {
+              if (this.globalRqParams.paginator.p === 1) {
+                this.globalRqParams.R_El.insertAdjacentHTML(
+                  "beforeend",
+                  this.tmpl("spelling_suggestions", {
+                    q: responseJson.d
+                      .replaceAll("<i>", "")
+                      .replaceAll("</i>", "")
+                      .replaceAll("'", "\\'"),
+                    v: responseJson.d,
+                  })
+                );
+              }
+            }
+        
+            if (responseJson.c) {
+              if (this.globalRqParams.paginator.p === 1) {
+                responseJson.q = this.globalRqParams.searchQuery;
+                this.globalRqParams.R_El.insertAdjacentHTML(
+                  "beforeend",
+                  this.tmpl("spelling_correction", responseJson)
+                );
+              }
+            }
+        
+            if (responseJson.y) {
+              this.globalRqParams.R_El.insertAdjacentHTML(
+                "beforeend",
+                "<p class='hd-s-syn'>Showing results also for <b class='hd-s-kw'><i>" +
+                  responseJson.y.join("</i></b>, <b class='hd-s-kw'><i>") +
+                  "</i></b></p>"
+              );
+              this.globalRqParams.R_El.querySelectorAll("b.hd-s-kw").forEach(
+                function ($b) {
+                  $b.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    this.search({ q: e.target.innerText, f: true });
+                  });
+                }
+              );
+            }
+          };
+        
+          this.addHistorySearch = function (requestJson) {
+            let addHistory = true;
+            this.globalRqParams.recommend.forEach((el) => {
+              if (addHistory && el == requestJson.q) {
+                addHistory = false;
+              }
+            });
+            if (addHistory) {
+              this.globalRqParams.recommend.unshift(requestJson.q);
+              if (this.globalRqParams.recommend.length > 5) {
+                this.globalRqParams.recommend.pop();
+              }
+              try {
+                localStorage.setItem(
+                  this.globalRqParams.qHistKey,
+                  JSON.stringify(this.globalRqParams.recommend)
+                );
+              } catch (e) {}
+            }
+          };
+          this.addEventsToElements = function (searchQ) {
+            const that = this;
+            this.globalRqParams.R_El.querySelectorAll(".Rlink img").forEach(function (
+              imageElm
+            ) {
+              if (!imageElm.getAttribute("addedEventLoad")) {
+                imageElm.addEventListener(
+                  "load",
+                  function () {
+                    imageElm.setAttribute("addedEventLoad", true);
+                    that.onLoadImg(imageElm);
+                  },
+                  false
+                );
+              }
+            });
+        
+            function handleSlideImgClick(event) {
+              const direction = event.target.classList.contains("prev") ? -1 : 1;
+              that.plusSlides(direction, event.target);
+            }
+        
+            const buttonsPrevNext =
+              this.globalRqParams.R_El.querySelectorAll(".prev, .next");
+            buttonsPrevNext.forEach((button) => {
+              if (!button.getAttribute("addedEventSlideImg")) {
+                button.setAttribute("addedEventSlideImg", true);
+                button.addEventListener("click", function (e) {
+                  handleSlideImgClick(e);
+                });
+              }
+            });
+        
+            function handleDotClick(event) {
+              const index = Array.from(event.target.parentElement.children).indexOf(
+                event.target
+              );
+              that.currentSlide(index + 1, event.target);
+            }
+            const dots = document.querySelectorAll(".dot");
+            dots.forEach((dot) => {
+              if (!dot.getAttribute("addedEventSlideImg")) {
+                dot.addEventListener("click", function (e) {
+                  dot.setAttribute("addedEventSlideImg", true);
+                  handleDotClick(e);
+                });
+              }
+            });
+            if (
+              this.globalRqParams.isRecommendedPage &&
+              this.SMvalidToTrkClk(searchQ, false)
+            ) {
+              let that = this;
+              this.globalRqParams.R_El.querySelectorAll(".Rlink").forEach(function (
+                el
+              ) {
+                if (!el.getAttribute("addedEvent")) {
+                  el.setAttribute("addedEvent", true);
+                  el.addEventListener("click", function (event) {
+                    if (that.SMvalidToTrkClk(searchQ, true)) {
+                      window._heyDayInterface.methods.logStats(2002);
+                    }
+                    return true;
+                  });
+                }
+              });
+            }
+        
+            var dropdowns = document.querySelectorAll(".hdy-attr-dropdown");
+        
+            dropdowns.forEach(function (dropdown) {
+              var selection = dropdown.querySelector(".hdy-attr-selection");
+              var items = dropdown.querySelectorAll(".hdy-dropdown-item");
+              var selectedValue = dropdown.querySelector(".hdy-selected-value");
+        
+              if (!selection.getAttribute("hdy-added-event")) {
+                selection.setAttribute("hdy-added-event", true);
+                selection.addEventListener("click", function () {
+                  dropdowns.forEach(function (otherDropdown) {
+                    if (otherDropdown !== dropdown) {
+                      otherDropdown.classList.remove("open");
+                    }
+                  });
+        
+                  dropdown.classList.toggle("open");
+                });
+              }
+        
+              items.forEach(function (item) {
+                if (!item.getAttribute("hdy-added-event")) {
+                  item.setAttribute("hdy-added-event", true);
+                  item.addEventListener("click", function () {
+                    selectedValue.textContent = item.textContent;
+                    selectedValue.dataset.value = item.dataset.value;
+                    var newValueImg = item.getAttribute("data-value-img");
+                    var newValueUrl = item.getAttribute("data-value-url");
+                    var rlinkParent = dropdown.closest(".Rlink");
+        
+                    if (newValueUrl) {
+                      if (rlinkParent) {
+                        rlinkParent
+                          .querySelectorAll(".RimgC a")
+                          .forEach(function (anchor) {
+                            anchor.href = newValueUrl;
+                          });
+                        var titleLink = rlinkParent.querySelector(".Rtitle");
+                        if (titleLink) {
+                          titleLink.href = newValueUrl;
+                        }
+                      }
+                    }
+        
+                    if (newValueImg) {
+                      rlinkParent
+                        .querySelectorAll(".RimgC img")
+                        .forEach(function (img, index) {
+                          if (img.src == newValueImg) {
+                            let dots = rlinkParent.querySelectorAll(
+                              ".dots-container .dot"
+                            );
+                            if (dots.length > 0) {
+                              if (dots[index]) {
+                                that.currentSlide(index + 1, dots[index]);
+                              }
+                            }
+                          }
+                        });
+                    }
+        
+                    dropdown.classList.remove("open");
+                  });
+                }
+              });
+            });
+        
+            document.addEventListener("click", function (event) {
+              if (!event.target.closest(".hdy-attr-dropdown")) {
+                dropdowns.forEach(function (dropdown) {
+                  dropdown.classList.remove("open");
+                });
+              }
+            });
+          };
+        
+          this.SMvalidToTrkClk = function (q, clickEv) {
+            let clickSess = sessionStorage.getItem("hedyClickSess");
+            if (
+              clickSess &&
+              (clickSess = JSON.parse(clickSess)) &&
+              clickSess.q == q
+            ) {
+              if (clickSess.cnt > 0) return false;
+              else if (clickEv) clickSess.cnt = 1;
+            } else {
+              clickSess = { q: q, cnt: 0 };
+            }
+            sessionStorage.setItem("hedyClickSess", JSON.stringify(clickSess));
+            return true;
+          };
+        }
+      
+      
+        ///////////////////////////// main start ///////
+
+        try {
+          window._heyDayInterface = window._heyDayInterface || {};
+          window._heyDayInterface.searchInit = function (config) {
+            this.searchElmnt = document.querySelectorAll(
+              config.searchBox.parent
+            );
+
+            var inlineStyles = function inlineStyles() {
+              return {
+                heyday_overlay: {
+                  opacity: 0,
+                  transition: 'all .15s ease-in',
+                  visibility: 'hidden',
+                  position: 'fixed',
+                  'z-index': 2147483647,
+                  width: '100%',
+                  height: '100vh',
+                  top: 0,
+                  left: 0,
+                  'background-color': 'white',
+                },
+                heyday_search_content: {
+                  position: 'absolute',
+                  'z-index': 1,
+                  width: '100%',
+                  height: '100%',
+                  'max-width': '100%',
+                  top: '0',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                },
+                heyday_search_container: {
+                  transition: 'all .15s ease-in-out, border .7s ease;',
+                  position: 'relative',
+                  height: '100%',
+                  'max-height': '100%',
+                  border: '0px solid blue',
+                },
+              };
+            };
+
+            var hasTouch = function hasTouch() {
+              try {
+                document.createEvent('TouchEvent');
+                return true;
+              } catch (e) {
+                return false;
+              }
+            };
+
+            var initialScrollStyle = document.body.parentElement.style.overflow;
+
+            this.getStyle = function getStyle(sl) {
+              var i_s = inlineStyles();
+              return Object.entries(i_s[sl]).reduce(function (acc, curr) {
+                return acc + curr[0] + ':' + curr[1] + ';';
+              }, '');
+            };
+
+            this.toggleSplash = function toggleSplash(e) {
+              if(e && e.preventDefault){
+                e.preventDefault();e.stopPropagation();
+              }
+
+              if (this.splash.style.display === 'none') {
+                if (e && e.close) return;
+                this.splash.style.display = 'block';
+                this.splash.style.opacity = '1';
+                document.body.parentElement.style.overflow = 'hidden';
+                let _context = {};
+                if (e) {
+                  if (e.ini_q) _context.ini_q = e.ini_q;
+                  if (e.ini_filters) _context.ini_q = e.ini_filters;
+                }
+                SB_objects['triggered'].msgListener({
+                  action: 'open_search',
+                  context: _context,
+                });
+              } else {
+                setTimeout(
+                  function () {
+                    this.splash.style.display = 'none';
+                  }.bind(this),
+                  300
+                );
+                this.splash.style.opacity = '0';
+                document.body.parentElement.style.overflow = initialScrollStyle;
+              }
+            }.bind(this);
+            this.onInit = function onInit() {
+              this.splash.style.visibility = 'initial';
+              this.splash.style.display = 'none';
+            };
+            this.bindElements = function bindElement(elements) {
+              var _this = this;
+              return Promise.all(
+                Array.from(elements).map(function (el) {
+                  return new Promise(function (resolve, reject) {
+                    try {
+                      var elmParent = el.parentNode,
+                        newElm = el.cloneNode(true);
+                      if (!elmParent) {
+                        reject({ error: 'Element not in DOM', element: el });
+                      }
+                      newElm.addEventListener(
+                        hasTouch() ? 'touchstart' : 'click',
+                        _this.toggleSplash,
+                        true
+                      );
+                      newElm.querySelectorAll('a').forEach(function (a) {
+                        a.addEventListener(
+                          hasTouch() ? 'touchstart' : 'click',
+                          _this.toggleSplash,
+                          true
+                        );
+                        a.addEventListener('touchend', function (e) {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        });
+                        a.addEventListener('mouseup', function (e) {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        });
+                        a.addEventListener('mousedown', function (e) {
+                          e.preventDefault();
+                          e.stopPropagation();
+                        });
+                      });
+                      elmParent.insertBefore(newElm, el);
+                      elmParent.removeChild(el);
+                      resolve(newElm);
+                    } catch (e) {
+                      reject(e);
+                      !!console && console.warn(e);
+                    }
+                  });
+                })
+              );
+            };
+            this.init = function init() {
+              this.splash = document.createElement('div');
+              this.splash.classList.add('heyday_overlay');
+              this.splash.style.cssText = this.getStyle('heyday_overlay');
+              this.splash.innerHTML =
+                "<div class='heyday_search_content' style='" +
+                this.getStyle('heyday_search_content') +
+                "'> <div id='heyday_injected_searchbox' class='heyday_search_container'  style='" +
+                this.getStyle('heyday_search_container') +
+                ";margin:auto;'></div> </div> ";
+              return new Promise(
+                function (resolve, reject) {
+                  try {
+                    document.body.appendChild(this.splash);
+                    var s = document.createElement('style'),
+                      css = `#hd-s-main .search_bar, #hd-s-main #searchResults, #hd-s-main #paging {width: 1024px;max-width: 90%;}`;
+                    document.head.appendChild(s);
+                    s.type = 'text/css';
+                    if (s.styleSheet) {
+                      s.styleSheet.cssText = css;
+                    } else {
+                      s.innerHTML = css;
+                    }
+                    this.iframeHolder = this.splash.querySelector(
+                      '#heyday_injected_searchbox'
+                    );
+                    resolve(this.iframeHolder);
+                  } catch (e) {
+                    reject(e);
+                  }
+                }.bind(this)
+              );
+            };
+          };
+        } catch (err) {
+          throw new Error('Error: :: ' + err);
+        }
+        //////////////////
+        var setIntervals = [];
+        window._heyDayInterface = window._heyDayInterface || {};
+        var configs = {};
+        window.SB_objects = {};
+        var SB_Els = {};
+        window._heyDayInterface.configs = configs;
+        const isSMvalid = (function(){
+            if(!history || !history.pushState || (document.referrer && (document.referrer.split('/')[2] == location.hostname || document.referrer=="https://heyday.io/")) || location.pathname=='/'){
+                return 0;
+            }
+          return 1;
+        })();
+
+        var methods = 
+        {
+          activateSearchBox: function () {
+            var elements = { triggered: [], holder: [], AC_holder: [], SM_holder: []};
+            var renderHiddenBtn = false;
+            makeSearchBox = function (elm) {
+              let type = elm[0].type;
+              let sb_el = document.createElement('div');
+              sb_el.id = 'heyday_SB_' + type;
+              let si = setInterval(function () {
+                if (!document.contains(sb_el)) {
+                  setIntervals.forEach(function (s) {
+                    clearInterval(s);
+                  });
+                  window._heyDayInterface.methods.activateSearchBox();
+                }
+              }, 1000);
+              setIntervals.push(si);
+              
+              
+              
+              
+              SB_Els[type] = sb_el;
+              if(type !== 'triggered')
+                elm[1][0].innerHTML = '';
+              elm[1][0].appendChild(sb_el);
+              let boxName = (configs.searchBox.type) ? configs.searchBox.type+"Box": "searchBox";
+              function loadSB()
+              {
+                SB_objects[type] = Object.assign(new hdy_tmplFunctions(), new window[boxName]());
+                if (
+                  type != 'triggered' &&
+                  configs.renderHidden &&
+                  configs.renderHidden[type]
+                ) {
+                  renderHiddenBtn =
+                    configs.renderHidden[type].indexOf('eval:') === 0
+                      ? eval(
+                          '(function(){' +
+                            configs.renderHidden[type].substring(5) +
+                            '})();'
+                        )
+                      : document.querySelector(configs.renderHidden[type]);
+                  if (renderHiddenBtn) {
+                    SB_objects[type].renderHiddenBtn = renderHiddenBtn;
+                    renderHiddenBtn.addEventListener('click', function () {
+                      SB_objects[type].msgListener({
+                        action: 'renderHidden',
+                        context: { dontPostBack: true },
+                      });
+                    });
+                  }
+                }
+                SB_objects[type].msgListener({
+                  domain: configs.sDomain ? configs.sDomain : configs.domain,
+                  p_domain: location.origin,
+                  topHref: location.href,
+                  sb_el: sb_el,
+                  requestParams: window._heyDayInterface.methods.requestParams(),
+                  configs: configs,
+                  action: 'init_search',
+                  context: {
+                    type: type,
+                  },
+                });
+              }
+              if( typeof window[boxName] == 'undefined')
+              {
+                let sBoxjs = document.createElement('script');
+                sBoxjs.src = "//cdn.heyday.io/heyday.io/templates_nf/"+boxName+".js";
+                sBoxjs.onload = loadSB;
+                document.body.appendChild(sBoxjs);
+              }
+              else
+              {
+                loadSB();
+              }
+              return sb_el;
+            };
+            if (
+              !configs.searchBox ||
+              !(configs.searchBox.elements || configs.searchBox.elements.length)
+            ) {
+              return true;
+            }
+            window._heyDayInterface.search =
+              window._heyDayInterface.search || {};
+            // Loop through available search triggered or holders
+            for (var i = 0; i < configs.searchBox.elements.length; i++) {
+              var el = configs.searchBox.elements[i];
+              if (!SB_Els[el.type] || !document.contains(SB_Els[el.type])) {
+                let elmnts;
+                if (el.selector.indexOf('eval:') === 0)
+                  elmnts = eval(
+                    '(function(){' + el.selector.substring(5) + '})();'
+                  );
+                else elmnts = document.querySelectorAll(el.selector);
+
+                if (!elmnts || elmnts.length == 0) continue;
+
+                if (!el.type) {
+                  el.type = el.injector ? 'triggered' : 'holder';
+                }
+                elements[el.type] = [];
+                elements[el.type].push([el, elmnts]);
+              }
+            }
+            if (
+              !elements.triggered.length &&
+              !elements.holder.length &&
+              !elements.AC_holder.length &&
+              !elements.SM_holder.length
+            )
+              return false;
+
+            var frame_style =
+              _heyDayInterface.configs.searchBox.modal_stylesheet || '';
+              if (elements.triggered.length) {
+                let frames = elements.triggered.map(function (elm) {
+                  return makeSearchBox(elm);
+              });
+            frames.forEach((frame)=>{
+              frame_style +=
+                '#' +
+                frame.id +
+                '{width:100%;overflow:auto;max-height:100%;height:100%;position:relative;top:0px;}';
+              window._heyDayInterface.search.searchInit =
+                window._heyDayInterface.search.searchInit ||
+                new window._heyDayInterface.searchInit(configs);
+              window._heyDayInterface.search.searchInit
+                .init()
+                .then(function (modal_el) {
+                  window._heyDayInterface.searchInit.iframeHolder = modal_el;
+                  modal_el.appendChild(frame);
+                  window._heyDayInterface.search.searchInit.onInit();
+                  // return resolved Promise for chaining
+                  return new Promise(function (resolve) {
+                    resolve(true);
+                  });
+                })
+                .then(function () {
+                  return Promise.all(
+                    elements.triggered.map(function (trigger) {
+                      return window._heyDayInterface.search.searchInit.bindElements(
+                        trigger[1]
+                      );
+                    })
+                  );
+                })
+                .catch(function (error) {
+                  console.log('Bind trigger elements error', error);
+                });
+              })
+            } else {
+              elements.holder
+                .concat(elements.AC_holder)
+                .concat(elements.SM_holder)
+                .forEach(function (elm) {
+                  makeSearchBox(elm);
+                });
+            }
+            if (window._heyDayInterface.searchBoxActivated) {
+              return true;
+            }
+            var hdStyle = document.createElement('style');
+            hdStyle.innerText = frame_style;
+            document.getElementsByTagName('head')[0].appendChild(hdStyle);
+            window._heyDayInterface.searchBoxActivated = true;
+            return true;
+          },
+          messageMain: function (ev) {
+            var action = ev.action,
+              context = ev.context;
+            let type = ev.type;
+            switch (action) {
+              case 'myEval':
+                eval(context.myEval);
+                break;
+              case 'close':
+                if (type == 'triggered') {
+                  window._heyDayInterface.search.searchInit.toggleSplash({
+                    close: 1,
+                  });
+                }
+                break;
+              case 'clear_search':
+                clearHeydaySearch();
+                if (context.type == 'AC_holder' && SB_Els.holder) {
+                  SB_objects['holder'].msgListener({
+                    action: 'close_search',
+                    context: { dontPostBack: true },
+                  });
+                }
+
+                break;
+              case 'trackSearch':
+                if (!context.isSM) {
+                  setHeydaySearch(context);
+                  if (configs.GA4) {
+                    let uri = configs.GA4.uri || '/?heyday_search=';
+                    try {
+                      window[configs.GA4.gtagKey](
+                        'config',
+                        configs.GA4.trackingId,
+                        {
+                          page_location:
+                            location.origin +
+                            uri +
+                            encodeURIComponent(context.q),
+                          page_title: 'heyday search',
+                        }
+                      );
+                    } catch (e) {}
+                  }
+                }
+                break;
+              case 'toggleSearch':
+                if (SB_Els.triggered) {
+                  window._heyDayInterface.search.searchInit.toggleSplash({
+                    ini_q: context.q,
+                  });
+                } else if (SB_Els.holder) {
+                  if (configs.closeHidden && configs.closeHidden.length == 2) {
+                    let hiddens = document.querySelectorAll(
+                      configs.closeHidden[0]
+                    );
+                    for (let i = 0; i < hiddens.length; i++) {
+                      if (configs.closeHidden[1]) {
+                        hiddens[i].className = configs.closeHidden[1];
+                      } else {
+                        hiddens[i].style.display = 'none';
+                      }
+                    }
+                  }
+                  if (SB_objects['triggered']) {
+                    SB_objects['triggered'].msgListener({
+                      action: 'do_search',
+                      context: { option: option },
+                    });
+                  } else {
+                    SB_objects['holder'].msgListener({
+                      action: 'do_search',
+                      context: { ini_q: context.q },
+                    });
+                  }
+                } else if (configs.searchPage) {
+                  if (configs.makeSearchRoom) {
+                    if (SB_objects[type].renderHiddenBtn) SB_objects[type].renderHiddenBtn.click();
+                    history.pushState(
+                      {},
+                      '',
+                      (configs.searchPage +=
+                        '?' + setHeydaySearch(context, true))
+                    );
+                    eval(configs.makeSearchRoom);
+                    _heyDayInterface.methods.activateSearchBox();
+                  } else {
+                    location.href = configs.searchPage +=
+                      '?' + setHeydaySearch(context, true);
+                  }
+                }
+                break;
+              case 'init_search_done':
+                let u = new URL(location.href);
+                let ini_q = configs.ini_q
+                  ? configs.ini_q
+                  : u.searchParams.get('hdyQ');
+                if (ini_q) {
+                  let filters = u.searchParams.get('hdyF');
+                  let ctx = {
+                    ini_q: ini_q,
+                    ini_filters: filters,
+                    ini_sm: configs.ini_sm,
+                    smData: configs.smData,
+                    isRecommended:configs.isRecommendedPage
+                  };
+                  if (SB_Els.triggered) {
+                    window._heyDayInterface.search.searchInit.toggleSplash(ctx);
+                  } else if (SB_Els.holder && context.type === 'holder') {
+                    SB_objects['holder'].msgListener({
+                      action: 'do_search',
+                      context: ctx,
+                    });
+                  } else if (SB_Els.SM_holder && context.type === 'SM_holder') {
+                    SB_objects['SM_holder'].msgListener({
+                      action: 'do_search',
+                      context: ctx,
+                    });
+                  }
+                  if (SB_Els.AC_holder) {
+                    if(SB_objects['AC_holder'])
+                      SB_objects['AC_holder'].globalRqParams.boxEl.value = ini_q;
+                  }
+                }
+                break;
+            }
+          },
+        activateSearchMore: function () 
+        {
+          let rqParams = methods.requestParams();
+          if(rqParams.bkBtn != 1)
+          {
+            return;
+          }  
+          let sesHdy = methods.myStorage(true, false,'hdySMBkrd');
+          if(sesHdy)
+          {
+            methods.myStorage(true, true,'hdySMBkrd');
+            let t =parseInt(sesHdy);
+            // if(!!t && t > Date.now() - 1000*60)
+            // {
+            //   history.go(-1);
+            // }
+            return;            
+          }
+          let smTrk = methods.myStorage(false, false,"heydaySM");
+          if(!!smTrk &&  smTrk > Date.now() - 1000*1800)
+          {
+            return;
+          }
+          let eventCalled = false;
+          history.pushState({"hdy" :'hdySM1'},"");
+          history.pushState({"hdy" :'hdySM2'},"");
+          window.addEventListener('click',function(){
+            if(history.state && history.state.hdy && history.state.hdy == 'hdySM2')
+              history.pushState({"hdy" :'hdySM3'},""); 
+          });
+          /*keep title and url before the event, since it might change*/
+          var u =document.location.href; 
+          if(document.querySelector('link[rel=canonical]') && document.querySelector('link[rel=canonical]').href)
+          {
+            u =  document.querySelector('link[rel=canonical]').getAttribute('href').replace(/[\r\n]/g, '').trim();
+          }
+          var t = (document.querySelector('meta[property=\"og:title\"]') && document.querySelector('meta[property=\"og:title\"]').content) ? document.querySelector('meta[property=\"og:title\"]').content : document.getElementsByTagName('title')[0].innerText;
+          window.addEventListener("popstate", function(evt) {
+            if(eventCalled || !evt.state || !evt.state.hdy || (evt.state.hdy != 'hdySM1' && evt.state.hdy != 'hdySM2') )
+            {
+              if(eventCalled)
+              {
+                history.go(-1);  
+              }
+              return;              
+            }
+            eventCalled = true;
+            evt.stopImmediatePropagation();
+            _heyDayInterface.methods.logStats(2000);
+            evt.stopPropagation();
+            initedCount = 41;
+            configs.smData = {};
+            methods.myStorage(true, false,'hdySMBkrd', Date.now());
+            methods.myStorage(false, false,"heydaySM", Date.now());
+            if(configs.searchMore===2)
+            { 
+              document.body.innerHTML = '<div id="hdy_sm_holder"></div>';
+              document.body.style.margin = '0px';
+              document.body.style.padding = '0px';
+              configs.isRecommendedPage = { hdy_u: u };
+              configs.searchBox.type = "nsm";
+              configs.searchBox.elements = [
+                { type: "SM_holder", selector: "#hdy_sm_holder" },
+              ];
+              configs.ini_q = t; 
+              if(window._heyDayInterface.methods.activateSearchBox())
+              {
+                _heyDayInterface.methods.logStats(2001);
+              }
+            }
+            else if(configs.searchMore===1)
+            {
+              document.location.href='https://heyday.io/sm/nsm.html?nl=1&trk=HEYDAY&d='+rqParams.hostname+'&affId='+rqParams.affId+'&u='+encodeURIComponent(u)+'&hdyQ='+encodeURIComponent(t.trim());
+            }
+            else
+              eval(configs.searchMore);
+          }); 
+      },
+      requestParams: function()
+      {
+          var _hostname = (location.hostname.lastIndexOf('heyday.io') !== -1 && configs.setOrigHost) ? configs.setOrigHost : configs.domain;
+          var o = {
+          "version": configs.version,
+          "hostname":_hostname, 
+          "affId":configs.affId, 
+          "bkBtn" : isSMvalid,
+          "platform" : navigator.platform,
+          "coreNum" : navigator.hardwareConcurrency,
+          "observe" : 0,
+          "href": location.href, 
+          "docReferrer" : document.referrer, 
+          };
+          return o;
+      },
+      logStats: function (action, options)
+      {
+        var requestJson = window._heyDayInterface.methods.requestParams();
+        requestJson.action = action;
+        requestJson.href = location.href;
+        if(options)
+        {
+          requestJson.opts = options;
+        }
+        navigator.sendBeacon("https://heyday.io/idx/OP", JSON.stringify(requestJson));
+      },
+      myStorage: function(isSession, isRm , key,val)
+      {
+        try{
+          let refStorage = (isSession) ? sessionStorage : localStorage;
+          if(isRm)
+          {
+            return refStorage.removeItem(key);
+          }
+          if(val)
+          {
+            return refStorage.setItem(key, val);
+          }
+          else
+          {
+            return refStorage.getItem(key);
+          }
+        }catch(e)
+        {
+          return false;
+        }
+      },
+      };
+        function clearHeydaySearch() {
+          let u = new URL(location.href);
+          u.searchParams.delete('hdyQ');
+          u.searchParams.delete('hdyF');
+          u.searchParams.delete('hdyA');
+          history.replaceState(null, '', u.href);
+        }
+        function setHeydaySearch(context, retunQuery) {
+          let u = new URL(location.href);
+          u.searchParams.set('hdyQ', context.q);
+          if (context.filters) u.searchParams.set('hdyF', context.filters);
+          if (retunQuery) {
+            return u.searchParams.toString();
+          } else history.replaceState(null, '', u.href);
+        }
+        window._heyDayInterface.myFrontFetch = function (
+          requestJson,
+          errorCalback,
+          uri,
+          callback,
+          noInclude
+        ) {
+          var credentialsVal = noInclude ? 'omit' : 'include';
+          return fetch('https://' + configs.backEnd + uri, {
+            method: 'POST',
+            credentials: credentialsVal,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestJson),
+          }).then(function (response) {
+            if (!response.ok) {
+              if (errorCalback) errorCalback(requestJson, response);
+            } else if (callback) {
+              response.json().then(function (responseJson) {
+                callback(requestJson, responseJson);
+              });
+            }
+            return response;
+          });
+        };
+        window._heyDayInterface.methods = methods;
+        window._heyDay = window._heyDay || { cmd: [] };
+        for (var i = 0; i < window._heyDay.cmd.length; i++) 
+        {
+          for (var k in window._heyDay.cmd[i]) 
+          {
+            if(window._heyDay.cmd[i].hasOwnProperty(k) )
+            {
+              if(typeof configs[k] =="undefined")
+                configs[k] = window._heyDay.cmd[i][k];
+              else
+              {
+                for(var j in window._heyDay.cmd[i][k])
+                {
+                  if(window._heyDay.cmd[i][k].hasOwnProperty(j) && typeof configs[k][j] =="undefined")
+                    configs[k][j] = window._heyDay.cmd[i][k][j];
+                }
+              }
+            }
+          }
+        }
+
+        function mobileCheck() {
+          let check = false;
+          (function (a) {
+            if (
+              /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
+                a
+              ) ||
+              /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(
+                a.substr(0, 4)
+              )
+            )
+              check = true;
+          })(navigator.userAgent || navigator.vendor || window.opera);
+          return check;
+        }
+        configs.isMobile = mobileCheck();
+
+        if (typeof configs.backEnd == 'undefined')
+          configs.backEnd = 'heyday.io';
+        if (!configs.affId || !configs.domain) {
+          return;
+        }
+        if(configs.searchMore)
+        {
+          methods.activateSearchMore();
+        }
+        var globalRqParams = methods.requestParams();
+        var initedCount = 0;
+        function init() {
+          if (initedCount === 0) {
+            if (
+              globalRqParams.hostname.replace('www.', '') !=
+              configs.domain.replace('www.', '')
+            ) {
+              console.log(
+                'domain name error ' +
+                  globalRqParams.hostname +
+                  ' !=  ' +
+                  configs.domain
+              );
+              // return;
+            }
+            for (var k in configs) {
+              if (
+                configs.hasOwnProperty(k) &&
+                typeof methods[k] == 'function'
+              ) {
+                methods[k](configs[k]);
+                delete configs[k];
+              }
+            }
+          }
+
+          if (initedCount > 40 || window._heyDayInterface.searchBoxActivated)
+            return;
+
+          if (methods.activateSearchBox()) {
+            initedCount = 41;
+          } else {
+            initedCount++;
+            setTimeout(function () {
+              init();
+            }, 500);
+          }
+        }
+
+        if (
+          document.readyState != 'loading' &&
+          document.readyState != 'loaded'
+        ) {
+          init();
+        } else {
+          var initTO = setTimeout(function () {
+            init();
+          }, 1000);
+          document.addEventListener('DOMContentLoaded', function () {
+            clearTimeout(initTO);
+            init();
+          });
+        }
+        methods.logStats((configs.isRecommendedPage) ? 2001 : 1300);
+      })();
+      ///////////////// main end ///////////////
+

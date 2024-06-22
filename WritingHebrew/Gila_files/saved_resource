@@ -1,0 +1,43 @@
+
+var ftGUID_8243817="59400170E22A15";
+var ftConfID_8243817="0";
+var ftParams_8243817="ftOBA=1&ft_domain=www.atmag.co.il&ft_ifb=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.atmag.co.il%2F&gdpr=0&us_privacy=${US_PRIVACY}&cachebuster=915150.9485850304";
+var ftKeyword_8243817="";
+var ftCustom_8243817="";
+var ftSection_8243817="";
+var ftSegment_8243817="amdr,aifw,aiie,aii6,ak2t,nl2,aiep,aihj,aih2,tur,tursamsungphones,alix,amjp,alxd,afr5,agk4,uin,x3q,x3qwdsandisk,uinwdhard_drives";
+var ftSegmentList_8243817=[{s:'amdr'},{s:'aifw',t:59560000},{s:'aiie',t:59560000},{s:'aii6',t:59560000},{m:'bbt2ka',s:'ak2t',t:59560000},{m:'bb2ln',s:'nl2',t:60160000},{m:'bbpeia',s:'aiep',t:59560000},{m:'bbjhia',s:'aihj',t:59560000},{m:'bb2hia',s:'aih2',t:59560000},{s:'tur',t:59560000},{s:'tursamsungphones',t:59560000},{s:'alix'},{s:'amjp'},{s:'alxd'},{s:'afr5'},{s:'agk4',t:60160000},{m:'bbniu',s:'uin',t:60160000},{s:'x3q'},{s:'x3qwdsandisk'},{s:'uinwdhard_drives'}];
+var ftRuleMatch_8243817="0";
+var ftTimestamp_8243817="1719083734";
+var ftGeoC2_8243817="us";
+var ftGeoState_8243817="ny";
+var ftGeoCity_8243817="new york";
+var ftISP_8243817="charter communications";
+var ftSpeed_8243817="cable";
+var ftConnType_8243817="wifi";
+var ftDMA_8243817="501";
+var ftLong_8243817="-73.99";
+var ftLat_8243817="40.76";
+var ftPostal_8243817="10036";
+var ftTimeZone_8243817="-400";
+var ftMobileCarrier_8243817="";
+var ftImp8243817 = {};
+ftImp8243817.privacy = "x";
+ftImp8243817.guidAge = "77";
+ftImp8243817.impID = "2C55122D-D4FA-0D79-BA5B-4A7008B046AE";
+ftImp8243817.duid = "FT:59400170E22A15";
+
+ftImp8243817.ft_tpplid = "";
+ftImp8243817.ft_c = {};
+ftImp8243817.gdpr = "0";
+ftImp8243817.gdpr_consent = "";
+ftImp8243817.gdpr_pd = "";
+ftImp8243817.oob_consent = "";
+ftImp8243817.gdprStoredConsent = "";
+ftImp8243817.us_privacy = "!!US_PRIVACY!";
+ftImp8243817.gpc = "0";
+
+ftImp8243817.jsAppend = "1";
+var ftCreativeId_8243817 = "4639226";
+(function(){var tag=document.getElementById("ft_servedby_8243817")||function(s){return s[s.length-1]}(document.getElementsByTagName("script")),js=document.createElement("script");js.src="https://ajs-assets.ftstatic.com/ftUtils.js";js.id="ftscript_m8243817";js.setAttribute("name","ftscript_m8243817");tag.parentNode.insertBefore(js,tag)})();window.fTChecker=window.fTChecker||function(id){if(!id)return false;id=""+id;if(window.hasOwnProperty("ftUtils")){window["ft"+id]=Object.assign({},window.ftUtils.common);window["ft"+id].getBannerConfig(id)}else(function(id){window.setTimeout(function(){window.fTChecker(id)},50)})(id)};window.fTChecker("8243817");
+

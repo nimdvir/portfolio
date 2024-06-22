@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://proton.ad.gt/join-ad-interest-groups.html?evid=72RBOTAR -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="origin-trial" content="A7EJXd+QZ2JL/N8k85e+yMFGsIkETopEYjLMJjZMUYg51sgbRqLKdhW9nOiyEdVwWCOq8YRHOx+w9GQ8D9HqeAoAAACCeyJvcmlnaW4iOiJodHRwczovL2F1ZGlnZW50LmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <title>Audigent Proton</title>
+    <script>
+        !function (w, d) {
+            const PROFILER_SERVICE_URL = 'https://p.ad.gt';
+
+            function addTrackingPixel(interestGroupNames, eventId) {
+                if (eventId != null) {
+                    const payload = {
+                        'events': [{
+                            'type': 'dsp_js_load',
+                            'igs': interestGroupNames,
+                            'evid': eventId
+                        }]
+                    };
+                    const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+                    w.navigator.sendBeacon(`${PROFILER_SERVICE_URL}/api/v1/event`, blob);
+                }
+            };
+
+            const url = new URL(w.location.href);
+            w.addEventListener('message', function (event) {
+                try {
+                    const payload = JSON.parse(event.data);
+                    const channel = payload['channel'];
+                    if (payload != null && channel === 'AUPA') {
+                        // the payload is the correct one, run main logic
+                        if ('joinAdInterestGroup' in w.navigator &&
+                            d.featurePolicy.allowsFeature('join-ad-interest-group')) {
+                            console.log('[Audigent DSP.js] navigator.joinAdInterestGroup() is supported on this page');
+
+                            const eventId = url.searchParams.get('evid');
+                            const interestGroups = payload['igs'];
+
+                            let i = 0;
+                            let interestGroupNames = []
+                            while (i < interestGroups.length) {
+                                w.navigator.joinAdInterestGroup(interestGroups[i]);
+                                interestGroupNames.push(interestGroups[i]['name']);
+                                i++;
+                            }
+                            console.log("[Audigent DSP.js] add user to [" + interestGroupNames.join(",") + "]");
+                            addTrackingPixel(interestGroupNames, eventId);
+                        } else {
+                            console.log('[Audigent DSP.js] navigator.joinAdInterestGroup() is not supported on this page');
+                        }
+                    }
+                }
+                catch (error) {
+                    // console.error('[Audigent DSP.js] ', error);
+                    return;
+                }
+            });
+
+        }(window, document);
+    </script>
+</head>
+
+<body>
+
+
+</body></html>

@@ -1,0 +1,646 @@
+function searchBox() {
+  this.globalRqParams = {
+    fetchHost: "//heyday.io",
+    p: window.parent,
+    classes: {
+      ACel: "ACel",
+      ACel_sell: "ACel ACel_sell",
+    },
+    debug: true,
+  };
+  this.defaultTmpl = {
+    htmlBox: `<div class="hd-s-main">
+          <%if(obj.logo){%>
+            <div class="header">
+                <a hre="<%=obj.home%>"><img class="logo" src="<%=obj.logo%>" /></a>
+            </div>
+          <%}%>
+          <div class="search_bar-fixed">
+            <button class="closeSearch">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path class="closeSvgPath" d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z" stroke="#3b78e6"/></svg>
+            </button>
+            <button class="searchBtn">
+            <svg width="17" height="22" viewBox="0 0 29 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 14.5714C28 22.0714 21.9512 28.1429 14.5 28.1429C7.04878 28.1429 1 22.0714 1 14.5714C1 7.0715 7.04878 1 14.5 1C21.9512 1 28 7.0715 28 14.5714Z" stroke="#373737" stroke-width="2"/>
+            <line x1="1" y1="-1" x2="6.82248" y2="-1" transform="matrix(0.494302 0.86929 -0.867189 0.497978 19.3333 27.2)" stroke="#373737" stroke-width="2" stroke-linecap="round"/>
+            </svg>       
+            </button>
+                <input type="text" class="HeyDay_q" placeholder="[!searchBoxText]" />
+            <div class="autoComplete"></div>
+            <button class="clearIcon">
+              <svg width="12px" height="12px">
+                  <line x1="0%" y1="0%" x2="100%" y2="100%" style="stroke:#828282;stroke-width:2" />
+                  <line x1="0%" y1="100%" x2="100%" y2="0%" style="stroke:#828282;stroke-width:2" />
+              </svg>
+            </button>
+        </div>
+          <div class="searchResults"></div>
+          <div class="paging"></div>
+        </div>`,
+    autocomplete_item: `<li class="ACel">
+          <div class="clockIcon"><svg class="[!AC_item_left]" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8.16016" cy="8" r="7" stroke="#C5C5C5" stroke-opacity="0.9" stroke-width="2"/>
+          <path d="M8.16016 4V9L11.6602 11" stroke="#C5C5C5" stroke-opacity="0.9" stroke-width="2"/>
+          </svg>
+          <span class="removeHistory">x</span>
+          </div>
+          <div class="searchIcon"><svg class="[!AC_item_right]" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.83207 0.984141C4.96202 1.0875 4.35371 1.25898 3.64191 1.60149C2.96611 1.92667 2.52673 2.23768 1.95867 2.79296C1.05462 3.67665 0.496543 4.69042 0.212303 5.96539C0.120315 6.37782 0.108825 6.5044 0.100368 7.19554C0.0922333 7.85858 0.102108 8.02453 0.171291 8.38602C0.651277 10.8948 2.47623 12.8131 4.95331 13.4124C5.34054 13.5061 5.48426 13.5214 6.16444 13.5417C6.82007 13.5612 7.00245 13.5541 7.37615 13.4945C8.08951 13.3809 8.89938 13.1003 9.49288 12.7613L9.76976 12.6031L11.8686 14.733C14.2542 17.1537 14.1426 17.0617 14.6978 17.067C15.1018 17.0709 15.3807 16.9551 15.6572 16.6688C15.935 16.381 16.0093 16.1988 16.0129 15.7963C16.0182 15.2104 16.1329 15.3563 13.7454 12.9113L11.6465 10.7619L11.7806 10.5431C12.1444 9.94978 12.4465 9.15268 12.5862 8.4177C12.6589 8.03483 12.6675 7.8887 12.6592 7.17643C12.6491 6.31096 12.6021 5.99703 12.3785 5.30231C11.8785 3.74885 10.6761 2.35189 9.22607 1.63997C8.36796 1.21869 7.57022 1.02093 6.6028 0.989628C6.24964 0.978222 5.90282 0.975761 5.83207 0.984141ZM7.23499 2.97938C8.7562 3.26349 10.0699 4.42702 10.5527 5.91786C11.2134 7.95761 10.2827 10.2015 8.37822 11.161C7.6446 11.5306 6.99951 11.6701 6.20099 11.6318C5.60565 11.6033 5.24261 11.5278 4.75058 11.3303C3.85166 10.9695 3.04026 10.257 2.55 9.39794C1.96944 8.38063 1.84396 6.96783 2.23547 5.85705C2.46813 5.19703 2.83436 4.61915 3.32014 4.14545C4.36404 3.1276 5.77639 2.70694 7.23499 2.97938Z" fill="#C5C5C5" fill-opacity="0.9"/>
+          </svg>
+          </div>
+          <%=obj.item%>
+          </li>`,
+    search_item: `<a href="<%=obj.clickUrl%>" target="_parent" class="Rlink"><div class="Rmain <%=obj.phz%>">
+          <div class="Rbody">
+              <div class="RimageC" <%if(obj.pd.img){%> style="background-image: url('<%=obj.pd.img%>')"<%}%> ></div>
+            <div class="Rtitle"><%=obj.pd.title%></div>    
+              <%if(obj.description){%>
+                <div class="description">
+                <%=obj.description%>
+                </div>
+              <%}%>
+            </div>
+            <%if(obj.pd.author || obj.creationTime){%>
+              <div class="Rda"> 
+                <%if(obj.pd.author){%>
+                <span class="Rauthor"><%=obj.pd.author%></span>
+                <%}%>
+                <%if(obj.creationTime){%>
+                  <span class="Rdate"><%=obj.creationTime%></span>
+                <%}%>
+                <%if(obj.nr && false){%>
+                  <div class="Rmissing">[!missing]: <span class="n"><%=obj.nr%></span> | [!must_include]: <span class="y" onclick="mustInclude('<%=obj.nr%>')"><%=obj.nr%></span></div>
+                <%}%>
+             </div>
+            <%}%>
+        </div></a>`,
+    results_without: `<p class="res_p">[!resWithout]: <b><%=obj.nr%></b><br />[!approx] <%=obj.res%> [!resFound]</p>`,
+    low_quality: `<p class="res_p">[!approx] <%=obj.res%> [!resWithout]</p><div class='lowQC'> <p class='lowQH'>It looks like there aren't many great matches for your search</p>
+              <p class='lowQ'>Tip: Try using words that might appear on the page you’re looking for.</p></div><p>`,
+    approximately_found: `<p class="res_p">
+  <span>[!approx]</span> 
+  <span class="res-num"><%=obj.res%></span> 
+  <span>[!resFound]</span> 
+  <span>[!for]</span> 
+  <span class="res-for"><q><%=obj.q%><q/></span>
+</p>`,
+    no_results: `<p class="noRes">[!noRes] <span class="res-for"><q><%=obj.q%></q></span>`,
+    spelling_suggestions: `<p class="hd-s-syn">[!didYouMean] 
+                                    <span class="c-p" onclick="search({q:\'<%=obj.q%>\', dym:true})">\"<%=obj.v%>\"</span>?
+                                </p><br/>`,
+    spelling_correction: `<div>
+                                <p class="hd-s-syn fn-12">Showing results for <b><i><%=obj.c%></i></b></p>
+                                <p class="hd-s-syn">Display results for <span class="c-p" onclick="search({f:true})">\"<%=obj.q%>\"</span> instead</p>
+                            </div>`,
+    paging_item: `<<%if(obj.active){%>span<%}else{%>a<%}%> href="<%=obj.href%>" data-p="<%=obj.href%>" title="<%=obj.title%>" class="<%=obj.active?'active':'do-search'%>"><%=obj.title%></<%if(obj.active){%>span<%}else{%>a<%}%>>`,
+    autocomplete_holder: "ul",
+    ellipsis_format1: `[!ellipsisF]`,
+    ellipsis_format2: `[!ellipsisL]`,
+    sort_by: `<div class="select-dropdown">
+                    <div class="select-dropdown-header" class="selectDropdownMenuButton">
+                      <span class="selected">
+                        <% if (obj.sortBySelected === "relevance") { %>
+                            [!relevance]
+                        <% } else if (obj.sortBySelected === "asc") { %>
+                          [!dateOTN]
+                        <% } else if (obj.sortBySelected === "desc") { %>
+                          [!dateNTO]
+                        <% } else { %>
+                            [!sortBy]
+                        <% } %>
+                    </span>
+                        <i class="arrow"></i>
+                        <div class="select-dropdown-menu" class="selectDropdownMenu">
+                            <div class="select-dropdown-item" data-value="relevance">[!relevance]</div>
+                            <div class="select-dropdown-item" data-value="asc">[!dateOTN]</div>
+                            <div class="select-dropdown-item" data-value="desc">[!dateNTO]</div>
+                        </div
+                    </div>
+                </div>`,
+  };
+
+  this.initStyle = function (SB_element) {
+    if (SB_element.id && !document.querySelector(`#${SB_element.id}_Style`)) {
+      let head = document.head || document.getElementsByTagName("head")[0];
+      let style = document.createElement("style");
+      head.appendChild(style);
+      style.type = "text/css";
+      style.id = `#${SB_element.id}_Style`;
+      let css = `
+
+      #heyday_SB_AC_holder .paging {
+        display: none;
+      }
+
+      #${SB_element.id} .paging {
+        text-align: center;
+        margin: 10px auto;
+        padding-top: 10px;
+        min-height: 40px;
+        height: 40px;
+      }
+      #heyday_SB_AC_holder .paging {
+        display: none;
+      }
+      #${SB_element.id} .autoComplete {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 110%;
+        width: 100%;
+        z-index: 1;
+        background: #fff;
+        border-radius: 0 0 8px 8px;
+      }
+      #${SB_element.id} .footer {
+        display: none;
+        font-size: 10px;
+        margin: 10px auto;
+      }
+      #${SB_element.id} .footer a {
+        color: #767676;
+        text-decoration: none;
+      }
+      @keyframes fromTop {
+        0% {
+          transform: translateY(-6px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      #${SB_element.id}.d_rtl {
+        direction: rtl;
+      }
+      #${SB_element.id}.d_rtl .search_bar-fixed .closeSearch {
+        left: unset;
+        right: -25px;
+      }
+      #${SB_element.id}.d_rtl .search_bar-fixed .autoComplete .AC_item_left {
+        margin-right: 9px;
+        margin-left: 11px;
+      }
+      #${SB_element.id}.d_rtl .search_bar-fixed .clearIcon {
+        border-radius: 50px 0 0 50px;
+        right: unset;
+        left: 2px;
+      }
+      #${SB_element.id}.d_rtl .search_bar-fixed .searchBtn {
+        left: unset;
+        right: 2px;
+      }
+      #${SB_element.id}.d_rtl .search_bar-fixed .closeSearch svg {
+        transform: rotateY(180deg);
+      }
+      #${SB_element.id}.d_rtl .HeyDay_q {
+        direction: rtl;
+        margin: 0px 26px 0 0;
+      }
+      #${SB_element.id} .res_p {
+        padding: 12px 0px;
+        margin: 0;
+      }
+      #${SB_element.id} .res-for {
+        quotes: '"' '"' '' '';
+      }
+      #${SB_element.id} .res_p span {
+        margin-right: 10px;
+      }
+      #${SB_element.id} .lowQC {
+        border: solid 1px gainsboro;
+        border-radius: 5px;
+        padding: 0px 10px;
+      }
+      #${SB_element.id} .lowQH {
+        font-size: 18px;
+      }
+      #${SB_element.id} .lowQ {
+        font-size: 12px;
+      }
+      #${SB_element.id} .Rmain {
+        margin: 0;
+        padding: 10px 0px;
+        border-bottom: 1px #ececec solid;
+        display: block;
+        overflow: hidden;
+        gap: 2%;
+      }
+      #${SB_element.id} .Rbody {
+        color: black;
+        font-size: 16px;
+        overflow: hidden;
+      }
+      #${SB_element.id} .Rtitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      #${SB_element.id}  .description{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+      #${SB_element.id} .RimageC {
+        display: block;
+        width: 200px;
+        height: 150px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        border-radius: 5px;
+        float: left;
+        margin: 0px 10px 0px 0px;
+      }
+      #${SB_element.id} .Rlink {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      #${SB_element.id} .Rmain strong {
+        font-weight: bold;
+      }
+      #${SB_element.id}.d_rtl .RimageC {
+        float: right;
+        margin: 0px 0px 0px 10px;
+      }
+      #${SB_element.id} .Rda {
+        color: #e90c59;
+        font-size: 14px;
+        position: relative;
+        bottom: 20px;
+        margin: 0;
+        height: 20px;
+        background: white;
+        padding-top: 6px;
+      }
+      #${SB_element.id}.d_rtl .Rda {
+        margin: 0px 210px 0px 0px;
+      }
+      #${SB_element.id} .Rauthor {
+        margin-right: 30px;
+      }
+      #${SB_element.id}.d_rtl .Rauthor {
+        margin-right: 0px;
+        margin-left: 30px;
+      }
+      #${SB_element.id} .Rmissing {
+        color: grey;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+      #${SB_element.id} .Rmissing .n {
+        text-decoration: line-through;
+      }
+      #${SB_element.id} .Rmissing .y {
+        color: #1a0dab;
+        cursor: pointer;
+      }
+      #${SB_element.id} .header {
+        width: 100%;
+        text-align: center;
+      }
+      #${SB_element.id} .logo {
+        cursor: pointer;
+      }
+      #${SB_element.id} * {
+        -webkit-overflow-scrolling: touch;
+      }
+      #${SB_element.id} .c-p {
+        cursor: pointer;
+        color: #0056b3;
+      }
+      #${SB_element.id} .c-p i {
+        font-weight: bold;
+      }
+      #${SB_element.id} .fn-05 {
+        font-size: 0.5em !important;
+      }
+      #${SB_element.id} .fn-06 {
+        font-size: 0.6em !important;
+      }
+      #${SB_element.id} .fn-07 {
+        font-size: 0.7em !important;
+      }
+      #${SB_element.id} .fn-08 {
+        font-size: 0.8em !important;
+      }
+      #${SB_element.id} .fn-09 {
+        font-size: 0.9em !important;
+      }
+      #${SB_element.id} .fn-1 {
+        font-size: 1em !important;
+      }
+      #${SB_element.id} .fn-11 {
+        font-size: 1.1em !important;
+      }
+      #${SB_element.id} .fn-12 {
+        font-size: 1.2em !important;
+      }
+      #${SB_element.id} .fn-13 {
+        font-size: 1.3em !important;
+      }
+      #${SB_element.id} .fn-14 {
+        font-size: 1.4em !important;
+      }
+      #${SB_element.id} .fn-15 {
+        font-size: 1.5em !important;
+      }
+      #${SB_element.id} .fn-16 {
+        font-size: 1.6em !important;
+      }
+      #${SB_element.id} .fn-17 {
+        font-size: 1.7em !important;
+      }
+      #${SB_element.id} .fn-18 {
+        font-size: 1.8em !important;
+      }
+      #${SB_element.id} .fn-19 {
+        font-size: 1.9em !important;
+      }
+      #${SB_element.id} .fn-2 {
+        font-size: 2em !important;
+      }
+      #${SB_element.id} .hd-s-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1024px;
+        padding: 0;
+        margin: auto;
+      }
+      #${SB_element.id} .select-dropdown {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 170px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.87);
+        direction: rtl;
+      }
+      #${SB_element.id} .select-dropdown-header {
+        padding: 6px 16px;
+        background-color: #fff;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.23);
+        border-radius: 4px;
+      }
+      #${SB_element.id} .select-dropdown-header:hover,
+      #${SB_element.id} .select-dropdown-header.open {
+        border: 1px solid rgba(0, 0, 0, 0.87);
+      }
+      #${SB_element.id} .select-dropdown-header:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid rgba(0, 0, 0, 0.87);
+      }
+      #${SB_element.id} .select-dropdown-header.open:after {
+        border-top: none;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.87);
+      }
+      #${SB_element.id} .select-dropdown-menu {
+        display: none;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.23);
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        margin-top: 4px;
+        z-index: 1000;
+      }
+      #${SB_element.id} .select-dropdown-item {
+        padding: 6px 16px;
+        cursor: pointer;
+      }
+      #${SB_element.id} .select-dropdown-item:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+      #${SB_element.id} .select-dropdown-header.open .select-dropdown-menu {
+        display: block;
+      }
+      #${SB_element.id} .search_bar-fixed {
+        position: relative;
+        top: 0;
+        left: 0px;
+        padding: 0;
+        border: 1px solid #9e9e9e;
+        border-radius: 50px;
+        margin: 10px 10px 0px 10px;
+      }
+      #${SB_element.id} .searchResults,
+      #${SB_element.id} .search_bar-fixed {
+        width: calc(100% - 50px);
+      }
+      #${SB_element.id} .searchResults {
+        margin: 0px 15px 0px 15px;
+      }
+      #${SB_element.id} .HeyDay_q {
+        outline: none;
+        display: block;
+        font-family: Roboto, HelveticaNeue, Arial, sans-serif;
+        font-size: 20px;
+        flex: 1 1 auto;
+        border: none;
+        vertical-align: middle;
+        padding: 6px 32px;
+        margin: 0;
+        color: #343434;
+        -webkit-appearance: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: calc(100% - 70px);
+        overflow: hidden;
+        margin: 0px 0 0 26px;
+        background-color: transparent;
+      }
+      #${SB_element.id} .removeHistory {
+        margin-left: 15px;
+        width: 23px;
+        display: none;
+      }
+      #${SB_element.id} .clearIcon {
+        position: absolute;
+        bottom: 0;
+        right: 2px;
+        z-index: 99;
+        height: 100%;
+        border: 0;
+        background-color: white;
+        padding: 0 8px 0 10px;
+        border-radius: 0px 50px 50px 0px;
+        line-height: 0;
+        opacity: 0;
+        width: fit-content;
+        transition: opacity 0.2s ease-in;
+      }
+      #${SB_element.id} .clearIcon svg {
+        width: 12px;
+        height: 12px;
+      }
+      #${SB_element.id} .search_bar-fixed.t #${SB_element.id} .clearIcon {
+        opacity: 1;
+        cursor: pointer;
+      }
+      #${SB_element.id} .closeSearch {
+        position: absolute;
+        bottom: 4px;
+        width: 20px;
+        left: -25px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: color 0.3s ease-in;
+        outline: none;
+      }
+      #${SB_element.id} .closeSvgPath {
+        stroke-width: 3;
+      }
+      #${SB_element.id} .hd-s-main .searchBtn {
+        position: absolute;
+        bottom: 0;
+        width: 42px;
+        padding: 0 12px;
+        line-height: 0;
+        z-index: 99;
+        height:100%;
+        background: none;
+        margin: 0;
+        border: none;
+        color: #9e9e9e;
+        cursor: pointer;
+        outline: none;
+        right: 0;
+      }
+  
+  #${SB_element.id} .hd-s-main .searchBtn:hover {
+        color: #868686;
+        text-shadow: 1px 1px 1px #ffffff;
+      }
+      #${SB_element.id} .removeHistory {
+        margin-right: 4px;
+        margin-left: 16px;
+        height: 18px;
+        width: 20px;
+      }
+      .hd-s-syn {
+        display: none;
+      }
+      #${SB_element.id} .autoComplete {
+        position: absolute;
+        left: 0;
+        top: 110%;
+        width: 100%;
+        z-index: 999;
+        background: #fff;
+        border-radius: 0 0 8px 8px;
+      }
+      #${SB_element.id} .autoComplete ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 2px 0;
+        text-align: left;
+        overflow: hidden;
+      }
+      #${SB_element.id} .ACel,
+      #${SB_element.id} .ACel_sell {
+        padding: 6px 2px 6px 38px;
+        font-size: 16px;
+        border-radius: 15px;
+        color: #828282;
+        display: flex;
+        align-items: center;
+      }
+      #${SB_element.id} .ACel_sell {
+        color: #121212;
+        background: #f3f3f3;
+        position: relative;
+        cursor: pointer;
+      }
+      #${SB_element.id} .ACel strong {
+        font-weight: bold;
+        color: black;
+      }
+      #${SB_element.id} .AC_item_left,
+      #${SB_element.id} .AC_item_right {
+        display: none;
+      }
+      #${SB_element.id} .ACsubStr {
+        font-weight: bold;
+        color: black;
+      }
+      #${SB_element.id} .AC_item_left {
+        height: 18px;
+        width: 20px;
+        margin-right: 6px;
+      }
+      #${SB_element.id} .AC_item_left_rtl {
+        margin-right: 0px;
+        margin-left: 11px;
+      }
+      #${SB_element.id} .AC_item_right {
+        display: block;
+        margin-right: 9px;
+        margin-left: 11px;
+      }
+      @media screen and (max-width: 700px) {
+        #${SB_element.id} .hd-s-main{
+          max-width: 90%;
+        }
+        #${SB_element.id} .search_bar-fixed {
+          border-radius: 0;
+          border-color: #9e9e9e;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          margin: 0px 10px;
+        }
+        #${SB_element.id} .searchResults,
+        #${SB_element.id} .search_bar-fixed {
+          width: calc(100% - 50px);
+        }
+        #${SB_element.id} .HeyDay_q {
+          padding: 6px 12px;
+          margin: 10px auto auto auto;
+        }
+
+        #${SB_element.id} .closeSvgPath {
+          stroke-width: 1;
+        }
+        #${SB_element.id} .searchBtn {
+          display: none;
+        }
+        #${SB_element.id}  .description{
+          -webkit-line-clamp: 2;
+        }
+
+        #${SB_element.id} .Rtitle {
+          font-size: 18px;
+        }
+        #${SB_element.id} .RimageC {
+          width: 90px;
+          height: 70px;
+        }
+        #${SB_element.id} .Rda {
+          margin: 10px 0px 0px 0px;
+          position: unset;
+        }
+      }
+    `;
+
+      style.appendChild(document.createTextNode(css));
+    }
+  };
+}

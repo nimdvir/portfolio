@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: SimplePro;
+  src: url("../fonts/SimplerPro-Regular.otf") format("truetype");
+}
+@font-face {
+  font-family: SimpleProBold;
+  src: url("../fonts/SimplerPro-Bold.otf") format("truetype");
+}
+
+.xvjs-big-play-button {
+  background-color: black;
+  opacity: 0.7;
+  width: 80px;
+  height: 80px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  border-radius: 40px;
+  border-style: solid;
+  border-color: #000000;
+}
+.xvjs-big-play-button .vjs-icon-placeholder:before {
+  content: "";
+  background-image: url("../icons/play-white.png");
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 55% calc(50% - 0px);
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.vjs-l7hover:hover .vjs-big-play-button {
+  display: block;
+}
+
+.vjs-l7hover .vjs-big-play-button {
+  display: none;
+  opacity: 0.7;
+  width: 80px;
+  height: 80px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  border-radius: 40px;
+  border-style: solid;
+  background-image: url("../icons/play-white.png");
+  border-width: 1px;
+  border-color: white;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 55% calc(50% - 0px);
+}
+.vjs-l7hover .vjs-big-play-button .vjs-icon-placeholder:before {
+  content: none;
+}
+.vjs-l7hover .vjs-paused .vjs-big-play-button {
+  background-color: red;
+}
+.hover-effects {
+  position: absolute;
+  width: 6.4rem;
+  height: 1.6rem;
+  top: 0;
+  right: 0;
+  font-family: SimplePro;
+  display: flex;
+  justify-content: flex-end;
+}
+.hover-effects .play-duration {
+  margin-left: 1px;
+  font-size: 1rem;
+  line-height: 1rem;
+  width: 3.2rem;
+  background-color: rgba(100, 100, 100, 0.5);
+  height: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.hover-effects .small-play-button {
+  background-color: green;
+  height: 1.6rem;
+  width: 3.2rem;
+  font-size: 1rem;
+  color: red;
+  background-color: rgb(241, 235, 235);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+/* ADDED CSS - START */
+/* ADDED CSS - END */
+html, body, #wrapper {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+

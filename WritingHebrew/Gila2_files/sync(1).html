@@ -1,0 +1,31 @@
+
+<!-- saved from url=(1717)https://ch-match.taboola.com/sync?dast=V9098CABYDABKMeES_wXFwBAASjHhEv8FxcAUAAAAABgYA9AcAJDeYmJaLxWgt8dgcbtFytVsrl6vdWjhzrjYW18I5cs2GAEByg4lpuViM1hKPzeEWLVe7tXK52q2FM-dqY3EtnCPXbAoAH8ZymQxqgYRl9vsOCsrp6TG7DKKi622xO5xmzxsAVtB0Onyue73u97srTG-Hz67x25Vmv36_36_1-_1-v1_r9_v9fr-XAwAAAADAA8D___8_BAAAAABABAAAAACABAAAAAAABUBABcC_BYDABQAAAAAABsD___-_BgDA-AaAgDPLAYDgLt9B-bd8_QEAAAAAAAIAAAAAQAIAcHAbXgIA0GK4fwLw_________x8DMECfeSMD8P___38DsNADAPDgAwDwIAQAAABwMQTQbEMWfx_zf04EACDwK1sEwAgAAAAAQOwA2OEIYBJAJwBUABZVAP____1WAABXAAAAAZBBYUhzWQC6gxJvYQAAAAABYgChqr1fhL2_xWMAC_Sw-P1mh13jd7sM4P_________fDOD_DOAfDUBoRKEnDUB4Uj9cDeAXEABgDeAXEACADUDdAAAA3gAE4ABEDmAFTafD57rX636_u8L0dvjsGr9dafbr9_v9Wr_f7_f7tX6_3-_3e9EBELRiMFgdgELshrPFbjiZLWYHAAAAAHAH8P___48HEKra-0XY-1usBwCCM9vMspjNLA6PyWUaGWYTz8JjWC1nu8lsY9kttwfgs7-KSTUFn9MHECIss993UFBOT4_ZZRAVXW-L3eE0ew7ig4ZhORkE8wOgaMlkNxyuZrPlZrRYjUbLyWCxP4CBmMwGCEDRos1wN1wNJ4PNYjRZbpaj4WCBAAE2QQCKFg0mq9FospgMV6PJarZc7HYbBJiIxWy4mayWk8VqMxnNFoPhcoQAFK3Z7RaD5WwwWoxGk91osxrNhggAM66Vb2OZDNYal2OzFi1HhrXEZtmslbvBaOFZzJYjk2sten1MJ8PEMRiMtgggGPCxF8nTIp0oZo6NZbGcmDw2j283MWw8I9PKNhiZJovZbjZYWcQSzckincgu-%2DLMNrMsZjOLw2NymUaG2cSz8BhWy9luMttYdst9x7XybSyTwVrjcmzWouXIsJbYLJu1cjcYLTyL2XJkcq1Fr4_pZJg4BoPRvrFbLAe73Wy12jd2i-VguBkuJvsOneG7-pyNvpu16lFZt6Kz9WIzHTwug807LVqkrcPRZ9R5bRNham3aOSZWoVXiNSg8v4W5N60OtZ5x9RkNaqsFsUGhiCWCi3SiefrMLstbYbqIJUrTRTrR6_f7_Vq_3-_3-7V-v9_v9xOxRHC6SCeil_F0Uf8RYCGHc91csZzMFaNVAgAAAAAAAAAAWALYBAAAAADgBDCowWo4Wa0T4ECWw81st1ouAEDFCYguwE_wo3NS2LvMMUDCPH1ml-WtMF0ZAKDiRIMZYDPAZwCCWKvVsgYAAAAYwAYAAAAI4AbQDcAbQMCZHQf4___3pwcAAACo3wcAsgIfvVboieMHIMjhbLR_AAABCrFWq9XtxlqtVkCAQO0mEAAAEFBPEAAAAAAAAGCCWBDw________P4wQILDtJgRQCDhwlvH1Oai2EJAh4P_______98f!&excid=22&docw=0&cijs=1&nlb=false -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+    const partners = [{url: '<iframe width="0" height="0" src="https://us-east-1-cs.taboolamedia.com/sync-iframe?gdpr=0&redirect=https%3A%2F%2Fsync.taboola.com%2Fsg%2Frisertb-network%2F1%2Frtb-h%2F%3Ftaboola_hm%3D%7BpartnerId%7D"></iframe>'},
+{url: '<img width="0" height="0" src="https://id5-sync.com/s/464/9.gif?puid=c5e7c220-ce13-49d0-bf23-9704a3169dd5-tuctd0b1004&gdpr=0&&callback=https%3A%2F%2Fsync.taboola.com%2Fsg%2Fid5-network%2F1%2Frtb-h%2F%3Ftaboola_hm%3D%7BID5UID%7D"></img>'}];
+
+    const MAX_SIMUL = 3 || 1;
+    const WAIT_MS = 5000;
+
+    window.onload = () => {
+        setTimeout(() => run(0), 0);
+    };
+
+    function run(current) {
+        const remaining = partners.length - current;
+        const fragment = new DocumentFragment();
+        for (let i = 0; i < MAX_SIMUL && i < remaining; ++i) {
+            const partner = partners[current + i];
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = partner.url.trim();
+            const element = tempDiv.firstChild;
+            fragment.appendChild(element);
+        }
+
+        document.body.appendChild(fragment);
+
+        if (MAX_SIMUL < remaining) {
+            setTimeout(run.bind(this, current + MAX_SIMUL), WAIT_MS);
+        }
+    }
+</script></head><body><iframe width="0" height="0" src="./sync-iframe(3).html"></iframe><img width="0" height="0" src="./9.gif"></body></html>

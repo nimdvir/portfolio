@@ -1,0 +1,25 @@
+@media only screen and (max-width: 767px) {
+    .topTrvd0{top:0% !important;}
+}
+.trv-close-container svg{height: 18px;}
+.trv-close-container svg path{fill:#000 !important;}
+.taboola_banner{position: relative; z-index: 9;}
+
+@media only screen and (max-width: 767px) {
+    .trv-floater-bg {
+         position: fixed !important;
+         top: 65px;
+         left: 0;
+         width: 100%;
+         visibility: hidden;
+         display: block;
+         background:#fff;
+         backdrop-filter: blur(5px);
+         -webkit-backdrop-filter: blur(5px);
+         padding: unset !important;
+         height: 130px;
+         z-index:1499;
+    }
+  
+    .trv-player-container:has(.trv-wrapper .trvdfloater) .trv-floater-bg {visibility: visible !important;}
+}

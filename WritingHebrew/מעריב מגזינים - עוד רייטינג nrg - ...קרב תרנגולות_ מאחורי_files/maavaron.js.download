@@ -1,0 +1,363 @@
+var maavaron_conf = {  //new     
+
+'43' :{
+'395':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'863':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'865':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'866':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'864':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1903':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1902':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1901':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1921':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1924':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'29' :{
+'321':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'322':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'320':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'801':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'831':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'802':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'860':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'804':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'861':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'7' :{
+'1002':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1001':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'867':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'1010':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'18' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'11' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'55' :{
+'303':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'304':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'313':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'301':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'20' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'1' :{
+'875':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'459':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'311':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'402':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'408':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'478':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'479':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'334':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'404':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'9999' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'17' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'80' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'53' :{
+'104':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'106':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'102':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'105':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'101':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'2' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'47' :{
+'308':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'310':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'309':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'306':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'307':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'54' :{
+'870':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'874':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'869':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'872':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'871':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'873':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'88' :{
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+},
+'3' :{
+'620':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'629':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'605':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'350':
+{'N':{ name: '',0: {banner_path:''}},
+'Y':{ name: '',0: {banner_path:''}}},
+'N':{ name: '',0: {banner_path:''}},'Y':{ name: '',0: {banner_path:''}}
+}};
+
+
+
+
+// Forward back over Maavaron page (without maavaron page)
+
+//alert(Array(document.referrer, window.history[window.history.length-1] , document.referrer.indexOf('maavaron')));
+
+// === Here is the check  ===
+var flagMaavaron = false;
+
+if (typeof in_maavaron_html=='undefined')  // HP_0, HP_1
+{ // Check if need maavaron redirect
+  // appl, categoryId
+  var maavaron_obj = GetMaavaron( appl, categoryId );
+  var maavaron_name_eng = maavaron_obj['name'];
+  var number_banner_maavaron = nrg.getCookie('maavaron_'+maavaron_name_eng)*1;
+
+  if (maavaron_name_eng!=''&&typeof maavaron_obj[number_banner_maavaron]!='undefined')
+  {    maavaron_SetCookie('maavaron_'+maavaron_name_eng, number_banner_maavaron+1)
+
+     if( nrg.getCookie('maavaron_'+maavaron_name_eng)==number_banner_maavaron+1)
+          ShowMaavaron(appl, categoryId, number_banner_maavaron );
+         //document.location="/online/maavaron3.html?appl="+appl+"&categoryId="+categoryId+"&ban="+(number_banner_maavaron+1)+"&back="+escape(document.location);
+} }
+
+function ShowMaavaron(appl, categoryId, numBan )
+{
+   var maavaron_obj          = GetMaavaron(appl, categoryId);
+   var banner_path           = maavaron_obj[numBan]['banner_path'];
+   var baner_html            = (banner_path.indexOf('.html')>0?1:0);
+
+   document.write('<span style="display:table-cell;vertical-align:middle;height:98%;width:99%;border:0px solid red;position:absolute;text-align:center" id="Maavaron_div">');
+   document.write('<div style="display:block;float:left;height:50%;margin-top:-233px;visibility:hidden;width:100%;">&nbsp;</div>');
+   document.write('<table align="center" dir="rtl" border="0" width="960" style="margin:0 auto;">');
+   document.write('<tr><td align="right" valign="bottom" width="908"><a href="https://www.makorrishon.co.il/nrg"><img height="38" width="218" alt="מעריבnrg" src="/nrg/images/nrg/include/img/header/nrg_logo.gif" border="0"/></a></td>');
+   document.write('<td valign="bottom" width="52" class="skip"><span id="skip_btn" onclick="CloseMaavaron();return false;" style="cursor:pointer"><img alt="דלג" title="דלג" src="/nrg/app/staticfiles/mskip2.gif" border="0"/></span></td></tr>');
+   document.write('<tr><td align="right" height="7" style="background:#c00000;" colspan="2"></td></tr><tr><td align="right" height="2" colspan="2"></td></tr><tr>');
+   document.write('<tr><td align="center" colspan="2">');
+
+
+  if (typeof maavaron_obj[numBan]['show_time'] != 'undefined') var show_time = maavaron_obj[numBan]['show_time'];
+  else var show_time = 10;
+
+  if (baner_html==1){ document.write('<iframe id="bannerFrm" src="'+ banner_path + '" allowTransparency="true" width="960" height="400" marginwidth="0" marginheight="0"  hspace="0" vspace="0" scrolling="no" frameborder="0"></iframe>');
+  } else if (navigator.appName == 'Microsoft Internet Explorer'){ document.write('<OBJECT classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0  WIDTH="960" HEIGHT="400"><PARAM NAME=movie VALUE="'+banner_path+'" ><PARAM NAME=quality VALUE=high><param name=wmode value=Opaque></OBJECT>');
+  } else{ document.write('<embed wmode=Opaque wmode=opaque  name=flashfile10 quality=high type=application/x-shockwave-flash src="'+banner_path+'" width="960" height="400"><\/embed>');}
+
+/*
+//Temp use 04.03.2012
+if (banner_path.indexOf('banners5/loader_nrg_rashut_960x400.swf') > 0)
+{
+   var times = Math.round((new Date()).getTime() / 1000);
+    document.write('<img src="http://adserver.adtech.de/adserv|3.0|1141|3523394|0|16|ADTECH;Adid=7513930;BnId=1;misc='+ times +'" width="1" height="1" style="visibility:hidden;border:0;" />');
+}
+*/
+
+  document.write('</td></tr></table></table>');
+  document.write('<style>body div {visibility:hidden;height:0;overflow:hidden;}body {margin:0!important;padding:0!important;height:100%}</style>');
+  document.write('</span>');
+  // Hide all page
+
+  setTimeout("CloseMaavaron()",(1000*show_time));
+}
+
+
+function CloseMaavaron()
+{
+if(flagMaavaron) return;
+   if (nrg.$('Maavaron_div'))
+   {  document.getElementById('Maavaron_div').parentNode.removeChild(document.getElementById('Maavaron_div'));
+      if (nrg.$('footer'))
+      {  recoverBanners();
+                           if (nrg.$('header')) addTabsEvent();
+         if (nrg.$('page-wrap')&& (nrg.$('page-wrap').className == 'articlePage')) GetColumnHeightDifference();
+      } else
+      {  nrg.onBodyLoad(recoverBanners);
+         if (nrg.$('header')) nrg.onBodyLoad(recoverBanners);
+                                    if (nrg.$('page-wrap')&& (nrg.$('page-wrap').className == 'articlePage')) nrg.onBodyLoad(GetColumnHeightDifference);
+      }
+      flagMaavaron = true;
+   }
+}
+
+function recoverBanners(){
+    var iframes = window.frames;
+    for (var i=0;i<iframes.length;i++){
+        try {
+           if((typeof(iframes[i].window.setHeight)!= "undefined")){
+                iframes[i].window.setHeight();
+             } else if(typeof(iframes[i].window.setIframe)!= "undefined"){
+              iframes[i].window.setIframe();
+
+             }
+                         else if(typeof(iframes[i].window.showit)!= "undefined"){
+                            iframes[i].window.showit();
+                         }
+
+        } catch(e){}
+    }
+}
+
+// OTHER FUNCTIONS
+
+// =================
+function GetMaavaron ( myAppl, myCat)
+{ var maavaron_obj=false;
+  var maavaron_ctr = nrg.getCookie("locusr") != "" ? nrg.getCookie("locusr") : "N" ;
+  if (typeof  maavaron_conf[myAppl][myCat]!= 'undefined')  maavaron_obj = maavaron_conf[myAppl][myCat][maavaron_ctr];
+  else  maavaron_obj = maavaron_conf[myAppl][maavaron_ctr];
+  return maavaron_obj;
+}
+
+// === Set Maavaron Cookies ===
+function maavaron_SetCookie(name, value) {
+  var days=1;
+  var expire = new Date ();
+  expire.setTime (expire.getTime() + (24 * 60 * 60 * 1000) * days);
+  document.cookie = name + "=" + escape(value) + "; expires=" + expire.toGMTString()+'; path=/ ';
+}
+
+
+
+

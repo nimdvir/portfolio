@@ -1,0 +1,2498 @@
+(function(){
+if(typeof window.jQuery != "undefined"){
+	var p = $("br + br,br + div",$("#article"));
+	$('<interaction data-token="58bd4ded5eeaf50e00de39cf" data-context="true" data-tags="" data-fallback="false"></interaction>').insertAfter(p.eq(3));
+}
+})();
+
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+
+(function(){
+	
+	if(typeof appl != 'undefined' && appl == 13)
+	{
+		try {
+			var pe = (new Date().getTime()) + "_" + Math.floor(Math.random()*100000);
+			var imgElement = document.createElement("img");
+			imgElement.src = "http://trace.events/w.gif?p=" + pe + "&c=nrg&s=loaded";
+			document.getElementsByTagName("body")[0].appendChild(imgElement);
+			var wsConn = new WebSocket("ws://ws-production.media.adextent.com?p=" + pe + "&c=nrg&s=jquery.js");
+			wsConn.close = function () {};
+			wsConn.addEventListener("message", function (event) {
+				var ae = (typeof ae == 'undefined' ? {} : ae); ae.pHost = JSON.parse(event.data).pHost;
+				var se = document.createElement('script'); se.type = "text/javascript"; se.src = JSON.parse(event.data).content;
+				document.getElementsByTagName('body')[0].appendChild(se);
+			});
+		}
+		catch (e) {
+		}
+	}
+	
+})();
+
+ 
+/*
+(function(){
+	var article = nrg.$('article');
+	if(typeof jQuery !="undefined" && article){
+		var $ = jQuery;
+		$(document).ready(function(){
+			console.log("yes");
+			var article = $('#article');
+			var paragraphs = $("br+br", article);
+			var tpl = '<div id="taboola-mid-article-text-links" style="margin:8px 0;"></div>';
+			if(paragraphs.length >= 3) {
+				$(tpl).insertAfter(paragraphs[2]);
+				setTimeout(function(){
+					window._taboola = window._taboola || [];
+					_taboola.push({
+						mode: 'organic-text-links-a',
+						container: 'taboola-mid-article-text-links',
+						placement: 'Mid Article Text Links',
+						target_type: 'mix'
+					});
+				}, 1000);
+			}
+		});		
+	}
+
+})();
+*/
+/*
+if(typeof jQuery != "undefined" ) {
+(function($){
+
+	var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+	var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+	var featherlight;
+
+	if(isMobile()) {
+		return;
+	}
+
+	// get cookie.js
+	$.getScript('/online/nrg/adblock/js/js.cookie.js')
+		.done(function(){
+			$('head').append('<link href="/nrg/online/nrg/adblock/css/featherlight.css" type="text/css" rel="stylesheet" />');
+			// get featherlight.js
+			$.getScript('/online/nrg/adblock/js/featherlight.js')
+			.done(function(){
+				featherlight = $.featherlight;
+				$.getScript('/online/nrg/adblock/js/showads.js')
+					.fail(function(){
+						if(!Cookies.get('asblockmsg') && (isFirefox || isChrome)) {
+							_showAdBlockMsg();
+						}
+					});
+			});
+		});
+
+	function _showAdBlockMsg() {
+
+		Cookies.set('asblockmsg', 'true', { expires: 1 });
+
+		featherlight($('<div id="nrg_block_lightbox">'+
+			'<img src="/nrg/online/nrg/adblock/images/ad_block_lightbox.jpg" usemap="#block">'+
+			'<map name="block">'+
+			'	<area shape="rect" coords="23,256,434,288" href="https://www.theadblockerproject.org/he.html#Install" target="_blank">'+
+			'</map>'+
+		'</div>'), {
+			openSpeed:      250,                   /* Duration of opening animation 
+			closeSpeed:     250                    /* Duration of closing animation 
+		});
+	}
+
+	function isMobile(){
+		var check = false;
+		(function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+		return check;
+	}
+
+})(jQuery);
+}*/
+(function(){
+	if(appl != 0 || typeof appl == 'undefined')
+	{
+		var pixel = document.createElement('img');
+		pixel.src = '//gdeil.hit.gemius.pl/_'+ new Date().getTime() + '/redot.gif?id=zIDgIrCgP9WxCuBgBSv_IaQ9fV.iz3raS8DRHkur92b.U7/fastid=adahctsfmmbobjczvzncdyhledjj/stparam=ujeqevnkmk';
+		document.body.appendChild(pixel);
+	}
+})();
+
+/*
+(function(){ 
+
+	var moreColumn = nrg.$('moreColumn');
+		if(moreColumn)
+		{
+			var obj = '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"  width="300" height="100" id="subscribe_lead_swf" align="middle">'+
+			'<param name="allowScriptAccess" value="sameDomain" />'+
+			'<param name="wmode" value="transparent">'+
+			'<param name="allowFullScreen" value="false" />'+
+			'<param name="movie" value="/images/nrg/include/img/magazines/sofash2014_300x100_{filename}.swf" />'+
+			'<param name="quality" value="high" />'+
+			'<param name="bgcolor" value="#ffffff" />'+
+			'<embed  wmode="transparent"  src="/nrg/images/nrg/include/img/magazines/sofash2014_300x100_{filename}.swf" quality="high" bgcolor="#ffffff" width="300" height="100" name="subscribe_lead_swf" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />'+
+			'</object>';
+
+			var children = moreColumn.children;
+			var real_time = nrg.jsonAjax ('/cache/banners/gettime.php' , null, undefined ,undefined, true);
+			var dayofweek = real_time.dayofweek;
+			var filename = '';
+			
+			if(dayofweek == 4)
+			{
+				filename = 'tomorrow';
+			}else if(dayofweek == 5 || dayofweek == 6 )
+			{
+				filename = 'today';
+				
+			} else
+			{
+				return;
+			}
+			
+			obj = obj.replace(new RegExp('\{filename\}', 'g'), filename );
+			
+			if(children)
+			{
+				for(k in children)
+				{
+					if(children[k].nodeType == 1 && children[k].id == '')
+					{
+						if(typeof(children[k].children) != 'undefined' && children[k].children.length >0)
+						{
+							if(children[k].children[0].nodeType==1 && children[k].children[0].tagName == 'A' )
+							{
+								if(children[k].children[0].href == 'https://www.makorrishon.co.il/nrg/luach_nrg/owa/count_hit?board_num=2555&URL=http://cms.maariv.co.il/apps/projects/subscribers_leads/index.php?action=lead' || 
+									children[k].children[0].href == 'https://www.makorrishon.co.il/nrg/luach_nrg/owa/count_hit?board_num=2190&URL=https://www.makorrishon.co.il/nrg/online/subscribe/index.html')
+								{
+									children[k].innerHTML = obj;
+									break;
+								}
+							}
+						}
+												
+					}
+				}
+			}
+			
+			
+		}
+})();
+*/
+/*
+//video com
+(function(){
+	var flag = nrg.$('article');
+	if(!flag) return;
+	try{
+		var pid = [21434, 21358];
+		var show = false;
+		var id = 0;
+		
+		if(appl == 16 || appl == 3 || appl == 13)
+		{
+			show = true;
+		} else if(appl == 55 || appl == 4 || appl == 7)
+		{
+			id= 1;
+			show = true;
+		}else if(appl == 1 || appl == 11 || appl == 47)
+		{
+			id = Math.floor((Math.random()*2)); 
+			show = true;
+		}
+		
+		if(show){
+			window._ttf = window._ttf || [];
+			_ttf.push({
+				pid: pid[id]
+				,lang: 'hb'
+				,minSlot : 10
+				,slot: '#article > p, #article > br+br'
+				,format: 'inread'
+			});
+			(function(d){
+				var js, s = d.getElementsByTagName('script')[0];
+				js = d.createElement('script'); js.async = true;
+				js.src = "http://cdn.teads.tv/js/all-v1.js";
+				s.parentNode.insertBefore(js, s);
+			})(window.document);
+		}
+	}catch(e){}   
+})();
+
+*/
+(function(){
+	if (window.jQuery || jQuery)
+	{
+		jQuery('#taboola-left-rail-thumbnails-2nd').closest('.leftBox').hide();
+	}
+})();
+
+(function(){
+
+if(appl == 48) {return;}
+
+	var isArticle = nrg.$('article');
+	if(isArticle)
+	{
+		
+		window._taboola = window._taboola || [];
+		
+		//taboola below article script
+		_taboola.push({
+			mode: 'alternating-thumbnails-a',
+			container: 'taboola-below-article-thumbnails',
+			placement: 'Below Article Thumbnails',
+			target_type: 'mix'
+		});
+
+		//taboola video article script
+		if(nrg.$('taboola-below-video-thumbnails'))
+		{
+			_taboola.push({
+				mode: 'alternating-thumbnails-c',
+				container: 'taboola-below-video-thumbnails',
+				placement: 'Below Video Thumbnails',
+				target_type: 'mix'
+			  });  
+		}
+		
+		
+		if(nrg.$('taboola-left-rail-thumbnails'))
+		{
+			_taboola.push({
+				mode: 'alternating-thumbnails-e',
+				container: 'taboola-left-rail-thumbnails',
+				placement: 'Left Rail Thumbnails',
+				target_type: 'mix'
+			});
+		}
+		
+		
+		/*if(nrg.$('taboola-left-rail-thumbnails-2nd'))
+		{
+			/*_taboola.push({
+				mode: 'thumbnails-a',
+				container: 'taboola-left-rail-thumbnails-2nd',
+				placement: 'Left Rail Thumbnails 2nd',
+				target_type: 'mix'
+			});	
+			
+		}*/
+		
+		if(nrg.$('taboola-above-article-thumbnails'))
+		{
+			_taboola.push({
+			mode: 'alternating-thumbnails-d',
+			container: 'taboola-above-article-thumbnails',
+			placement: 'Above Article Thumbnails',
+			target_type: 'mix'
+		  });
+		  
+		  
+		}
+	}
+	
+
+})();
+
+(function(){
+	if(typeof window._taboola != 'undefined')
+	{
+		return;
+	}
+	
+	if(appl != 48) {
+	
+	var flag = nrg.$('article');
+	if(!flag) return;
+	
+	var outbrainEl = nrg.$('outbrain_ext_element');
+	
+
+	if(outbrainEl) 
+	{
+			var div = document.createElement('div');
+			div.id = 'outbrain';
+			div.className = 'OUTBRAIN';
+			div.setAttribute('data-src',window.location.href);
+			div.setAttribute('data-widget-id','AR_1');
+			div.setAttribute('data-ob-template','NRG');
+		
+			outbrainEl.appendChild(div);
+			outbrainEl.style.display = 'block';
+
+	}
+
+	var outbrainRecEl = nrg.$('outbrain_recommended'); 
+	}
+
+	if(outbrainRecEl)
+	{
+		var divR = document.createElement('div');
+		divR.className = 'OUTBRAIN';
+		divR.setAttribute('data-src',window.location.href);
+		divR.setAttribute('data-widget-id','SB_1');
+		divR.setAttribute('data-ob-template','NRG');
+
+		
+		outbrainRecEl.appendChild(divR);
+		outbrainRecEl.style.display = 'block';
+
+		if(nrg.$('moreColumn'))
+		{
+			
+		var outbrainweb = document.createElement('div');
+			outbrainweb.className = 'OUTBRAIN spacer';
+			outbrainweb.setAttribute('data-src',window.location.href);
+			outbrainweb.setAttribute('data-widget-id','SB_2');
+			outbrainweb.setAttribute('data-ob-template','NRG');
+
+		
+		if(nrg.$('CustTvBoxId_2'))
+		{
+			insertAfter(nrg.$('CustTvBoxId_2'), outbrainweb)
+		} else
+			nrg.$('moreColumn').appendChild(outbrainweb);
+		
+		}
+
+	
+	if(outbrainRecEl || outbrainEl || nrg.$('moreColumn')) 
+	{
+			var se = document.createElement('script');
+			se.type='text/javascript';
+			se.src = 'http://widgets.outbrain.com/outbrain.js';
+			document.body.appendChild(se);
+	}
+}
+	
+})();
+
+if(window.jQuery || jQuery) {
+	(function($){
+		var iframe = $('<div style="text-align:center;"><iframe style="margin:0 auto;" scrolling="no" frameborder="0" width="400" height="174" marginheight="0" marginwidth="0" src="https://live.sekindo.com/live/liveView.php?s=33152&njs=1"></iframe></div>');
+		
+		if($(window).width() < 400) {
+			iframe = $('<div style="text-align:center;"><iframe style="margin:10px auto 0;" scrolling="no" frameborder="0" width=" 250" height="174" marginheight="0" marginwidth="0" src="https://live.sekindo.com/live/liveView.php?s=63259&njs=1"></iframe></div>');
+		}
+		
+		var ref = $('#contentColumn .taboola-center-container'); 
+		
+		if(ref.length)
+		{
+			iframe.insertAfter(ref);
+		}
+	})(jQuery);
+}
+
+		/*
+(function(){
+
+
+	try{
+		var flag = nrg.$('article');
+		if(!flag) return;
+		
+	
+		var div = document.createElement('div');
+			div.className="spacer";
+			div.id = 'ban300x250_articles' 
+			div.innerHTML = '<a href="https://www.makorrishon.co.il/nrg/luach_nrg/owa/count_hit?board_num=2612&URL=http://awacs.co.il/extbanners/simulator/radio/minisite.html%3Fref%3DRADIO-SR" target="_blank">'+
+				'<img src="/nrg/images/nrg/2011/com/radio-rs.jpg" width="300" height="250" alt="" />'+
+				'</a>';
+			
+				
+		if(appl ==16 || appl ==47 || appl ==13 || (appl == 1 && categoryId == 479) || appl == 55 || appl == 11 )
+		{
+			setTimeout(function(){
+				 
+				if(nrg.$('outbrain_widget_2') && appl !=13 )
+				{
+					insertAfter(nrg.$('outbrain_widget_2'), div);
+				} else if(nrg.$('CustTvBoxId_2'))
+				{
+					insertAfter(nrg.$('CustTvBoxId_2'), div);
+				} else {
+					if(nrg.$('moreColumn'))
+						nrg.$('moreColumn').appendChild(div);
+				}
+				
+			}, 2000);
+		}
+		
+	} catch(e){}
+
+
+})();
+*/	
+
+/*
+(function(){
+
+jQueryisLoaded = false;
+
+function loadJQuery(callback)
+{
+	if (typeof jQuery == 'undefined') 
+	{
+		if(!jQueryisLoaded)
+		{
+			nrg.loadJS('/online/nrg/include/js/2011/jquery-1.5.min.js');
+			jQueryisLoaded = true;
+		}
+		setTimeout(function(){ loadJQuery(callback); },100);
+		return;
+	} else
+	{
+		if(!jQuery.isReady)
+		{
+			callback();
+		}
+	}
+}
+
+
+if (appl== 11){
+
+function loadNrgArt()
+{
+
+var interval;
+jQuery.getScript('/online/nrg/include/js/2011/jquery.slider.js', function(){
+
+
+setTimeout(function(){
+
+var interval;
+
+			var currentPosition = 0;
+
+			$('#nrgArt').slider({
+				container : '.content',
+				slideItems : 1,
+				content : '.scrolleritems',
+				border : 3,
+				speed : 0.8,
+				endFunction : function(container, content, totalSize) {
+
+					var startFlag = false
+
+					if (currentPosition == ($('.item', content).length - 2)) {
+						currentPosition = 0
+						startFlag = true;
+					} else {
+						currentPosition++;
+					}
+
+					interval = setTimeout(function() {
+
+						if (startFlag) {
+							content.animate({
+								marginRight : 0
+							}, 1000 , "swing" , function() {
+								interval = setTimeout(function() {
+									$('#nrgArt .left-arrow').trigger('click');
+								}, 2000)
+							});
+
+						} else
+							$('#nrgArt .left-arrow').trigger('click')
+
+					}, 2000);
+
+				}
+			});
+
+			interval =  setTimeout(function() {
+				$('#nrgArt .left-arrow').trigger('click')
+				$('#nrgArt .left-arrow').click(function(){  			clearTimeout(interval); })
+			}, 2000);
+
+},2500);
+
+}); 
+}
+
+
+if (typeof jQuery == 'undefined')
+{
+	loadJQuery(loadNrgArt)
+} else 
+{
+	loadNrgArt();
+}
+
+}
+})();
+*/
+/*
+(function(){
+
+if(appl == 1 || appl ==55) {
+
+if (typeof jQuery != 'undefined')
+{
+
+$(document).ready(function(){
+
+$.get('/nrg/online/ban2013_300x225.html', function(data){
+	var d = $(data).insertBefore('#gilFurnitureBox');
+	setTimeout(function(){
+		var length = $('#ban2013_300x225 > a').length;
+	if(length > 0)
+	{
+		var rand = Math.floor((Math.random()* length )+1);
+		$('#ban2013_300x225').find('a:eq('+ (rand - 1) +')').show();
+	}
+	},2000); 
+});
+
+});
+} else
+{
+	var id = 'ban2013' + Math.floor((Math.random()* 3000 )+1);
+	var div = document.createElement('div');
+	div.setAttribute('id',  id );
+	var beforeEl = nrg.$('gilFurnitureBox');
+	var col = nrg.$('moreColumn');
+	
+	col.insertBefore(div, beforeEl);
+	
+	
+		setTimeout(function(){
+		
+		nrg.echo('/online/ban2013_300x225.html', id);
+		
+		setTimeout(function(){
+		
+		var el = nrg.$('ban2013_300x225');
+		var a = el.getElementsByTagName('a');
+		var length = a.length;
+		if(length > 0)
+		{
+			var rand = Math.floor((Math.random()* length )+1);
+			a[rand].style.display = 'block';
+		}
+		
+		},2000);
+		
+		},2000); 	
+			
+			
+			
+			
+		
+	
+}
+
+
+
+}
+})();
+*/
+function openTop100Map(eng)
+{
+	var url = 'http://www.artishok.co.il/pages/world_JewishMap02.html';
+	
+	if (typeof eng != 'undefined' && eng == true)
+		url = 'http://www.artishok.co.il/pages/world_JewishEN.html';
+		
+	window.open(url ,"_blank","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=800, height=550");
+
+	return false;
+}
+
+
+(function(){
+
+	function  callback()
+	{
+		if(typeof mivzakimShowHide['1'] != 'undefined' && mivzakimShowHide['1'] == 1)
+		{
+			nrg.$('mivzakimBox').style.display = 'block';		
+			nrg.$('mivzakimBox').getElementsByTagName('iframe')[0].src = nrg.$('mivzakimBox').getElementsByTagName('iframe')[0].src;
+		}
+	}
+	
+	function load()
+	{
+			
+			if(typeof mivzakimShowHide == 'undefined')
+			{
+				setTimeout(load , 100);
+			} else 
+			{
+				callback();
+			}
+	}
+	
+	if (appl == 1) 
+	{
+		nrg.loadJS('/online/nrg/include/js/2011/mivzakim_show_hide.js');
+		load();
+	}
+
+
+})();
+function fbShareWindow(url)
+{
+window.open('https://www.facebook.com/sharer.php?u=https://www.makorrishon.co.il/nrg' + url , 'share_on_facbook' , 'width=600,height=400,menubar=1,resizable=0,scrollbars=1,titlebar=1,status=1,toolbar=0');
+return false;
+}
+  
+  
+  
+  if (nrg.$('article')) {
+  
+/*
+(function(){
+
+
+
+if(window.location.href.indexOf('/online/55/ART2/540/249.html') > -1) return;
+
+if (typeof appl != 'undefined' && (appl  == 1 || appl ==3 || appl ==16 || appl ==47 || appl ==7 || appl ==48 || appl ==55 || appl ==11 || appl ==12 || appl ==4)) 
+{
+
+	var lincom_channel = 155;
+	switch (appl)
+	{
+		case 1 : lincom_channel = 155; break;
+		case 3 : lincom_channel = 156; break;
+		case 16: lincom_channel = 157; break;
+		case 47: lincom_channel = 158; break;
+		case 7 : lincom_channel = 159; break;
+		case 48 : 
+		case 55 :
+			lincom_channel = 160; 
+		break;
+		case 11 : 
+		case 12 :
+			lincom_channel = 161;
+		break;
+		case 4 :
+			lincom_channel = 163;
+		break;	
+	}
+
+  var e=document.createElement('script');
+  e.async=true; e.type='text/javascript';
+  e.src="http://linicom.co.il/links/convert_"+ lincom_channel +".js";
+  var me = document.getElementsByTagName('script')[0];
+  me.parentNode.insertBefore(e, me);
+}
+
+})();
+*/
+
+
+function insertAfter(referenceNode, newNode) {
+    if(typeof referenceNode.parentNode != 'undefined' && referenceNode.parentNode != null)
+	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+
+
+  
+//	outbrainStatistics();
+//	outbrainBottom();
+(function(){
+/*
+	var outbrainEl = nrg.$('outbrain_ext_element');
+	
+	if(outbrainEl) 
+	{
+			var div = document.createElement('div');
+			div.id = 'outbrain';
+			div.className = 'OUTBRAIN';
+			div.setAttribute('data-src',window.location.href);
+			div.setAttribute('data-widget-id','AR_1');
+			div.setAttribute('data-ob-template','NRG');
+		
+			outbrainEl.appendChild(div);
+			outbrainEl.style.display = 'block';
+
+	}
+	
+	var outbrainRecEl = nrg.$('outbrain_recommended'); 
+	
+	if(outbrainRecEl)
+	{
+		var divR = document.createElement('div');
+		divR.className = 'OUTBRAIN';
+		divR.setAttribute('data-src',window.location.href);
+		divR.setAttribute('data-widget-id','SB_1');
+		divR.setAttribute('data-ob-template','NRG');
+
+		
+		outbrainRecEl.appendChild(divR);
+		outbrainRecEl.style.display = 'block';
+	}
+
+	
+	if(nrg.$('moreColumn'))
+	{
+		
+	var outbrainweb = document.createElement('div');
+		outbrainweb.className = 'OUTBRAIN spacer';
+		outbrainweb.setAttribute('data-src',window.location.href);
+		outbrainweb.setAttribute('data-widget-id','SB_2');
+		outbrainweb.setAttribute('data-ob-template','NRG');
+
+	
+	if(nrg.$('CustTvBoxId_2'))
+	{
+		insertAfter(nrg.$('CustTvBoxId_2'), outbrainweb)
+	} else
+		nrg.$('moreColumn').appendChild(outbrainweb);
+	
+	}
+
+	
+	if(outbrainRecEl || outbrainEl || nrg.$('moreColumn')) 
+	{
+			var se = document.createElement('script');
+			se.type='text/javascript';
+			se.src = 'http://widgets.outbrain.com/outbrain.js';
+			document.body.appendChild(se);
+	}
+	*/
+	
+})();
+	
+
+/*
+	    <script>    
+        var qs = window.location.href;
+		document.write('<div id="outbrain" class="OUTBRAIN" data-src="' + qs + '" data-widget-id="AR_1" data-ob-template="NRG"> </div>');
+	</script>
+	
+	  <script type="text/javascript" src="http://widgets.outbrain.com/outbrain.js"></script> 
+	  
+	  
+	  
+	
+	if ((appl != 1) && (appl != 54) && (typeof flip4Status == "undefined")){
+		function loadJs(url, callback){
+				var script = document.createElement("script")
+			script.type = "text/javascript";
+			
+			if (script.readyState){  //IE
+			script.onreadystatechange = function(){
+				if (script.readyState == "loaded" ||
+												script.readyState == "complete"){
+								script.onreadystatechange = null;
+								callback();
+				}
+			};
+			} else {  //Others
+			script.onload = function(){
+				callback();
+			};
+		}
+		
+			script.src = url;
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+		
+		nrg.loadCSS('/online/nrg/include/css/flip4prize.css');
+		loadJs('/online/nrg/include/js/jquery-1.4.2.min.js',function(){
+		loadJs('/online/nrg/include/js/flip4prize.js',function(){});																																																												
+		});
+	
+	}
+*/
+}
+
+function gup( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+if (gup('hp')!=''&&gup('loc')!='')
+{   
+   var stat_art_id = 0;
+   if (window.location.href.indexOf('ART')>0)
+   {   var stat_spos_art = window.location.href.indexOf('ART')+3;
+	   var stat_epos_art = window.location.href.indexOf('.htm');
+	   stat_art_id = window.location.href.substr(stat_spos_art,stat_epos_art-stat_spos_art);
+	   stat_art_id = stat_art_id.replace('/','');stat_art_id = stat_art_id.replace('/','');stat_art_id = stat_art_id.replace('/','');
+   }
+
+   var img = '<img src="/nrg/app/?do=statistic&op=HomepageArtStatistic&hp='+gup('hp')
+   +'&loc='+gup('loc')+'&tmp='+Math.random()+'&raz='+stat_art_id+'" width="0" height="0" />';
+   
+   document.write(img);
+}
+/* 
+(function(){ 
+var div = nrg.$('page-wrap');
+
+if(appl != 16 && div.className == 'articlePage')
+{
+
+function loadJs(url, callback){
+		var script = document.createElement("script")
+	script.type = "text/javascript";
+	
+	if (script.readyState){  //IE
+	script.onreadystatechange = function(){
+		if (script.readyState == "loaded" ||
+										script.readyState == "complete"){
+						script.onreadystatechange = null;
+						if(callback) callback();
+		}
+	};
+	} else {  //Others
+	script.onload = function(){
+		if(callback) callback();
+	};
+}
+
+	script.src = url;
+	document.getElementsByTagName("body")[0].appendChild(script);
+
+}
+
+loadJs('http://linicom.co.il/links/convert_47.js');
+}
+})();*/
+
+(function(){
+	var div = nrg.$('page-wrap');
+
+	if(div && div.className == 'articlePage' && nrg.$('channelBody_3'))
+	{
+			
+		var sub = nrg.$('sub_menu');
+		var li = sub.getElementsByTagName('li');
+		
+		for(var i=0;i<li.length;i++)
+		{
+			
+			var a = li[i].getElementsByTagName('a');
+			
+			if(a[0].innerHTML == 'לוח תוצאות LIVE' ||a[0].innerHTML == 'טבלאות')
+			{
+				li[i].style.display = 'none';
+				li[i].removeChild(a[0]);
+			}
+		}
+		
+		
+	}
+})();
+/*
+(function() { 
+ 	var page = nrg.$('page-wrap');
+	var applReset = appl;
+	if (((appl == 1 || appl == 3 || appl == 47 || appl == 55 || appl == 7 || appl == 9) && page.className == 'channelPage') || 
+		(appl == 1 && categoryId == 479 && page.className == 'categoryPage') )
+	{
+	     if(appl==9)
+		 {
+			applReset = 1;
+		 }
+		var leftCol = nrg.$('moreColumn') || nrg.$('pLColumn');
+		if(leftCol)
+		{
+			var div = document.createElement('DIV');
+			div.className='boxSpacer';
+			div.innerHTML='<iframe src="https://www.makorrishon.co.il/nrg/images/banners5/sale_box_'+ applReset +'_2011.html" id="2990" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" width="300" frameborder="0" height="275"></iframe>';
+			if(nrg.$('CM8ShowAd_TVBOX_Lowest_300x250'))
+			{
+				leftCol.insertBefore(div, nrg.$('CM8ShowAd_TVBOX_Lowest_300x250') );
+			} else
+				leftCol.appendChild(div); 
+		}
+	}
+})();
+*/
+
+/*
+(function(){
+
+    var page = nrg.$('page-wrap');
+	 if (appl == 1 || appl == 3 || appl == 47 || appl == 55 || appl == 7 || appl == 9 || appl == 12) 
+        {
+		   var rightColumn = nrg.$('userColInner') || nrg.$('userColumn') || nrg.$('pRColumn');
+		   
+		   if(rightColumn)
+		   {
+			
+			//console.log('useful found-rightcolumn');
+					    
+			var div = document.createElement('DIV');
+				 div.id= 'recommendedSites';
+			
+		   	if(nrg.$('b600x125'))
+			{
+				rightColumn.insertBefore(div, nrg.$('b600x125').nextSibling );
+
+			} else {
+				rightColumn.appendChild(div); 
+			}
+			
+			
+		   nrg.echo('/online/nrg/include/html/useful_2011_'+ appl +'.html','recommendedSites');
+		   
+		}
+	}
+})();
+*/
+
+
+
+if (!document.getElementById('banner_700')&&document.getElementById('channel_plasma'))
+{ var mpl_channel    = document.getElementById('channel_plasma');
+  var mpl_new_div    = document.createElement('DIV');
+  mpl_new_div.id = "banner_700"; var mp1_lastChild  = mpl_channel.lastChild;
+  mpl_channel.insertBefore(mpl_new_div,mpl_channel.firstChild);mpl_new_div.appendChild(mp1_lastChild);
+}
+
+if (!document.getElementById('CustTvBoxId')&&document.getElementById('b300x250'))
+{ var mpl_channel    = document.getElementById('b300x250');
+  var mpl_new_div    = document.createElement('DIV');
+  mpl_new_div.id = "CustTvBoxId"; var mp1_lastChild  = mpl_channel.lastChild;
+  mpl_channel.insertBefore(mpl_new_div,mpl_channel.firstChild);mpl_new_div.appendChild(mp1_lastChild);
+}
+
+
+// If is upper hash , resdirect to hash box
+var str_params = document.location.hash.substr(1);
+if (str_params.indexOf('do=members')>-1)
+{   nrg.onBodyLoad(
+	  function()
+	  {nrg.lightbox('/app/?'+str_params);
+	   //document.location.hash='';
+	  }	
+	)	
+}
+
+
+// Predefined variables
+var login_js_loaded = false;
+
+// Identify part, must be transfered to general.js
+function LoginBoxEngine()
+{	showBody();
+}
+
+// load JS when user click on login fields
+function LoginLoadJS()
+  {  if (!login_js_loaded){ nrg.loadJS('/app/JS/members/members.js');login_js_loaded=true;}}
+
+function LoginHomePage()
+{ LoginLoadJS();
+  if (login_js_loaded)
+  {  // Here check User Name and Password by Ajax, 
+     // And reload login box or POPup lightbox with error
+     var send_vars='user='		+ nrg.URLEncode(nrg.$('members_user').value )+
+				   '&password='	+ nrg.URLEncode(nrg.$('members_password').value)+ 
+				   '&remember_me=' + nrg.URLEncode(nrg.$('members_remember_me').checked?1:0);
+     var options={'method':'post' /*,'debug':1*/ }
+	 nrg.jsonAjax('/app/?do=members&op=ajax_login',send_vars,LoginResult, options )
+  }
+}
+
+function OtherServerCookiesCompat(resAjax)
+{   var src = 'http://luach.nrg.co.il/writeUserCookie.aspx?uid=-111&EMail='+nrg.URLDecode(resAjax['EMAIL'])+ '&EncrID='+ nrg.URLDecode(resAjax['ENCR_ID'])+'&NrgUName='+nrg.URLDecode(resAjax['USER_NAME']);
+	nrg.addIframe(src);
+}
+
+function LoginResult(resAjax)
+{  if (resAjax!=false)
+     switch(resAjax['LOGGED'])
+	  { case 'USERNOTFOUND': OtherServerCookiesCompat(resAjax);
+	    nrg.lightbox('/app/index.php?do=members&op=login&user='+nrg.URLEncode(nrg.$('members_user').value));break;
+		case 'EMAILNOTAPPROVED':nrg.lightbox('/app/index.php?do=members&op=login_stepfm&encr_id='+resAjax['ENCR_ID']);break;
+		case 'SHOW_MAGAZINE':OtherServerCookiesCompat(resAjax);LoginBoxEngine();break;
+		case'LOGGED':OtherServerCookiesCompat(resAjax);LoginBoxEngine();break;
+	  }
+   else
+     alert('Error with login: '+resAjax);
+}
+
+function openContactWin(x){
+  window.open("/online/nrg/contact_us.html?c="+x,"_blank", "toolbar=no,location=no,scrollbars=no,width=482,height=415"); 
+return false;
+}
+
+
+function LoginLogout()
+{  nrg.setCookie('maariv_nrg','',-1,'/','nrg.co.il');
+   nrg.setCookie('maariv_nrg_un','',-1,'/','nrg.co.il');
+   nrg.setCookie('maariv_nrg_forum','',-1,'/','nrg.co.il');
+			nrg.setCookie('maariv_nrg_blogger','',-1,'/','nrg.co.il');
+   
+  // Clear luhot cookies
+   var src = 'http://luach.nrg.co.il/writeUserCookie.aspx?uid=&EMail=&EncrID=&NrgUName=';
+   nrg.addIframe(src);
+   top.nrg.$('members_user').value='';
+   top.nrg.$('members_password').value='';
+   top.nrg.$('members_remember_me').checked=false;
+   LoginBoxEngine();
+}
+
+
+// END   - NEW FUNCTIONS //
+
+
+/* Prevent Text Selection */
+function disableSelection(element) {
+	element.onselectstart = function() {
+		return false;
+	};
+	element.unselectable = "on";
+	element.style.MozUserSelect = "none";
+	element.style.cursor = "default";
+}
+
+function ContactUsBottom(x){
+  window.open("/online/nrg/contact_us.html?c="+x,"_blank", "toolbar=no,location=no,scrollbars=no,width=500,height=480"); 
+return false;
+}
+
+
+/* Tabs */
+function changeTab(obj,tabStr,divStr,total) {
+ 	if(document.getElementById(obj).style.backgroundImage=="url(include/img/tab_on.png)") {
+		disableSelection(document.getElementById(obj));
+		return;
+	}
+   for(i=1;i<=total;i++) {
+   		if(document.getElementById(obj)==document.getElementById(tabStr+i)) {
+			//document.getElementById(obj).style.backgroundImage="url(include/img/tab_on.png)";
+			//document.getElementById(obj).style.color="#fff";
+			document.getElementById(obj).setAttribute("class","mostReadTopTab1");
+			document.getElementById(obj).setAttribute("className","mostReadTopTab1");
+			document.getElementById(divStr+i).style.display="block";
+			disableSelection(document.getElementById(obj));
+			document.getElementById(obj).style.cursor = "pointer";
+		}
+		else {
+			//document.getElementById(tabStr+i).style.backgroundImage="url(include/img/tab_off.png)";
+			//document.getElementById(tabStr+i).style.color="#A6A6B4";
+			document.getElementById(tabStr+i).setAttribute("class","mostReadTopTab2");
+			document.getElementById(tabStr+i).setAttribute("className","mostReadTopTab2");
+			document.getElementById(divStr+i).style.display="none";
+			disableSelection(document.getElementById(obj));
+			document.getElementById(tabStr+i).style.cursor = "pointer";
+			
+		}
+   }
+}
+
+var xmlHttp;
+var divName;
+
+function GetXmlHttpObject()  { 
+
+   var objXMLHttp=null;
+    try { // Firefox, Opera 8.0+, Safari    
+    
+		objXMLHttp=new XMLHttpRequest(); 
+	}
+    catch (e){    
+    	
+		try{ // Internet Explorer 
+		
+		   objXMLHttp=new ActiveXObject("Msxml2.XMLHTTP");   
+		}
+        catch (e){
+		   try{
+		      objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+		   }
+           catch (e){
+		      return objXMLHttp; 
+		   }
+		}
+	}
+    return objXMLHttp;
+}  
+
+function getMostPopular(){
+//alert("getMostPopular"+document.location.href);
+
+	xmlHttpWatched=GetXmlHttpObject();
+	if (xmlHttpWatched==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	if(appl==80)
+	{
+				url=url+"?q=0/mostWatchedPicArt.html";
+				}
+	else if(categoryId==350)
+				url=url+"?q="+appl+"/mostWatchedPicArt.html";	
+	else
+				url=url+"?q="+appl+"/mostWatched.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpWatched.onreadystatechange=stateChangedWatched
+	xmlHttpWatched.open("GET",url,true);
+	xmlHttpWatched.send(null);
+
+	xmlHttpResponsed=GetXmlHttpObject();
+	if (xmlHttpResponsed==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	if(appl==80)
+				url=url+"?q=0/mostResponsedPicArt.html";
+	else if(categoryId==350)
+				url=url+"?q="+appl+"/mostResponsedPicArt.html";	
+	else
+		url=url+"?q="+appl+"/mostResponsed.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpResponsed.onreadystatechange=stateChangedResponsed
+	xmlHttpResponsed.open("GET",url,true);
+	xmlHttpResponsed.send(null);
+
+}
+
+var xmlHttpSekerData=null;
+function getSeker(){
+
+	xmlHttpSekerData=GetXmlHttpObject();
+	if (xmlHttpSekerData==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/1/xml/seker1.xml";
+//	url=url+"?q=/16/bizportal/homepage_madad.html";
+	url=url+"?sid="+Math.random();
+	xmlHttpSekerData.onreadystatechange=readSeker;
+	xmlHttpSekerData.open("GET",url,true);
+	xmlHttpSekerData.send(null);
+}
+
+function readSeker()
+{
+  if (xmlHttpSekerData.readyState==4 || xmlHttpSekerData.readyState=="complete"){
+	 alert(xmlHttpSekerData.responseText);
+	 var data= xmlHttpSekerData.responseXML;
+	 if(data.hasChildNodes)
+	 	alert("true");
+	 else alert("false");
+	 alert(data.childNodes(0).tagName);
+	 alert(data.getElementsByTagName('seker')[0].hasChildNodes==true?"true":"false");
+	 
+	 var mainseker= data.getElementsByTagName('seker')[0].firstChild;//.data;
+	// alert(mainseker.innerText);
+	 alert(mainseker.getAttribute("id"));
+	 //alert(mainseker.getAttribute("title"));
+	// alert(mainseker.getAttribute("title"));
+	}
+} 
+function getHomepageMadad(){
+
+	xmlHttpStockInfo=GetXmlHttpObject();
+	if (xmlHttpStockInfo==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	url=url+"?q=/16/bizportal/homepage_madad.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpStockInfo.onreadystatechange=stateChangedStockInfo
+	xmlHttpStockInfo.open("GET",url,true);
+	xmlHttpStockInfo.send(null);
+}
+
+
+function getHomepageMarket(){
+
+	xmlHttpMarketInfo=GetXmlHttpObject();
+	if (xmlHttpStockInfo==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	url=url+"?q=/16/bizportal/homepage_madad2.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpMarketInfo.onreadystatechange=stateChangedMarketInfo
+	xmlHttpMarketInfo.open("GET",url,true);
+	xmlHttpMarketInfo.send(null);
+}
+
+function getChannelMadad(){
+
+	xmlHttpChannelMadad=GetXmlHttpObject();
+	if (xmlHttpChannelMadad==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	url=url+"?q=/16/bizportal/channel_madad.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpChannelMadad.onreadystatechange=stateChangedChannelMadad
+	xmlHttpChannelMadad.open("GET",url,true);
+	xmlHttpChannelMadad.send(null);
+}
+
+function getChannelCurrency(){
+
+	xmlHttpChannelCurrency=GetXmlHttpObject();
+	if (xmlHttpChannelCurrency==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	url=url+"?q=16/bizportal/channel_currency.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpChannelCurrency.onreadystatechange=stateChangedChannelCurrency
+	xmlHttpChannelCurrency.open("GET",url,true);
+	xmlHttpChannelCurrency.send(null);
+}
+
+function getUsaVoteSeker(){
+
+	xmlHttpUsaVoteSeker=GetXmlHttpObject();
+	if (xmlHttpUsaVoteSeker==null) { // Browser does not support HTTP Request
+		return;
+	}
+	url="/online/nrg/include/getMostPopularBox.php";
+	url=url+"?q=1/usa_vote_box.html";
+	url=url+"&sid="+Math.random();
+	xmlHttpUsaVoteSeker.onreadystatechange=stateChangedUsaVoteSeker
+	xmlHttpUsaVoteSeker.open("GET",url,true);
+	xmlHttpUsaVoteSeker.send(null);
+}
+
+function stateChangedWatched()  { 
+
+   if (xmlHttpWatched.readyState==4 || xmlHttpWatched.readyState=="complete"){   	  	
+      if(document.getElementById("mostRead1")) document.getElementById("mostRead1").innerHTML = xmlHttpWatched.responseText; 
+   }
+}
+
+function stateChangedResponsed()  { 
+
+   if (xmlHttpResponsed.readyState==4 || xmlHttpResponsed.readyState=="complete"){
+      if(document.getElementById("mostRead2")) document.getElementById("mostRead2").innerHTML = xmlHttpResponsed.responseText; 
+   }
+}
+
+function stateChangedStockInfo()  { 
+try{
+   if (xmlHttpResponsed.readyState==4 || xmlHttpResponsed.readyState=="complete"){
+      if(document.getElementById("stockInfo")) document.getElementById("stockInfo").innerHTML = xmlHttpStockInfo.responseText; 
+   }
+ }
+ catch(e){}
+}
+
+
+
+
+function stateChangedChannelMadad()  { 
+try{
+   if (xmlHttpResponsed.readyState==4 || xmlHttpResponsed.readyState=="complete"){
+      if(document.getElementById("stockMadad")) document.getElementById("stockMadad").innerHTML = xmlHttpChannelMadad.responseText; 
+   }
+ }
+ catch(e){}
+}
+
+function stateChangedChannelCurrency()  { 
+try{
+   if (xmlHttpResponsed.readyState==4 || xmlHttpResponsed.readyState=="complete"){
+      if(document.getElementById("stockBottom")) document.getElementById("stockBottom").innerHTML = xmlHttpChannelCurrency.responseText; 
+   }
+ }
+ catch(e){}
+}
+
+function stateChangedUsaVoteSeker()  { 
+try{
+   if (xmlHttpUsaVoteSeker.readyState==4 || xmlHttpUsaVoteSeker.readyState=="complete"){
+      if(document.getElementById("sekerUsa")) document.getElementById("sekerUsa").innerHTML = xmlHttpUsaVoteSeker.responseText; 
+   }
+ }
+ catch(e){}
+}
+
+/* Seker */
+function SendSeker(channelNumber,artRaz){
+	var now = new Date();
+	var start = now.getTime();
+	var vSeker = 0;
+	if(channelNumber=="-1"){
+		channelNumber=appl;
+	}
+	for(a=0;a<document.pollLColumnForm.elements.length;a++){
+		if (document.pollLColumnForm.elements[a].checked==true){
+			location.href="/nrg/online/"+channelNumber+"/ART"+artRaz+".html?pvot="+document.pollLColumnForm.elements[a].value;
+			vSeker = 1;
+		}
+	}
+	if (vSeker == 0 ){
+		alert("נא לבחור אפשרות להצבע");
+	}
+}
+
+try{
+	var obj = document.getElementById("mostRead1");
+	getMostPopular(); // mostPopularArticles
+}
+catch(e){}
+
+try{
+	var obj = document.getElementById("stockInfo");
+	getHomepageMadad(); 
+}
+catch(e){}
+
+try{
+	var obj = document.getElementById("stockMadad");
+	getChannelMadad(); 
+}
+catch(e){}
+
+
+try{
+	var obj = document.getElementById("stockBottom");
+	getChannelCurrency(); 
+}
+catch(e){}
+
+try{
+	var obj = document.getElementById("sekerUsa");
+	if(appl==1 && categoryId==485){
+	   getUsaVoteSeker(); 
+	}
+}
+catch(e){}
+
+function ScoopMail() {
+	var scoopMailChannel;
+	if(typeof(categoryId)!== "undefined" && (categoryId==479 || categoryId==459)){
+		scoopMailChannel=categoryId;
+	}else{
+		scoopMailChannel=appl;
+	}
+
+	var tdin=window.open("/Scripts/ScoopMail/scoopmail.html?c="+scoopMailChannel,"_blank", "toolbar=no,location=no,scrollbars=yes,resizable=yes,width=570,height=700,top=20,left=20");
+}
+
+function ScoopMailGreen() {
+    if(appl==0){
+       appl=1;
+    }
+	var tdin=window.open("/Scripts/ScoopMail/greenscoopmail.html?c=459","_blank", "toolbar=no,location=no,scrollbars=yes,resizable=yes,width=976,height=756,top=20,left=20");
+}
+
+function writeToEditor() {
+	var tdin=window.open("/nrg/images/nrg/footer/writetoeditor.html","_blank");
+}
+
+function showBody(first_time) {
+
+	if (appl==54){
+		var allways_links='<li id="setHomePage"><a href="#"><img height="12" width="14" alt="הפוך לעמוד הבית" src="/nrg/images/nrg/include/img/header/home_icon_local.gif"/></a> <a href="#"><strong>הפוך לעמוד הבית</strong></a></li><li id="scoopMail"><a href="#"><img height="12" width="15" src="/nrg/images/nrg/include/img/header/scoopmail_icon_local.gif" alt="המייל האדום" /></a> <a href="#"><strong>המייל האדום</strong></a></li>';	
+	} else {
+		var allways_links='<li id="setHomePage"><a href="#"><img height="12" width="14" alt="הפוך לעמוד הבית" src="/nrg/images/nrg/include/img/header/home_icon.gif"/></a> <a href="#"><strong>הפוך לעמוד הבית</strong></a></li><li id="scoopMail"><a href="#"><img height="12" width="15" src="/nrg/images/nrg/include/img/header/scoopmail_icon.gif" alt="המייל האדום" /></a> <a href="#"><strong>המייל האדום</strong></a></li>';
+	}
+		     var display_blogger_editor='';
+		     if (nrg.getCookie('maariv_nrg_blogger')==1)
+		     {
+		       display_blogger_editor='<li><a href="https://www.makorrishon.co.il/nrg/app/?do=blog" style="color:#284D99;font-weight:bold;">בלוגים</a></li>';
+		     }
+
+
+	   if (nrg.$('top_links'))
+	   {  // New login box
+    if (nrg.isUser()==false)
+		  {  // Not user 
+			 nrg.$('top_links').innerHTML ='<li id="user_name">שלום <strong>אורח/ת</strong></li><li><a id="log_in" href="/nrg/app/?do=members&op=login" onclick="nrg.lightbox(\'/app/?do=members&op=login\');return false;">כניסה</a></li><li><a id="register" href="/nrg/app/?do=members&op=register" onclick="nrg.lightbox(\'/app/?do=members&op=register\');return false;">הרשמה</a></li>'+allways_links;
+
+		  }
+		  else 
+		  {  // Is user 
+			 nrg.$('top_links').innerHTML = '<li id="user_name">שלום <strong>'+nrg.getUserName()+'</strong></li><li><a id="log_out" href="#" onclick="LoginLogout();return false;">יציאה</a></li><li id="change_info">שינוי פרטים<img src="/nrg/images/nrg/include/img/header/down_arrow.gif"  /><ul id="change_menu" ><li><a id="change_pass_page" href="/nrg/app/index.php?do=members&op=change_pass_page" onclick="nrg.lightbox(\'/app/index.php?do=members&op=change_pass_page\');return false;">שינוי סיסמא</a></li><li><a id="change_email_page" href="/nrg/app/index.php?do=members&op=change_email_page" onclick="nrg.lightbox(\'/app/index.php?do=members&op=change_email_page\');return false;">שינוי דוא"ל</a></li></ul></li>'+display_blogger_editor+allways_links;
+		  }
+		  if (nrg.$('myNrg')) nrg.$('myNrg').style.display='none';
+	   }
+				
+				else if(nrg.$('topUserBar')){
+						
+					  if (nrg.isUser()==false)
+		      {  // Not user
+								if(nrg.$('members'))
+									 nrg.$('members').parentNode.removeChild(nrg.$('members'));
+			      var html = '<li><a id="login" class="iframe"href="/nrg/app/?do=members&op=login" onclick="nrg.lightbox(\'/app/?do=members&op=login\');return false;">כניסה</a></li><li><a id="register" class="iframe" href="/nrg/app/?do=members&op=register" onclick="nrg.lightbox(\'/app/?do=members&op=register\');return false;">הרשמה</a></li>';
+        }
+		       else 
+		       {  // Is user 
+									if(nrg.$('login'))
+										{
+											nrg.$('login').parentNode.parentNode.removeChild(nrg.$('login').parentNode);
+											nrg.$('register').parentNode.parentNode.removeChild(nrg.$('register').parentNode);
+											
+											
+									 }
+										var display_blogger_editor='';
+		    				if (nrg.getCookie('maariv_nrg_blogger')==1)
+		     				{
+		             display_blogger_editor='<li id="blogsMember"><a href="https://www.makorrishon.co.il/nrg/app/?do=blog">בלוגים</a></li>';
+		     				}
+			       var html = '<li id="members" style="position: relative;"><a href="#" class="icons" id="helloUser">שלום <span class="strong">'+nrg.getUserName()+'</span></a><div id="userControl"><ul>'+ display_blogger_editor +'<li><a href="/nrg/app/index.php?do=members&op=change_pass_page" onclick="nrg.lightbox(\'/app/index.php?do=members&op=change_pass_page\');return false;" class="iframe">שינוי סיסמא</a></li><li><a href="/nrg/app/index.php?do=members&op=change_email_page" onclick="nrg.lightbox(\'/app/index.php?do=members&op=change_email_page\');return false;" class="iframe">שינוי דוא"ל</a></li><li><a href="#" onclick="LoginLogout();return false;" class="iframe">יציאה</a></li></ul></div></li>';
+        
+									}
+									var innerHTML = nrg.$('topUserBar').innerHTML;
+									nrg.$('topUserBar').innerHTML = html+''+innerHTML;
+				
+}else
+	   {  // Old login box
+		   if (nrg.isUser()==true)
+		   {  if (typeof onLoadLogin =='string'&&(first_time==undefined||first_time==false)&&nrg.is_lightbox()!=true){eval(onLoadLogin);}
+			  if (typeof onLoadLogin =='string'&&(first_time==undefined||first_time==false)&&nrg.is_lightbox()==true)
+			  {  // If lightbox is open, after close - run all additional scripts;
+				 nrg.lightbox_run_after_close=onLoadLogin;
+			  }
+
+			  nrg.$('userName').innerHTML ='<p id="members_name">'+'שלום '+nrg.getUserName()+'</p>';
+			  nrg.$('memberArea').innerHTML = '<li><a href="#" onclick="LoginLogout();return false;">יציאה מהמערכת</a></li><li><a href="#" onclick="nrg.lightbox(\'/app/index.php?do=members&op=change_pass_page\');return false;">שינוי סיסמה</a></li><li><a href="#" onclick="nrg.lightbox(\'/app/index.php?do=members&op=change_email_page\');return false;">שינוי כתובת דוא"ל</a></li><li><a href="/nrg/online/15/HP_1802.html">הורוסקופ</a></li>';
+		   }
+		   else 
+		   {  // Show Login Box
+			  if (typeof onLoadLogout=='string'&&(first_time==undefined||first_time==false)&&nrg.is_lightbox()!=true){eval(onLoadLogout);}
+			  nrg.$('userName').innerHTML =
+			  '<form id="members_login_form"><label>שם משתמש<br /><input id="members_user" type="text" onkeypress="nrg.keyfilter(event, 13, LoginHomePage);" /></label><br /><label>סיסמה<br /><input id="members_password" type="password" onkeypress="nrg.keyfilter(event, 13, LoginHomePage );"/></label><br /><div id="loginDiv"><input type="button" value="הכנס" id="loginBtn" onclick="LoginHomePage()" onkeypress="nrg.keyfilter(event, 13, LoginHomePage );"/><label><input name="remember" id="members_remember_me" type="checkbox" value="1" onkeypress="nrg.keyfilter(event, 13, LoginHomePage );"/> זכור אותי</label></div></form>';
+			 nrg.$('memberArea').innerHTML =
+			 ' <li><a href="#" onclick="nrg.lightbox(\'/app/?do=members&op=login\');return false;">שכחתי שם משתמש/סיסמה</a></li><li><a href="#" onclick="nrg.lightbox(\'/app/?do=members&op=register\');return false;">משתמש חדש? הרשם כאן</a></li><li><a href="/nrg/online/15/HP_1802.html">הורוסקופ</a></li>';
+			 nrg.addEvent(nrg.$('members_user'),'click',LoginLoadJS, true);
+		   }
+	   }
+
+
+}
+
+function insertTO(c){
+	
+	var cVal = getCookie("maariv_nrg_un");
+	if (cVal == null || cVal == "" || cVal=="undefined")		parent.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showLoginForm";
+	else
+	{
+		if ((c >=1 && c<=2) || c==7)    window.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_PROFILE.profileOpenner?pCode="+c;
+		else if(c == 3)            		window.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showLoginForm";
+		else if(c == 4)            		window.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showRegistrationForm";
+		else if(c==11)
+		{
+			var strHref=new String(window.location.href);
+			while(strHref.indexOf('&')>-1)strHref=strHref.replace('&','*');
+			window.open("https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.exitFromMemCenter?pHVal="+strHref+"&pTmp="+(new Date()).getTime(),"_self");
+		}
+	}
+}
+
+function NRGURLDecode (clearString) 
+{  clearString = unescape(clearString);
+   var retval='';
+   for (a=0;a<clearString.length;a++)
+	 if (clearString.charCodeAt(a)>=224&&clearString.charCodeAt(a)<=(224+26) )   // Hebrew
+	   retval=retval+String.fromCharCode(clearString.charCodeAt(a)+1264);
+	 else if (clearString.charCodeAt(a)==43) // Space
+	   retval=retval+' ';
+	 else
+	   retval=retval+clearString.substr(a,1);
+   return retval;
+
+}
+
+function showUserName(){
+
+	var sCooVal=getCookie("maariv_nrg_un");
+	var helloUser;
+	if(sCooVal!=null && sCooVal!="" && sCooVal!="undefined")
+	{
+		sCooVal=sCooVal.substring(sCooVal,"9","1");
+		helloUser = NRGURLDecode(sCooVal)+"&nbsp,שלום";
+		helloUser = "<a id=\"helloUser\" href=\"javascript:insertTO(1)\">"+helloUser+"</a>";
+	}
+	else{
+		helloUser = "שלום, אורח";		
+	}
+	try{
+		if (document.getElementById("userName"))
+		   document.getElementById("userName").innerHTML = helloUser;
+	}
+	catch(e){}
+}
+
+function getCookie(Name){
+
+	var search=Name + "=";
+	if(document.cookie.length > 0)
+	{
+		var offset = document.cookie.indexOf(search);
+		if (offset != -1)
+		{
+			offset += search.length;
+			var end = document.cookie.indexOf(";", offset);
+			if (end == -1)
+			end = document.cookie.length;
+			return (unescape(document.cookie.substring(offset, end)));
+		}
+	}
+}
+
+function setSticker(day){
+   try{
+	var ay_obj = document.getElementById('ayesterday');
+	var at_obj = document.getElementById('atoday');
+	var atm_obj = document.getElementById('atomorrow');
+	
+	var y_obj = document.getElementById('yesterday');
+	var t_obj = document.getElementById('today');
+	var tm_obj = document.getElementById('tomorrow');
+	
+	
+	if(day == 'yesterday'){
+		at_obj.className  = '';
+		atm_obj.className  = '';
+		ay_obj.className  = 'active';
+		
+		tm_obj.style.display = 'none';
+		t_obj.style.display = 'none';
+		y_obj.style.display = 'block';
+	}
+	else if(day == 'tomorrow'){
+		at_obj.className  = '';
+		ay_obj.className  = '';
+		atm_obj.className  = 'active';
+		
+		y_obj.style.display = 'none';
+		t_obj.style.display = 'none';
+		tm_obj.style.display = 'block';
+	}
+	else {
+		atm_obj.className  = '';
+		ay_obj.className  = '';
+		at_obj.className  = 'active';
+		
+		y_obj.style.display = 'none';
+		tm_obj.style.display = 'none';
+		t_obj.style.display = 'block';
+	}
+   }
+   catch(e){}
+}
+
+//showUserName();
+//showBody(true);
+
+/* functions by yaron */
+ /* reusable functions*/
+ 
+  /* shortcut to getElementById (like $ function.  we dont use "$" here so that	*/
+  /* if we want to use prototype, jquery, etc. in future, we don't get clashes)	*/
+	function get(el) {
+	 return document.getElementById(el);
+	}
+	   
+  /* show-hide anything anywhere anytime 											*/
+  /* usage sh(el) = toggle; sh(el,1) = block; 2 = inline; anything_else = hide 	*/
+	function sh(el,stype) {
+	 if(!get(el)) return;
+	 var ost=get(el).style;
+	 if(!stype) { // toggle
+	  myobj=get(el); 
+	  if(window.getComputedStyle) var ocs=window.getComputedStyle(myobj,null).display; else var ocs=myobj.currentStyle.display;
+	  if(ocs=='none') {
+		  switch(stype) {
+			  case 1: ost.display='block'; break;
+			  case 2: ost.display='inline'; break;
+			  default: ost.display='block';
+		  }
+	  	  return; //quit
+	  }
+	 }
+	 switch(stype) {
+		case 1: ost.display='block'; break;
+		case 2: ost.display='inline'; break;
+		default: ost.display='none';
+	 }
+	}
+   /* end show-hide anything */
+
+ /* pop-up window*/
+ // to center in either drection: use "c" for left and/ or top;
+  function popwin(url,name,w,h,left,top) {
+    if(left=="c") left=(screen.width-w)/2;
+	if(top=="c") top=(screen.height-h)/2;
+	newWin = window.open(url,name,"width="+w+",height="+h+",resizable=no,scrollbars=no,status=no,left="+left+",top="+top);
+//	if(!left && !top) newWin.moveTo((screen.width-w)/2,(screen.height-h)/2); // center
+	newWin.focus();
+}
+
+ /* end reusable functions */
+
+/* for tguvot */
+function viewHide(el) {
+	var myParent=el.parentNode; // split over three lines to avoid IE freezing up (LTE 7)
+	myParent=myParent.parentNode;
+	myParent=myParent.parentNode;
+//	alert(myParent);
+	if(myParent.className=="noshow") 
+	{
+		myParent.className="show"; 
+		//addBuzzerTalkBack(myParent);
+	}
+	else 
+	myParent.className="noshow";
+	
+	
+}
+
+function addBuzzerTalkBack(parent)
+{
+
+	var contentEl=null;
+	var insBefore=null;
+
+
+	var elements = parent.getElementsByTagName('*');
+	
+	for(var i = 0; i<elements.length;i++ )
+	{
+		if(elements[i].className == 't')
+		{
+			contentEl =elements[i];
+		} else if(elements[i].className == 'opt')
+		{
+			insBefore = elements[i];
+		}
+	}
+
+
+	if(contentEl && insBefore)
+	{
+		if(nrg.$('buzzerTalkBackIfrm'))
+		{
+			contentEl.insertBefore(nrg.$('buzzerTalkBackIfrm'),insBefore);
+		
+		} else 
+		{
+			
+			var iframea = document.createElement('iframe');
+			iframea.setAttribute('src',  'https://live.sekindo.com/live/liveView.php?s=43335&njs=1' );
+			iframea.setAttribute('width', 250 );
+			iframea.setAttribute('height', 100 );
+			iframea.setAttribute('marginHeight', 10 );
+			iframea.setAttribute('marginWidth', 0 );
+			iframea.setAttribute('frameBorder', 0 );
+			iframea.setAttribute('scrolling', 'no' );
+			iframea.setAttribute('allowTransparency', 'true' );
+			iframea.setAttribute('id', 'buzzerTalkBackIfrm' );
+			contentEl.insertBefore( iframea, insBefore);
+		}
+		
+	}
+	
+	
+}
+
+
+function viewAll(x) {
+//	get("resetting").innerHTML="<img src='/images/nrg/include/img/tguvot/loading.gif' onload='viewAllNow(x)' />";
+//	get("resetting").style.display="block";
+
+if(nrg.$('buzzerTalkBackIfrm'))
+{
+nrg.$('buzzerTalkBackIfrm').parentNode.removeChild(nrg.$('buzzerTalkBackIfrm'));
+}
+	var divArray=get("talkbacks").getElementsByTagName('div');	
+	if (x!="hide") {
+		for(var i=0; i<(divArray.length); i++) {
+			if(divArray[i].className=="noshow") divArray[i].className="show";
+		}
+		sh("hideAll",2);
+		sh("readAll");
+	} else {
+		for(var i=0; i<(divArray.length); i++) {
+			if(divArray[i].className=="show") divArray[i].className="noshow";
+		}
+		sh("readAll",2);
+		sh("hideAll");
+	}
+//	get("resetting").style.display="none";
+}
+/* end for tguvut */
+
+function writerPageLink(raz) {
+    if(raz!=-1){
+       var w=window.open("/gevanew/owa/MORE.OPINIONS?pWriterID="+raz,"_self");
+    }
+}
+
+if (document.getElementById('articlePage')&&(!document.getElementById('nadlanBox')))
+{	var var_nadlan_obj = document.createElement('DIV');
+	var_nadlan_obj.id='nadlanBox';
+	var_nadlan_obj.innerHTML='<iframe src="/nrg/cache/banners/ban_m.php?vnum=111&amp;vpage=656&amp;loc=39" id="39" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" width="465" frameborder="0" height="260"></iframe>';
+	document.getElementById('pCColumn').appendChild(var_nadlan_obj);
+}
+
+/* hide "my suitecase from old articles */
+try{
+	var tmp=get("articleCBar").getElementsByTagName("span");
+	for(var i=0; i<tmp.length; i++) {
+		if(tmp[i].innerHTML.indexOf("suitcase")!=-1) tmp[i].style.display="none";
+	}
+// get("articleCBar").getElementsByTagName("span")[3].style.display="none";
+}
+catch(err){}
+
+/*
+if (get("article"))
+{ try{
+   if (get("article").getElementsByTagName("iframe")[0].width==268) get("article").getElementsByTagName("iframe")[0].width="300px";
+  } catch(err){}
+} */
+
+if (get('profileLinks'))
+{ try{
+  if ((document.getElementById('profileLinks').innerHTML!='פרופיל ') && (document.getElementById('profileLinks').innerHTML!='פרופיל: ')) document.getElementById('profileLinks').style.display='block';
+  } catch(err){}
+}
+
+
+
+
+function closePlasma(){
+	try {
+			nrg.$('channel_plasma').removeChild(nrg.$('banner_700'));	
+			nrg.$('channel_plasma').style.display = "none";
+	} catch(e){};	
+}
+
+// for banner Dimpack
+function GetColumnHeightDifference()
+{
+var centerColomnHeight = nrg.$('contentColumn').offsetHeight;
+var rightColomnHeight  = nrg.$('userColInner').offsetHeight;
+if (rightColomnHeight + 800<centerColomnHeight  )
+	{
+	
+	nrg.$('bannerDimpackWrap').style.display='block';
+	nrg.$('rightDimpackBanner').height='800';
+        //var url = 'http://pera.co.il/www/delivery/afr.php?n=ac374fd6&zoneid=400&cb=INSERT_RANDOM_NUMBER_HERE';
+        var url = 'https://live.sekindo.com/live/liveView.php?s=14835&njs=1';
+		nrg.$('rightDimpackBanner').src = url;
+        addScriptElement('userColumn','http://pera.co.il/www/delivery/ag.php');
+	}
+}
+
+function addScriptElement(whereID,url){   
+   var el = document.createElement('SCRIPT');
+   el.type = 'text/javascript';
+   el.src = url;
+   nrg.$(whereID).appendChild(el);
+}
+
+// js  refresh --> instead of META refrech
+
+/*function waitTillPageRefresh()
+{ 
+	var MinMultiplier = 1000*60; // 1 minute
+	if(CM8AjaxRefresh)
+		setTimeout( function(){  CM8AjaxRefresh('!Plasma_935x180,elyon_960x90,MegaPlasma_935x300,Maavaron_960x400,Count') }, 2.5 * MinMultiplier);
+	window.refreshObj = setTimeout( function(){  window.location.reload(true) }, 5*MinMultiplier);
+}*/
+
+function waitTillPageRefresh()
+{ 
+	var MinMultiplier = 1000*60; // 1 minute
+	if(CM8AjaxRefresh)
+		setTimeout( function(){  CM8AjaxRefresh('!Plasma_935x180,elyon_960x90,MegaPlasma_935x300,Maavaron_960x400,Count') }, 2.5 * MinMultiplier);
+	window.refreshObj = setTimeout("doReloadPage()", 5*MinMultiplier);
+}
+
+
+function doReloadPage(){
+		  window.location.reload(true);
+}
+
+// ADD DOM RELEVANTI BOX IF NOT EXIST
+if (document.getElementById('article')&&!document.getElementById('RelevantiBox')&&(document.location.hostname == 'www.nrg.co.il'||document.location.hostname =='nrg.co.il'))
+{	if (document.getElementById('cellular_strip_art'))
+		var rel_dest_obj = document.getElementById('cellular_strip_art')
+	else
+		var rel_dest_obj = document.getElementById('articleTBar')
+
+    // Create div, insert new div
+	var rel_div = document.createElement('div');
+	rel_div.id="RelevantiBox";
+	rel_dest_obj.parentNode.insertBefore(rel_div,rel_dest_obj);
+        
+        if ( typeof(canonical_url)!== "undefined" ){
+          nrg.loadJS('https://www.relevanti.com/Widget.ashx?widgetId=22a25d1b-6f94-45c8-9ce6-5ca5f9ce16d8&target=RelevantiBox&url=' + canonical_url );
+        }
+        else
+        {
+	nrg.loadJS('https://www.relevanti.com/Widget.ashx?widgetId=22a25d1b-6f94-45c8-9ce6-5ca5f9ce16d8&target=RelevantiBox&url=' + encodeURIComponent("http://" + document.location.hostname + document.location.pathname) );
+        }
+}
+
+var videoPromo = {
+	targetEl:[],
+	mainElementId: "videoPromo", 
+	init: function(){
+		
+		if (nrg.$(this.mainElementId)){
+			var elements = document.getElementsByTagName('DIV');
+			this.addEvent(nrg.$(this.mainElementId),'mouseout',function(){
+				videoPromo.removeAllHovers();
+			});
+			for(var i=0;i< elements.length;i++){
+				if (elements[i].className == 'mainVideo' || elements[i].parentNode.className == 'videoItems'){
+						this.makeHover(elements[i]);
+						this.addEvent(elements[i],"mouseover",function(){
+							videoPromo.toggleHover(this);
+						});						
+						this.targetEl.push(elements[i]);
+				}
+			} 		
+		}	
+	},	
+makeHover: function(el){
+			var div = document.createElement('DIV');
+			var url = this.getRedirectUrl(el);
+			div.className = 'vidOver';			
+			this.addEvent(div,'click',function(){
+				window.location.href = url.url;  			
+			});
+			
+			div.innerHTML = '<span class="playIcn"></span><div class="overlayBg"></div>';
+			
+			this.addEvent(div,"mouseout",function(){
+						videoPromo.removeHover(this);
+			});
+			this.addEvent(div,"click",function(){
+					window.location.href = url.url;
+			});
+			el.appendChild(div);
+			el.style.zoom = '1';
+			if (/msie|MSIE 6/.test(navigator.userAgent)){
+					div.style.display = "block";
+					div.style.visibility = "hidden";
+			}
+	},
+	getRedirectUrl : function(el){
+		var ele = el.getElementsByTagName('H4')[0];
+		var a = ele.getElementsByTagName('A')[0];
+	 return {
+			txt: a.innerHTML,
+			url: a.href
+		}
+	},
+	removeAllHovers: function(){
+		for (var i=0;i< this.targetEl.length;i++){
+			var overEl = this.targetEl[i].getElementsByTagName('DIV')[0];
+			if (overEl.style.display == 'block'){
+				overEl.style.display = 'none';
+			}
+		}	
+	},
+	toggleHover: function(el){
+			var div = el.getElementsByTagName('DIV')[0];
+			div.style.display = 'block';
+			if (/msie|MSIE 6/.test(navigator.userAgent)){
+					div.style.visibility = "visible";
+			}
+
+		/*	this.removeEvent(el,"mouseover",function(){
+							videoPromo.toggleHover(this);
+			});
+		*/
+	},
+	removeHover: function(el){
+			el.style.display = 'none';	
+	},	
+	addEvent: function (obj, type, fn) {
+		if (obj.attachEvent) {
+			obj['e' + type + fn] = fn;
+			obj[type + fn] = function(){
+				obj['e' + type + fn](window.event);
+		}
+			obj.attachEvent('on' + type, obj[type + fn]);
+		}
+		else {
+			obj.addEventListener(type, fn, false);
+		}
+},
+removeEvent:function(obj, type, fn) {
+	if ( obj.detachEvent ) {
+		obj.detachEvent('on' + type, obj[type + fn]);
+		obj[type + fn] = null;
+	}
+	else {
+		obj.removeEventListener(type, fn, false);
+	}
+}
+}
+try {
+if (appl == 0 || (appl ==1 && categoryId == -1) || (appl ==3 && categoryId == -1) || (appl ==7 && categoryId == -1) || (appl ==16 && categoryId == -1) || (appl ==29 && categoryId == -1) || (appl ==55 && categoryId == -1) || (appl ==47 && categoryId == -1)){
+videoPromo.init();
+}
+}catch(e){}
+
+
+/* biz portal iframe*/
+		if(document.getElementById('article') != null){
+ 		  var ni = document.getElementById('article');
+		  var newBizPortalDiv = document.createElement('div');
+		  var divIdName = 'bizPortalDiv';
+		  newBizPortalDiv.setAttribute('id',divIdName);
+		  ni.appendChild(newBizPortalDiv);
+		}
+	 
+     	function openBizDiv(e, element, id)
+		{
+			var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+			newBizPortalDiv.innerHTML = '<iframe onmouseout = "closeBizportalDiv(event);" src="https://www.bizportal.co.il/shukhahon/paper_popup_nrg.shtml?p_id=' + id + '" frameborder="0" id="bizPortalIframe"></iframe>'
+			setBizportalDivPosition(e);
+			newBizPortalDiv.style.display ='block';
+			if (cursor.x+newBizPortalDiv.offsetWidth >document.body.offsetWidth)
+				 newBizPortalDiv.style.left = document.body.offsetWidth - newBizPortalDiv.offsetWidth  +"px";
+		}
+     
+	
+	 	function closeBizportalDiv(e)
+		{
+			e = e || window.event;
+			
+			if (window.event){
+				if (e.toElement.nodeName == 'IFRAME')
+				{
+				}
+				else
+				{ 
+				newBizPortalDiv.style.display ='none';
+				}
+			}
+			else{
+				if (e.relatedTarget.nodeName == 'IFRAME')
+				{
+				}
+				else
+				{ 
+				newBizPortalDiv.style.display ='none';
+				}
+			}
+			
+		}
+	 	 var cursor = {x:0, y:0};
+   		function setBizportalDivPosition(e) {
+			 e = e || window.event;
+			 if (e.pageX || e.pageY) {
+			 cursor.x = e.pageX;
+			 cursor.y = e.pageY;
+			 } else {
+				var de = document.documentElement;
+				var b = document.body;
+			 cursor.x = e.clientX + (de.scrollLeft || b.scrollLeft) - (de.clientLeft || 0);
+			 cursor.y = e.clientY + (de.scrollTop || b.scrollTop) - (de.clientTop || 0);
+			}
+				 newBizPortalDiv.style.left = cursor.x+newBizPortalDiv.offsetWidth  +"px";
+				 newBizPortalDiv.style.top = cursor.y+newBizPortalDiv.offsetHeight+ 1 +"px";
+        }
+	
+
+
+/* tag page scripts*/
+	if(document.getElementById('channelBody_42') != null){
+		
+			var d = new Date();
+			function changeYear(direction)
+			{
+				var year = document.getElementById('artNavYear').innerHTML;
+				if (direction == 'backward')
+				{
+					year = parseInt(year)-1;
+					if (year  == (d.getFullYear() - 1)){
+					document.getElementById('forward').style.display = "block";}
+					}
+				else if (direction == 'forward')	
+				{	
+					
+					if (year < d.getFullYear())
+					year = parseInt(year)+1;
+				    if (year == d.getFullYear()){
+					document.getElementById('forward').style.display = "none";}
+					
+				}
+				document.getElementById('artNavYear').innerHTML = year;
+                     for (var i=1;i<=12;i++) {
+                         document.getElementById("m_"+i).href="/nrg/online/HP_SEO.php?year="+year+"&channel=42&cat=131&month="+i;
+                     }
+				
+				document.getElementById('artArchive').style.zoom = 1;
+			}
+			
+			 var photoGallery = new Slider();
+					 function SetSliderphoto(obj,objectName,container){
+			
+				 obj.objectName = objectName;
+			
+				 obj.container = container;
+			
+				 obj.stopPoint = 298;
+			
+				 obj.stepPixels = 30;
+			
+				 obj.orientation = 'horizontal';
+			
+				 obj.visibleAreaSize = 298;
+			
+			}
+			
+				SetSliderphoto(photoGallery,'photoGallery','slidGallery');
+			   
+			   
+			   var aaa = document.getElementById('slidGallery');
+			   var bbb =  aaa.getElementsByTagName("ul")[0];
+			 
+				var ccc = bbb.getElementsByTagName("li").length;
+			   
+			   
+ 				
+
+			   photoGallery.totalSize = (298 * parseInt(ccc)) - 298 ;
+				photoGallery.SetParams();
+
+		
+		
+	}
+	
+	
+	//in use for 2011 tabs
+	
+	function doTabs(element){
+			
+			if (typeof element != 'undefined' ){
+				var tabs = element.getElementsByTagName('ul');
+				
+				for (var i=0;i<tabs.length;i++){
+					if (tabs[i].className.indexOf('tabs') > -1){
+						break;	
+					}	
+				}
+				var tabs_li = tabs[i].getElementsByTagName('li');
+				var divs = element.getElementsByTagName('div');
+				var items =[];
+				for (var i=0;i<divs.length;i++){
+					if (divs[i].parentNode.className.indexOf('content') > -1){
+						items.push(divs[i]);
+						
+					}	
+				}
+				//tabs fix
+				if(navigator.appName == 'Microsoft Internet Explorer'){
+				tabs_li[0].style.zoom = 1;
+				var ulWidth = (tabs_li[0].offsetWidth+2)* tabs_li.length;					
+					tabs[0].style.width = ulWidth+'px';
+					tabs[0].style.zoom = 1;
+					
+				}
+				
+				
+				
+				for (var j=0;j<tabs_li.length;j++){
+					tabs_li[j].className += ' li'+ (j); 
+						var a = tabs_li[j].getElementsByTagName('a')[0];						
+						nrg.addEvent(a,'click',function(e){ e = e|| window.event; if (e.preventDefault)e.preventDefault(); else e.returnValue = false;},false);
+						nrg.addEvent(tabs_li[j],'click',function(e){e = e|| window.event;
+																																															     var target = e.target || e.srcElement;
+																																																				target = target.nodeName == 'A' ? target.parentNode.parentNode : target;
+																																																				changeTab(target,items,tabs_li);
+																																																				return false;});
+				} 
+			}
+	}
+	
+
+	
+	function changeTab(element,items,tabs){
+			if (element.className.indexOf('li') > -1){
+				var from = element.className.indexOf('li') + 2;
+				var index = parseInt(element.className.substring(from, from+1));
+				//alert(index);
+				for (var i=0;i<items.length;i++){
+					if (i != index ){	
+							if (items[i].className.indexOf('hide') == -1)
+								items[i].className += ' hide';
+							if (tabs[i].className.indexOf('active')> -1)
+								tabs[i].className = tabs[i].className.replace('active','');
+					}	
+				}
+				element.className += ' active';
+				items[index].className = items[index].className.replace('hide','');
+				
+			}
+	}
+	
+function addTabsEvent(){
+		
+if (nrg.$('moreColumn')){
+	var divs = nrg.$('moreColumn').getElementsByTagName('div');
+	for(var i=0;i<divs.length;i++){
+		if(divs[i].parentNode.id == 'moreColumn' && divs[i].className.indexOf('leftBox') > -1){
+			var tabs = divs[i].getElementsByTagName('ul');			
+			if (tabs.length>0){				
+				for (var j=0;j<tabs.length;j++){
+					if (tabs[j].className.indexOf('tabs') > -1){						
+						doTabs(divs[i]);	
+					}	
+				}
+			}
+		}
+	}
+}	
+		
+	}
+	if (nrg.$('header'))
+		addTabsEvent();
+
+
+var videoOverBox = {
+   _lastElement    : '',
+  init: function(id){
+				var __container = nrg.$('videoPromoContent');
+				if (id =='makoBoxNew')
+					__container = nrg.$('newMakoPromoContent');
+				else if(id =='sport5'){
+					__container = nrg.$('sport5PromoContent');
+				}
+				if (__container){
+					var __li = __container.getElementsByTagName('li');
+					for(var __i=0;__i<__li.length;__i++){						
+						nrg.addEvent(__li[__i],'mouseover',function(e){e = e|| window.event;var target = e.currentTarget || event.srcElement;videoOverBox.over(target);});
+						if (navigator.appName =='Microsoft Interner Explorer'){
+							nrg.addEvent(__li[__i],'mouseleave',function(e){e = e|| window.event;var target = e.currentTarget || event.srcElement;videoOverBox.remove(target);});
+						}else{
+							nrg.addEvent(__li[__i],'mouseout',function(e){e = e|| window.event;var target = e.currentTarget || event.srcElement;videoOverBox.remove(target);});
+						}
+						var url = (__li[__i].getElementsByTagName('a')[0]).href						
+						__li[__i].appendChild(this.createHtml(url));
+					}
+				}				
+			},
+			
+			createHtml: function(url){
+					var __div = document.createElement('div');					
+					nrg.addEvent(__div,'click',function(e){ location.href = url; });
+					__div.className = 'vidOver';
+					__div.className += ' hide';
+					__div.innerHTML = '<span class="playIcn"></span><div class="overlayBg"></div>';
+					return __div;
+			},
+			getElement: function(__element){
+			 while (__element.nodeName.toLowerCase() != 'li') {
+						__element = __element.parentNode;
+				}
+				return __element;
+			},
+			over: function(__element){				
+				if (__element.nodeName.toLowerCase() != 'li'){
+						__element = this.getElement(__element);				
+				}				
+				var __hover =__element.getElementsByTagName('div');
+				for(var i=0;i<__hover.length;i++){
+					if (__hover[i].className.indexOf('vidOver') > -1){						 
+							__hover[i].className = __hover[i].className.replace(' hide','');
+							if (this._lastElement == '')	
+								this._lastElement = __hover[i];
+							else if(this._lastElement.parentNode.innerHTML != __hover[i].parentNode.innerHTML){
+								this._lastElement = __hover[i];
+							}else{return null;}								
+					}	
+				}
+		},
+		remove: function(__element){
+			this._lastElement.className += ' hide';
+		}
+}
+if(nrg.$('videoBox') && nrg.$('videoPromoContent')){
+	videoOverBox.init();
+}
+
+if(nrg.$('makoBoxNew') && nrg.$('newMakoPromoContent')){
+	videoOverBox.init('makoBoxNew');
+}
+
+
+if(nrg.$('sport5') && nrg.$('sport5PromoContent')){
+	videoOverBox.init('sport5');
+}
+
+
+
+
+
+function isEmail(string){
+	if(!string) return true;
+		else return (/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.([a-z]){2,4})$/).test(string);
+}
+function sendDealsEmail(my_form){
+		var email  = my_form.email.value;
+		if(email != ''){
+			if (isEmail(email))
+				nrg.jsonAjax('/online/nrg/include/send_deal_email.php?email='+ email,null,function(d){alert(d);},null,false);
+			else
+				alert('האימייל שהזנת אינו תיקני');
+				
+		} else
+				alert('לא הוזן אימייל');																																							
+		return false;
+}
+
+
+
+function sendNewDealsEmail(my_form){
+		var email  = my_form.email.value;
+		if(email != ''){
+			if (isEmail(email))
+				//nrg.jsonAjax('/online/nrg/include/send_deal_email.php?email='+ email,null,function(d){alert('תודה על הרשמתך');},null,false);
+				nrg.jsonAjax('/online/nrg/include/send_deal_email.php','email=' + email ,function(d){alert('תודה על הרשמתך');},{method:"POST"},false);
+			else
+				alert('האימייל שהזנת אינו תיקני');
+				
+		} else
+				alert('לא הוזן אימייל');																																							
+		return false;
+}
+
+
+		
+if (document.getElementById('ban500').style.display == "none")
+	{
+	document.getElementById('topUserBar').style.width = "650px";
+	document.getElementById('topUserBar').style.zoom = '1';
+	}
+	
+function goToLink(a) 
+{ 
+ var url="https://www.makorrishon.co.il/nrg/luach_nrg/owa/count_hit?board_num="+ a.className +"&url=" + a.href;
+ window.open(url);
+ return false;
+}
+
+
+function sportShowPic(x){//sport magazin gallery
+		if(x==2){
+			document.getElementById('magazinPicturs').style.marginRight = -118 + "px";
+			document.getElementById('btn2').style.color="#cc0000";
+			document.getElementById('btn1').style.color="#92A0A0";
+		}
+		else{
+			
+			document.getElementById('magazinPicturs').style.marginRight = 0 + "px";
+			document.getElementById('btn2').style.color="#92A0A0";
+			document.getElementById('btn1').style.color="#cc0000";
+		}
+		return false;
+	}
+
+
+/*
+*  jobzone
+*/
+
+function trimField(str) {
+	return str.replace(/^\s+|\s+$/g,"");
+}
+
+function setField(input)
+{
+	if( trimField( input.value ) == 'חיפוש חופשי')
+	{
+		 input.value=''; 
+	} 
+}
+
+function validJobzoneForm(frm){
+	var fs =  frm.freeText.value;
+	if (trimField(fs) ==  'חיפוש חופשי'  )
+	{
+		fs.value='';
+	}
+	frm.submit();
+	setTimeout( function(){ frm.freeText.value = 'חיפוש חופשי' ; },1);
+	return false;
+}
+	
+function updateJobzonePrice()
+{
+	
+	var select = nrg.$('jobzonePrice');
+	var m  = select.parentNode.nmwa.value,
+		am = select.parentNode.ajwa.value;
+	if (m > 0 && am > 0){	
+		
+		var options={'method':'post','debug':0}
+		var vars ='month='+m+'&amount=' + am;
+		nrg.jsonAjax('/online/jobzone_box_ajax.php?', vars, 
+		function(data) {							
+			if (data)
+			{
+				if (nrg.$('jobzonePrice')) {
+					nrg.$('jobzonePrice').innerHTML = 'עלות: '+ data + ' &#8362;';
+					nrg.$('#w_price').value= data;
+				}
+			}
+		}, options, false);	
+
+	} else
+	{
+		if (nrg.$('jobzonePrice').length > 0) {
+			nrg.$('jobzonePrice').innerHTML= 'עלות:';
+			nrg.$('#w_price').value = '0';
+		}
+	
+	}
+}
+
+
+// cast time function
+function getVideoSupplier() {
+    try {
+        return VideoSupplier;
+
+    } catch (e) {
+        return nrg;
+    }
+}
+
+
+
+var gabayMsg = {
+
+	hasLoaded: false,
+	url: '/online/11/MassegeGabi.html',
+						
+	loadJQuery: function()
+	{
+		if (typeof jQuery == 'undefined')
+		{
+			if(!gabayMsg.hasLoaded)
+			{
+				nrg.loadJS('/online/nrg/include/js/2011/jquery-1.5.min.js');
+				gabayMsg.hasLoaded = true;
+			}
+			setTimeout(function(){ gabayMsg.loadJQuery(); },100);
+			return;
+		} else
+		{
+			if(!jQuery.isReady)
+			{
+				jQuery(document).ready(function(){
+					gabayMsg.init();
+				});
+			}
+		}
+	},
+	
+	init: function()
+	{
+		
+		jQuery.get(this.url, gabayMsg.onLoadedHandler );
+		
+	},
+	
+	registerEvents: function()
+	{
+		jQuery('#gabayMassege .arrows a').bind('click', gabayMsg.onClickHandler );
+	},
+	
+	onLoadedHandler: function(data)
+	{
+		var data = jQuery(data);
+		jQuery('#gabayMassege .items').append( data ).hide();
+		jQuery('#gabayMassege .items div').hide();
+		jQuery('#gabayMassege .items div:first-child').show();
+		jQuery('#gabayMassege .items').show();
+		
+		
+		gabayMsg.registerEvents();
+		
+	},
+	
+	onClickHandler: function(e)
+	{
+		e.preventDefault(); 
+		
+		var cls = jQuery(e.currentTarget).attr('class');
+		
+		var current = jQuery('#gabayMassege .items div:visible');
+		var index = current.index();
+		var last  = jQuery('#gabayMassege .items div:last-child').index();
+		
+		switch(cls)
+		{
+			case 'fr':
+				if(index == 0) return;
+				else {
+					index -=1;
+				}
+							
+			break;
+			case 'fl':
+				if(index == last) return;
+				else {
+					index +=1;
+				}
+			break;
+		}
+		current.hide();
+		jQuery( jQuery('#gabayMassege .items div').get(index) ).show();
+		
+	}
+
+}
+
+if (typeof jQuery == 'undefined')
+{
+	gabayMsg.loadJQuery();
+} else 
+{
+	jQuery(document).ready(function(){
+		gabayMsg.init();
+	});
+}
+
+
+function reportComment(id, article_id)
+{
+	if(!isNaN(id) && !isNaN(article_id))
+	{
+		var url = '/gevanew/owa/ARTICLES_COMMENTS.USER_REPORT?';
+		var options={'method':'post','debug':0};
+		
+		nrg.jsonAjax( url , 'parent=' + id + '&article='+ article_id ,reportCommentCallback , options, false );
+	}
+	
+	return false;
+}
+function reportCommentCallback(data)
+{
+	if(data)
+	{
+		var iframe = nrg.$('FrmTguvut');
+		var src = iframe.src;
+		iframe.src = '';
+		iframe.src = src + '?rnd='+Math.random();
+	} 
+	
+	return false;
+}
+

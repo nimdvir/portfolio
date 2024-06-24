@@ -1,0 +1,306 @@
+/* ============ !style.css ================= */
+/* ========================================= */
+
+/* ============ !Main/General ============== */
+/* ========================================= */
+
+img_player {
+	border-width:0px;
+}
+
+.visHidden {
+	visibility:hidden;
+}
+.disNone {
+	display:none;
+}
+/* ============ !End of Main/General ======= */
+
+
+
+/* ============ !Economy Wmv Player ======== */
+/* ========================================= */
+
+/* for new slider */
+
+#smallPlayer .economyWmvMainContainer {height:265px;}
+#smallPlayer .economyWmvControlsMute {margin-right:0px;}
+#smallPlayer .economyWmvControls{ width:288px; left:4px;}
+/*End new slider */
+
+.economyWmvMainContainer {
+	width:300px;
+	height:244px;
+	position:relative;
+	margin:0px auto 2px auto;
+	background-color:#E8EBEB;
+	padding-top:7px;
+	text-align:center;
+	overflow:hidden;
+}
+.economyWmvTop {
+	width:263px;
+	height:16px;
+	position:relative;
+	margin:0px;
+	background-position:top;
+	background-repeat:no-repeat;
+	overflow:hidden;
+}
+.economyWmvPlayer {
+	width:284px;
+	height:212px;
+	position:relative;
+	margin:0px auto 0px auto;
+	text-align:right;
+	direction:rtl;
+	color:#ffffff;
+	background-color:#000000;
+	background-position:top;
+	background-repeat:no-repeat;
+	overflow:hidden;
+	border: solid 2px #ffffff;
+}
+.economyWmvPlayer a, .economyWmvPlayer a:hover {
+	color:#ffffff;
+	text-decoration:none;
+
+}
+.economyWmvDiv {
+	width:284px;
+	height:212px;
+	position:relative;
+	/*margin-right:2px;
+	*/
+	margin-top:0px;
+	overflow:hidden;
+}
+.economyWmvBottom {
+	width:280px;
+	height:45px;
+	margin:0px auto 0px auto;
+	padding-top: 0px;
+	text-align: center;
+}
+/* Title */
+.economyWmvTitle {
+	width:137px;
+	height:22px;
+	line-height:22px;
+	padding-right:17px;
+	float:right;
+	text-align:right;
+	direction:rtl;
+	font-weight:bold;
+	color:#000000;
+	overflow:hidden;
+}
+/* End of Title */
+
+/* Link */
+.economyWmvLink {
+	width:92px;
+	height:22px;
+	line-height:22px;
+	padding-left:17px;
+	float:left;
+	direction:rtl;
+	color:#e20915;
+	text-align:left;
+}
+.economyWmvLink a, .economyWmvLink a:hover {
+	color:#e20915;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+}
+/* End of Link */
+
+/* Advertiser */
+.economyWmvAdvertiser {
+	width:43px;
+	height:27px;
+	position:relative;
+	background-image:url(/nrg/images/nrg/video_player/castup_logo.gif);
+	background-position:0px 8px;
+	background-repeat:no-repeat;
+	overflow:hidden;
+	float:right;
+
+}
+/* End of Advertiser */
+
+/* Controls */
+.economyWmvControls {
+	width:280px;
+	height:25px;
+	position:relative;
+	padding-top:0px;
+}
+.economyWmvControlsPlay,.economyWmvControlsPause {
+	width:14px;
+	height:14px;
+	position:relative;
+	float:left;
+	padding-right:5px;
+	padding-top:6px;
+}
+.economyWmvControlsStop {
+	width:14px;
+	height:14px;
+	position:relative;
+	float:left;
+	padding-right:5px;
+	padding-top:6px;
+}
+
+.economyWmvControlsPlay img, .economyWmvControlsPause img,.economyWmvControlsStop img,.economyWmvControlsFs img,
+.economyWmvControlsMute img{
+  cursor:pointer;
+}
+
+.economyWmvControlsVolumeContainer {
+	width:75px;
+	height:18px;
+	padding-top:5px;
+	position:relative;
+	float:left;
+	background-image:url(/nrg/images/nrg/video_player/vol_bg_right.gif);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	padding-right:0px;
+
+}
+.economyWmvControlsVolumeLeft {
+	width:7px;
+	height:23px;
+	position:relative;
+	float:left;
+	background-image:url(/nrg/images/nrg/video_player/vol_bg_left.gif);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	margin-right:2px;
+	overflow:hidden;
+	display:none;
+}
+.economyWmvControlsVolumeRight {
+	width:75px;
+	height:23px;
+	position:relative;
+	float:left;
+	background-image:url(/nrg/images/nrg/video_player/vol_bg_right.gif);
+	background-position:bottom;
+	background-repeat:no-repeat;
+	margin-right:12px;
+	overflow:hidden;
+}
+.economyWmvControlsVolume img_player {
+	position: absolute;
+	top: 5px;
+	right: 0px;
+}
+.economyWmvControlsMute {
+	width:27px;
+	height:14px;
+	position:relative;
+	float:left;
+	overflow:hidden;
+	padding-top:6px;
+    margin-top:0px;
+    margin-right:20px;
+
+}
+.economyWmvControlsFs {
+	width:14px;
+	height:14px;
+	position:relative;
+	float:left;
+	padding-right: 10px;
+	padding-top:6px;
+}
+#economyWmvOnScreenPlay {
+	position: absolute;
+	width: 62px;
+	height: 62px;
+	top: 88px;
+	left: 119px;
+	cursor:pointer;
+}
+
+/* ============ !End of Economy Wmv Player = */
+/* ========================================= */
+
+
+
+/* ============ !Wmv Player Slider ========= */
+/* ========================================= */
+.fd-slider {
+	position:relative;
+	width:100%;
+	height:16px;
+	text-align:center;
+	border:0 none;
+	text-decoration:none;
+	display:block;
+	cursor:pointer;
+}
+.fd-slider-inner {
+
+}
+.fd-slider-bar {
+
+}
+.focused .fd-slider-inner {
+
+}
+.fd-slider-handle {
+	position:absolute;
+	display:block;
+	padding:0;
+	border:0 none;
+	margin:0;
+	z-index:3;
+	top:0;
+	left:0;
+	width:6px;
+	height:16px;
+	outline:0px none;
+	background:transparent url(/nrg/images/nrg/video_player/vol_control.gif) no-repeat 0px 0px;
+	cursor:W-resize;
+}
+.fd-slider-handle:focus {
+	outline:0px none;
+	border:0 none;
+}
+button.fd-slider-handle:focus { 
+	border-color: transparent; 
+}
+
+.fd-slider-hover .fd-slider-handle {
+	background:transparent url(/nrg/images/nrg/video_player/vol_control.gif) no-repeat 0px 0px;
+}
+.focused .fd-slider-handle {
+	background:transparent url(/nrg/images/nrg/video_player/vol_control.gif) no-repeat 0px 0px;
+}
+.focused.fd-slider-hover .fd-slider-handle {
+	background:transparent url(/nrg/images/nrg/video_player/vol_control.gif) no-repeat 0px 0px;
+}
+body.W-resize-s *
+        {
+        cursor:W-resize !important;
+        }
+body.N-resize-s *
+        {
+        cursor:N-resize !important;
+        }
+/* ============ !End of Wmv Player Slider=== */
+
+
+
+/* wmv Timeline */
+#smallPlayer .videoTimer {font-size:0.7em; padding-top:7px;}
+#smallPlayer #sliderWrap {background-image:0px 0px; background-attachment:scroll; background-repeat:repeat; background-color:#fff; position:relative; width:288px; height:10px; padding:0px; margin-top:7px; margin-bottom:3px; left:0px; border:#CCCCCC 0px solid; float:right; margin-right:-4px}
+#smallPlayer .progressBar {position:absolute;left:0px; top:0px; width:0px; height:6px; margin-top:2px; background-color:#ccc; overflow:hidden;}
+#smallPlayer .knob{position:absolute; left:0px; top:0px; width:7px; height:10px; margin-top:0px;}
+#smallPlayer .knob img{cursor:pointer;}
+/* End wmv timeline */

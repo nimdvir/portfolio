@@ -1,0 +1,56 @@
+
+
+function SetSlideTabBox(obj,objectName,defaultItem,container){
+	obj.objectName = objectName;
+	obj.defaultItem = defaultItem;
+	obj.container = container;
+	obj.stopPoint = 101;
+	obj.stepPixels = 15;
+	obj.orientation = 'horizontal';
+	obj.visibleAreaSize = 300;
+	obj.totalSize = 303;
+}
+
+
+
+function SetSliders(obj,objectName,container){
+     obj.objectName = objectName;
+	 obj.container = container;
+	 obj.stopPoint = 34;
+	 obj.stepPixels = 15;
+	 obj.orientation = 'vertical';
+	 obj.visibleAreaSize = 93;
+}
+
+
+
+
+// - Scrollers ---------
+	if(!scroller2){
+			var scroller2=new Slider();
+			SetSliders(scroller2,'scroller2','scrollerUL2');
+			scroller2.SetParams();
+	}
+
+	if(!scroller3){
+		var scroller3=new Slider();
+		SetSliders(scroller3,'scroller3','scrollerUL3');
+		scroller3.SetParams();
+	}
+	
+	
+// - SlideTabBoxes ----------		
+	
+    if(!mostReadItems){
+		var mostReadItems=new Slider();
+        SetSlideTabBox(mostReadItems,'mostReadItems','mostReadItems','slidingTab2-1');
+		mostReadItems.totalSize = 202;
+		mostReadItems.SetParams();
+	}
+	
+	if(!mostTalkItems){	
+		var mostTalkItems=new Slider();
+		SetSlideTabBox(mostTalkItems,'mostTalkItems','mostTalkItems','slidingTab2-2');
+	    mostTalkItems.totalSize = 202;
+		mostTalkItems.SetParams();
+    }

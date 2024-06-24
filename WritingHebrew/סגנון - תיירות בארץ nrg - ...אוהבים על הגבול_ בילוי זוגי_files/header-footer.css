@@ -1,0 +1,622 @@
+/* Header */
+
+.icons{background: url(/nrg/images/nrg/2011/include/icons.gif) no-repeat 0 0;}
+.strong { font-weight: bold;}
+#header{margin:12px auto 11px;}
+
+#topUserBar {width:556px;height:21px;background:#E7EAEA;float:right;}
+#topUserBar li{font-size:1.1em;float:right;}
+#topUserBar li  a{color:#c00;height:9px;padding:0 9px 3px;margin:5px 0 4px;line-height:85%;border-left:1px solid #BAC1C3;display:block;}
+#topUserBar li#ban50{padding-top:2px;}
+#topUserBar li#ban50 a {border:none; color:#647777;}
+#topUserBar li #userControl{display:none;position:absolute;right:0;top:20px;z-index:20;display:none;}
+#topUserBar li ul{color:#92a0a0;font-size:0.55em;min-width:100%;padding:4px 0;list-style:inside square;background:#F3F6F6;border:1px solid #bcc4c4;}
+#topUserBar li ul li{ line-height:175%;margin-right:9px;float:none;}
+#topUserBar li ul li a{color:#284D99;height:auto;padding:0;margin:0;line-height:normal;border:none;display:inline;font-size:1.6em;position:relative;top:2px;right:-4px;}
+#members:hover #userControl{display:block;}
+
+#blogsMember{ font-weight: bold;}
+
+.submit{width:45px;height:21px;border:none;cursor:pointer;}
+
+#topUserBar #helloUser{padding-left:20px;background-position:9px -23px;}
+#topUserBar #userControl{display:none;position:absolute;right:0;top:21px;z-index:20;}
+#topUserBar #sethomePage{ position:relative;}
+#topUserBar #sethomePage a{padding-right:26px;background-position:90px -10px;}
+#topUserBar #scoopMail a{padding-right:26px;background-position:70px 2px;}
+#topUserBar #scoopMailGreen a{padding-right:26px;background-position:67px -48px;color:#9ac000;border-left:none;}
+#ban500{width:96px;height:21px;margin:0 4px;float:right;overflow:hidden}
+
+#searchBar {width: 300px;float: left;}
+#searchBar #query{width:250px;height:19px;border: 1px solid #CFD5D5;}
+#searchBar .submit{background: url(/nrg/images/nrg/include/img/header/search_btn.gif) no-repeat; float:left}
+#searchBar ul{padding-top:7px;margin-top:-1px;background: url(/nrg/images/nrg/2011/include/search-arrow.gif) no-repeat 284px top/* temp */;z-index:10;position:relative}
+#searchBar ul li{padding-left:7px;border-left:1px solid #D9D6DD;margin-left:4px;line-height:95%;font-size:1.1em;display:inline-block;}
+#searchBar ul li.last{border: none;}
+#searchBar ul li a{color:#647878;}
+#searchBar a, #searchBar a:hover, #searchBar a:active, #searchBar a:focus{outline:0;} 
+
+#searchBar ul li.googleIcon{width:36px;display:inline-block;}
+#searchBar ul li.googleIcon a{background: url("https://www.makorrishon.co.il/nrg/images/nrg/2011/include/google-top-search.gif") no-repeat scroll 0 2px transparent;height: 11px;overflow: hidden;text-indent: -9999px;width: 36px;padding-top: 1px;margin:-1px 0 -2px;display:inline-block;}
+
+#logo{margin:-5px 0 -5px!important;float:right;background: url(/nrg/images/nrg/2011/include/nrg-logo.gif) no-repeat right top;clear:both;}
+#logo a{width:190px;height:47px;overflow:hidden;text-indent:-9999px;text-decoration:none;display:block;}
+#logo.video_logo{background:url(/nrg/images/nrg/2011/include/video_logo.gif) no-repeat top right;}
+#logo.imgLogo{background:none !important;}
+#logo.imgLogo a{text-indent:0 !important;}
+#logo a.shabatLogo{display:block;position:absolute;width:55px;height:61px;z-index:1;left:-52px;top:-8px;}
+#date{margin:-5px 0 0;font-size:1em;color:#647878;font-weight:bold;line-height:100%}
+#date span{color:#c00;}
+
+#nrgSites{margin:-9px 0 6px;clear:both;float:left;font-size:1.5em;}
+#nrgSites li{margin-right:12px;float:right;}
+#nrgSites li a{color:#647878;}
+
+
+#mainMenu{height:24px;border:1px solid #bcc4c5;background:url(https://www.makorrishon.co.il/nrg/images/nrg/include/img/homepag_new/nav_bar_bg.gif) repeat-x top right;clear:both;}
+#mainMenu li{padding-left:1px;font-size:1.5em;font-weight:bold;float:right;background: url(/nrg/images/nrg/2011/include/menu-border.gif) no-repeat left 6px;} 
+#mainMenu li a{padding:3px 21px 5px;color:#474748;text-decoration:none;display:block;} 
+#mainMenu li.last,
+#mainMenu li.active{background:none;padding-left:0;}
+#mainMenu li.last a{padding:3px 21px 5px 0px;}
+
+#mainMenu #goHome:hover a{color:#C00000;}
+#mainMenu #goNews:hover a{color:#C00000;}
+
+#mainMenu #goSport:hover a{color:#288200;}
+#mainMenu #goCulture:hover a{color:#634C96;}
+#mainMenu #goLeisure:hover a{color:#3282BE;}
+#mainMenu #goHealth:hover a{color:#50AAA0;}
+#mainMenu #goGossip:hover a{color:#F0B400;}
+#mainMenu #goJudaism:hover a{color:#539ACC;}
+#mainMenu #goMedia:hover a{color:#C00000;}
+#mainMenu #goGreen:hover a{color:#5bac4e;}
+#mainMenu #goOpinion:hover a{color:#C00000;}
+#mainMenu #goTourism:hover a{color:#3282BE;}
+#mainMenu #goNewAge:hover a{color:#3282BE;}
+#mainMenu #goBlogs:hover a{color:#284D99;}
+#mainMenu #goLocal:hover a{color:#000099;}
+#mainMenu #goVideo:hover a{color:#00E4FF;}
+#mainMenu #goFood:hover a{color:#3A81C3;}
+#mainMenu #goRaiting:hover a{color:#96246A;}
+#mainMenu #goHoroscop:hover a{color:#284D99;}
+#mainMenu #goDigital:hover a{color:#767676;}
+#mainMenu #goElections2015 a{color:#0688ef;} 
+#mainMenu #goCars:hover a{color:#ff3d33;} 
+
+.localHeader #mainMenu li:hover a{color:#000099;}
+#mainMenu #goItzuv:hover a{color:#AAA496;}
+
+#nrgSites li span{font-weight:bold;font-size:0.9em;line-height:100%;vertical-align:1px;margin-left:3px;color:#C00000;}
+
+#channelBody_0 #mainMenu #goHome a,
+#channelBody_0  #header #mainMenu #goHome a:hover{color:#fff; background:#C00000;margin:-1px -1px -1px 0;}
+#channelBody_0 #mainMenu #goHome{background:none;}
+#channelBody_0 #footer .channels {border-top-color:#C00000}
+#channelBody_0 #nrgSites li span {color:#C00000;}
+
+
+	  #channelBody_48 #categoryId_335 #mainMenu #goItzuv a,
+#channelBody_48  #categoryId_335 #header #mainMenu #goItzuv a:hover{color:#fff; background:#AAA496;margin:-1px -1px -1px -1px;}
+
+
+#channelBody_61 #categoryId_6174 .articlePage  #mainMenu #goVideo a,
+#channelBody_61 #categoryId_6175 .articlePage  #mainMenu #goVideo a,
+#channelBody_61 #categoryId_6176 .articlePage  #mainMenu #goVideo a,
+#channelBody_61 #categoryId_6177 .articlePage  #mainMenu #goVideo a,
+#channelBody_61 #categoryId_6174 .articlePage  #mainMenu #goVideo #home a:hover,
+#channelBody_61 #categoryId_6175 .articlePage  #mainMenu #goVideo #home a:hover,
+#channelBody_61 #categoryId_6176 .articlePage  #mainMenu #goVideo #home a:hover,
+#channelBody_61 #categoryId_6177 .articlePage  #mainMenu #goVideo #home a:hover,
+#channelBody_1 #mainMenu #goNews a,
+#channelBody_1  #header #goNews #home a:hover{color:#fff; background:#C00000;margin:-1px -1px -1px 0;}
+
+
+#channelBody_61 #categoryId_6174 .articlePage  #mainMenu #goNews,
+#channelBody_61 #categoryId_6175 .articlePage  #mainMenu #goNews,
+#channelBody_61 #categoryId_6176 .articlePage  #mainMenu #goNews,
+#channelBody_61 #categoryId_6177 .articlePage  #mainMenu #goNews,
+#channelBody_1 #mainMenu #goNews{background:none;}
+
+#channelBody_61 #categoryId_6174 .articlePage   #footer .channels,
+#channelBody_61 #categoryId_6175 .articlePage   #footer .channels,
+#channelBody_61 #categoryId_6176 .articlePage   #footer .channels,
+#channelBody_61 #categoryId_6177 .articlePage   #footer .channels,
+#channelBody_1 #footer .channels {border-top-color:#C00000}
+
+#channelBody_61 #categoryId_6174 .articlePage #nrgSites li span,
+#channelBody_61 #categoryId_6175 .articlePage #nrgSites li span,
+#channelBody_61 #categoryId_6176 .articlePage #nrgSites li span,
+#channelBody_61 #categoryId_6177 .articlePage #nrgSites li span,
+#channelBody_1 #nrgSites li span {color:#C00000;}
+
+#channelBody_1 #categoryId_478 #mainMenu #goNews a{color:#474748; background:none ;margin:0;}
+#channelBody_1  #categoryId_478 #header #goNews a:hover{color:#C00000;}
+#channelBody_1 #categoryId_478 #mainMenu #goNews{background: url(/nrg/images/nrg/2011/include/menu-border.gif) no-repeat left 6px;}
+
+#channelBody_29 #mainMenu #goNews a,
+#channelBody_29  #header #goNews #home a:hover{color:#fff; background:#C00000;margin:-1px -1px -1px 0;}
+#channelBody_29 #mainMenu #goNews{background:none;}
+#channelBody_29 #footer .channels {border-top-color:#C00000}
+#channelBody_29 #nrgSites li span {color:#C00000;}
+
+#channelBody_16 #mainMenu #goFinance a,
+#channelBody_16  #header #mainMenu #goFinance a:hover{color:#fff; background:#CA0A00;margin:-1px -1px -1px 0;}
+#channelBody_16 #mainMenu #goFinance{background:none;}
+#channelBody_16 #footer .channels {border-top-color:#CA0A00}
+
+#channelBody_23 #mainMenu #goChildrens a,
+#channelBody_23  #header #mainMenu #goChildrens a:hover{color:#fff; background:#FF985A;margin:-1px -1px -1px 0;}
+#channelBody_23 #mainMenu #goChildrens{background:none;}
+#channelBody_23 #footer .channels {border-top-color:#FF985A}
+
+#channelBody_11 #mainMenu #goJudaism a,
+#channelBody_11  #header #mainMenu #goJudaism a:hover{color:#fff; background:#539ACC;margin:-1px -1px -1px 0;}
+#channelBody_11 #mainMenu #goJudaism{background:none;}
+#channelBody_11 #footer .channels {border-top-color:#539ACC}
+
+
+#channelBody_4 #mainMenu #goFood a,
+#channelBody_4  #header #mainMenu #goFood a:hover{color:#fff; background:#3A81C3;margin:-1px -1px -1px 0;}
+#channelBody_4 #mainMenu #goFood{background:none;}
+#channelBody_4 #footer .channels {border-top-color:#3A81C3}
+
+
+#channelBody_28 #mainMenu #goGishur a,
+#channelBody_28  #header #mainMenu #goGishur a:hover{color:#fff; background:#0FAFA0;margin:-1px -1px -1px 0;}
+#channelBody_28 #mainMenu #goGishur{background:none;}
+#channelBody_28 #footer .channels {border-top-color:#0FAFA0}
+
+#channelBody_90 #mainMenu #goCars a,
+#channelBody_90  #header #mainMenu #goCars a:hover{color:#fff; background:#ff3d33;margin:-1px -1px -1px 0;}
+#channelBody_90 #mainMenu #goCars{background:none;}
+#channelBody_90 #footer .channels {border-top-color:#ff3d33}
+
+
+
+#channelBody_13 #mainMenu #goDigital a,
+#channelBody_13  #header #mainMenu #goDigital a:hover{color:#fff; background:#767676;margin:-1px -1px -1px 0;}
+#channelBody_13 #mainMenu #goDigital{background:none;}
+#channelBody_13 #footer .channels {border-top-color:#767676}
+
+
+
+#channelBody_11 #nrgSites li span {color:#539acc;}
+
+#channelBody_21 #mainMenu #goFinance a,
+#channelBody_21  #header #mainMenu #goFinance a:hover{color:#fff; background:#CA0A00;margin:-1px -1px -1px 0;}
+#channelBody_21 #mainMenu #goFinance{background:none;}
+#channelBody_21 #footer .channels {border-top-color:#CA0A00}
+#channelBody_21 #nrgSites li span {color:#CA0A00;}
+
+
+#channelBody_66 #footer .channels {border-top-color:#0054A6}
+#channelBody_66 #nrgSites li span {color:#0054A6;}
+
+
+#channelBody_3 #mainMenu #goSport a,
+#channelBody_3  #header #mainMenu #goSport a:hover{color:#fff; background:#288200;margin:-1px -1px -1px 0;}
+#channelBody_3 #mainMenu #goSport{background:none;}
+#channelBody_3 #footer .channels {border-top-color:#288200}
+#channelBody_3 #nrgSites li span {color:#288200;}
+
+#channelBody_1 #categoryId_478 #mainMenu #goRaiting a,
+#channelBody_1 #categoryId_478 #header #mainMenu #goRaiting a:hover,
+#channelBody_47 #mainMenu #goRaiting a,
+#channelBody_47  #header #mainMenu #goRaiting a:hover,
+#channelBody_7 #mainMenu #goRaiting a,
+#channelBody_7  #header #mainMenu #goRaiting a:hover{color:#fff; background:#96246A;margin:-1px -1px -1px 0;}
+#channelBody_1 #categoryId_478 #mainMenu #goRaiting,
+#channelBody_7 #mainMenu #goRaiting,
+#channelBody_47 #mainMenu #goRaiting{background:none;}
+#channelBody_1 #categoryId_478 #footer .channels,
+#channelBody_47 #footer .channels,
+#channelBody_7 #footer .channels {border-top-color:#96246A}
+
+#channelBody_47 #nrgSites li span{color:#634C96;}
+#channelBody_7 #nrgSites li span {color:#F0B400;}
+
+
+
+#channelBody_55 #mainMenu #goLeisure a,
+#channelBody_55  #header #mainMenu #goLeisure a:hover{color:#fff; background:#3282BE;margin:-1px -1px -1px 0;}
+#channelBody_55 #mainMenu #goLeisure{background:none;}
+#channelBody_55 #footer .channels {border-top-color:#3282BE}
+#channelBody_55 #nrgSites li span {color:#3282BE;}
+
+
+
+#channelBody_1 #categoryId_479 #mainMenu #goNews a{color:#474748; background:none ;margin:0;}
+#channelBody_1  #categoryId_479 #header #goNews a:hover{color:#C00000;}
+#channelBody_1 #categoryId_479 #mainMenu #goNews{background: url(/nrg/images/nrg/2011/include/menu-border.gif) no-repeat left 6px;}
+#categoryId_479 #mainMenu #goOpinion a,
+#categoryId_479  #header #mainMenu #goOpinion a:hover{color:#fff; background:#C00000;margin:-1px -1px -1px 0;}
+#categoryId_479 #mainMenu #goOpinion{background:none;}
+#categoryId_479 #footer .channels {border-top-color:#C00000}
+#categoryId_479 #nrgSites li span {color:#C00000;}
+
+/*
+#channelBody_blogs #mainMenu #goBlogs a,
+#channelBody_blogs  #header #mainMenu #goBlogs a:hover,
+#channelBody_9 #mainMenu #goBlogs a,
+#channelBody_9  #header #mainMenu #goBlogs a:hover{color:#fff; background:#284D99;margin:-1px -1px -1px 0;}
+#channelBody_blogs #mainMenu #goBlogs,
+#channelBody_9 #mainMenu #goBlogs{background:none;}
+#channelBody_blogs #footer .channels,
+#channelBody_9 #footer .channels {border-top-color:#284D99}
+#channelBody_blogs #nrgSites li span,
+#channelBody_9 #nrgSites li span {color:#284D99;}
+*/
+
+
+#channelBody_1 #categoryId_676 .articlePage   #footer .channels2011,
+#channelBody_1 #categoryId_676 #footer .channels2011 {border-top-color:#175c9e}
+
+
+#channelBody_61 #mainMenu #goVideo a,
+#channelBody_61  #header #mainMenu #goVideo a:hover{color:#fff; background:#00E4FF;margin:-1px -1px -1px 0;}
+#channelBody_61 #mainMenu #goVideo{background:none;}
+#channelBody_61 #footer .channels {border-top-color:#00E4FF}
+#channelBody_61 #nrgSites li span {color:#00E4FF;}
+
+
+#channelBody_61 #categoryId_6174 .articlePage #header #mainMenu #goVideo a:hover,
+#channelBody_61 #categoryId_6175 .articlePage#header #mainMenu #goVideo a:hover,
+#channelBody_61 #categoryId_6176 .articlePage #header #mainMenu #goVideo a:hover,
+#channelBody_61 #categoryId_6177 .articlePage #header #mainMenu #goVideo a:hover{background:#c00000;}
+
+
+#channelBody_55 #categoryId_315 #mainMenu #goLeisure a{color:#474748; background:none ;margin:0;}
+#channelBody_55  #categoryId_315 #header #mainMenu #goLeisure a:hover{color:#3282BE;background:none ;margin:0;}
+#channelBody_55 #categoryId_315 #mainMenu #goLeisure{background: url(/nrg/images/nrg/2011/include/menu-border.gif) no-repeat left 6px;}
+#categoryId_315 #mainMenu #goHoroscop a,
+#categoryId_315  #header #mainMenu #goHoroscop a:hover{color:#fff; background:#3282BE;margin: -1px; padding: 3px 25px 5px 21px;}
+#categoryId_315 #footer .channels {border-top-color:#3282BE}
+#categoryId_315 #nrgSites li span {color:#3282BE;}
+
+
+#channelBody_1 #categoryId_459 #mainMenu #goNews a{color:#474748; background:none ;margin:0;}
+#channelBody_1  #categoryId_459 #header #goNews a:hover{color:#C00000;}
+#channelBody_1 #categoryId_459 #mainMenu #goNews{background: url(/nrg/images/nrg/2011/include/menu-border.gif) no-repeat left 6px;}
+#categoryId_459 #mainMenu #goGreen a,
+#categoryId_459  #header #mainMenu #goGreen a:hover{color:#fff; background:#5bac4e;margin:-1px -1px -1px 0;}
+#categoryId_459 #mainMenu #goGreen{background:none;}
+#categoryId_459 #footer .channels {border-top-color:#5bac4e}
+#categoryId_459 #nrgSites li span {color:#5bac4e;}
+
+#mainMenu li.active a{/*padding:3px 16px 5px 17px;*/margin:-1px -1px -1px 0;}
+
+
+#channelBody_53 #footer .channels {border-top-color:#87463C}
+#channelBody_53 #nrgSites li span {color:#87463C;}
+
+
+
+
+#topBanners{height:auto;margin-bottom:0px;}
+
+#channelBody_0 #topBanners{ margin-bottom:13px;}
+
+
+
+
+
+#sub_menu_bar {background: #E8EBEB; border-bottom: none;border-top:none; clear: both; display: block; height: 16px; margin-top: -1px; padding: 4px 8px 6px 0;  position: relative; top: -1px;  width: 952px;}
+
+
+#categoryId_315 #footer	 {border-top:none;}
+#footer #goTop, #footer #goHome{font-size:1.2em;  margin-bottom: 3px;}
+#footer .channels {clear:both}
+#footer .channels { border-top: 5px solid #c00000; border-bottom:1px solid #D0D6D6; overflow:hidden; margin-bottom:14px}
+#footer .channels ul li{width:73px; float:right;  margin:10px 0 10px 80px}
+#footer .channels ul li ul{ font-size: 1.1em;}
+#footer .channels ul li.last {margin-left:0; width:40px; overflow:hidden!important;}
+#footer #mainLinks li,
+#footer #news li,
+#footer #finance li,
+#footer #sport li,
+#footer #tarbut li,
+#footer #leisure li,
+#footer #briut li,
+#footer #rescue li,
+#footer #gossip li,
+#footer #local li,
+#footer #greenChanel li{float:right; margin:0px;}
+	
+#mainLinks li strong { color:#647878;}
+#news li strong{ color:#c00000;} 
+#finance li strong{ color:#CA0A00;} 
+#sport li strong{ color:#288200;} 
+#tarbut li strong{ color:#634C96;} 
+#leisure li strong{ color:#3282BE;} 
+#briut li strong{ color:#50B7CA;} 
+#rescue li strong{ color:#9C463D;} 
+#gossip li strong{ color:#F0B400;} 
+#local li strong{ color:#c00000;}
+#greenChanel li strong{ color:#5bac4e;}
+
+#footerLogo{ top: 3px; right:0}
+#footerLinks li {border-left:1px solid #D0D6D6; display:inline-block; padding-left:5px; margin-left:5px; float:right;}
+#footerLinks li span {display:block; color:#647878; font-weight:bold;}
+#footerLinks li.last {border:none;}
+#footerLinks li span a{padding-right:5px; position:relative; top:8px;}
+#footerLinks .rss {background:url(/nrg/images/nrg/2011/include/rss-logo.gif) no-repeat right top; display:inline-block; padding-right:20px ; border:none}
+#footerLinks #arab {font-weight:bold; }
+#footerLinks  .footer-link-acum img{display:inline;vertical-align:middle;margin:-4px 0;}
+#footer #goTop {background:url(/nrg/images/nrg/2011/include/back-top.gif) no-repeat right 5px; display:inline-block; padding-right:13px;}
+
+
+#setHomepageFF { width:250px;font-size:1.1em;padding:11px; border:solid 1px #647878; display:none; position:absolute; top:26px; right:58px; z-index:99; background:url(/nrg/images/nrg/include/img/header/MakeHomeFF_bg.png);}
+#setHomepageFF img {padding-top:8px;}
+#setHomepageFF span{display:block;position:absolute; top:-11px; right:23px;width:19px;height:12px;background: url(/nrg/images/nrg/include/img/header/MakeHomeFF_arrow.png) no-repeat 0 0;}
+#setHomepageFF a:active {outline:none;}
+#setHomepageFF a#icon {height:71px; width:55px; display:block; float:left; background: transparent url(/nrg/images/nrg/include/img/header/MakeHomeFF_btn.png) no-repeat center; border:dotted 1px #242424;}
+#setHomepageFF ol { padding: 11px 22px 0 0; clear:both;}
+#setHomepageFF li {margin-bottom:6px;float:none;font-size:1em;}
+#setHomepageFF p { text-align:center; font-size:1em; margin:0;border:none;}
+#setHomepageFF p a{color:#C00000;border:none;line-height:normal;padding:0;margin:0;font-size:1em;}
+
+/*local header*/
+
+#channelBody_54 .channelPage #mainMenu #goLocalHome a,
+#channelBody_54  .channelPage #header #mainMenu #goLocalHome a:hover{color:#fff; background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 .channelPage #mainMenu #goLocalHome{background:none;}
+#channelBody_54  #footer .channels {border-top-color:#000099}
+#channelBody_54  #nrgSites li span {color:#000099;}
+
+
+#channelBody_54  #categoryId_869  #mainMenu #goJerusalem a,
+#channelBody_54  #categoryId_869  #header #mainMenu #goJerusalem a:hover{color:#fff; background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 #categoryId_869  #mainMenu #goJerusalem{background:none;}
+
+#channelBody_54 #categoryId_870  #mainMenu #goCenter a,
+#channelBody_54 #categoryId_870  #header #mainMenu #goCenter a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 #categoryId_870  #mainMenu #goCenter{background:none;}
+
+#channelBody_54 #categoryId_874  #mainMenu #goSharon a,
+#channelBody_54 #categoryId_874  #header #mainMenu #goSharon a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 #categoryId_874  #mainMenu #goSharon{background:none;}
+
+#channelBody_54 #categoryId_871  #mainMenu #goPlain a,
+#channelBody_54 #categoryId_871  #header #mainMenu #goPlain a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 #categoryId_871  #mainMenu #goPlain{background:none;}
+
+#channelBody_54 #categoryId_872  #mainMenu #goNorth a,
+#channelBody_54 #categoryId_872  #header #mainMenu #goNorth a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 #categoryId_872  #mainMenu #goNorth{background:none;}
+
+#channelBody_54 #categoryId_873  #mainMenu #goSouth a,
+#channelBody_54 #categoryId_873  #header #mainMenu #goSouth a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_54 #categoryId_873  #mainMenu #goSouth{background:none;}
+
+
+
+#channelBody_14 .channelPage #mainMenu #goLocalHome a,
+#channelBody_14  .channelPage #header #mainMenu #goLocalHome a:hover{color:#fff; background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 .channelPage #mainMenu #goLocalHome{background:none;}
+#channelBody_14  #footer .channels {border-top-color:#000099}
+#channelBody_14  #nrgSites li span {color:#000099;}
+
+
+#channelBody_14  #categoryId_141  #mainMenu #goJerusalem a,
+#channelBody_14  #categoryId_141  #header #mainMenu #goJerusalem a:hover{color:#fff; background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 #categoryId_141  #mainMenu #goJerusalem{background:none;}
+
+#channelBody_14 #categoryId_142  #mainMenu #goCenter a,
+#channelBody_14 #categoryId_142  #header #mainMenu #goCenter a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 #categoryId_142  #mainMenu #goCenter{background:none;}
+
+#channelBody_14 #categoryId_143  #mainMenu #goSharon a,
+#channelBody_14 #categoryId_143  #header #mainMenu #goSharon a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 #categoryId_143  #mainMenu #goSharon{background:none;}
+
+#channelBody_14 #categoryId_144  #mainMenu #goPlain a,
+#channelBody_14 #categoryId_144  #header #mainMenu #goPlain a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 #categoryId_144  #mainMenu #goPlain{background:none;}
+
+#channelBody_14 #categoryId_145  #mainMenu #goNorth a,
+#channelBody_14 #categoryId_145  #header #mainMenu #goNorth a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 #categoryId_145  #mainMenu #goNorth{background:none;}
+
+#channelBody_14 #categoryId_146  #mainMenu #goSouth a,
+#channelBody_14 #categoryId_146  #header #mainMenu #goSouth a:hover{color:#fff;background:#000099;margin:-1px -1px -1px 0;}
+#channelBody_14 #categoryId_146  #mainMenu #goSouth{background:none;}
+
+
+.localHeader #mainMenu li a{padding:3px 10px 5px;} 
+.localHeader #mainMenu li.last a{padding:3px 10px 5px;}
+.localHeader #nrgLocalLogo {color:#6D8080; background:url(/nrg/images/nrg/2011/include/arrow_local.png) no-repeat 0 8px; padding-left:2px; margin-left:3px}
+.localHeader #nrgLocalLogo span {color:#000099;}
+
+ #header.localHeader{margin-bottom:0px;}
+
+#channelBody_54 #welcomeScreen {border-top:5px solid #000099;}
+
+
+#channelBody_0 #sub_menu{background:url(/nrg/images/nrg/2011/include/dotted-line.gif) repeat-x bottom left; height:27px}
+#channelBody_0 #sub_menu li{display:inline-block; float:right; margin:4px 9px 0 ; font-size:1.2em}
+#channelBody_0 #sub_menu li a{color:#647878;}
+#channelBody_0 #sub_menu #nrgMore {color:#cc0000; font-weight:bold; margin-right:0;margin-top:0px; padding-top:4px}
+#channelBody_0 #sub_menu #nrgMore span {font-size:1.3em; line-height: 100%;padding-top: 3px;vertical-align: text-top;}
+
+#channelBody_8 #header {margin-bottom:11px!important;}
+#channelBody_8 #sub_menu{background:url(/nrg/images/nrg/2011/include/dotted-line.gif) repeat-x bottom left; height:27px}
+#channelBody_8 #sub_menu li{display:inline-block; float:right; margin:4px 9px 0 ; font-size:1.2em; padding:0; font-weight:normal}
+#channelBody_8 #sub_menu li a{color:#647878;}
+#channelBody_8 #sub_menu #nrgMore {color:#cc0000; font-weight:bold; margin-right:0;margin-top:0px; padding-top:4px}
+#channelBody_8 #sub_menu #nrgMore span {font-size:1.3em; line-height: 100%;padding-top: 3px;vertical-align: text-top;}
+
+#footer #goHome {color:#284D99;}
+#mainMenu #goParenrs:hover a {color:#E00072}
+
+#channelBody_17 #mainMenu #goParenrs {
+    background: none repeat scroll 0 0 transparent;
+}
+#channelBody_17 #mainMenu #goParenrs a { background:#E00072; color:#fff; margin:-1px -1px -1px 0;}
+#mainMenu.newMenu li a {padding:3px 17px 5px;} 
+#mainMenu.newMenu li.last a { padding:3px 10px 5px 0} 
+
+/* new styles */
+#channelBody_7  #mainMenu.mainMenu2013 #goGossip a{ background:#F0B400; color:#fff; margin:-1px -1px -1px 0;} 
+#channelBody_47  #mainMenu.mainMenu2013 #goCulture a{ background:#634C96; color:#fff; margin:-1px -1px -1px 0;} 
+ 
+#mainMenu.newMenu2011 li a {padding:3px 14px 5px;} 
+#mainMenu.newMenu2011 li.last a { padding:3px 14px 5px 0} 
+
+#mainMenu.newMenu2012 li a {padding:3px 14px 5px 13px;} 
+#mainMenu.newMenu2012 li.last a { padding:3px 14px 5px 0} 
+
+#mainMenu.newMenu2013 li a {padding:3px 16px 5px 16px;} 
+#mainMenu.newMenu2013 li.last a { padding:3px 14px 5px 24px } 
+#mainMenu.mainMenu2013 li a{padding:3px 16px 5px 16px;}
+	  
+
+.channels2011{clear:both;background:#E8EBEB;height:126px; border:1px solid #D0D6D6;padding:11px 9px 11px 0;}
+#footer .channels2011{border:none;border-top: 5px solid #c00000; border-bottom:1px solid #D0D6D6; overflow:hidden;padding-right:0;background:none;height:auto;margin-bottom:14px}
+.channels2011 div {background:#D0D6D6;border: 1px solid #92A0A0;color: #647878;cursor: pointer;float: left;font: bold 0.825em verdana,arial,sans-serif;margin: 0 0 0 15px;padding: 1px 0 2px;text-align: center;width: 16px;}
+.channels2011 ul li{width:96px; margin-left:9px;border-left:1px solid #D0D6D6;height:166px;float:right;}
+.channels2011 ul li ul{ font-size: 1.1em;}
+.channels2011 ul li ul li{height:auto;margin:0;float:none !important;}
+.channels2011 strong{font-weight:bold;}
+.channels2011 ul li.last {margin-left:0; width:40px; overflow:hidden!important;border:none;}
+.channels2011 .mainLinksChl li,
+.channels2011 .newsChl li,
+.channels2011 .financeChl li,
+.channels2011 .sportChl li,
+.channels2011 .tarbutChl li,
+.channels2011 .leisureChl li,
+.channels2011 .briutChl li,
+.channels2011 .rescueChl li,
+.channels2011 .gossipChl li,
+.channels2011 .localChl li,
+.channels2011 .greenChanel li{float:right; margin:0px;}
+
+.channels2011 .mainLinksChl li strong { color:#647878;}
+.channels2011 .newsChl li strong{ color:#c00000;} 
+.channels2011 .financeChl li strong{ color:#CA0A00;} 
+.channels2011 .sportChl li strong{ color:#288200;} 
+.channels2011 .tarbutChl li strong{ color:#634C96;} 
+.channels2011 .leisureChl li strong{ color:#3282BE;} 
+.channels2011 .briutChl li strong{ color:#50B7CA;} 
+.channels2011 .rescueChl li strong{ color:#9C463D;} 
+.channels2011 .gossipChl li strong{ color:#F0B400;} 
+.channels2011 .localChl li strong{ color:#c00000;}
+.channels2011 .greenChanelChl li strong{ color:#5bac4e;}
+.channels2011 .parentsChl li strong{color:#E00072;}
+
+#channelBody_53 #footer .channels2011 {border-top-color:#87463C}
+#channelBody_1 #categoryId_459 #footer .channels2011 {border-top-color:#5bac4e}
+#categoryId_315 #footer .channels2011 {border-top-color:#3282BE}
+#channelBody_61 #footer .channels2011 {border-top-color:#00E4FF}
+#channelBody_blogs #footer .channels2011,
+#channelBody_9 #footer .channels2011 {border-top-color:#284D99}
+#categoryId_479 #footer .channels2011 {border-top-color:#C00000}
+#channelBody_55 #footer .channels2011 {border-top-color:#3282BE}
+#channelBody_1 #categoryId_478 #footer .channels2011,
+#channelBody_47 #footer .channels2011{border-top-color:#634C96}
+#channelBody_7 #footer .channels2011 {border-top-color:#F0B400}
+#channelBody_3 #footer .channels2011 {border-top-color:#288200}
+#channelBody_16 #footer .channels2011 {border-top-color:#CA0A00}
+#channelBody_23 #footer .channels2011 {border-top-color:#FF985A}
+#channelBody_21 #footer .channels2011 {border-top-color:#CA0A00} 
+#channelBody_11 #footer .channels2011 {border-top-color:#539acc}
+#channelBody_4 #footer .channels2011 {border-top-color:#3A81C3} 
+#channelBody_28 #footer .channels2011 {border-top-color:#0FAFA0} 
+#channelBody_90 #footer .channels2011 {border-top-color:#ff3d33} 
+
+#channelBody_14 #footer .channels2011 {border-top-color:#000099} 
+#channelBody_13 #footer .channels2011 {border-top-color:#767676}
+#channelBody_12 #footer .channels2011 {border-top-color:#4e6dae}
+#channelBody_48  #categoryId_335 #footer .channels2011 {border-top-color:#AAA496}
+#channelBody_48  #categoryId_336 #footer .channels2011 {border-top-color:#AAA496}
+#channelBody_48  #categoryId_337 #footer .channels2011 {border-top-color:#AAA496}
+#channelBody_48  #categoryId_338 #footer .channels2011 {border-top-color:#AAA496}
+#channelBody_48  #categoryId_339 #footer .channels2011 {border-top-color:#AAA496}
+#channelBody_48  #categoryId_490 #footer .channels2011 {border-top-color:#000000;}
+#channelBody_29 #footer .channels2011 {border-top-color:#C00000}
+#channelBody_0 #footer .channels2011 {border-top-color:#C00000}
+#channelBody_61 #categoryId_6174 .articlePage .channels2011,
+#channelBody_61 #categoryId_6175 .articlePage .channels2011,
+#channelBody_61 #categoryId_6176 .articlePage .channels2011,
+#channelBody_61 #categoryId_6177 .articlePage .channels2011,
+#channelBody_1 #footer .channels2011 {border-top-color:#C00000}
+#channelBody_66 #footer .channels2011 {border-top-color:#0054A6}
+
+#channelBody_0 #sub_menu{clear:both;}
+
+#channelBody_0 #sub_menu .NatSub a{background:url(/nrg/images/nrg/2011/include/nationalLogoSubMenu.jpg) 0 0 no-repeat; width:53px; height:19px; display:block; overflow:hidden; text-indent:-999px;}
+#channelBody_0 #sub_menu .NatSub{margin-top: 2px;margin-right: 7px;float:left;margin-left:0;}
+#channelBody_0 #sub_menu .fbSub a{background:url(/nrg/images/nrg/2011/include/facebookLogoSubMenu.jpg) 0 0 no-repeat;width:16px; height:16px;display:block; overflow:hidden; text-indent:-999px;}
+#channelBody_0 #sub_menu .fbSub {border-right: 1px solid #BEC2C1;float: left;margin-left: 0;margin-right: 0;padding-right: 7px;padding-top: 2px;padding-bottom: 2px;margin-top: 2px;}
+#channelBody_0 #sub_menu .utSub a{background:url(/nrg/images/nrg/2011/include/youTubeSubMenu.jpg) 0 0 no-repeat;width:39px; height:15px;display:block; overflow:hidden; text-indent:-999px; } 
+#channelBody_0 #sub_menu .utSub {float:left;margin-left: 7px;}
+        
+#adInMaariv a {font-weight:bold; color:#cc0000;}
+#mainMenu.euro2012Header li a {position:static!important}
+#mainMenu.euro2012Header li.last a {padding:3px 6px 5px 0; @padding: 3px 10px 5px 0;}
+#mainMenu #goEuro a{color:#cc0000}
+
+
+#topUserBar li #register{background:url(/nrg/images/nrg/2011/include/icons.gif) no-repeat 48px -94px;padding-right:21px;height:11px;*height:10px;*padding-bottom:2px;}
+#topUserBar #sethomePage a{background-position:93px -77px;padding-right:27px;*padding-bottom:1px;}
+#topUserBar #scoopMail a{background-position: 70px -109px;}
+#topUserBar #scoopMailGreen a{background-position: 67px -109px;}
+
+/* new styles override */
+#searchBar.newSearchBar{width:341px;float:left;}
+#topUserBar.topUserBarNew{width:614px !important;}
+
+#searchBar.newSearchBar form input{vertical-align: top;}
+#searchBar.newSearchBar .submit{background: url(/nrg/images/nrg/2011/include/new-search-submit-btn.gif) 0 0 no-repeat; width:59px; height:21px;margin-right:2px;}
+#searchBar.newSearchBar #query {width:272px;padding-right:3px; height:19px;font-size:1.2em; border:1px solid #CDCDCD; font-family:Arial, Helvetica, sans-serif;display: inline-block;}
+
+#channelBody_0 #logo.newLogo{height:52px;clear:right;margin: 11px 0 10px !important; float:right !important;}
+#channelBody_0 #topUserBar.topUserBarNew  {width:100%!important; float:none; }
+#channelBody_0 #searchBar.newSearchBar {width:343px;float: right; margin-right: 84px; margin-top: 16px;line-height:150%;}
+#channelBody_0 #searchBar.newSearchBar .submit{display:inline-block;background: url(/nrg/images/nrg/2011/include/summit_new_search.jpg) 0 0 no-repeat; width:59px; height:26px;}
+#channelBody_0 #searchBar.newSearchBar #query { width:274px; height:24px;  border:1px solid #CDCDCD;font:inherit;font-size:1.4em;padding-right:3px;}
+#channelBody_0 #searchBar.newSearchBar ul{background-position: 320px top;}
+
+#mediaToolBar {margin-top:45px}
+#mediaToolBar li {height:18px;border-right:1px solid #BEC2C1; float: left;padding: 2px 7px 0 0;margin: 2px 7px 0 0;}
+#mediaToolBar li a{display:block; overflow:hidden; text-indent:-999px;}
+#mediaToolBar #fbSub a{background:url(/nrg/images/nrg/2011/include/facebookLogoSubMenu.jpg) 0 0 no-repeat;width:16px; height:16px;}
+#mediaToolBar #utSub a{background:url(/nrg/images/nrg/2011/include/youTubeSubMenu.jpg) 0 0 no-repeat;width:39px; height:15px;} 
+#mediaToolBar #appStoreSub a{background:url(/nrg/images/nrg/2011/include/apple_store_hp.jpg) 0 0 no-repeat;width:46px; height:15px;}
+#mediaToolBar #googlePlaySub a{background:url(/nrg/images/nrg/2011/include/google_play_hp.jpg) 0 0 no-repeat;width:63px; height:16px;}
+#mediaToolBar #googlePlaySub {border:none}
+#mediaToolBar{float: left;}
+
+
+#ban500{display:none;}
+#mainMenu #goElections2015{display:none !important;}
+
+#mainMenu  #goMondial2014 a{color:#288200 !important;}
+
+#channelBody_3 #categoryId_634 #mainMenu.mainMenu2013  #goSport a{padding:3px 16px 5px !important;color:#474748;text-decoration:none;display:block;}
+#channelBody_3 #categoryId_634  #header #mainMenu #goSport a:hover{color:#288200; background:none;margin:0;}
+#channelBody_3 #categoryId_634 #mainMenu #goSport a, #channelBody_3 #categoryId_634 #header #mainMenu #goSport a:hover{background:none !important;margin:0 !important;}
+
+
+#channelBody_48 #categoryId_489 #footer .channels {border-top-color:#016900;}
+#channelBody_48 #categoryId_489 #nrgSites li span {color:#016900;}
+#channelBody_48 #categoryId_489 #footer .channels2011 {border-top-color:#016900;} 
+
+
+
+
+#channelBody_3 #categoryId_634 #mainMenu #goMondial2014 a,
+#channelBody_3 #categoryId_634  #header #mainMenu #goMondial2014 a:hover{color:#fff !important; background:#288200;margin:-1px -1px -1px 0;}
+#channelBody_3 #categoryId_634  #mainMenu #goMondial2014{background:none;}
+
+html #mainMenu #goHoroscop{display:none !important;}
+
+#channelBody_1 #categoryId_676 #mainMenu #goNews a{color:#474748; background:none ;margin:0;}
+#channelBody_1  #categoryId_676 #header #goNews a:hover{color:#C00000;}
+#channelBody_1 #categoryId_676 #mainMenu #goNews{background: url(/nrg/images/nrg/2011/include/menu-border.gif) no-repeat left 6px;}
+#channelBody_1 #categoryId_676 #mainMenu #goElections2015 a,
+#channelBody_1 #categoryId_676  #header #mainMenu #goElections2015 a:hover{color:#fff; background:#175C9E;margin:-1px -1px -1px 0;}
+#channelBody_1 #categoryId_676 #mainMenu #goElections2015{background:none;}
+/**/
+
+#topUserBar li.newsletter-signup a{background: url(/nrg/images/nrg/2011/include/newsletter-icon.png) no-repeat right top;padding-right:21px;margin-right:7px;} 

@@ -1,0 +1,376 @@
+/*function err() {
+  return true;
+}
+window.onerror = err;*/
+
+/*var videoIsReady = 0;
+var videoIsAutoLoaded = 0;
+*/
+var videoIsReady =new Array();
+var videoIsAutoLoaded = new Array();
+var videoIsOn = new Array();
+var mutevar = new Array();
+var notDrag =true;
+function nrgWmv(src,width,height,elementID,mute,autostart,id) {
+//alert(elementID);
+
+var WMVObject = ''
++'<object style="position:absolute" id="nrgWmvPlayer'+id+'" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"' 
++' onReadyStateChange="videoIsRunning('+id+');"' 
++'type="video/x-ms-wmp"' 
++'standby="Loading Microsoft Windows Media Player components..."' 
++'data="'+src+'"' 
++'width="'+width+'"' 
++'height="'+height+'">' 
++'<param name="url" value="'+src+'" />' 
++'<param name="src" value="'+src+'" />' 
++'<param name="Enabled" value="true" />' 
++'<param name="AutoStart" value="'+autostart+'" />' 
++'<param name="SendPlayStateChangeEvents" value="true" />' 
++'<param name="windowlessVideo" value="false" />'
++'<param name="StretchToFit" value="true" />'
++'<param name="invokeURLs" value="false" />' 
++'<param name="Volume" value="50" />' 
++'<param name="Balance" value="0" />' 
++'<param name="Rate" value="1.0" />' 
++'<param name="Mute" value="'+mute+'" />' 
++'<param name="FullScreen" value="false">' 
++'<param name="uiMode" value="none" />' 
+//+'<param name="PlayCount" value="3" />'
+//+'<param name="Loop" value=0 />' 
+//+'<param name="EnableJavascript" value="true" />' 
++'<param name="transparentatStart" value="true">' 
++'<param name="EnableContextMenu" value="false" />' 
++'<a href="'+src+'" target="_blank">נגן Windows Media Player<br />לא נמצא או שאינו מותקן.<br /><u>לחץ כאן לצפייה בוידאו</u><\/a>' 
++'<\/object>'
++'<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="284" HEIGHT="212" border="0" STYLE="position: absolute; z-index:99;  visibility: visible; display:block">'
++'<TR><a id="nrgWmvPlayerLink'+id+'" onClick="return MediaPlayerSmallClickedLink('+id+')" href="#" target="_blank"><TD WIDTH="284" HEIGHT="212" STYLE="cursor: pointer;" ></TD></a></TR></TABLE>';
+document.getElementById(elementID).innerHTML=WMVObject;
+videoIsRunning(id);
+showPos(id);
+}
+
+function MediaPlayerSmallClickedLink(id)
+{
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	var url=playerId.currentMedia.getItemInfo("CastUP_AssociatedURL");
+
+	if (url!=undefined&&url!='')
+	{
+      document.getElementById("nrgWmvPlayerLink"+id).href=url;
+	  return true;
+	}
+	else
+      return false;
+}
+
+		
+   
+function nrgWmvCbut(state, name, image)  {
+	
+	var path = "/images/nrg/video_player/";
+	var src = image.src;
+	var ext = src.substring(src.lastIndexOf('.'),src.length); 
+	switch(state)
+	{
+	case 0:
+		image.src = (path + name + ext);return;
+		break;   
+	case 1:
+		image.src = (path + name + '_on' + ext);return;
+		break;    
+	case 2:
+		image.src = (path + name + '_click' + ext);return;
+		break;
+	default:
+		image.src = (path + name + ext);return;
+	}
+	
+}
+
+function replaceButs(par,id) {
+try{
+	if(par=='toPause') {
+			if(document.getElementById("play"+id)) {
+				document.getElementById("play"+id).style.display = "none";
+				document.getElementById("pause"+id).style.display = "inline";
+			}
+	}
+	else {
+	document.getElementById("play"+id).style.display = "inline";
+	document.getElementById("pause"+id).style.display = "none";
+		
+	}
+	}
+catch(e)
+{}
+}
+
+function nrgWmvControlsPlay(id) {
+ try{
+//alert("play");
+ if (videoIsReady[id] == 1 && videoIsAutoLoaded[id] == 2) {
+  //var Img = document.getElementById("imgV"+id);
+	//alert(Img.src);
+	
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	//alert(playerId.currentMedia.getItemInfo("CastUP_AssociatedURL"));
+	playerId.controls.Play();
+	
+	}
+	}
+	catch(e)
+	{
+	 	alert(e.message);
+	}
+}
+
+function nrgWmvControlsPause(id) {
+
+	if (videoIsReady[id] == 1) {
+	videoIsAutoLoaded[id] = 2;
+
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+  
+	playerId.controls.Pause();
+	}
+}
+
+function nrgWmvControlsStop(id) {
+
+try{
+
+	if (videoIsReady[id] == 1) {
+	videoIsAutoLoaded[id] = 2;
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	playerId.controls.Stop();
+	}
+}
+
+catch(e)
+{}
+}
+
+function nrgWmvControlsMute(id) {
+	if (videoIsReady[id] == 1) {
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	playerId.settings.Mute = true;
+	mutevar = 1;
+	playerId.settings.Volume = 0;
+	fdSliderController.sliders["volslider"+id].setInputValue(0);
+	fdSliderController.sliders["volslider"+id].resetHandlePosition();
+	}
+}
+
+function nrgWmvControlsChangeToUnMute(id) {
+
+	if (videoIsReady[id] == 1) {
+	var muteDivId = document.getElementById("nrgVideoMute"+id);
+	muteDivId.innerHTML = ''
+	+'<img src="/nrg/images/nrg/video_player//big_player_volume_unmute.gif"'
+	+'onmouseover="nrgWmvCbut(1, \'big_player_volume_unmute\', this)"'
+	+'onmouseout="nrgWmvCbut(0, \'big_player_volume_unmute\', this)"'
+	+'onmousedown="nrgWmvCbut(2, \'big_player_volume_unmute\', this)"'
+	+'onmouseup="nrgWmvCbut(0, \'big_player_volume_unmute\', this)"'
+	+'onclick="nrgWmvControlsUnMute('+id+');nrgWmvControlsChangeToMute('+id+')" '
+	+'alt="" title="" />';
+	}
+}
+function nrgWmvControlsChangeToMute(id) {
+	if (videoIsReady[id] == 1) {
+	var muteDivId = document.getElementById("nrgVideoMute"+id);
+	muteDivId.innerHTML = ''
+	+'<img src="/nrg/images/nrg/video_player/big_player_volume.gif"'
+	+'onmouseover="nrgWmvCbut(1, \'big_player_volume\', this)"'
+	+'onmouseout="nrgWmvCbut(0, \'big_player_volume\', this)"'
+	+'onmousedown="nrgWmvCbut(2, \'big_player_volume\', this)"'
+	+'onmouseup="nrgWmvCbut(0, \'big_player_volume\', this)"'
+	+'onclick="nrgWmvControlsMute('+id+');nrgWmvControlsChangeToUnMute('+id+')" '
+	+'alt="" title="" />';
+	}
+}
+
+function nrgWmvControlsUnMute(id) {
+	if (videoIsReady[id] == 1) {
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	playerId.settings.Mute = false;
+	mutevar = 0;
+	playerId.settings.Volume = 50;
+	fdSliderController.sliders["volslider"+id].setInputValue(50);
+	fdSliderController.sliders["volslider"+id].resetHandlePosition();
+	}
+}
+
+function nrgWmvControlsFs(id) {
+	if (videoIsReady[id] == 1) {
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	if (playerId.playState == 3)
+		playerId.fullScreen = 'true';
+	}
+}
+
+function nrgWmvControlsVolume(id) {
+
+  
+	if (videoIsReady[id] == 1) {
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	var volLevel = parseInt(document.getElementById('volslider'+id).value);
+//	alert("volLevel="+volLevel);
+		playerId.settings.Volume = volLevel;
+	if (volLevel == 0) {
+		nrgWmvControlsMute(id);
+		nrgWmvControlsChangeToUnMute(id);
+	} else if (volLevel != 0 && mutevar == 1) {
+		nrgWmvControlsUnMute(id);
+		nrgWmvControlsChangeToMute(id);
+	} else { 
+	}
+	}
+}
+
+/*var videoIsOn = 0;*/
+
+function videoIsRunning(id) {
+//alert("running "+id);
+	videoIsOn[id] = 1;	
+	//var i=bllbll();
+}
+
+function bllbll(id)
+{
+try{
+// alert(id);
+	var playerId = document.getElementById("nrgWmvPlayer"+id);
+	var url=playerId.currentMedia.getItemInfo("CastUP_AssociatedURL");
+	window.status=url;
+	if(url!="undefined"&&url!="")
+	{	
+		window.status=url+" haha";
+		//alert(playerId.parentElement.innerHTML);
+		playerId.parentElement.style.cursor='pointer';
+		playerId.parentElement.onclick='alert()';
+		// alert("2"+url+playerId.parentElement.id);
+		var vparent =document.getElementById(playerId.parentElement.id);
+		//vparent.attachEvent('onclick',doSomething);
+		createTOC(id);
+	}
+	}
+	catch(e)
+	{
+ alert(e.messege);
+	}
+}
+
+function doSomething() {
+				 //alert();
+	//this.style.backgroundColor = '#cc0000';
+}
+
+function createTOC(id) {
+}
+
+
+
+function addEvent(elm,evType,fn,useCapture) {
+        if(elm.addEventListener) {elm.addEventListener(evType,fn,useCapture); return true;}
+        else if (elm.attachEvent) {var r=elm.attachEvent('on' + evType,fn);  return r;}
+        else {elm['on' + evType] = fn;}
+} //usage = addEvent(window,'load',funcName,false);
+addEvent(window,'load',init,false);
+
+
+
+var barLength=284; //small video =284, big video = 429
+
+
+function showPos(n){ // moves the knob and progress bar
+	try{
+		t=window.setTimeout("showPos("+n+")",50); //set timer 
+		var p=window.document.getElementById("nrgWmvPlayer"+n);
+		var time_str=p.controls.currentPositionString;
+	    var blockpos=(p.controls.currentPosition/p.currentMedia.duration);	
+		var tmp=0;
+	
+		tmp=Math.round((blockpos*barLength));
+	 			if (notDrag) {
+	window.document.getElementById("knobId"+n).style.left=tmp  + "px"; //set ball pos
+	window.document.getElementById("progressBarId"+n).style.width=tmp + "px" ; //set progress bar
+	window.document.getElementById("videoTimerId"+n).innerHTML =p.currentMedia.durationString +" / "+time_str; //set time
+	//window.document.getElementById("status"+n).innerHTML=p.currentMedia.getItemInfo('TITLE'); //set status
+	
+							}
+	}
+	catch(err){;}
+}
+
+/*******************************   drag knob     **********************************************************/
+var mousex = 0;
+var grabx = 0;
+var orix2 = 0;
+var elex = 0;
+var dragobj = null;
+
+function falsefunc() { return false; } // used to block cascading events
+
+function init()
+{
+  document.onmousemove = getMouseX; // getMouseX(event) implied on NS, getMouseX(null) implied on IE
+  getMouseX();
+}
+
+function getMouseX(e) // works on IE6,FF,Moz,Opera7
+{ 
+  if (!e) e = window.event; // works on IE, but not NS (we rely on NS passing us the event)
+
+  if (e)
+  { 
+    if (e.pageX)
+    { // this doesn't work on IE6!! (works on FF,Moz,Opera7)
+      mousex = e.pageX;  
+    }
+    else if (e.clientX)
+    { // works on IE6,FF,Moz,Opera7
+      mousex = e.clientX + document.body.scrollLeft;
+    }  
+  }
+}
+
+
+function grab(obj)
+{
+  document.onmousedown = falsefunc; // in NS this prevents cascading of events, thus disabling text selection
+  dragobj = obj;
+  document.onmousemove = drag;
+  document.onmouseup = drop;
+  notDrag =false;
+  grabx = mousex;
+  elex = orix2 = dragobj.offsetLeft;
+  getMouseX();
+}
+
+function drag(e) {	// parameter passing is important for NS family 
+
+  if (dragobj) {
+    elex = orix2 + (mousex-grabx);
+	if ((elex>-1 && elex<(barLength+1)) && (videoIsOn[idNum]==1)) { // restrict range of movement + check that video has begun playing
+    dragobj.style.left=elex + 'px'; 
+    document.getElementById("progressBarId" + idNum).style.width=elex + 'px';
+    }
+  }
+  getMouseX(e);
+  return false; // in IE this prevents cascading of events, thus text selection is disabled
+}
+
+function drop() {
+  if (dragobj) {
+    dragobj = null;
+	if (videoIsOn[idNum] == 1) { // set the new pos of the video
+	 var p=document.getElementById("nrgWmvPlayer" + idNum);
+     p.controls.currentPosition=(p.currentMedia.duration*(elex/barLength))
+	}	
+  }
+  getMouseX();
+  document.onmouseup = null;
+  document.onmousedown = null;   // re-enables text selection on NS
+  notDrag=true;
+}

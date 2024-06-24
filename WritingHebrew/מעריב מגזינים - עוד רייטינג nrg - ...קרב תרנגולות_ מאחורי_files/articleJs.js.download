@@ -1,0 +1,614 @@
+// window.onresize ie6 fix
+var moreVideos = {
+  //add Events, removeEvents Functions;
+	addEvent: function (obj, type, fn) {
+		if (obj.attachEvent) {
+			obj['e' + type + fn] = fn;
+			obj[type + fn] = function(){
+			obj['e' + type + fn](window.event);
+		}
+			obj.attachEvent('on' + type, obj[type + fn]);
+		} else {
+			obj.addEventListener(type, fn, false);
+		}
+	},
+	removeEvent:function(obj, type, fn) {
+		if ( obj.detachEvent ) {
+			obj.detachEvent('on' + type, obj[type + fn]);
+			obj[type + fn] = null;
+		} else {
+			obj.removeEventListener(type, fn, false);
+		}
+	}
+}
+isIE6 = /msie|MSIE 6/.test(navigator.userAgent);
+var currentHeight = 0;
+var currentWidth = 0;
+
+function toggleBlackScreen(status) {
+	var inc = 0;
+	if (status && !nrg.$('videoOverlay')){		
+		// create overlay element and set element properties
+		var overlay = document.createElement('DIV');
+		overlay.id = 'videoOverlay';		
+		if (document.body.clientWidth < 960)
+			inc += document.body.scrollWidth; 
+		
+		overlay.style.width = (document.body.clientWidth + inc)+ 'px';
+		overlay.style.height = document.body.clientHeight + 'px';
+		currentHeight = document.body.clientHeight;
+		currentWidth = document.body.clientWidth;
+		//set opacity
+		if(navigator.appName == 'Microsoft Internet Explorer')
+			overlay.style.filter = 'alpha(opacity=80)';
+		else 
+			overlay.style.opacity = '.8';		
+		//add click event to close overlay
+		moreVideos.addEvent(window,'resize',function(){setOverlayDim()});
+		document.body.appendChild(overlay);
+		if (isIE6)
+			setTimeout(function(){setZoomIe6(["mainVideos","moreColumn","recentlyAndPopularVids","moreVideos"])},500);
+	} else if(!status && nrg.$('videoOverlay')){
+		removeOverlay();
+	}
+
+}
+
+function setZoomIe6(elements){
+for (var i=0;i<elements.length;i++){
+		nrg.$(elements[i]).style.zoom = '1';	
+}
+	
+}
+
+function removeOverlay(){
+	if(nrg.$('videoOverlay')){
+		document.body.removeChild(nrg.$('videoOverlay'));
+		moreVideos.removeEvent(window,'resize',function(){setOverlayDim()});
+	}
+}
+
+function setOverlayDim(){	
+	if (currentHeight != document.body.clientHeight || currentWidth != document.body.clientWidth) {
+		moreVideos.removeEvent(window,'resize',function(){setOverlayDim()});
+		var inc = 0; 
+		var el = nrg.$('videoOverlay');
+		if (el){
+			if (document.body.clientWidth < 960)
+				inc += document.body.scrollWidth; 
+			el.style.width = (document.body.clientWidth+inc) + 'px';
+			el.style.height = document.body.clientHeight + 'px';
+		}
+		moreVideos.addEvent(window,'resize',function(){setOverlayDim()});
+	}
+}
+
+function openSendMailWindow() {
+    var str = window.location.href;
+	if (str.indexOf('/online') > -1 && str.indexOf('.html') > -1 ){
+     	str = str.substring(str.indexOf('/online'),str.indexOf('.html') + 5);
+	} else str = '';	
+	openInnewWindow1('/Scripts/stf/stf.html?art=' + str  ,550,500);
+}
+function openShareWindow() {
+	u=location.href;
+	t=document.title;
+	window.open('https://www.facebook.com/sharer.php?u=' + encodeURIComponent(u) + '&t=' + encodeURIComponent(t), 'sharer', 'toolbar=0, status=0,width=626,height=436');
+	return false;
+}
+
+var user="";
+
+function changeClass()
+{
+if (document.getElementById("titleS1")!=null && document.getElementById("subS1")!=null)
+ {
+ document.getElementById("titleS1").setAttribute("className","newsVitzTitleWhite");
+ document.getElementById("subS1").setAttribute("className","newsMainVitzSubTitleWhite");
+ }
+}
+
+
+
+											 function initRos()
+              				{
+              				var sCooVal=getCookie("last_action_act");
+              				if(sCooVal!=null && sCooVal!="" && sCooVal!="undefined")
+              				{
+              						var sCommand=new String(sCooVal);		var n=sCommand.indexOf("addArt(");
+              				if(n==-1)return;		sCommand=sCommand.substring(n);
+              				try
+              				{
+              				eval(sCommand);
+              				}		catch(err)
+              				{
+              				n=0;
+              				}
+              				document.cookie='last_action_act='+sCooVal+'; domain=nrg.co.il; expires='+(new Date((new Date()).getTime()/2).toGMTString());
+              				}
+              				}
+
+
+
+
+
+
+
+							 				 function insertTO(c){	var cVal = getCookie("maariv_nrg_un");
+											 if (cVal == null || cVal == "" || cVal=="undefined")		parent.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showLoginForm";
+											 else
+											 {
+											 						if ((c >=1 && c<=2) || c==7)            		window.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_PROFILE.profileOpenner?pCode="+c;
+																	else if(c == 3)            		window.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showLoginForm";
+																	else if(c == 4)            		window.location.href = "https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showRegistrationForm";
+																	else if(c==11)
+																	{
+																											 var strHref=new String(window.location.href);
+																											 while(strHref.indexOf('&')>-1)strHref=strHref.replace('&','*');
+																										   window.open("https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.exitFromMemCenter?pHVal="+strHref+"&pTmp="+(new Date()).getTime(),"_self");
+																  }
+											 }}
+
+											 function showUserName()
+											 {
+											 		var sCooVal=getCookie("maariv_nrg_un");
+													if(sCooVal!=null && sCooVal!="" && sCooVal!="undefined")
+													{
+													    sCooVal=sCooVal.substring(sCooVal,"9","1");
+															document.write("<a class='noLink' href='javascript:insertTO(1)'>"+sCooVal+"&nbsp,שלום&nbsp</a>");
+													}
+													else
+													{
+														  document.write("<font class='topfooter'>שלום, אורח</font>");
+													}
+											 }
+
+              				function showBody()
+              				{							
+							var cur_date=new Date();
+              				var sCooVal=getCookie("maariv_nrg");
+              				
+              				if(sCooVal!=null && sCooVal!="" && sCooVal!="undefined")
+              				{		
+              				//document.write(user+"<td height='21' align='left'><A id='enterup' href='javascript:insertTO(1)' style='text-decoration:none'><font class='topfooter'><nobr>החשבון שלי</nobr></font></A></td>"+"<td><IMG src='/images/nrg/3td/gifs/ver_line.gif' class='block1' width='1'></td>"+"<td align='center'><A id='mysutup' href='javascript:insertTO(2)' style='text-decoration:none'><font class='topfooter'><nobr>המזוודה שלי<nobr></font></A></td>"+"<td><IMG src='/images/nrg/3td/gifs/ver_line.gif' class='block2' width='1'></td>"+"<td align='left'><A id='signup1' href='JavaScript:insertTO(11)' style='text-decoration:none'><font class='topfooter'><nobr>התנתקות</nobr></font></A></td>");	
+              				document.write(user+"<ul><li><a id='enterup' href='javascript:insertTO(1)' target='_top'>כניסה לחשבון</a></li><li><a  id='mysutup' href='javascript:insertTO(2)' target='_top'>המזוודה שלי</a></li><li><a href='https://www.makorrishon.co.il/nrg/members/owa/MEMBER_PROFILE.profileOpenner?pCode=8&pTmp="+cur_date.getTime()+"' target='_top'>אלבום תמונות</a></li> <li><a href='https://www.makorrishon.co.il/nrg/online/15/HP_1802.html' target='_top'>הורוסקופ</a></li></ul>");
+
+              				}	
+              				else	
+              				{
+              				//document.write(user+"<td height='21' align='left'><A id='enterup' href='javascript:insertTO(3)' style='text-decoration:none'><font class='topfooter'><nobr>כניסה לחשבון</nobr></font></A></td>"+"<td><IMG src='/images/nrg/3td/gifs/ver_line.gif' class='block1' width='1'></td>"+"<td align='center'><A id='mysutup' href='javascript:insertTO(3)' style='text-decoration:none'><font class='topfooter'><nobr>המזוודה שלי<nobr></font></A></td>"+"<td><IMG src='/images/nrg/3td/gifs/ver_line.gif' class='block2' width='1'></td>"+"<td align='left'><A id='signup1' href=\"https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showRegistrationForm\" target='_parent' style='text-decoration:none'><font class='topfooter'><nobr>הרשמה<nobr></font></A></td>");	
+              				document.write(user+"<ul><li><a href='javascript:insertTO(3)' target='_top'>כניסה לחשבון</a></li>     <li><a href='https://www.makorrishon.co.il/nrg/members/owa/MEMBER_LOGIN.showRegistrationForm' target='_top'>הרשמה חינם</a></li><li><a href='https://www.makorrishon.co.il/nrg/online/15/HP_1802.html' target='_top'>הורוסקופ</a></li></ul>");
+              				}
+              				}
+
+
+              			 function validatePage()
+              		   {
+
+
+              		     var queryString = document.searchOptions.query.value;
+
+              					       if(queryString == "")
+              								 {
+              								    alert("אנא הזן שאילתא");
+              										document.searchOptions.query.focus();
+              								 }
+              								 else
+              								 {
+              								 submitPage();
+              								 }
+              			}
+
+              			function checkKey()
+              			{
+              								 if(event.keyCode==13)
+              								 {
+              								 validatePage()
+              								 }
+              			}
+
+              			function submitPage()
+              			{
+										var vTmp;
+
+										 for (var x=0;x<searchOptions.searchEngine.length; x++){
+										    if(searchOptions.searchEngine[x].checked){
+ 												vTmp=searchOptions.searchEngine[x].value;}
+										 }
+
+
+              								if(vTmp == "1")
+              								{
+              								document.searchOptions.searchAction.value = "search";
+              								document.searchOptions.method = "GET";
+              								document.searchOptions.action = "http://search.nrg.co.il/search/index.php";
+              							  document.searchOptions.submit();
+              								}
+              								else
+              								{
+              								var query = document.searchOptions.query.value;
+              								window.open("http://www.google.co.il/search?hl=he&lr=&ie=UTF-16&q="+query);
+              								}
+                             	
+
+              			}
+ 
+
+window.setTimeout('initRos()',2000);
+
+function writeToEditorNew(x)
+    {
+     var tdin=window.open("/Scripts/wte/wte.html?c="+x,"_blank", "toolbar=no,location=no,scrollbars=no,width=500,height=480"); 
+    }
+	
+	
+ function ScoopMail(x)
+    {
+     var tdin=window.open("/nrg/images/nrg/write2writer.html?c="+x,"_blank", "toolbar=no,location=no,scrollbars=no,width=500,height=480"); 
+    }
+
+function ScoopMailNrgcity(x)
+{
+var tdin=window.open("/online/nrgcity/write2writer_nrgcity.html?c="+x,"_blank", "toolbar=no,location=no,scrollbars=no,width=600,height=267"); 
+}
+
+
+
+function showAdd(parent,art,channel,color,pW,appl){
+
+	var pWi=pW;
+	var pappl;
+
+	if (pWi=="" || (!pWi)){
+		pWi=408;
+	}
+
+	try{
+		pappl=new String(window.location.href);  
+		pappl=pappl.substring(pappl.indexOf("online/")+7); 
+		pappl=pappl.substring(0,pappl.indexOf("/"));  }
+	catch(e){pappl = appl;}
+					
+	if(parent > 0){
+		
+		if (channel.indexOf("nrgMondial")>-1) {
+		    var w = window.open("/gevanew/owa/ARTICLES_COMMENTS.add_comment_form_mondial?parent="+parent+"&art="+art+"&channelName="+channel+"&backColor="+color+"&appl="+pappl+"","_blank","left=20,top=20,width=500,height=345,scrollbars=1,resizable=0");
+		    w.focus();
+		  }
+		else {
+			var w = window.open("/online/nrg/include/responses_form.php?parent="+parent+"&art="+art+"&channelName="+channel+"&backColor="+color+"&appl="+pappl+"","_blank","left=20,top=20,width=500,height=345,scrollbars=1,resizable=0");
+			w.focus();
+		}
+	
+	}
+	else{
+		
+		if (channel.indexOf("nrgMondial")>-1) {
+			document.getElementById("commentS").innerHTML="<iframe id='commentFrame' src='/gevanew/owa/ARTICLES_COMMENTS.add_comment_form_mondial?parent="+parent+"&art="+art+"&channelName="+channel+"&backColor="+color+"&pwidth="+pW+"&appl="+pappl+"' frameborder=0 width=481 height=555 marginwidth=0 marginheight=0 scrolling=no hspace=0 vspace=0></iframe>";
+	        document.getElementById("commentS").style.display = '';
+			    
+		}
+		else {
+			document.getElementById("commentS").innerHTML="<iframe id='commentFrame' src='/online/nrg/include/responses_form.php?parent="+parent+"&art="+art+"&channelName="+channel+"&backColor="+color+"&pwidth="+pW+"&appl="+pappl+"' frameborder=0 width=465 height=555 marginwidth=0 marginheight=0 scrolling=no hspace=0 vspace=0 onload=setHeight();></iframe>";
+			document.getElementById("commentS").style.display = '';
+		}
+	
+	}
+}
+
+
+/*    var refreshFlag = true;
+    var sURL = unescape(window.location.pathname);
+    function doLoad()
+    {
+        if(refreshFlag){
+          setTimeout( "refresh()", 20*60*1000 );
+        }
+    }
+    function refresh()
+    {   if(refreshFlag){
+        window.location.replace( sURL );
+        }
+    }
+    window.onload= doLoad;
+
+	*/
+
+    /******************************************/
+    function SetCookie(name, value, days) {
+    var expire = new Date ();
+    expire.setTime (expire.getTime() + (24 * 60 * 60 * 1000) * days);
+    document.cookie = name + "=" + escape(value) + "; expires=" + expire.toGMTString();
+    }
+    function getCookie(Name)
+    {
+    var search=Name + "=";    
+    if(document.cookie.length > 0)
+    {
+     var offset = document.cookie.indexOf(search);
+     if (offset != -1)
+     {
+     offset += search.length;
+     var end = document.cookie.indexOf(";", offset);
+     if (end == -1)
+     end = document.cookie.length;
+     return (unescape(document.cookie.substring(offset, end)));
+     }
+    }
+    }
+    
+    function openWin1(url,title,attrib)
+    {
+        wref=window.open(url,title,attrib);
+    }
+    
+    function openInnewWindow1(url,width,height,toolbar)
+    {
+        if(toolbar==1)
+        {
+            openWin1(url,'_blank','toolbar=yes,location=yes,directories=yes,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width='+width+',height='+height)
+        }
+        else
+        {
+            openWin1(url,'_blank','toolbar=no,location=no,directories=no,status=yes,menubar=no,scrollbars=yes,movable=yes,resizable=yes,width='+width+',height='+height)
+        }
+    }
+    
+    function addArt(aID,aHref,aChn,pFrom)
+    {
+     var cVal = getCookie("maariv_nrg");
+     var vChn = aChn;     
+     var vHref = new String(window.location.href);
+     
+     if(vHref.indexOf('HP_487')>-1 || vHref.indexOf('/breaking')>-1){vHref=aHref;}
+	 
+     while(vHref.indexOf('&')>-1)vHref=vHref.replace('&','*');
+    
+     while(vChn.indexOf('&')>-1)vChn=vChn.replace('&','*');
+    
+     if (cVal == null || cVal == "") {
+     document.getElementById("launcher").innerHTML="<iframe id=imgcut height=0 src=/members/owa/MEMBER_ACOUNT.SAVE_LAST_ACTION?pArtRaz="+aID+"&pArtLink="+vHref+"&pChannelName="+vChn+"&pFrom="+window.location.href+"></iframe>";
+     window.setTimeout('location.href = "/members/owa/MEMBER_LOGIN.showLoginForm"',2000);
+     }
+     else{
+      document.getElementById("launcher").innerHTML="<iframe id=imgcut height=0 width=100 height=100 border=2  src=/members/owa/MEMBER_ACOUNT.addArtToMyFolder?pArtRaz="+aID+"&pArtLink="+vHref+"&pChannelName="+vChn+"&pFrom=></iframe>";
+      var vURL = "/gevanew/owa/ADD_ART_TO_FOLDER?pArtRaz="+aID;
+      openInnewWindow1(vURL, 600, 200, 0);
+      document.getElementById("launcher").innerHTML="";
+     }
+    }
+    
+    var vabrod="N";
+    function coo()
+    {
+     vabrod=getCookie("locusr");
+     if(vabrod!="Y" && vabrod!="N")
+     {
+      document.write("<SCRIPT LANGUAGE=\"JavaScript\" src=\"" + "/location/locusr.php\">");
+      document.write("<\/SCRIPT>");
+     }
+    }
+    coo();
+    function showMsg(msg,img){
+     if(document.getElementById(msg).style.display == "none"){
+    	document.getElementById(msg).style.display = "";
+        if(document.getElementById(img)!= null) {
+         if(document.getElementById(img).src != "/images/nrg/gifs/t.gif")
+        	document.getElementById(img).src = "/images/nrg/gifs/comments/minus.gif";
+        }
+     }
+     else{
+    	document.getElementById(msg).style.display = "none";
+        if(document.getElementById(img)!= null) {
+          if(document.getElementById(img).src != "/images/nrg/gifs/t.gif")
+           document.getElementById(img).src = "/images/nrg/gifs/comments/plus.gif";
+        }
+     }
+    }
+		
+function showAllComments(maxComment){
+   var msg="MSG";
+	 var img="IMG";
+	 
+	 if(document.getElementById("openAll").style.display == "none"){
+	    document.getElementById("openAll").style.display = "block";
+	    document.getElementById("closeAll").style.display = "none";
+			for(i=maxComment;i>0&&(maxComment-i)<1000;i--){
+         closeAllMsg(msg+i,img+i);				 
+	    }						
+	 }
+	 else{
+	    document.getElementById("openAll").style.display = "none";
+	    document.getElementById("closeAll").style.display = "block";
+			for(i=maxComment;i>0&&(maxComment-i)<1000;i--){
+         openAllMsg(msg+i,img+i);
+	    }				
+	 }
+}
+function showAllCommentsNrgcity(maxComment){
+   var msg="MSG";
+	 var img="IMG";
+	 
+	 if(document.getElementById("openAll").style.display == "none"){
+	    document.getElementById("openAll").style.display = "block";
+	    document.getElementById("closeAll").style.display = "none";
+	    document.getElementById("openAll2").style.display = "block";
+	    document.getElementById("closeAll2").style.display = "none";
+      for(i=maxComment;i>0&&(maxComment-i)<1000;i--){
+         closeAllMsg(msg+i,img+i);				 
+	    }						
+	 }
+	 else{
+	    document.getElementById("openAll").style.display = "none";
+	    document.getElementById("closeAll").style.display = "block";
+	    document.getElementById("openAll2").style.display = "none";
+	    document.getElementById("closeAll2").style.display = "block";
+      for(i=maxComment;i>0&&(maxComment-i)<1000;i--){
+         openAllMsg(msg+i,img+i);
+	    }				
+	 }
+}
+function openAllMsg(msg,img){
+ 	 document.getElementById(msg).style.display = "";
+   if(document.getElementById(img)!= null) {
+      if(document.getElementById(img).src != "/images/nrg/gifs/t.gif")
+         document.getElementById(img).src = "/images/nrg/gifs/comments/minus.gif";
+   }
+}
+function closeAllMsg(msg,img){
+ 	 document.getElementById(msg).style.display = "none";
+   if(document.getElementById(img)!= null) {
+     if(document.getElementById(img).src != "/images/nrg/gifs/t.gif")
+       document.getElementById(img).src = "/images/nrg/gifs/comments/plus.gif";
+   }
+}
+/* Toggle Comments */
+
+function toggleComment(id) {
+
+		var commentContent = document.getElementById("c_"+id);
+		var commentName = document.getElementById("n_"+id);
+		var commentSpacer = document.getElementById("s_"+id);
+		var commentItem = commentContent.parentNode;
+		if (commentContent.style.display == "none") {
+				commentContent.style.display = "";
+				commentSpacer.style.display = "";
+				var curcomment = document.getElementById("curcom"+id);
+//				curcomment.style.paddingTop="0px";
+/*				curcomment.style.paddingTop="7px";
+				curcomment.style.paddingRight="7px";
+				curcomment.style.paddingBottom="7px";
+				curcomment.style.paddingLeft="7px";*/
+//				commentItem.setAttribute("class", "commentsOpen");
+//				commentItem.setAttribute("className", "commentsOpen");
+				commentItem.className = "commentsOpen";
+				commentName.style.fontWeight = "bold"; // ys
+		} else {
+			var curcomment = document.getElementById("curcom"+id);
+//			curcomment.style.paddingRight="0px";
+			commentContent.style.display = "none";
+			commentSpacer.style.display = "none";
+//			commentItem.setAttribute("class", "commentsClose");
+//			commentItem.setAttribute("className", "commentsClose");
+			commentName.style.fontWeight = "normal"; // ys
+			commentItem.className = "commentsClose";
+			commentName.style.fontWeight = "normal";
+		}
+}
+
+
+
+function toggleInlineComment(id) {
+
+		var commentContent = document.getElementById("c_"+id);
+		var commentName = document.getElementById("n_"+id);
+		var commentSpacer = document.getElementById("s_"+id);
+		var commentImage = document.getElementById("i_"+id);
+		var commentItem = commentContent.parentNode;
+		/*hs*/
+		var commWidth=450;
+		var commMargin=15;
+		var commPadding=15; 
+		var curcomment = document.getElementById("curcom"+id);
+		var countSpan =parseInt(document.getElementById("innnerComNum"+id).innerHTML);		
+  	/*hs*/
+		if (commentContent.style.display == "none") {		
+		commentContent.style.display = "";
+		commentSpacer.style.display = "";
+		curcomment.style.marginRight=-1*(commMargin*(countSpan))+"px";
+		curcomment.style.paddingRight=(commPadding*(countSpan))+"px";		
+		curcomment.setAttribute("class", "commentsInlineOpen");
+		curcomment.setAttribute("className", "commentsInlineOpen");
+		commentName.style.fontWeight = "bold";
+		commentImage.src = "/images/nrg/include/img/comments_close.gif";
+
+		} else {
+
+		commentContent.style.display = "none";
+		commentSpacer.style.display = "none";
+		commentItem.setAttribute("class", "commentsInlineClose");
+		commentItem.setAttribute("className", "commentsInlineClose");
+		commentName.style.fontWeight = "normal";
+		commentImage.src = "/images/nrg/include/img/comments_open.gif";
+		}
+}
+
+
+/* General Functions */
+
+function lv() {
+
+	//
+
+}
+
+
+var allComments=Array();
+var toggleAllConmentsSwitch=0;
+function toggleAllConments()
+{ toggleAllConmentsSwitch++;
+  if (toggleAllConmentsSwitch>1)toggleAllConmentsSwitch=0;
+
+  // var mobj = document.getElementById('comments');
+   //for(a=0;a<=allComments.length; a++)
+   for (a in allComments)
+   if (a>0)
+   {  
+	  var id=a;
+	  var commentContent = document.getElementById("c_"+id);
+	  var commentName = document.getElementById("n_"+id);
+	  var commentSpacer = document.getElementById("s_"+id);
+	  var commentItem = commentContent.parentNode;
+
+      if (toggleAllConmentsSwitch==1)
+      { 
+		//var aaa=mobj[a].id;
+		commentContent.style.display = "";
+		commentSpacer.style.display = "";
+		var curcomment = document.getElementById("curcom"+id);
+		curcomment.style.paddingTop="0px";
+		commentItem.setAttribute("class", "commentsOpen");
+		commentItem.setAttribute("className", "commentsOpen");
+		commentName.style.fontWeight = "bold";
+		document.getElementById('toggleAllConmentsId').innerHTML='סגור כל התגובות ברצף';
+		}
+      if (toggleAllConmentsSwitch==0)
+      { 
+     	var curcomment = document.getElementById("curcom"+id);
+		curcomment.style.paddingRight="0px";
+		commentContent.style.display = "none";
+		commentSpacer.style.display = "none";
+		commentItem.setAttribute("class", "commentsClose");
+		commentItem.setAttribute("className", "commentsClose");
+		commentName.style.fontWeight = "normal";
+		document.getElementById('toggleAllConmentsId').innerHTML='לקריאת כל התגובות ברצף';
+	  }
+   }
+
+   // Get elements by id: comments
+   //     find by class: commentsClose
+   // -> div _id 
+}
+
+// ss
+
+   /* auto-set iframe height */
+      function setHeight() {
+		try {
+         if(document.getElementById && !(document.all)) {
+         h = document.getElementById("commentFrame").contentDocument.body.scrollHeight;
+         document.getElementById("commentFrame").height = h-6;
+         }
+         else if(document.all) {
+         h = document.frames("commentFrame").document.body.scrollHeight;
+	     document.all.commentFrame.height = h+9;
+         }
+		}
+		catch (e) {}
+      }
+   /* end auto-set */
+   
+function err() {
+  return true;
+}
+window.onerror = err;

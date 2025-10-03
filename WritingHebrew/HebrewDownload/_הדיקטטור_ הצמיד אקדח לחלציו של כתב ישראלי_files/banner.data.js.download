@@ -1,0 +1,50 @@
+'use strict';
+/**
+ * Dynamic Data
+ */
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Banner.prototype.loadDynamicData = function () {
+  var _this = this;
+
+  var isJsonString = function isJsonString(item) {
+    item = typeof item !== 'string' ? JSON.stringify(item) : item;
+
+    try {
+      item = JSON.parse(item);
+    } catch (e) {
+      return false;
+    }
+
+    if (_typeof(item) === 'object' && item !== null) {
+      return true;
+    }
+
+    return false;
+  };
+
+  var logger = function logger() {
+    if (!Enabler.isServingInLiveEnvironment()) {
+      for (var _len = arguments.length, string = new Array(_len), _key = 0; _key < _len; _key++) {
+        string[_key] = arguments[_key];
+      }
+
+      console.log(string);
+    }
+  };
+
+  this.banner = document.querySelector('.banner');
+  this.bannerWidth = this.banner.offsetWidth;
+  this.bannerHeight = this.banner.offsetHeight;
+  var baseData = dynamicContent.feed[0] || devDynamicContent.feed[0];
+  this.bannerData = dynamicContent || devDynamicContent;
+  Object.keys(baseData).forEach(function (x) {
+    if (typeof _this.bannerData.feed[0][x] === 'string' && isJsonString(_this.bannerData.feed[0][x])) {
+      _this.bannerData.feed[0][x] = JSON.parse(_this.bannerData.feed[0][x]);
+    } else {
+      _this.bannerData.feed[0][x] = _this.bannerData.feed[0][x];
+    }
+  });
+  logger(this.bannerWidth, this.bannerHeight, this.bannerData);
+};

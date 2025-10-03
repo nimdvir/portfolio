@@ -1,0 +1,107 @@
+'use strict';
+/**
+ * DoubleClick enabler events.
+ */
+
+Banner.prototype.loader = function () {
+  var _this = this;
+
+  function onVisible() {
+    _this.onVisible();
+  }
+
+  function pageLoaded() {
+    _this.onPolite();
+
+    if (Enabler.isVisible()) {
+      onVisible();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, onVisible);
+    }
+  }
+
+  function enablerInitialised() {
+    _this.onInit();
+
+    if (Enabler.isPageLoaded()) {
+      pageLoaded();
+    } else {
+      Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, pageLoaded);
+    }
+  }
+
+  if (Enabler.isInitialized()) {
+    enablerInitialised();
+  } else {
+    Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitialised);
+  }
+};
+/**
+ * DoubleClick polite load.
+ */
+
+
+Banner.prototype.politeLoad = function (urls, onComplete) {
+  var loaded = 0;
+
+  var checkProgress = function checkProgress() {
+    if (++loaded === urls.length && onComplete) {
+      onComplete();
+    }
+  };
+
+  for (var i = 0; i < urls.length; i++) {
+    Enabler.loadScript(urls[i], checkProgress);
+  }
+};
+
+Banner.prototype.loadCss = function (urls, onComplete) {
+  var _this = this;
+
+  var loaded = 0;
+
+  var checkProgress = function checkProgress() {
+    if (++loaded === urls.length && onComplete) {
+      onComplete();
+    }
+  };
+
+  for (var i = 0; i < urls.length; i++) {
+    _this.loadStyle(urls[i], checkProgress);
+  }
+};
+
+Banner.prototype.loadStyle = function (url, callback) {
+  var link = document.createElement('link');
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("type", "text/css");
+
+  if (link.readyState) {
+    link.onreadystatechange = function () {
+      if (link.readyState === 'loaded' || link.readyState === 'complete') {
+        link.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else {
+    link.onload = function () {
+      callback();
+    };
+  }
+
+  link.setAttribute('href', Enabler.getUrl(url));
+  document.getElementsByTagName('head')[0].appendChild(link);
+};
+/**
+ * Bind Enabler events.
+ */
+
+
+Banner.prototype.bindEvents = function () {
+  var _this2 = this;
+
+  var url = this.bannerData.feed[0].landingPage_InputEditor_studio.Url ? this.bannerData.feed[0].landingPage_InputEditor_studio.Url : this.bannerData.feed[0].landingPage_InputEditor_studio;
+  this.exit.addEventListener('click', function () {
+    Enabler.exitOverride('clickthrough', url + _this2.bannerData.feed[0].landingSuffix_InputEditor_studio);
+  });
+};

@@ -1,0 +1,515 @@
+// GA4 push function - PPLUS
+window.pushGa4DataLayer = (e, eventData) => {
+    // when the event is captured, bubble up the tree to find elements with the data attribute "yitan-dc_path"
+    // then collect all data attributes of the elements with the data attributes that start with "yitan"
+    // and send them to the dataLayer
+
+    let dataToCollect = {};
+    let el = e.target;
+    while (el) {
+        dataToCollect = Object.keys(el.dataset)
+            .filter((key) => key.startsWith("yitan"))
+            .reduce((obj, key) => {
+                if (!obj[key]) {
+                    obj[key] = el.dataset[key];
+                }
+                return obj;
+            }, {});
+
+        if (Object.keys(dataToCollect).length) {
+            // have data keys lose the yitan prefix and convert to snake case
+            Object.keys(dataToCollect).forEach((key) => {
+                const newKey = key
+                    .replace(/([A-Z])/g, "_$1")
+                    .toLowerCase()
+                    .replace("yitan_", "");
+                dataToCollect[newKey] = dataToCollect[key];
+                delete dataToCollect[key];
+            });
+        }
+
+        const nextEl = el.closest("[data-yitan-dc_path]");
+
+        if (nextEl === el) {
+            break;
+        }
+
+        el = nextEl;
+    }
+
+    dataToCollect["event_timestamp"] = new Date()
+        .toISOString()
+        .replace("T", " ")
+        .replace("Z", " UTC");
+
+    window.dataLayer.push({
+        ...dataToCollect,
+        ...eventData,
+    });
+};
+
+// GA4 content view - PPLUS
+window.addEventListener("load", () => {
+    const dataLayerToGaDict = {
+        contentPageType: "page_type",
+        dcPath: "dc_path",
+        userId: "yid",
+    };
+    // document.addEventListener("analyticsInjectionFinished", () => {
+    const getYitanDataset = (ds) => {
+    let articleYitanAttributes = {};
+    for (att in ds) {
+        if (att.indexOf("yitan") != -1) {
+            const fixedAtt = att.slice(5).toLowerCase();
+            gaAttr = dataLayerToGaDict[fixedAtt] || fixedAtt;
+            articleYitanAttributes = {
+                ...articleYitanAttributes,
+                [gaAttr]: ds[att],
+            };
+        }
+    }
+    return articleYitanAttributes;
+};
+
+const bodyDataset = document.body.dataset;
+const hContainer = document.getElementsByClassName("hContainer");
+const mContainer = document.getElementsByClassName("mContainer");
+const container = hContainer ? hContainer[0] : mContainer[0];   
+
+// Function called if AdBlock is not detected
+function adBlockNotDetected() {
+    window.hosemAds = false;
+}
+// Function called if AdBlock is detected
+function adBlockDetected() {
+    window.hosemAds = true;
+}
+
+// Recommended audit because AdBlock lock the file 'blockadblock.js'
+// If the file is not called, the variable does not exist 'blockAdBlock'
+// This means that AdBlock is present
+if (typeof blockAdBlock === "undefined") {
+    adBlockDetected();
+} else {
+    blockAdBlock.onDetected(adBlockDetected);
+    blockAdBlock.onNotDetected(adBlockNotDetected);
+    // and|or
+    blockAdBlock.on(true, adBlockDetected);
+    blockAdBlock.on(false, adBlockNotDetected);
+    // and|or
+    blockAdBlock
+        .on(true, adBlockDetected)
+        .onNotDetected(adBlockNotDetected);
+}
+
+    window.dataLayer.push({
+            ...getYitanDataset(bodyDataset),
+            ...getYitanDataset(container.dataset),
+            ad_blocker: !!window.hosemAds ? "true" : "false",
+            comments_count: window.wcmNumOfComments ? window.wcmNumOfComments: 0,
+            date_modified: window.dataLayer[0].dateModified,
+            date_published: window.dataLayer[0].datePublished,
+            event: "page_view",
+    });
+});
+
+    
+(function () {
+
+function get_date_format(new_date) {
+    try {
+        if (isDateValid(new_date) != true) {
+            let dateArray = new_date.split(".");
+            fdate = `${dateArray[1]}/${dateArray[0]}/${dateArray[2]}`;                          
+        } 
+        let new_title_date = new Date(fdate);  
+        fdate = new_title_date.toISOString();
+        // formated to local time
+        let local_date = new Date(fdate);
+        const toISOStringWithTimezone = date => {
+            const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+            return date.getFullYear() +
+            '-' + pad(date.getMonth() + 1) +
+            '-' + pad(date.getDate()) +
+            ' ' + pad(date.getHours()) +
+            ':' + pad(date.getMinutes()) +
+            ':' + pad(date.getSeconds());
+        };
+        
+        fdate = toISOStringWithTimezone(local_date);
+      } catch (error) {
+        console.error(error);
+        fdate = "";
+      } 
+
+}
+
+function content_share_func() {
+
+    document.addEventListener("click", function (event) {
+        // Find the class name of the element where the click event was triggered
+        const sharingClassList = ["wa", "fb", "tw", "mailto", "frontCopyButton"];
+        const sharingClassToDataLayerName = {
+            wa: "whatsapp",
+            fb: "facebook",
+            tw: "twitter",
+            mailto: "email",
+            frontCopyButton: "copy_url",
+        };
+        const className = [...event.target.classList].find((className) =>
+            sharingClassList.includes(className)
+        );
+
+        if (!className || !window.collectGa4DataFromDomElements) {
+            return;
+        }
+
+        const data = window.collectGa4DataFromDomElements(event);
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: "content_share",
+            content_type_shared: "article",
+            date_modified: window.dataLayer[0].dateModified,
+            date_published: window.dataLayer[0].datePublished,
+            social_network_name: sharingClassToDataLayerName[className],
+            ...data,
+        });
+    });
+
+window.collectGa4DataFromDomElements = (e) => {
+        // when the event is captured, bubble up the tree to find elements with the data attribute "yitan-dc_path"
+        // then collect all data attributes of the elements with the data attributes that start with "yitan"
+        // and send them to the dataLayer
+
+        let dataToCollect = {};
+        let el = e.target;
+        while (el) {
+            const data = Object.keys(el.dataset)
+                .filter(key => key.startsWith('yitan'))
+                .reduce((obj, key) => {
+                    if (!obj[key]) {
+                        obj[key] = el.dataset[key];
+                    }
+                    return obj;
+                }, {});
+
+            if (Object.keys(data).length) {
+                // have data keys lose the yitan prefix and convert to snake case                
+                Object.keys(data).forEach(key => {
+                    const newKey = key.replace(/([A-Z])/g, '_$1').toLowerCase().replace('yitan_', '');
+                    data[newKey] = data[key];
+                    delete data[key];
+                });
+                dataToCollect = { ...dataToCollect, ...data };
+            }
+
+            const nextEl = el.closest('[data-yitan-dc_path]');
+
+            if (nextEl === el) {
+                break;
+            }
+
+            el = nextEl;
+        }
+
+        dataToCollect['event_timestamp'] = new Date().toISOString().replace('T', ' ').replace('Z', ' UTC');
+        dataToCollect['date_modified'] = window.dataLayer[0].dateModified;
+        dataToCollect['date_published'] =  window.dataLayer[0].datePublished;
+
+        return dataToCollect;
+    }
+   
+}
+
+function pplus_componentas_and_header() {
+    let page_type = window.dcCG == "main" ? "Home page" : (window.dcCG == "sub" ? "Category page" : "article") ;
+
+    /* pplus header */
+    let header_components = document.querySelectorAll(".PplusHeader .menuItem");
+    let header_ar = Array.from(header_components);
+    for (let i in header_ar) {
+        header_ar[i].addEventListener("click", function (event) {
+            let header_title = header_ar[i].querySelector("a") != null ? header_ar[i].querySelector("a").textContent : "";
+
+            // GA4
+            if (window.pushGa4DataLayer) {
+                window.pushGa4DataLayer(event, {
+                    event: "content_click",
+                    page_type: page_type,
+                    click_text: header_title,
+                    content_type: "menu",
+                    componenta_name: "header",
+                    position_in_componenta: i,
+                });
+            }
+        });
+    }
+
+    if (window.dcCG != "article") {
+        /* Multiarticles and article headlines auto */
+        let multi_components_pplus = document.querySelectorAll(".PplusMultiArticleComponenta .slotView, .PplusArticleHeadlinesAuto .slotView");
+        let multi_ar = Array.from(multi_components_pplus);
+        for (let k in multi_ar) {
+            multi_ar[k].addEventListener("click", function (event) {
+            
+                let closest_componenta = (multi_ar[k].closest(".PplusMultiArticleComponenta") != null) ? multi_ar[k].closest(".PplusMultiArticleComponenta") :   multi_ar[k].closest(".PplusArticleHeadlinesAuto"); 
+                let multi_title = (closest_componenta.querySelector(".leshonitText") != null) ? closest_componenta.querySelector(".leshonitText").textContent : "pplus_multi_article";                    
+        
+                let content_type = (multi_title == "pplus_multi_article") ? "multi_article" : "article_headlines_auto";          
+                let slotviews_multi_sum = Array.from(closest_componenta.querySelectorAll(".slotView"));
+                let multi_strip_index = slotviews_multi_sum.indexOf(multi_ar[k]);
+        
+                let multi_title_article =
+                (multi_ar[k].querySelector(".slotTitle a span") != null && multi_ar[k].querySelector(".slotTitle a span").textContent != null)
+                        ? multi_ar[k].querySelector(".slotTitle a span").textContent : "";
+                if (multi_ar[k].querySelector(".slotTitle a") != null && multi_ar[k].querySelector(".slotTitle a").textContent != null) {
+                    multi_title_article =  multi_ar[k].querySelector(".slotTitle a").textContent;
+                }
+
+                
+                let title_editor = (multi_ar[k].querySelector(".authorName") && multi_ar[k].querySelector(".authorName").textContent != null) ? multi_ar[k].querySelector(".authorName").textContent : "";  
+                let title_date = (multi_ar[k].querySelector(".DateDisplay") && multi_ar[k].querySelector(".DateDisplay").attributes.datetime) ? multi_ar[k].querySelector(".DateDisplay").attributes.datetime.textContent : "";  
+                let photo_title = multi_ar[k].querySelector(".mediaArea img") && multi_ar[k].querySelector(".mediaArea img").attributes.title ? multi_ar[k].querySelector(".mediaArea img").attributes.title.textContent : "there is no photo";
+                let photo_url = multi_ar[k].querySelector(".mediaArea img") && multi_ar[k].querySelector(".mediaArea img").attributes.src ? multi_ar[k].querySelector(".mediaArea img").attributes.src.textContent : "there is no photo";
+                
+                if (title_date != "") {
+                         // formated to local time
+                        let local_date = new Date(title_date);
+                        const toISOStringWithTimezone = date => {
+                            const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+                            return date.getFullYear() +
+                            '-' + pad(date.getMonth() + 1) +
+                            '-' + pad(date.getDate()) +
+                            ' ' + pad(date.getHours()) +
+                            ':' + pad(date.getMinutes()) +
+                            ':' + pad(date.getSeconds());
+                        };
+                        
+                        title_date = toISOStringWithTimezone(local_date);
+                }
+                if (content_type == "article_headlines_auto") {
+                    title_editor = (multi_ar[k].querySelector(".author") && multi_ar[k].querySelector(".author").textContent != null) ? multi_ar[k].querySelector(".author").textContent : "";  
+                    photo_title = multi_ar[k].querySelector("img") && multi_ar[k].querySelector("img").attributes.title ? multi_ar[k].querySelector("img").attributes.title.textContent : "there is no photo";
+                    photo_url = multi_ar[k].querySelector("img") && multi_ar[k].querySelector("img").attributes.src ? multi_ar[k].querySelector("img").attributes.src.textContent : "there is no photo";                   
+                }
+                // GA4
+                if (window.pushGa4DataLayer) {
+                    window.pushGa4DataLayer(event, {
+                        event: "content_click",
+                        page_type: page_type,
+                        author_name: title_editor, 
+                        date_published: title_date,
+                        photo_url: photo_url,
+                        photo_title: photo_title,
+                        click_text: multi_title_article,
+                        content_type: content_type,
+                        componenta_name: multi_title,
+                        position_in_componenta: multi_strip_index,
+                    });
+                }
+            });
+        }
+
+        //Load more button
+        let load_more_btn = document.querySelector(".loadMoreArticlesButton");
+        if (load_more_btn) {
+            load_more_btn.addEventListener("click", function (event) {
+                // GA4
+                if (window.pushGa4DataLayer) {
+                    window.pushGa4DataLayer(event, {
+                        event: "content_click",
+                        page_type: page_type,
+                        click_text: "טען עוד...",
+                        content_type: "load_more",
+                        componenta_name: "load_more",
+                        position_in_componenta: 0,
+                    });
+                }
+            });
+        }
+    }
+}
+
+function pplus_tags_event() {
+    if (window.dcPath.includes("tags") || window.dcPath.includes("Topics")) {
+        let tags_components = document.querySelectorAll(".tags-page-main-1280 .slotView");
+        let tags_ar = Array.from(tags_components);
+        for (let k in tags_ar) {
+            tags_ar[k].addEventListener("click", function (event) {
+            let closest_componenta = tags_ar[k].closest(".TagPageComponenta") ? tags_ar[k].closest(".TagPageComponenta") : false;
+                let tags_title = (closest_componenta && closest_componenta.querySelector(".componentaTab") != null 
+                                && closest_componenta.querySelector(".componentaTab").textContent != null) 
+                                ? closest_componenta.querySelector(".componentaTab").textContent : "tag_page_main";                    
+                let tags_title_article =
+                (tags_ar[k].querySelector(".slotTitle a") != null && tags_ar[k].querySelector(".slotTitle a").textContent != null)
+                        ? tags_ar[k].querySelector(".slotTitle a").textContent : "";     
+       
+               
+                let title_editor = "";
+                let title_date = "";
+    
+              if (closest_componenta) {
+                    title_editor = (tags_ar[k].querySelector(".authorInfo") && tags_ar[k].querySelector(".authorInfo").textContent != null) ? tags_ar[k].querySelector(".authorInfo").textContent : "";  
+                    title_date = (tags_ar[k].querySelector(".dateView") && tags_ar[k].querySelector(".dateView").textContent != null) ? tags_ar[k].querySelector(".dateView").textContent : "";                
+                    if (title_date != "") {
+                    let new_date = title_date.replace(/[^0-9-.]/g, '');
+                    function isDateValid(dateStr) { return !isNaN(new Date(dateStr)) };                    
+                    if (isDateValid(new_date) != true) {
+                        try {
+                            let dateArray = new_date.split(".");
+                            let newDate = `${dateArray[1]}/${dateArray[0]}/${dateArray[2]}`;
+                            let new_title_date = new Date(newDate);  
+                            title_date = new_title_date.toISOString();
+                            // formated to local time
+                            let local_date = new Date(title_date);
+                            const toISOStringWithTimezone = date => {
+                                const pad = n => `${Math.floor(Math.abs(n))}`.padStart(2, '0');
+                                return date.getFullYear() +
+                                '-' + pad(date.getMonth() + 1) +
+                                '-' + pad(date.getDate()) +
+                                ' ' + pad(date.getHours()) +
+                                ':' + pad(date.getMinutes()) +
+                                ':' + pad(date.getSeconds());
+                            };
+                            
+                            title_date = toISOStringWithTimezone(local_date);
+                          } catch (error) {
+                            console.error(error);
+                            title_date = "";
+                          }
+                        } 
+                     }
+                 }
+                
+                
+                let photo_title = tags_ar[k].querySelector("img") && tags_ar[k].querySelector("img").attributes.title ? tags_ar[k].querySelector("img").attributes.title.textContent : "there is no photo";
+                let photo_url = tags_ar[k].querySelector("img") && tags_ar[k].querySelector("img").attributes.src ? tags_ar[k].querySelector("img").attributes.src.textContent : "there is no photo";
+            
+                        if (window.pushGa4DataLayer) {
+                            window.pushGa4DataLayer(event, {
+                                event: "content_click",
+                                page_type: "article",
+                                author_name: title_editor, 
+                                date_published: title_date,
+                                photo_url: photo_url,
+                                photo_title: photo_title,
+                                click_text: tags_title_article,
+                                content_type: "tag_page_main",
+                                componenta_name: tags_title,
+                                position_in_componenta: k,
+                            });
+                        }
+                  });
+             }
+        }
+}
+
+function pplus_comments_event() {
+    if (window.dcCG == "article") {
+        document
+            .querySelectorAll(
+                ".authorAndDateContainer .addNewComment, .SiteVerticalArticleSocialShare_Wrapper .addNewComment, .commentInfoBox .addNewComment, .sendBtn, .ArticleComment1280 .topView .topLeftView .details .commentToComent, .showMoreCommentsButton"
+            )
+            .forEach((btn, index) => {
+                let comments_numer =
+                    document.querySelector(
+                        ".verticalSidebarCommentNumber"
+                    ) &&
+                    document.querySelector(".verticalSidebarCommentNumber")
+                        .textContent != null
+                        ? parseInt(
+                              document.querySelector(
+                                  ".verticalSidebarCommentNumber"
+                              ).textContent
+                          )
+                        : 0;
+                btn.addEventListener("click", function (event) {
+                    let innerText = "";
+                    let action = "";
+                    if (btn.classList.contains("addNewComment")) {
+                        innerText = "הוספת תגובה";
+                        action = "add_comment";
+                    } else if (btn.classList.contains("sendBtn")) {
+                        innerText = "שלח תגובה";
+                        action = "send_comment";
+                    } else if (btn.classList.contains("commentToComent")) {
+                        innerText = "הגיבו לתגובה";
+                        action = "comment_to_comment";
+                    } else if (
+                        btn.classList.contains("showMoreCommentsButton")
+                    ) {
+                        innerText = "טען תגובות נוספות";
+                        action = "load_more_comments";
+                    } else if (
+                        btn.querySelector(
+                            ".addNewComment #spotimCmtCounter"
+                        )
+                    ) {
+                        innerText = "הוספת תגובה";
+                        action = "go_to_commments";
+                    }
+                    // GA4
+                    if (window.pushGa4DataLayer) {
+                        window.pushGa4DataLayer(event, {
+                            event: "comments",
+                            click_text: innerText,
+                            content_type: "article",
+                            componenta_name: "comments",
+                            comments_action: action,
+                            comments: comments_numer,
+                            date_modified: window.dataLayer[0].dateModified,
+                            date_published: window.dataLayer[0].datePublished
+                        });
+                    }
+                });
+            });
+    }
+}
+
+function photo_gallery_func() {
+    window.$(".ArticleBodyComponent .ArticleImageComponenta .gelleryOpener > img").on("click", function () {
+        var link = window.$(this).attr("src");
+        var linkText = window.$(this).attr("title");
+        if (window.pushGa4DataLayer) {
+            window.pushGa4DataLayer(event, {
+                event: "content_click",
+                photo_url: link,
+                photo_title: linkText,
+                content_type: "photo (article gallery)",
+                component_name: "Article Body",
+                date_modified: window.dataLayer[0].dateModified,
+                date_published: window.dataLayer[0].datePublished,
+                position_in_component: 0,
+            });
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+ 
+    // Content click - componentas and header pplus
+    pplus_componentas_and_header();
+
+    
+    if (window.dcCG != "article") {
+        if (window.dcCG != "home") pplus_tags_event();
+    }
+    if (window.dcCG == "article") {  
+        // ga4 switch flowplayer events 
+        window.gtag= 1;   
+         // Content share event
+        content_share_func();
+
+        setTimeout(function() {
+            // Comment event pplus
+            pplus_comments_event();
+            // photo gallery event
+            photo_gallery_func();
+        }, 3000);
+
+    }
+
+});
+
+})();

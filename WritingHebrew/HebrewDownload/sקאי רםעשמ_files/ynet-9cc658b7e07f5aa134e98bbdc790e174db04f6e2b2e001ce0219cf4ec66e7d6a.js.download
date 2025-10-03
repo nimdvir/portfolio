@@ -1,0 +1,5 @@
+window.BUTTONS = window.BUTTONS || {};
+window.BUTTONS.ynet = {
+ "play": "<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"icon-button-outer\" cx=\"18\" cy=\"18\" r=\"18\" transform=\"matrix(-1 0 0 1 36 0.000488281)\" fill=\"black\" fill-opacity=\"0.75\"/>\n<path class=\"icon-button-inner\" d=\"M26.7116 17.4823C27.1085 17.7138 27.1085 18.2873 26.7116 18.5189L14.1023 25.8742C13.7023 26.1076 13.2 25.819 13.2 25.356L13.2 10.6452C13.2 10.1821 13.7023 9.89361 14.1023 10.1269L26.7116 17.4823Z\" fill=\"white\"/>\n</svg>\n",
+ "pause": "<svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"icon-button-outer\" cx=\"15\" cy=\"15\" r=\"15\" transform=\"matrix(-1 0 0 1 30 0)\" fill=\"black\" fill-opacity=\"0.75\"/>\n<path class=\"icon-button-inner\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M14 8H11V22H14V8ZM19 8H16V22H19V8Z\" fill=\"white\"/>\n</svg>\n"
+};

@@ -1,0 +1,408 @@
+'use strict';
+/**
+ * Run the Load the Webfont .
+ */
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+Banner.prototype.webFontLoad = function (options) {
+  WebFont.load(options);
+  this.start();
+};
+/**
+ * Run the animation functions.
+ */
+
+
+Banner.prototype.start = function () {
+  var _this = this;
+
+  this.dims = this.bannerWidth + 'x' + this.bannerHeight;
+  this.path = this.bannerData.feed[0];
+  this.images = this.getImageUrls([this.path.backgroundImageUrl_InputEditor_asset, this.path.image1Url_InputEditor_asset, this.path.image2Url_InputEditor_asset, this.path.image3Url_InputEditor_asset, this.path.image4Url_InputEditor_asset, this.path.image5Url_InputEditor_asset, this.path.image6Url_InputEditor_asset, this.path.image7Url_InputEditor_asset, this.path.image8Url_InputEditor_asset, this.path.image9Url_InputEditor_asset, this.path.image10Url_InputEditor_asset, this.path.logoUrl_InputEditor_asset]);
+  this.preloadImages(this.images, function () {
+    console.log("Banner width", _this.bannerWidth);
+
+    _this.createElements();
+
+    _this.setup();
+
+    _this.hidePreloader();
+
+    _this.animate();
+
+    _this.bindEvents();
+  });
+};
+
+Banner.prototype.getImageUrls = function (imageElementArray) {
+  var urls = imageElementArray.map(function (imageElement) {
+    return imageElement.hasOwnProperty('Url') ? imageElement.Url : imageElement;
+  });
+  return urls.filter(Boolean);
+};
+/**
+ * Create dom elements.
+ */
+
+
+Banner.prototype.createElements = function () {
+  this.copyArr = [];
+  this.imageArr = [];
+
+  var isRetina = function isRetina(smartObject) {
+    if (smartObject.hasOwnProperty('retina')) {
+      return smartObject.retina.toLowerCase() == 'true' ? true : false;
+    } else {
+      return false;
+    }
+  };
+
+  this.animationContainer = this.smartObject({
+    id: 'ANIMATION_CONTAINER',
+    width: this.bannerWidth,
+    height: this.bannerHeight,
+    parent: this.banner
+  });
+  this.bgColor = this.smartObject({
+    id: 'backgroundColor_ColorEditor_asset',
+    width: this.bannerWidth,
+    height: this.bannerHeight,
+    backgroundColor: this.path.backgroundColor_ColorEditor_asset,
+    parent: this.animationContainer
+  });
+  this.bgImage = this.smartObject(_objectSpread(_objectSpread({
+    id: 'backgroundImage_InputEditor_asset',
+    backgroundImage: this.path.backgroundImageUrl_InputEditor_asset.hasOwnProperty('Url') ? this.path.backgroundImageUrl_InputEditor_asset.Url : this.path.backgroundImageUrl_InputEditor_asset
+  }, this.path.backgroundImageStyle_InputEditor_asset), {}, {
+    retina: isRetina(this.path.backgroundImageStyle_InputEditor_asset),
+    parent: this.animationContainer
+  }));
+
+  for (var x = 1; x <= 6; x++) {
+    this["shape" + x] = this.smartObject(_objectSpread(_objectSpread({
+      id: "shape" + x + "_InputEditor_asset"
+    }, this.path["shape" + x + "_InputEditor_asset"]), {}, {
+      parent: this.animationContainer
+    }));
+  }
+
+  for (var i = 1; i <= 10; i++) {
+    this["image" + i] = this.smartObject(_objectSpread(_objectSpread({
+      id: "image" + i + "_InputEditor_asset",
+      backgroundImage: this.path["image" + i + "Url_InputEditor_asset"].hasOwnProperty('Url') ? this.path["image" + i + "Url_InputEditor_asset"].Url : this.path["image" + i + "Url_InputEditor_asset"]
+    }, this.path["image" + i + "Style_InputEditor_asset"]), {}, {
+      retina: isRetina(this.path["image" + i + "Style_InputEditor_asset"]),
+      parent: this.path["image" + i + "Style_InputEditor_asset"].hasOwnProperty('parent') ? this[this.path["image" + i + "Style_InputEditor_asset"].parent] : this.animationContainer
+    }));
+    this.imageArr.push(this["image" + i]);
+  }
+
+  for (var j = 1; j <= 5; j++) {
+    this["textGrid" + j] = this.smartObject(_objectSpread(_objectSpread({
+      id: "textGrid" + j + "_InputEditor_text"
+    }, this.path["textGrid" + j + "_InputEditor_text"]), {}, {
+      parent: this.path["textGrid" + j + "_InputEditor_text"].hasOwnProperty('parent') ? this[this.path["textGrid" + j + "_InputEditor_text"].parent] : this.animationContainer
+    }));
+  }
+
+  for (var q = 1; q <= 10; q++) {
+    this["copy" + q] = this.smartObject({
+      id: "copy" + q + "_InputEditor_text",
+      className: 'text',
+      parent: this.path["copy" + q + "_InputEditor_text"].hasOwnProperty('varParent') ? this[this.path["copy" + q + "_InputEditor_text"].varParent] : this.animationContainer
+    });
+
+    if (this.path["copy" + q + "_InputEditor_text"].hasOwnProperty('styles')) {
+      gsap.set(this["copy" + q], this.path[this.path["copy" + q + "_InputEditor_text"].styles + '_InputEditor_text']);
+    }
+
+    gsap.set(this["copy" + q], this.path["copy" + q + "_InputEditor_text"]);
+  }
+
+  this.legal = this.smartObject(_objectSpread(_objectSpread({
+    id: 'legal_InputEditor_text'
+  }, this.path.legal_InputEditor_text), {}, {
+    parent: this.animationContainer
+  }));
+  this.logo = this.smartObject(_objectSpread(_objectSpread({
+    id: 'logoStyle_InputEditor_asset',
+    backgroundImage: this.path.logoUrl_InputEditor_asset.hasOwnProperty('Url') ? this.path.logoUrl_InputEditor_asset.Url : this.path.logoUrl_InputEditor_asset
+  }, this.path.logoStyle_InputEditor_asset), {}, {
+    retina: isRetina(this.path.logoStyle_InputEditor_asset),
+    parent: this.animationContainer
+  }));
+  this.cta = this.smartObject(_objectSpread(_objectSpread({
+    id: 'ctaStyle_InputEditor_text',
+    zIndex: 101
+  }, this.path.ctaStyle_InputEditor_text), {}, {
+    parent: this.animationContainer
+  }));
+  this.exit = this.smartObject({
+    id: 'EXIT',
+    zIndex: 100,
+    width: this.bannerWidth,
+    height: this.bannerHeight,
+    parent: this.banner
+  });
+};
+/**
+ * Setup initial element states.
+ */
+
+
+Banner.prototype.setup = function () {
+  var _this2 = this;
+
+  CSSPlugin.defaultTransformPerspective = 1000;
+  this.cta.addEventListener('mouseover', function () {
+    console.log("over");
+
+    _this2.cta.set({
+      backgroundColor: _this2.vars.CtaOver
+    });
+  });
+  this.cta.addEventListener('mouseout', function () {
+    _this2.cta.set({
+      backgroundColor: _this2.vars.CtaOut
+    });
+  });
+  this.cta.addEventListener('click', function () {
+    var url = _this2.bannerData.feed[0].landingPage_InputEditor_studio.Url ? _this2.bannerData.feed[0].landingPage_InputEditor_studio.Url : _this2.bannerData.feed[0].landingPage_InputEditor_studio;
+    Enabler.exitOverride('clickthrough', url + _this2.bannerData.feed[0].landingSuffix_InputEditor_studio);
+  });
+};
+/**
+ * Hide the preloader.
+ */
+
+
+Banner.prototype.hidePreloader = function () {
+  gsap.to('.preloader', 0.25, {
+    autoAlpha: 0
+  });
+};
+/**
+ * Animation timeline.
+ */
+
+
+Banner.prototype.animate = function () {
+  var _this3 = this;
+
+  gsap.set(this.animationContainer, {
+    autoAlpha: 0
+  });
+  this.vars = this.path.shape6_InputEditor_asset;
+  this.HexEase = 'power3.inOut';
+  this.TextEase = 'power1.inOut';
+  this.HexDelay = 0.25;
+  this.TextSpeed = 0.6;
+  this.FlipSpeed = 1;
+  var hexGridTl = gsap.timeline({
+    paused: false
+  }).to('#hex-grid *', {
+    opacity: 0.1,
+    duration: 5,
+    stagger: {
+      yoyo: true,
+      amount: 20,
+      repeatRefresh: true,
+      from: 'random',
+      grid: 'auto',
+      ease: 'none',
+      repeat: -1
+    }
+  });
+
+  var flip = function flip(front, back) {
+    var tl = new TimelineMax({
+      paused: true,
+      onComplete: function onComplete() {}
+    });
+
+    if (_this3.vars.flipFrom == 'right') {
+      tl.from(front, _this3.FlipSpeed, {
+        rotationY: '+=180',
+        ease: 'power2.inOut'
+      }).to(back, _this3.FlipSpeed, {
+        rotationY: '-=180',
+        ease: 'power2.inOut'
+      }, 0);
+    } else if (_this3.vars.flipFrom == 'left') {
+      tl.from(front, _this3.FlipSpeed, {
+        rotationY: '-=180',
+        ease: 'power2.inOut'
+      }).to(back, _this3.FlipSpeed, {
+        rotationY: '+=180',
+        ease: 'power2.inOut'
+      }, 0);
+    }
+
+    return tl;
+  };
+
+  var light = function light(front, back) {
+    var tl = new TimelineMax({
+      paused: true,
+      onComplete: function onComplete() {}
+    }).fromTo(front, _this3.FlipSpeed, {
+      webkitFilter: "brightness(1)",
+      filter: "brightness(1)"
+    }, {
+      webkitFilter: "brightness(0)",
+      filter: "brightness(0)",
+      ease: _this3.HexEase
+    }).fromTo(back, _this3.FlipSpeed, {
+      webkitFilter: "brightness(0)",
+      filter: "brightness(0)"
+    }, {
+      webkitFilter: "brightness(1)",
+      filter: "brightness(1)",
+      ease: _this3.HexEase
+    }, 0);
+    return tl;
+  };
+
+  this.timeline = gsap.timeline({
+    paused: false,
+    onComplete: function onComplete() {
+      hexGridTl.pause();
+    }
+  }).set([this.shape1], {
+    scale: this.vars.HexScale2,
+    y: this.vars.HexY2,
+    x: this.vars.HexX2
+  }).set([this.shape2, this.shape3, this.shape4], {
+    scale: this.vars.HexScale1,
+    y: this.vars.HexY1,
+    x: this.vars.HexX1
+  }).set([this.image1, this.image2, this.image3, this.image4, this.image5, this.image6, this.image7, this.image8], {
+    webkitFilter: "brightness(1)",
+    filter: "brightness(1)"
+  }).add('frame1', '+=0.5').from(this.textGrid1, {
+    duration: this.TextSpeed,
+    autoAlpha: 0,
+    x: "+=" + this.vars.TextShiftX,
+    y: "+=" + this.vars.TextShiftY,
+    ease: this.TextEase
+  }, 'frame1').to(this.shape1, {
+    duration: 1,
+    x: this.vars.HexX3,
+    y: this.vars.HexY3,
+    scale: this.vars.HexScale3,
+    ease: this.HexEase
+  }, "frame1+=" + this.HexDelay).add(flip(this.image2, this.image3).play(), "frame1+=" + this.HexDelay).add(light(this.image3, this.image2).play(), "frame1+=" + this.HexDelay).to(this.shape2, {
+    duration: 1,
+    x: this.vars.HexX2,
+    y: this.vars.HexY2,
+    scale: this.vars.HexScale2,
+    ease: this.HexEase
+  }, "frame1+=" + this.HexDelay).add(flip(this.image4, this.image5).play(), "frame1+=" + this.HexDelay).add(light(this.image5, this.image4).play(), "frame1+=" + this.HexDelay).add('frame2', '+=2').to(this.textGrid1, {
+    duration: this.TextSpeed,
+    autoAlpha: 0,
+    x: "-=" + this.vars.TextShiftX,
+    y: "-=" + this.vars.TextShiftY,
+    ease: this.TextEase
+  }, 'frame2').from(this.textGrid2, {
+    duration: this.TextSpeed,
+    autoAlpha: 0,
+    x: "+=" + this.vars.TextShiftX,
+    y: "+=" + this.vars.TextShiftY,
+    ease: this.TextEase
+  }, 'frame2').to(this.shape1, {
+    duration: 1,
+    x: this.vars.HexX4,
+    y: this.vars.HexY4,
+    scale: this.vars.HexScale4,
+    ease: this.HexEase
+  }, "frame2+=" + this.HexDelay).add(flip(this.image2, this.image3).play(), "frame2+=" + this.HexDelay).add(light(this.image2, this.image3).play(), "frame2+=" + this.HexDelay).to(this.shape2, {
+    duration: 1,
+    x: this.vars.HexX3,
+    y: this.vars.HexY3,
+    scale: this.vars.HexScale3,
+    ease: this.HexEase
+  }, "frame2+=" + this.HexDelay).add(flip(this.image4, this.image5).play(), "frame2+=" + this.HexDelay).add(light(this.image4, this.image5).play(), "frame2+=" + this.HexDelay).to(this.shape3, {
+    duration: 1,
+    x: this.vars.HexX2,
+    y: this.vars.HexY2,
+    scale: this.vars.HexScale2,
+    ease: this.HexEase
+  }, "frame2+=" + this.HexDelay).add(flip(this.image6, this.image7).play(), "frame2+=" + this.HexDelay).add(light(this.image7, this.image6).play(), "frame2+=" + this.HexDelay).add('frame3', '+=2').to(this.textGrid2, {
+    duration: this.TextSpeed,
+    autoAlpha: 0,
+    x: "-=" + this.vars.TextShiftX,
+    y: "-=" + this.vars.TextShiftY,
+    ease: this.TextEase
+  }, 'frame3').from(this.textGrid3, {
+    duration: this.TextSpeed,
+    autoAlpha: 0,
+    x: "+=" + this.vars.TextShiftX,
+    y: "+=" + this.vars.TextShiftY,
+    ease: this.TextEase
+  }, 'frame3').to(this.shape2, {
+    duration: 1,
+    x: this.vars.HexX4,
+    y: this.vars.HexY4,
+    scale: this.vars.HexScale4,
+    ease: this.HexEase
+  }, "frame3+=" + this.HexDelay).add(flip(this.image4, this.image5).play(), "frame3+=" + this.HexDelay).add(light(this.image5, this.image4).play(), "frame3+=" + this.HexDelay).to(this.shape3, {
+    duration: 1,
+    x: this.vars.HexX3,
+    y: this.vars.HexY3,
+    scale: this.vars.HexScale3,
+    ease: this.HexEase
+  }, "frame3+=" + this.HexDelay).add(flip(this.image6, this.image7).play(), "frame3+=" + this.HexDelay).add(light(this.image6, this.image7).play(), "frame3+=" + this.HexDelay).to(this.shape4, {
+    duration: 1,
+    x: this.vars.HexX2,
+    y: this.vars.HexY2,
+    scale: this.vars.HexScale2,
+    ease: this.HexEase
+  }, "frame3+=" + this.HexDelay).add(flip(this.image8, this.image8).play(), "frame3+=" + this.HexDelay).add(light(this.image8, this.image8).play(), "frame3+=" + this.HexDelay);
+  gsap.to(this.animationContainer, {
+    autoAlpha: 1,
+    delay: 0.25
+  });
+};
+/**
+ * Setup preview data element states.
+ */
+
+
+Banner.prototype.setupPreview = function (targetId, settings) {
+  var _settings = settings;
+  console.log(targetId);
+  console.log(settings);
+
+  if (targetId == 'logo_InputEditor_asset') {
+    if (settings.hasOwnProperty('backgroundImage')) {
+      _settings.backgroundImage = this.getImagePath(settings.backgroundImage);
+      gsap.set(this.logo, {
+        backgroundImage: 'url(' + _settings.backgroundImage + ')'
+      });
+    } else {
+      gsap.set(this.logo, _settings);
+    }
+  }
+
+  if (targetId == 'backgroundImage_InputEditor_asset') {
+    if (settings.hasOwnProperty('backgroundImage')) {
+      _settings.backgroundImage = this.getImagePath(settings.backgroundImage);
+      gsap.set(this.bgImage, {
+        backgroundImage: 'url(' + _settings.backgroundImage + ')'
+      });
+    } else {
+      gsap.set(this.bgImage, _settings);
+    }
+  }
+
+  if (targetId == 'textStyle_InputEditor_text') {
+    gsap.set(this.copyArr, _settings);
+  } else {
+    gsap.set("#" + targetId, _settings);
+  }
+};

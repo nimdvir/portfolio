@@ -1,0 +1,220 @@
+var __TRINITY_IS_LEGACY__ = false;
+
+try {
+  eval('({...{x: 1}})');
+  eval('let b = window?.x ?? document');
+  eval('(async () => { await Promise.resolve(); })()');
+  eval('const fn = ({a, b = {}, ...c}) => {}');
+  eval('`${window.x}`');
+  eval('(async () => { for await (const item of []) {} })()');
+
+  if (!window.fetch) throw 'No fetch';
+  if (!(typeof Symbol)) throw 'No Symbol';
+} catch (error) {
+  __TRINITY_IS_LEGACY__ = error;
+}
+(function() {
+    var prefix = __TRINITY_IS_LEGACY__ ? 'legacy/' : '';
+
+    window.TRINITY_PLAYER = window.TRINITY_PLAYER || {
+        isLegacyBrowser: !!__TRINITY_IS_LEGACY__,
+        isDev: false,
+        domain: 'ynet.co.il',
+        options: {
+            useBunnyCDN: 0,
+            serverSubdomain: '',
+            pageURL: 'https://pplus.ynet.co.il/richul/article/4518968',
+            disabledDepartEvents: ["injectorImp"]        },
+        config: {
+            bundlePath: 'https://vd.trinitymedia.ai/trinity-player/tts-player/20251002_a100c6ba4014db25d171a133c876512664550e12/',
+            injectorScriptPath: prefix + 'trinity-injector-script.js',
+            SRIHashes: {
+                'trinity-injector-script.js': 'sha384-1VHPHzIqnWSPf0DyExZL814AIsjeLgKMfRpBzmRCX5XmF3X3ZUsrQ159UeIf5FB4',
+                'legacy/trinity-injector-script.js': 'sha384-bSUuHmqtxY3KFa8FDwG7779zrDXJfFkQf3JfmJfdsamlrwkM1d7bUtTRc+oxWcTe'
+            }
+        },
+        userAgentData: {"browser":"Chrome","os":"Windows","os_ver":"10","device":"Other","browser_ver":"140.0.0","is_bot":false,"is_legacy_browser":true},
+        SDKData: {},
+        userId: '',
+        server: 'ip-10-64-229-74',
+        server_region: 'us-east-1',
+        server_env: 'PRD',
+        publisherId: '28091',
+        ts: Date.now(),
+        tsServer: 1759453381515,
+        isOembed: 0    };
+    const TP = window.TRINITY_PLAYER;
+    const d = document;
+
+    const playerId = d.currentScript.dataset.playerId || '' || '013d076b70a9b28bd809461a34c14986'
+    d.currentScript.setAttribute('data-player-id', playerId); // set dynamically generated ID
+
+    
+    TP.players = TP.players || {};
+    TP.players[playerId] = {
+        isIframe: '',
+        isAMP: '',
+        abTestAlias: '',
+        adsDurationThreshold: '',
+        cf: '',
+        contentURL: 'https://pplus.ynet.co.il/richul/article/4518968',
+        documentLoadType: '',
+        documentLoadTypeSelector: '',
+        estimatedDuration: "",
+        filters: [],
+        FAB: 'none',
+        FABConfig: {},
+        displayExpanded: {"isEnabled":true,"maxAdHeight":90,"renderType":"onInit","integration":"adtelligent"},
+        displayOverlay: {"returnToPlayer":{},"integration":"adtelligent"},
+        isTrinityEnabled: true,
+        isShareEnabled: 0,
+        shareEndpoint: '',
+        isNewTextApproach: true,
+        selectorVersion: '1',
+        headlineSelector: 'h1.mainTitle,h2>.subTitle, div.title, div.subTitle, .ArticleHeaderMobileComponent h1, .ArticleHeaderMobileComponent h2, .ArticleHeaderApp h1, .ArticleHeaderApp h2',
+        articleSelector: '.text_editor_paragraph, h3.pHeader',
+        textSelector: 'h1.mainTitle, h2.subTitle, .text_editor_paragraph, h3.pHeader, div.title, div.subTitle, div.author, .ArticleHeaderMobileComponent h1, .ArticleHeaderMobileComponent h2',
+        imageSelector: '',
+        language: 'he',
+        isTranslationEnabled: true,
+        loaderText: '',
+        paramsObject: {},
+        partnerName: '',
+        isShowPoweredBy: true,
+        isPoweredByLinkDisabled: '',
+        placeholderSelector: {},
+        playerMode: 'default',
+        playerType: '',
+        integrationType: 'web',
+        googleCustomParams: '',
+        pubShare: '1',
+        publisherSections: [{"regexp":".il/([\\w\\-]+)/(?:[\\w\\-\\.]*\\/)*article","selector":"","example":"https://www.ynet.co.il/activism/article/hktftqd7c","type":"url","timestamp":1717491209437}],
+        publisherSectionsAutoEnabled: false,
+        publisherTags: [{"regexp":"(.*)","selector":"jsonld.keywords","example":"","type":"metadata","delimiterSplitter":",","timestamp":1717491209438,"result":"Not matched"},{"type":"metadata","regexp":"(.*)","example":"ynet ספורט","selector":"meta[property=\"vr:author\"]","timestamp":1717491308965,"result":"ynet ספורט"}],
+        publisherUserId: '',
+        publisherUserIdOptions: '{}',
+        readContentType: '',
+        readContentConfig: '',
+        readAlongConfig: null,
+        renderOptions: {},
+        rchURL: '',
+        state: 'not-started',
+        themeDataComputed: {"light":{"layout":"global-expanded","is-force-desktop":true,"height":100,"height-mobile":100,"main-color":"#515151 !important","el-play-button.width":"36px","el-play-button.height":"36px","el-powered-by.extra.link-url":"mailto:product@ynet.co.il"},"dark":{"layout":"global-expanded","is-force-desktop":true,"height":100,"height-mobile":100,"main-color":"#515151 !important","el-play-button.width":"36px","el-play-button.height":"36px","el-powered-by.extra.link-url":"mailto:product@ynet.co.il"},"i18n":{"he":{"initialTitle":"\u05dc\u05d7\u05e6\u05d5 \u05dc\u05d4\u05d0\u05d6\u05e0\u05d4 \u05dc\u05db\u05ea\u05d1\u05d4"}},"fonts":[{"name":"MosesText","weight":400,"woff2":"https:\/\/vd.trinitymedia.ai\/fonts\/MosesText_1.0VF.woff2"}],"__key":"production:default:79a7308c3a1091dc1cd76cf442c815d28c744f66:0","__debug":{"isOnDemand":true}},
+        themeId: '565',
+        themeAppearance: 'light',
+        unitId: '2900015643',
+        unitType: 'tts-player',
+        unitEnvironment: 'web',
+        version: '20251002_a100c6ba4014db25d171a133c876512664550e12'
+    };
+
+    function trinitySendDepart(params) {
+  const data = {
+    t: 'audio',
+    platform: 'Trinity',
+    server: params.server,
+    server_env: params.serverENV,
+    server_region: params.serverRegion,
+    unit_type: params.unitType,
+
+    imp_id: params.impId,
+    user_id: params.userId,
+    kind: params.kind,
+    campaign_id: params.unitId,
+    seller_id: params.publisherId,
+    url: params.url,
+    top_domain: params.topDomain,
+    text_value: params.textValue,
+    user_agent: params.userAgent,
+    user_agent_data: params.userAgentData,
+    player_version: params.playerVersion
+  };
+
+  const resultData = JSON.stringify(data);
+
+  fetch('https://depart.trinitymedia.ai/api/collect?t=audio', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: resultData
+  })
+    .then((response) => response.text())
+    .catch((error) => {
+      console.error('Can not send depart', error, data);
+    });
+
+  console.info('DEPART', resultData);
+}
+    TP.injectScript = function(playerId, injectorScriptId) {
+  var isDOMContentLoaded = false;
+
+  function checkIfDocumentReady() {
+    return ['interactive', 'complete', 'loaded'].indexOf(d.readyState) !== -1 || isDOMContentLoaded;
+  }
+
+  function run() {
+    if (d.body) {
+      if (!d.getElementById(injectorScriptId)) {
+        var js = d.createElement('script');
+        var src = TP.config.bundlePath + TP.config.injectorScriptPath;
+
+        js.type = 'text/javascript';
+        js.setAttribute('crossorigin', 'anonymous');
+        js.setAttribute('integrity', TP.config.SRIHashes[TP.config.injectorScriptPath]);
+        js.setAttribute('fetchpriority', 'high');
+        js.setAttribute('charset', 'UTF-8');
+        js.onerror = () => {
+          trinitySendDepart({
+            server: TP.server,
+            serverENV: TP.server_env,
+            serverRegion: TP.server_region,
+            unitType: TP.players[playerId].unitType,
+            userId: TP.userId,
+            kind: 'errorJSLoad',
+            unitId: Number(TP.players[playerId].unitId),
+            publisherId: Number(TP.publisherId || TP.players[playerId].publisherId),
+            url: window.location.href,
+            topDomain: TP.domain,
+            textValue: src,
+            userAgent: navigator.userAgent,
+            userAgentData: TP.userAgentData,
+            playerVersion: TP.players[playerId].version
+          });
+        };
+        js.src = src;
+        js.id = injectorScriptId;
+
+        js.addEventListener('load', createPlayer);
+
+        d.body.appendChild(js);
+      } else {
+        if (TP.isLoaded) createPlayer();
+        else d.getElementById(injectorScriptId).addEventListener('load', createPlayer);
+      }
+    }
+  }
+
+  function createPlayer() {
+    if (TP.players[playerId].__initializing) return;
+    if (checkIfDocumentReady()) TP.api && TP.api._internal && TP.api._internal.createPlayer(playerId);
+  }
+
+  run();
+
+  d.addEventListener('DOMContentLoaded', () => {
+    isDOMContentLoaded = true;
+  });
+
+  const t = setInterval(() => {
+    if (!checkIfDocumentReady()) return;
+
+    clearInterval(t);
+
+    run();
+  }, 100);
+};
+
+    TP.injectScript(playerId, 'trinity-tts-js');
+})();
+var __TRINITY_TAG_TIME__ = 12;

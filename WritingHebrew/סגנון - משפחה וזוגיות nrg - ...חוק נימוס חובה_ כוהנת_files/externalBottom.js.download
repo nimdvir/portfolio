@@ -1,0 +1,96 @@
+//externalBottom.js
+//RELEVANTI
+/*
+(function(){
+	
+	var tvbox = nrg.$('b300x250');
+	if(tvbox == false)
+	{
+		tvbox = nrg.$('CustTvBoxId_1');
+	}
+	
+	if(tvbox  && vabrod == 'Y') 
+	{
+		var div = document.createElement('DIV');
+			div.className = 'spacer';
+		
+		div.innerHTML = "<iframe id='a06e52fd' name='a06e52fd' src='http://pera.co.il/www/delivery/afr.php?zoneid=340&cb=INSERT_RANDOM_NUMBER_HERE' frameborder='0' scrolling='no' width='300' height='250' allowtransparency='true'><a href='http://pera.co.il/www/delivery/ck.php?n=a7469d1e&cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://pera.co.il/www/delivery/avw.php?zoneid=340&cb=INSERT_RANDOM_NUMBER_HERE&n=a7469d1e' border='0' alt='' /></a></iframe>";
+		tvbox.parentNode.insertBefore(div,tvbox.nextSibling); 
+	}
+})();
+*/
+
+if (nrg.$('RelevantiBox')){
+	if ( typeof(canonical_url)!== "undefined" ){
+	   document.write('<script type="text/javascript" src="http://www.relevanti.com/Widget.ashx?widgetId=22a25d1b-6f94-45c8-9ce6-5ca5f9ce16d8&target=RelevantiBox&url='+ canonical_url +'"></scr' + 'ipt>');
+	}else{
+	   document.write('<script type="text/javascript" src="http://www.relevanti.com/Widget.ashx?widgetId=22a25d1b-6f94-45c8-9ce6-5ca5f9ce16d8&target=RelevantiBox&url=' + encodeURIComponent("http://" + document.location.hostname + document.location.pathname) + '"></scr' + 'ipt>');
+	}
+}
+// for Outbrain statistics
+function getQueryString(url){
+    var queryString = url.substring(url.indexOf('?')+1,url.length);
+    var StrVars = queryString.split('&');
+    var vars = new Array();
+    for (var i=0;i<StrVars.length;i++){
+        var strTemp = StrVars[i].split('=');
+        vars[strTemp[0]] = strTemp[1];
+    }
+    return vars;
+ }
+
+function outbrainStatistics(){
+   var qs = getQueryString(location.href);
+   var appl_num = qs["ap"];
+   var from_art = qs["from_art"];
+   var to_art   = qs["to_art"];
+   if(typeof appl_num != "undefined" && typeof from_art != "undefined" && typeof to_art != "undefined"){
+        nrg.echo('/luach_nrg/owa/OUTBRAIN_STATISTICS?p_appl='+appl_num+'&p_from_art='+from_art+'&p_to_art='+to_art);
+   }
+}
+
+
+
+/*
+if(appl == 7)
+{
+function loadJs(url, callback){
+		var script = document.createElement("script")
+	script.type = "text/javascript";
+	
+	if (script.readyState){  //IE
+	script.onreadystatechange = function(){
+		if (script.readyState == "loaded" ||
+										script.readyState == "complete"){
+						script.onreadystatechange = null;
+						if(callback) callback();
+		}
+	};
+	} else {  //Others
+	script.onload = function(){
+		if(callback) callback();
+	};
+}
+
+	script.src = url;
+	document.getElementsByTagName("body")[0].appendChild(script);
+}
+
+loadJs('http://linicom.co.il/links/convert_47.js');
+}
+*/
+/*
+(function(){
+
+		if (/(iPhone|iPod|iPad|BlackBerry|Android)/.test(navigator.userAgent)) return;	 
+	
+		var links = ['https://live.sekindo.com/live/liveView.php?s=33150', 'http://crm.3dots.co.il/pop/new_scripts/which_pop.php?from=nrg_pop&hours=4'];
+		var random = Math.floor((Math.random()*2)+1); 
+		nrg.loadJS(links[random-1]);
+})();
+*/
+
+if(nrg.$("channelBody_17")){
+	document.getElementById("topBreadCrumbs").getElementsByTagName("SPAN")[0].innerHTML = '<img src="https://www.makorrishon.co.il/nrg/images/nrg/include/img/parent/parents_logo.gif">';
+	}
+

@@ -1,0 +1,66 @@
+#dhtmlgoodies_slideshow{
+	width:465px;	/* Total width of slideshow */
+}
+
+#galleryContainer{
+	
+	height:70px;	/* Height of the images + 2 */
+	position:relative;
+	overflow:hidden;
+	/*padding:1px;*/
+	
+	/* CSS HACK */
+	height: 70px;	/* IE 5.x - Added 2 pixels for border left and right */
+	height/* */:/**/72px;	/* Other browsers */
+	height: /**/72px;
+	padding: 0px;
+	/*border: solid 1px red;*/
+			
+}
+#arrow_left{
+	position:absolute;
+	left:0px;
+	z-index:10;
+	background-color: #FFF;
+	height: 70px;
+	padding: 25px 0px 0px 0px;
+	margin: 0xp;
+	cursor:pointer;
+	
+}
+#arrow_right{
+	position:absolute;
+	right:-10px;
+	z-index:10;
+	background-color: #fff;
+	height: 70px;
+	padding: 25px 0px 0px 10px;
+	margin: 0px;
+	text-align: right;
+	cursor: pointer;
+}
+#theImages{
+	position:absolute;
+	height:70px;
+	left:-9563px;
+	width:10000px;
+
+}
+#theImages #slideEnd{
+	float:right;
+}
+
+#theImages img{
+	float:right;
+	/*padding:1px;*/
+	/*margin: 3px;*/
+	width:98px;
+	cursor:pointer;
+	border:solid 3px white;
+}
+
+
+
+#theImages .imageCaption{
+	display:none;
+}

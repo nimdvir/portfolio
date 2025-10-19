@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; MediaBook - Interviews &amp; Translations</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/JuliaGemini';</script>
+    <link rel="canonical" href="/mediabook/content/JuliaGemini.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="MediaBook - Interviews & Translations - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="MediaBook - Interviews & Translations - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/JuliaGemini.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Two years have passed since Julia Louis-Dreyfus was diagnosed with breast cancer.By Nimrod Dvir, March 28, 2019The past year was far from full of smiles for Julia Louis-Dreyfus, a woman who usually approaches life with perpetual humor. “When I was diagnosed with breast cancer, I started to cry,” she says about the discovery of the malignant disease in her body in 2017. It’s not easy to see a comedian in tears, but after completing six chemotherapy treatments and surgery, Louis-Dreyfus already sounds and looks recovered.”The treatments and the surgery were very difficult. I felt sick to my core, but I always knew I was going to get through it, that I had to get through it,” she explains. “Of course, cancer makes you think. We are not the same when we see the end right in front of our eyes. I saw death.””I can say that before the illness, I was much more lighthearted, but the disease made me realize that being carefree is not something I can afford anymore. It’s not that I’m heavy now, I’m just much more aware and goal-oriented.” Louis-Dreyfus, who shared her journey with her fans on social media, said this week in an interview on “Good Morning America”: “I think I reached a lot of people. I raised a lot of money for women who have undergone mastectomy and reconstruction.””The support from everyone helped me get through chemotherapy. And now, I’m completely back.” Next week, she returns to the screen in the seventh and final season of the political comedy she stars in, “Veep.” “I never had a doubt for a second that this season would make it to the screen,” she says. “If anything, the cancer motivated me. They say humor is the best medicine, and that’s not a cliché. I needed laughter in my life, I needed this goal.”A Career of ‘Awful’ CharactersSince first breaking out as Elaine Benes in “Seinfeld,” Louis-Dreyfus (58) has become one of the most acclaimed actresses in history, with a record-breaking number of Emmy Awards. After several seasons on the series “The New Adventures of Old Christine,” she stepped into the shoes of the seasoned politician Selina Meyer in the successful “Veep.”In the final season, her character is once again running for President of the United States, surrounded by her team of misfits and armed with a cynical approach to life. This season, Meyer throws out a slew of inappropriate jokes about disabled people, victims of mass shootings, the lower class, and anyone who crosses her path. All she cares about is the White House.”You could say I’ve made a career out of playing pretty awful characters,” Louis-Dreyfus laughs when we meet this week at a New York hotel. “But even when Meyer is really terrible, I don’t see it that way. She is very determined and very, very frustrated. There’s something interesting about frustration. Behind it, there’s a lot of sadness and ambition. It’s much deeper than just being ‘awful.’ So she takes her frustration out on everyone around her.”What is it about her character’s dialogue that you find so funny?”It cracks me up how she talks to people. For example, a line where she scolds one of the employees who messed up: ‘It’s like using a croissant as a dildo—it doesn’t get the job done and it leaves a mess!’” she bursts out laughing.You talk about her as if she’s a real person. How much of you is in Selina?”A lot, tons,” she laughs. “I can mostly identify with her. I understand her frustration—being a woman who is busy all day with how to sell her brand. I do the same thing. There are many similarities between surviving in politics and surviving in showbiz. Being a middle-aged woman trying to stay relevant and influential—I definitely understand that feeling. When people in front of you think you’re finished and you should go home, or when they don’t take you seriously—it’s infuriating.”The Unquestionable BossLouis-Dreyfus is the undisputed boss of the show. The entire crew adores her—complimenting her endlessly and holding their breath as she walks on set. Still, it seems she works harder than anyone. At the hotel where the interview takes place, she has been there since seven in the morning, without a break. She moves between interviews with media from around the world, confers with the show’s producers, and finalizes edits for upcoming episodes.”A good leader is one who manages to set an example,” says Tony Hale, who plays her right-hand man on the show. “Julia is like that. She is never ‘off.’ She never has a bad day. And even if she does, you would never know. She comes to work.”How has your role as a producer evolved?”It’s a never-ending job. I’m involved in everything,” she says. “At least I’ve changed. I used to watch all the scenes that were shot on a given day, like a possessed person, but I learned to let go. When I used to watch myself, I would be filled with self-criticism, disgust, and shame. Today, I’m not that hard on myself anymore.”Why is the show ending now?”It was a decision made by me and the producers. The network was willing to let us continue, but I felt the show had run its course. We are ending at a point where I think we should end.”Is there a connection to the fact that reality itself has become a satire that surpasses the scripts?”Given the current climate, it’s much more challenging to try to push comedic boundaries. On the other hand, in the show, we’ve always operated without specifying the political identity of the characters. None of them are defined on a particular side of the political divide, and we live in a parallel universe that helps us advance the story, especially now. Donald Trump is not funny to me. I mean, he could have been funny if he didn’t have the power that he has.”From “Seinfeld” to “Veep”She wasn’t originally supposed to be in “Seinfeld.” The idea was to have a show entirely about men, but NBC insisted on adding a female character—and Elaine felt like an unwelcome addition. “It took me a while to find my place,” she says of her days on the legendary sitcom. “The truth is, for years I felt like they didn’t give me jokes with ‘meat.’ I had jokes, but they weren’t as strong as the men’s, in my opinion.” And yes, she admits that some of the time she felt like she was in a boys’ club. “I often heard Larry David and Jerry Seinfeld say they wrote Elaine as if she were a guy.”Jerry Seinfeld has said that political correctness is nonsense and “anti-comedy.” Do you agree?”Not at all. I am for political correctness. You could say I’m even a little suspicious of people who oppose it. I think what they’re really saying is that it’s okay to tell racist jokes or jokes about violence against women. That’s not okay at all.”Well-founded gossip has attached the image of a wealthy heiress to Louis-Dreyfus, a descendant of a billionaire family. Her father, William, managed the Louis Dreyfus Group from 1996 to 2006—an investment company with holdings in real estate, gas, media, and more. “The media reports about my father’s wealth are greatly exaggerated,” she says defensively. “They like to write that he’s a billionaire, and they often write about me as a billionaire heiress. That’s really not the case. Far from it.” On the other hand, when her father passed away a decade ago, he may not have left behind billions, but it’s undeniable that this is a very wealthy family. The art collection alone in the father’s country house in upstate New York was valued highly after his death.Notable CitationsGood Morning America Interview (2019): Julia Louis-Dreyfus discusses her return to “Veep” after her cancer battle. Watch on ABC NewsThe Hollywood Reporter - “The Veep Finale: A ‘Hopeful’ Ending for a Cynical Show” (2019): An analysis of the show’s conclusion and its place in television history. Read on The Hollywood ReporterEmmys.com - Julia Louis-Dreyfus’ Awards &amp; Nominations: Official record of her numerous Emmy wins and nominations, highlighting her historic career. View on Emmys.com</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Nimrod Dvir
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

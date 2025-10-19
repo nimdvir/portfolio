@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+# mediabook/_toc.yml
+format: jb-book
+root: intro
+parts:
+  - caption: "Celebrity Interviews"
+    chapters:
+      - file: content/ladygaga
+      - file: content/Jlo
+      - file: content/JulianneMoore
+      - file: content/Lucas
+      - file: content/Kardeshian
+      - file: content/EvaMandez
+  - caption: "Behind the Scenes"
+    chapters:
+      - file: content/fasbender
+      - file: content/Julia

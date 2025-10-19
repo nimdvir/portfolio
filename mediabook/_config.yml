@@ -1,0 +1,24 @@
+title: "MediaBook - Interviews & Translations"
+author: "Nimrod Dvir"
+logo: logo.png
+execute:
+  execute_notebooks: "off"
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - deflist
+    - html_image
+html:
+  favicon: assets/favicon.png
+  use_repository_button: false
+  use_issues_button: false
+  use_edit_page_button: false
+  baseurl: /mediabook
+  home_page_in_navbar: true
+  theme:
+    name: sphinx_book_theme
+    options:
+      navigation_depth: 3
+      repository_url: https://github.com/nimdvir/portfolio
+      path_to_docs: mediabook
+      use_fullscreen_button: true

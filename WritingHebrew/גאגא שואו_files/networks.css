@@ -1,0 +1,54 @@
+﻿#spnPopupSharing .popupIcons .fa, #spnPopupSharing .popupIcons .fa:hover {}
+#spnPopupSharing .fa-twitter { background:#69d0f7;}
+#spnPopupSharing .fa-facebook {background:#2e5693;}
+#spnPopupSharing .fa-linkedin {background:#096898;}
+#spnPopupSharing .fa-google-plus {background:#e04636;}
+#spnPopupSharing .fa-envelope:before {content: "\f0e0";}
+#spnPopupSharing .fa-envelope  {background:#f8916d;}
+ 
+#spnPopupSharing.popupSharing {
+    width: 337px;
+    height:72px;
+	padding:0px !important;
+    display: none;
+    position: absolute;
+    margin-top: -30px;
+    margin-left: -40px;
+	border-radius:5px;
+    text-align:center;
+   
+	background-image: url('https://www.ynet.co.il/images/bubble.png');
+    z-index:1000;
+}
+.highlight{background-color:Yellow;}
+.icons{padding-right:10px;position:relative;top:-5px;}
+.shatef {font: bold 12px Arial;font-color:#595959; display: inline;position:relative;top:-16px;margin-left:5px;}
+
+#spnSharedPhrase {font-style:italic;color:#000;}
+#spnPopupSharing .popupSharingClose {position:absolute;top:23px;left:17px; cursor:pointer; }
+#spnPopupSharing .popupIcons {text-align:left}
+#spnPopupSharing span.wr {position:relative;display:block;}
+.fa-linkedin:before { content: "\f0e1";}
+
+.fa-times-circle:before {}
+
+.popupShare {display:block; margin:0 auto}
+
+#spnPopupSharing:after {
+    /*background: none repeat scroll 0 0 #fff;
+    border-bottom: 2px solid #ededed;
+    border-right: 2px solid #ededed;
+	content: "";
+    display: block;
+    height:10px;
+    left:70px;
+    position: absolute;
+    top:60px;
+    width:10px;
+    z-index:-1;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);  
+    -webkit-transform: rotate(45deg); 
+    -o-transform: rotate(45deg); 
+    -moz-transform: rotate(45deg); */ 
+}

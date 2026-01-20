@@ -1,0 +1,694 @@
+ 
+    (function () {
+        tp = window["tp"] || [];
+    
+        /* Checkout related */
+        /**
+         * Event properties
+         *
+         * chargeAmount - amount of purchase
+         * chargeCurrency
+         * uid
+         * email
+         * expires
+         * rid
+         * startedAt
+         * termConversionId
+         * termId
+         * promotionId
+         * token_list
+         * cookie_domain
+         * user_token
+         *
+         */
+        /***************************************************UTILS*******************************************************************/    
+        function isTablet() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return /ipad|android(?!.*mobile)|tablet/.test(userAgent);
+            }
+        /*************************************************ANALYTICS*****************************************************************/
+    
+        function sendEvent(piano_funnel_step, user_type, extraData) {
+            let analyticsData;
+            let updatedAnalyticsData;
+            let responseVariables;
+            if (dataLayer && dataLayer[0]) {
+                let { dcPath, channel_name, authorName, dateModified, datePublished, contentPageType, piano_id } = dataLayer[0];
+                const templateId = window.templateId ? window.templateId : '';
+    
+                if (!extraData) {
+                    extraData = {};
+                }
+    
+                if (!responseVariables) {
+                    responseVariables = {}
+                }
+    
+                analyticsData = {
+                    "dc_path": dcPath ? dcPath : '',
+                    "page_title": document ? document.title : '',
+                    "channel_name": channel_name ? channel_name : '',
+                    "article_id": window.articleId ? window.articleId : (window.location.href === 'https://www.ynet.co.il/plus/packages' ? 'packages' : 'homepage'),
+                    "author_name": authorName ? authorName : '',
+                    "date_published": datePublished ? datePublished : '',
+                    "date_modified": dateModified ? dateModified : '',
+                    "page_type": contentPageType ? contentPageType : '',
+                    "piano_funnel_step": piano_funnel_step,
+                    "block_template": templateId,
+                    "article_status": window.article_status ? window.article_status : '',
+                    "page_location": window.location.href,
+                    "user_type": user_type ? user_type : '',
+                    "piano_id": piano_id ? piano_id : '',
+                    "term_name": window.selectedTerm && window.selectedTerm.termName ? selectedTerm.termName : "",
+                    "term_id": window.selectedTerm && window.selectedTerm.termId ? selectedTerm.termId : "",
+                }
+    
+            } else {
+                analyticsData = {
+                    "dc_path": '',
+                    "page_title": '',
+                    "channel_name": '',
+                    "article_id": '',
+                    'author_name': '',
+                    'date_published': '',
+                    "date_modified": '',
+                    "page_type": '',
+                    "piano_funnel_step": '',
+                    "block_template": '',
+                    "article_status": '',
+                    "page_location": '',
+                    "user_type": '',
+                    "piano_id": '',
+                    "term_name": '',
+                    "term_id": '',
+                }
+            }
+    
+    
+            updatedAnalyticsData = Object.assign({}, analyticsData, extraData);
+            const eventData = Object.assign({ 'event': 'plus_funnel' }, updatedAnalyticsData);
+            dataLayer.push(eventData);
+            if (eventData.page_type === 'lp_evrit_book' && eventData.piano_funnel_step === 'registration_success') {
+                checkDataLayerAndRedirect(500, 3000, 'https://www.ynet.co.il/plus');
+            }
+    
+        }
+    
+        function checkDataLayerAndRedirect(intervalTime, searchDuration, redirectUrl) {
+            let totalTime = 0;
+            const intervalId = setInterval(() => {
+                totalTime += intervalTime;
+    
+                if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                    for (const item of window.dataLayer) {
+                        if (item.event === 'plus_funnel' &&
+                            item.page_type === 'lp_evrit_book' &&
+                            item.piano_funnel_step === 'registration_success') {
+                            clearInterval(intervalId);
+                            window.location.href = redirectUrl;
+                            return;
+                        }
+                    }
+                }
+    
+                if (totalTime >= searchDuration) {
+                    clearInterval(intervalId);
+                    window.location.href = redirectUrl;
+                }
+            }, intervalTime);
+        }
+    
+    
+        function sendGA4Event(piano_funnel_step, extraData) {
+            tp.push(["init", function () {
+                let user_type = "guest";
+                tp.api.callApi("/access/check", { rid: "RHLCJS4" }, function (response) {
+                    if (response && response.granted) {
+                        user_type = "subscribed"
+                    } else if (tp.pianoId.getUser()) {
+                        user_type = "registered"
+                    }
+                    sendEvent(piano_funnel_step, user_type, extraData)
+                });
+            }]);
+        }
+        /*************************************************CONTACT FORM**************************************************************/
+        var ynet_origin = "https://www.ynet.co.il";
+        var piano_origin = "https://buy.tinypass.com";
+          var piano_id_origin ='https://pauth.ynet.co.il';
+    
+        const validationRules = {
+            name: [
+                {
+                    validator: value => value.trim() !== '',
+                    message: 'יש להזין שם'
+                }
+            ],
+            email: [
+                {
+                    validator: value => value.trim() !== '',
+                    message: 'יש להזין כתובת דוא"ל'
+                },
+                {
+                    validator: value => /\S+@\S+\.\S+/.test(value),
+                    message: 'יש להזין כתובת דוא"ל תקינה'
+                }
+            ],
+            phone: [
+                {
+                    validator: value => value.trim() !== '',
+                    message: 'יש להזין מספר טלפון'
+                },
+                {
+                    validator: value => /^((\+972|972)|0)( |-)?([1-468-9]( |-)?\d{7}|(5|7)[0-9]( |-)?\d{7})$/i.test(value),
+                    message: 'יש להזין מספר טלפון תקין'
+                }
+            ],
+            subject: [
+                {
+                    validator: (value) => value,
+                    message: 'יש לבחור נושא'
+                }
+            ],
+            message: [
+                {
+                    validator: value => value.trim() !== '',
+                    message: 'יש להזין הודעה'
+                }
+            ]
+        };
+    
+        function validateField(fieldName, value) {
+            let validationResult = true;
+            for (const rule of validationRules[fieldName]) {
+                if (!rule.validator(value)) {
+                    validationResult = rule.message;
+                    break;
+                }
+            }
+    
+            return validationResult;
+        }
+    
+        function validateForm(formData) {
+            try {
+                let isFormValid = false;
+                let errorList = {};
+                for (const field in validationRules) {
+                    let validationResult = validateField(field, formData[field]);
+                    if (typeof validationResult === 'boolean') {
+                        isFormValid = true;
+                    } else {
+                        errorList = Object.assign({}, errorList, { [field]: validationResult });
+                    }
+                }
+                if (Object.keys(errorList).length > 0) {
+                    isFormValid = errorList;
+                }
+                return isFormValid
+            } catch (error) {
+                console.error(error)
+            }
+    
+        }
+    
+        function sendPostMessageToPiano(parent, iframeId, type, payload, params) {
+            if (parent) {
+                window.parent.postMessage({
+                    piano: { type, payload, params }
+                }, ynet_origin);
+            } else {
+                var iframe = document.getElementById(iframeId);
+                if (iframe) {
+                    iframe.contentWindow.postMessage({
+                        piano: { type, payload, params }
+                    }, piano_origin);
+                }
+            }
+        }
+        function sendContactForm(formData, params) {
+            sendPostMessageToPiano(false, params.iframeId, 'LOADING', true)
+            let isFormValid = validateForm(formData);
+            if (typeof isFormValid === 'boolean') {
+                sendPostMessageToPiano(true, '', 'FETCH', formData, params);
+            } else {
+                sendPostMessageToPiano(false, params.iframeId, 'SERVER_RESPONSE', isFormValid, params)
+            }
+        }
+    
+        /*********************************************END - CONTACT FORM********************************************************/
+        /***********************************************************************************************************************/
+        function onCheckoutComplete(data) {
+            sendGA4Event("subscription_success")
+        }
+    
+        function onCheckoutClose(event) {
+            window.selectedTerm = { 'termName': '', 'termId': '' }
+            /* Default behavior is to refresh the page on successful checkout */
+            if (typeof pageRefreshEnable === 'function') {
+                pageRefreshEnable();
+            }
+            if (event && event.state == "alreadyHasAccess") {
+                location.reload();
+            }
+            if (event && event.state == "checkoutCompleted") {
+                location.reload();
+            }
+            if (event.state === 'close' && sessionStorage.getItem('checkout') === 'registered') {
+                location.reload();
+            }
+    
+        }
+    
+        function onCheckoutCancel() {
+    
+        }
+        function onCheckoutError() {
+        }
+    
+        function onCheckoutSubmitPayment() {
+        }
+    
+            /* Meter callback */
+            function onMeterExpired() {
+        }
+    
+        /* Meter callback */
+        function onMeterActive() {
+        }
+    
+        /* Callback executed when a user must login */
+        function onLoginRequired() {
+            // this is a reference implementation only
+            // your own custom login/registration implementation would
+            // need to return the tinypass-compatible userRef inside the callback
+    
+            // mysite.showLoginRegistration(function (tinypassUserRef)
+            // tp.push(["setUserRef", tinypassUserRef]); // tp.offer.startCheckout(params); // }
+            // this will prevent the tinypass error screen from displaying
+    
+            return false;
+        }
+    
+        tp.push(["addHandler", "registrationSuccess", function (data) {
+            dataLayer.push({ 'event': 'ynet_registration_success' });
+            if (sessionStorage.getItem('checkout') === 'guest') {
+                sessionStorage.setItem('checkout', "registered");
+            }
+            if (window.templateId === 'OTH7PIOAT56L' || window.templateId === 'OTW83UBBB62I') {
+                sendGA4Event("registration_success",
+                    {
+                        'page_type': 'lp_evrit_book',
+                        'article_id': ''
+                    })
+            } else {
+                sendGA4Event("registration_success")
+            }
+        }]);
+    
+        /* Callback executed after a tinypassAccounts login */
+        function onLoginSuccess(data) {
+    
+            if (data.source === "PIANOID") {
+    
+            }
+    
+            if (window.templateId === 'OTH7PIOAT56L' || window.templateId === 'OTW83UBBB62I') {
+                try {
+                    tp.api.callApi(
+                        "/conversion/registration/create", { term_id: 'TM66I4LWWO1F' },
+                        function (data) {
+                            console.log("reg conversion done: ", data)
+    
+                        });
+                } catch (error) {
+                    console.log("reg conversion done: ", error)
+                }
+            }
+    
+            dataLayer.push({
+                'event': 'GA_Event',
+                'Category': 'Ynet+ - Login',
+                'Action': 'Manual Login',
+                'Label': 'Success'
+            });
+
+            if (data.source === "PIANOID" && !data.registration && data.stage === 'lp_flow') {
+            window.location.href = ynet_origin + '/plus'
+         }
+        }
+    
+        function onLogoutSuccess(data) {
+            if (data.source === 'OFFER') {
+                location.reload();
+            }
+        }
+    
+    
+    
+        /* Callback executed after an experience executed successfully */
+        function onExperienceExecute(event) {
+    
+        }
+    
+        /* Callback executed if experience execution has been failed */
+        function onExperienceExecutionFailed(event) {
+        }
+    
+        /* Callback executed if external checkout has been completed successfully */
+        function onExternalCheckoutComplete(event) {
+            /* Default behavior is to refresh the page on successful checkout */
+            location.reload();
+        }
+    
+        tp.push(["setAid", 'scyIGFmBpu']);
+        tp.push(["setCxenseSiteId", "1141964880015811425"]);
+        tp.push(['setPianoIdUrl', 'https://pauth.ynet.co.il/']);
+        tp.push(["setEndpoint", 'https://buy.tinypass.com/api/v3']);
+        tp.push(["setUseTinypassAccounts", false]);
+        tp.push(["setUsePianoIdUserProvider", true]);
+    
+        /* checkout related events */
+        tp.push(["addHandler", "checkoutComplete", onCheckoutComplete]);
+        tp.push(["addHandler", "checkoutClose", onCheckoutClose]);
+        tp.push(["addHandler", "checkoutCustomEvent", onCheckoutExternalEvent]);
+        tp.push(["addHandler", "checkoutCancel", onCheckoutCancel]);
+        tp.push(["addHandler", "checkoutError", onCheckoutError]);
+        tp.push(["addHandler", "checkoutSubmitPayment", onCheckoutSubmitPayment]);
+        /* user login events */
+        tp.push(["addHandler", "loginRequired", onLoginRequired]);
+        tp.push(["addHandler", "loginSuccess", onLoginSuccess]);
+    
+        /* meter related */
+        tp.push(["addHandler", "meterExpired", onMeterExpired]);
+        tp.push(["addHandler", "meterActive", onMeterActive]);
+    
+        tp.push(["addHandler", "experienceExecute", onExperienceExecute]);
+        tp.push(["addHandler", "experienceExecutionFailed", onExperienceExecutionFailed]);
+    
+        /* external checkout related events */
+        tp.push(["addHandler", "externalCheckoutComplete", onExternalCheckoutComplete]);
+        tp.push(["addHandler", "startCheckout", function (data) {
+            if (typeof pageRefreshDisable === 'function') {
+                pageRefreshDisable();
+            }
+            if (!data.userToken) {
+                sessionStorage.setItem('checkout', "guest");
+            }
+        }]);
+    
+    
+        tp.push(["addHandler", "showOffer", function (offerParams) {
+            if(isTablet()){
+            tp.setCustomVariable('tablet','tablet');
+          }
+            window.article_status = offerParams.containerSelector === "#piano-container-article" ? 'Close' : 'Open';
+            window.templateId = offerParams.templateId;
+
+            if(offerParams.templateId !== 'OT9S9YN057BV'){
+              sendGA4Event("block_view")
+            }
+
+        }]);
+    
+        tp.push(["addHandler", "showTemplate", function (templateParams) {
+            //Contact Form 
+            if (templateParams.templateId === "OTVNLR3L0G2M") {
+                window.addEventListener('message', function (event) {
+                    if (event.origin === "https://www.ynet.co.il") {
+                        if (event.data && typeof event.data.piano != 'undefined') {
+                            let result = event.data.piano;
+                            switch (result.type) {
+                                case 'SUCCESS':
+                                    sendPostMessageToPiano(false, result.params.iframeId, 'SERVER_RESPONSE', true, result.params)
+                                    break;
+                                case 'FAIL':
+                                    sendPostMessageToPiano(false, result.params.iframeId, 'SERVER_RESPONSE', false, result.params)
+                                    break;
+                                default: return;
+                            }
+                        }
+                    }
+                });
+            }
+        }]);
+    
+        function onCheckoutExternalEvent(event) {
+            let stage ='';
+      	let templateId = event.params && event.params.params && JSON.parse(event.params.params).templateId;
+        if(templateId == "OTA40LOLS76I"){
+              stage = "lp_flow"
+              tp.setCustomVariable("lp_flow", true)
+        }else{
+              stage = "register_flow" 
+        }
+ 
+            switch (event.eventName) {
+                case "paywall-login":
+                    window.YitPaywall.openLoginPopUp();
+                    break;
+                case "paywall-payment":
+                    sendGA4Event("click on enter credit card information button")
+                    break;
+                case "accecibility-btn":
+                    window[`interdeal`] && window[`interdeal`][`a11y`] && window[`interdeal`][`a11y`].openMenu();
+                    break;
+                case "contact-form":
+                    var params;
+                    const { name, email, phone, subject, message } = event.params;
+                    sendContactForm({ name, email, phone, subject, message }, JSON.parse(event.params.params));
+                    break;
+                case "gotoynetplus":
+                    location.href = "https://www.ynet.co.il/plus"
+                    break;
+                case "gotocontactpage":
+                    location.href = "https://www.ynet.co.il/plus/contact"
+                    break;
+                case "open-register-popup":
+                    tp.pianoId.show({ 'screen': 'register' })
+                    sendGA4Event("click on register button")
+                    break;
+                case "start-checkout":
+                    if (event.params && event.params && event.params.term) {
+                        const selectedTermObj = JSON.parse(event.params.term);
+                        const params = JSON.parse(event.params.params);
+                        window.selectedTerm = { 'termName': selectedTermObj.name, 'termId': selectedTermObj.termId }
+                        tp.offer.startCheckout({ offerId: params.offerId, termId: selectedTermObj.termId });
+                        sendGA4Event("click on subscribe button")
+                    }
+                    break;
+                    case "open-register-inline":
+                    sendGA4Event("click on register button")
+                    tp.push(["init", function () {
+                        tp.setCustomVariable("trackingId", event.trackingId)
+                        tp.pianoId.show({
+                            screen: 'register', trackingId: event.trackingId, stage: stage, observeContainer: true, displayMode: 'inline', containerSelector: '#inner-premium-block-container',
+                            loggedIn: function (data) {
+                                console.log('user ', data.user, ' logged in with token', data.token);
+                            },
+                            loggedOut: function () { console.log('user logged out'); }
+                        });
+                    }]);
+                    break;
+                case "open-login-inline": 
+                    tp.push(["init", function () {
+                        tp.setCustomVariable("trackingId", event.trackingId)
+                        tp.pianoId.show({
+                            screen: 'login', trackingId: event.trackingId, stage: stage, observeContainer: true, displayMode: 'inline', containerSelector: '#inner-premium-block-container',
+                            loggedIn: function (data) {
+    
+                                console.log('user ', data.user, ' logged in with token', data.token);
+                            },
+                            loggedOut: function () { console.log('user logged out'); }
+                        });
+                    }]);
+                    break;
+    
+                case "open-register-inline_flow_b":
+                    tp.push(["init", function () {
+                        tp.setCustomVariable("trackingId", event.trackingId)
+                        tp.pianoId.show({
+                            screen: 'register', trackingId: event.trackingId, stage: 'register_flow_b', observeContainer: true, displayMode: 'inline', containerSelector: '#inner-premium-block-container',
+                            loggedIn: function (data) {
+                                console.log('user ', data.user, ' logged in with token', data.token);
+                            },
+                            loggedOut: function () { console.log('user logged out'); }
+                        });
+                    }]);
+                    break;
+    
+                case "open-login-inline_flow_b":
+                    tp.push(["init", function () {
+                        tp.setCustomVariable("trackingId", event.trackingId)
+                        tp.pianoId.show({
+                            screen: 'login', trackingId: event.trackingId, stage: 'register_flow_b', observeContainer: true, displayMode: 'inline', containerSelector: '#inner-premium-block-container',
+                            loggedIn: function (data) {
+                                console.log('user ', data.user, ' logged in with token', data.token);
+                            },
+                            loggedOut: function () { console.log('user logged out'); }
+                        });
+                    }]);
+                    break;
+    
+                case "evrit-campaign-register-click":
+                    tp.pianoId.show({ 'screen': 'register' })
+                    sendGA4Event("click on register button", { 'page_type': 'lp_evrit_book', 'article_id': '' })
+                    break;
+                } ///End Of Switch
+            } //End Of Custom external event
+    
+            
+        tp.push(["addHandler", "checkoutSelectTerm", function (termDetails, iframeId) {
+            console.log(termDetails, iframeId)
+            window.selectedTerm = { 'termName': termDetails.termName, 'termId': termDetails.termId }
+        }]);
+    
+        tp.push(['addHandler', 'customEvent',
+            function (event) {
+                switch (event.eventName) {
+                    case 'disconnect-user':
+                        const isApp = new URLSearchParams(window.location.search).has("IsApp");
+                        if (isApp) {
+                            window.location.href = "//btn-disconnect";
+                        } else {
+                            tp.pianoId.logout(() => {
+                                tp.pianoId.show();
+                            });
+                        }
+                        break;
+                }
+            }
+        ]);
+    
+    
+    
+        tp.push(["init", function () {
+            const mainSiteContainer = document.querySelector('#site_container .articleContainer');
+            window.addEventListener("message", (e) => {
+                if (e.data && (e.origin === piano_origin || e.origin === piano_id_origin ) ) {
+                    let pianoData = {}
+                    let page_type = dataLayer && dataLayer[0] && dataLayer[0].contentPageType;
+    
+                    if (typeof e.data === 'string') {
+                        pianoData = JSON.parse(e.data)
+                        if (pianoData.event === "changeScreen" && pianoData.params.screen !== 'register') {
+                            e = Object.assign({}, e, { data: { event: 'register-change-screen' } });
+                            if(mainSiteContainer){
+                                mainSiteContainer.classList.add('piano-id-login')
+                                mainSiteContainer.classList.remove('piano-id-register')
+                            }
+          
+                        } else if (pianoData.event === "changeScreen" && pianoData.params.screen === 'register') {
+                            if(mainSiteContainer){
+                            mainSiteContainer.classList.remove('piano-id-login')
+                            mainSiteContainer.classList.add('piano-id-register')
+                            }
+                        }
+                 }
+    
+                    if (window.templateId === 'OTH7PIOAT56L' || window.templateId === 'OTW83UBBB62I') {
+                        page_type = 'lp_evrit_book'
+                    }
+    
+                    switch (e.data.event) {
+                        case "show_disabled_email_popup":
+                            const isApp = new URLSearchParams(window.location.search).has("IsApp");
+                            if (isApp) {
+                                window.location.href = "//change-email-popup";
+                            } else {
+                                let mobile = "OTHCQJWSCYOO";
+                                let dekstop = "OT3SP4MW1YRY";
+                                tp.push(["init", function () {
+                                    tp.offer.show({
+                                        offerId: "OFM86K09GKGV",
+                                        templateId: window.innerWidth <= 600 ? mobile : dekstop,
+                                        displayMode: "modal",
+                                    });
+                                }]);
+                            }
+                            break;
+    
+                        case "register-click-apple":
+                            sendGA4Event("click on 3rd party register button",
+                                {
+                                    'page_type': page_type,
+                                    '3rd_party_registration_platform': 'apple',
+                                    'article_id': ''
+                                })
+                            break;
+                        case "register-click-google":
+                            sendGA4Event("click on 3rd party register button",
+                                {
+                                    'page_type': page_type,
+                                    '3rd_party_registration_platform': 'google',
+                                    'article_id': ''
+                                })
+                            break;
+    
+                        case 'register-consent-click':
+                            sendGA4Event("terms_checkbox_checked",
+                                {
+                                    'page_type': page_type,
+                                    'article_id': ''
+                                })
+                            break;
+    
+                        case 'register-action-click':
+                            sendGA4Event("continue_button",
+                                {
+                                    'page_type': page_type,
+                                    'article_id': ''
+                                })
+                            break;
+                        case 'register-change-screen':
+                            sendGA4Event("enter_button",
+                                {
+                                    'page_type': page_type,
+                                    'article_id': ''
+                                })
+                            break;
+                            case 'click-newspaper-details':
+                            sendGA4Event("click_on_details",
+                                {
+                                    'page_type': page_type,
+                                    'article_id': ''
+                                })
+                            break;
+
+                    
+                    }
+                }
+            });
+        }]);
+    
+    
+        tp.push(["init", function () {
+            tp.pianoId.init({
+                profileUpdate: function (data) {
+                    const isApp = new URLSearchParams(window.location.search).has("IsApp");
+                    if (isApp) {
+                        window.location.href = "//btn-save";
+                    } else {
+                        const completeMsg = document.querySelector(".complete-msg");
+                        if (completeMsg) {
+                            completeMsg.style.display = "block";
+                            setTimeout(() => {
+                                completeMsg.style.display = "none";
+                            }, 2000);
+                        }
+                    }
+                },
+            });
+            tp.experience.init()
+        }]);
+    })();
+    
+    
+        // do not change this section
+        // |BEGIN INCLUDE TINYPASS JS|
+        (function (src) { var a = document.createElement("script"); a.type = "text/javascript"; a.async = true; a.src = src; var b = document.getElementsByTagName("script")[0]; b.parentNode.insertBefore(a, b) })("//cdn.tinypass.com/api/tinypass.min.js");
+        // |END   INCLUDE TINYPASS JS|
+    
+    
+    
+    

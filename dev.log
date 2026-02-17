@@ -1,0 +1,20 @@
+[33m[1m15:35:16[22m [WARN][39m Missing pages directory: src/pages
+[2m15:35:16[22m [34m[types][39m Generated [2m1ms[22m
+[2m15:35:16[22m [34m[content][39m Syncing content
+[33m[1m15:35:16[22m [WARN][39m Missing pages directory: src/pages
+[33m[1m15:35:16[22m [WARN][39m Missing pages directory: src/pages
+[33m[1m15:35:16[22m [WARN][39m Missing pages directory: src/pages
+[2m15:35:16[22m [34m[content][39m Synced content
+[33m[1m15:35:16[22m [WARN][39m Missing pages directory: src/pages
+[33m[1m15:35:17[22m [WARN][39m Missing pages directory: src/pages
+[33m[1m15:35:17[22m [WARN] [vite][39m Failed to resolve dependency: [36mastro > cssesc[39m, present in client 'optimizeDeps.include'
+[33m[1m15:35:17[22m [WARN] [vite][39m Failed to resolve dependency: [36mastro > aria-query[39m, present in client 'optimizeDeps.include'
+[33m[1m15:35:17[22m [WARN] [vite][39m Failed to resolve dependency: [36mastro > axobject-query[39m, present in client 'optimizeDeps.include'
+
+[42m[1m astro [22m[49m [32mv5.17.2[39m [2mready in[22m 1456 [2mms[22m
+
+[2mΓöâ[22m Local    [36mhttp://localhost:4321/[39m
+[2mΓöâ[22m Network  [2muse --host to expose[22m
+
+[2m15:35:17[22m [32mwatching for file changes...[39m
+[33m[1m15:35:18[22m [WARN][39m Missing pages directory: src/pages
